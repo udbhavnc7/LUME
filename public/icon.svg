@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Slate Background -->
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)" />
+
+  <!-- Subtle Cadastral Grid Overlay -->
+  <path d="M64 128 H448 M64 256 H448 M64 384 H448 M128 64 V448 M256 64 V448 M384 64 V448" stroke="#334155" stroke-width="1.5" opacity="0.3" stroke-dasharray="6 6" />
+
+  <!-- Central Statutory Shield Outline -->
+  <path d="M256 72 L392 128 V248 C392 344 328 418 256 448 C184 418 120 344 120 248 V128 Z" fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="8" stroke-linejoin="round" />
+
+  <!-- Inner Cadastral Land Parcel Polyline (Boundary Survey) -->
+  <polygon points="180,180 320,160 340,280 280,350 200,310" fill="url(#tealGrad)" opacity="0.25" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4 4" />
+
+  <!-- Statutory Pillar / Balance Beam Scales of Justice & Land RoW -->
+  <line x1="256" y1="140" x2="256" y2="360" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" />
+  <line x1="170" y1="190" x2="342" y2="190" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round" />
+  
+  <!-- Left Scale Pan -->
+  <path d="M170 190 L150 240 H190 Z" fill="#d97706" opacity="0.8" />
+  <ellipse cx="170" cy="242" rx="24" ry="7" fill="url(#goldGrad)" />
+  
+  <!-- Right Scale Pan -->
+  <path d="M342 190 L322 240 H362 Z" fill="#d97706" opacity="0.8" />
+  <ellipse cx="342" cy="242" rx="24" ry="7" fill="url(#goldGrad)" />
+
+  <!-- Center Fulcrum Jewel -->
+  <circle cx="256" cy="190" r="14" fill="#0f172a" stroke="url(#goldGrad)" stroke-width="5" />
+  <circle cx="256" cy="190" r="6" fill="#38bdf8" />
+
+  <!-- Statutory Base Pedestal -->
+  <path d="M216 360 H296 L312 384 H200 Z" fill="url(#goldGrad)" />
+
+  <!-- Compass Star Accents -->
+  <polygon points="256,110 262,126 278,126 264,136 270,152 256,142 242,152 248,136 234,126 250,126" fill="#fef08a" />
+</svg>

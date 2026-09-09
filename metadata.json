@@ -1,0 +1,6 @@
+{
+  "name": "LUME - Land-Acquisition Uncertainty Intervention-Management Engine",
+  "description": "Land-Acquisition Uncertainty Intervention-Management Engine: statutory clock countdowns, calibrated delay-intelligence, precedent matching, and multi-generational transparency portal under RFCTLARR 2013 and NHAI Sec 3.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
