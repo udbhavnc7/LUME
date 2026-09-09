@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Shield, ArrowRight, Activity, CheckCircle2 } from 'lucide-react';
+import { LumeLogo } from './LumeLogo';
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -76,19 +77,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
 
         {/* LUME Animated Typography */}
         <div className="space-y-2">
-          <div className="flex items-center justify-center gap-1">
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-amber-400 drop-shadow-sm transition-all duration-500 hover:scale-110">
-              L
-            </span>
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-emerald-400 drop-shadow-sm transition-all duration-500 hover:scale-110">
-              U
-            </span>
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-teal-300 drop-shadow-sm transition-all duration-500 hover:scale-110">
-              M
-            </span>
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-white drop-shadow-sm transition-all duration-500 hover:scale-110">
-              E
-            </span>
+          <div className="flex items-center justify-center gap-1 py-1">
+            <LumeLogo theme="dark" className="h-12 sm:h-14 w-auto drop-shadow-xl transition-transform duration-500 hover:scale-105" />
           </div>
 
           <h2 className="text-sm sm:text-base font-bold text-slate-200 tracking-wide uppercase">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
+import { LumeLogo } from './components/LumeLogo';
 import { OfflineStatutoryBar } from './components/OfflineStatutoryBar';
 import { ContextRoleClarifier } from './components/ContextRoleClarifier';
 import { SplashScreen } from './components/SplashScreen';
@@ -449,9 +450,7 @@ export default function App() {
       <footer className="bg-slate-900 border-t border-slate-800 py-6 text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-emerald-500 p-0.5 flex items-center justify-center font-black text-slate-950 text-sm">
-              L
-            </div>
+            <LumeLogo theme={theme} className="h-6 w-auto" />
             <div>
               <div className="text-slate-200 font-semibold flex items-center gap-2">
                 <span>LUME • Land-Acquisition Uncertainty Intervention-Management Engine</span>

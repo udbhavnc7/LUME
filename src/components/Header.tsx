@@ -14,6 +14,7 @@ import {
   BarChart3
 } from 'lucide-react';
 import { AppTheme, AppFontSize, AppView } from '../types';
+import { LumeLogo } from './LumeLogo';
 
 interface HeaderProps {
   currentView: AppView;
@@ -81,20 +82,14 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
         {/* Brand & Logo */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => onSelectView('OFFICER')}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-emerald-600 to-teal-700 p-0.5 shadow-lg shadow-emerald-950/40 flex items-center justify-center">
-            <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-              <span className="font-extrabold text-lg tracking-wider text-amber-400">L</span>
-              <span className="font-extrabold text-lg text-emerald-400">U</span>
-              <span className="font-extrabold text-sm text-teal-300">ME</span>
-            </div>
+        <div className="flex items-center gap-3 cursor-pointer group" onClick={() => onSelectView('OFFICER')}>
+          <div className="flex items-center gap-2">
+            <LumeLogo theme={theme} className="h-7 sm:h-8 w-auto transition-transform duration-200 group-hover:scale-105" />
+            <span className="text-[10px] font-mono px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-medium">
+              v7.0
+            </span>
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
-                LUME <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium">v7.0</span>
-              </h1>
-            </div>
+          <div className="hidden lg:block border-l border-slate-700/60 pl-3">
             <p className="text-[11px] text-slate-400 leading-tight">
               {language === 'HI' 
                 ? 'भूमि अधिग्रहण अनिश्चितता एवं हस्तक्षेप प्रबंधन इंजन' 

@@ -615,3 +615,28 @@
 .app-theme-high-contrast button {
   font-weight: 700 !important;
 }
+
+/* =========================================================
+   LUME LOGO THEME ADAPTATION
+   ========================================================= */
+.app-theme-light .lume-logo-light {
+  display: block !important;
+}
+.app-theme-light .lume-logo-dark {
+  display: none !important;
+}
+
+.app-theme-dark .lume-logo-light {
+  display: none !important;
+}
+.app-theme-dark .lume-logo-dark {
+  display: block !important;
+}
+
+.app-theme-high-contrast .lume-logo-light {
+  display: none !important;
+}
+.app-theme-high-contrast .lume-logo-dark {
+  display: block !important;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(85%) saturate(1200%) hue-rotate(360deg) !important;
+}
