@@ -95,6 +95,30 @@ export default function App() {
   const [projects] = useState<LandAcquisitionProject[]>(MOCK_PROJECTS);
   const [parcels] = useState<CitizenParcelRecord[]>(MOCK_CITIZEN_PARCELS);
 
+  // Synchronize theme classes to document root and body for global styling and modals
+  useEffect(() => {
+    const root = document.documentElement;
+    const body = document.body;
+    root.classList.remove('app-theme-light', 'app-theme-dark', 'app-theme-high-contrast', 'dark', 'light');
+    body.classList.remove('app-theme-light', 'app-theme-dark', 'app-theme-high-contrast', 'dark', 'light');
+
+    const effectiveThemeClass = highContrast || theme === 'high-contrast'
+      ? 'app-theme-high-contrast'
+      : theme === 'light'
+      ? 'app-theme-light'
+      : 'app-theme-dark';
+
+    root.classList.add(effectiveThemeClass);
+    body.classList.add(effectiveThemeClass);
+    if (theme === 'light' && !highContrast) {
+      root.classList.add('light');
+      body.classList.add('light');
+    } else {
+      root.classList.add('dark');
+      body.classList.add('dark');
+    }
+  }, [theme, highContrast]);
+
   // When splash completes, check if onboarding is needed
   const handleSplashComplete = () => {
     setShowSplash(false);

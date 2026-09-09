@@ -531,7 +531,9 @@ export const DocumentVerificationModule: React.FC<DocumentVerificationModuleProp
       actionTaken: customReason || `Updated verification status to ${newStatus} for ${activeDocument.surveyKhasraNo} (${activeDocument.village}) following statutory record review.`,
       category: 'STATUS_REVIEW',
       targetDueDate: new Date(Date.now() + 7 * 86400000).toISOString().split('T')[0],
-      scenarioAssumptionsTested: `Status changed to ${newStatus}. Statutory compliance tracking under RFCTLARR Section 11(5).`
+      scenarioAssumptionsTested: `Status changed to ${newStatus}. Statutory compliance tracking under RFCTLARR Section 11(5).`,
+      status: 'ASSIGNED',
+      notes: customReason || `Status changed to ${newStatus}. Statutory compliance tracking under RFCTLARR Section 11(5).`
     });
 
     setTimeout(() => setActionSuccessToast(null), 4500);
@@ -843,7 +845,9 @@ export const DocumentVerificationModule: React.FC<DocumentVerificationModuleProp
       actionTaken: `Manual OCR Correction: Field '${targetField.label}' updated from '${prevValue}' to '${newValue}'. Reason: ${reason}. Record confidence recalculated to ${(updatedDoc.ocrConfidence * 100).toFixed(0)}%.`,
       category: 'STATUS_REVIEW',
       targetDueDate: new Date(Date.now() + 5 * 86400000).toISOString().split('T')[0],
-      scenarioAssumptionsTested: `Human-in-the-loop OCR correction under statutory verification guidelines. Field: ${targetField.fieldKey}.`
+      scenarioAssumptionsTested: `Human-in-the-loop OCR correction under statutory verification guidelines. Field: ${targetField.fieldKey}.`,
+      status: 'COMPLETED',
+      notes: `Manual OCR correction by officer: '${prevValue}' -> '${newValue}'. Reason: ${reason}`
     });
 
     setActionSuccessToast(

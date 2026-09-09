@@ -567,7 +567,7 @@ export const OfflineStatutoryBar: React.FC<OfflineStatutoryBarProps> = ({ langua
                   <div className="space-y-1">
                     {selectedDoc.discrepancies.map((disc, idx) => (
                       <div key={idx} className="p-2 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
-                        <span className="text-slate-300">{disc.label}: <strong className="text-white">{disc.scannedValue}</strong> vs DB <strong className="text-slate-400">{disc.databaseValue}</strong></span>
+                        <span className="text-slate-300">{disc.fieldLabel}: <strong className="text-white">{disc.scannedValue}</strong> vs DB <strong className="text-slate-400">{disc.databaseValue}</strong></span>
                         <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono ${
                           disc.severity === 'CRITICAL' ? 'bg-rose-950 text-rose-300 border border-rose-800' :
                           disc.severity === 'WARNING' ? 'bg-amber-950 text-amber-300 border border-amber-800' :
@@ -610,10 +610,11 @@ export const OfflineStatutoryBar: React.FC<OfflineStatutoryBarProps> = ({ langua
                                 <span 
                                   className="w-2.5 h-2.5 rounded-full inline-block"
                                   style={{
-                                    backgroundColor: annot.color === 'YELLOW' ? '#f59e0b' :
-                                      annot.color === 'RED' ? '#ef4444' :
-                                      annot.color === 'GREEN' ? '#10b981' :
-                                      annot.color === 'BLUE' ? '#3b82f6' : '#8b5cf6'
+                                    backgroundColor: annot.color === 'amber' ? '#f59e0b' :
+                                      annot.color === 'rose' ? '#ef4444' :
+                                      annot.color === 'emerald' ? '#10b981' :
+                                      annot.color === 'blue' ? '#3b82f6' :
+                                      annot.color === 'cyan' ? '#06b6d4' : '#8b5cf6'
                                   }}
                                 />
                                 {annot.title}
