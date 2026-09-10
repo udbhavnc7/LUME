@@ -1030,26 +1030,72 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
             </ul>
           </div>
 
-          {/* Historical Precedent */}
-          <div className="space-y-2">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1">
-              3. Comparable Precedent & Resolution Insight
-            </h2>
-            {project.precedents.length > 0 && (
-              <div className="text-xs text-slate-700 p-3 bg-emerald-50 border border-emerald-200 rounded-lg">
-                <strong>{project.precedents[0].projectName} ({project.precedents[0].distanceKm} km away):</strong>
-                <p className="mt-1">{project.precedents[0].successfulIntervention}</p>
+          {/* Tested Intervention Scenario (Dynamic from Scenario Lab) */}
+          <div className="space-y-2 p-3 bg-emerald-50/80 border border-emerald-300 rounded-xl text-xs">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
+                <span>3. Tested Policy Interventions & Simulated Outcome</span>
+                <span className="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded text-[10px] font-mono">Live Sensitivity</span>
+              </h2>
+              <span className="font-mono font-bold text-emerald-800">
+                IPI Priority Score: {ipiIndex} / 100
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-[11px]">
+              <div className="bg-white p-2 rounded border border-emerald-200">
+                <span className="text-slate-500 block">Tested Compensation:</span>
+                <strong className="text-slate-900">
+                  ₹{(project.compensationBasePerAcreLakh * scenarioInput.compensationMultiplier).toFixed(1)}L / acre ({scenarioInput.compensationMultiplier > 1 ? `+${Math.round((scenarioInput.compensationMultiplier - 1) * 100)}% revision` : 'Base Circle Rate'})
+                </strong>
+              </div>
+              <div className="bg-white p-2 rounded border border-emerald-200">
+                <span className="text-slate-500 block">Projected Delay Risk:</span>
+                <strong className={scenarioRisk < baselineRisk ? "text-emerald-700 font-bold" : "text-slate-800"}>
+                  {Math.round(scenarioRisk * 100)}% ({deltaPoints > 0 ? `-${deltaPoints}% delta` : 'Current Baseline'})
+                </strong>
+              </div>
+              <div className="bg-white p-2 rounded border border-emerald-200">
+                <span className="text-slate-500 block">Est. Delay Averted:</span>
+                <strong className="text-emerald-700 font-bold">~{savedDelayDays} Days Saved</strong>
+              </div>
+              <div className="bg-white p-2 rounded border border-emerald-200">
+                <span className="text-slate-500 block">Carrying Cost Saved:</span>
+                <strong className="text-emerald-700 font-bold">~₹{(savedDelayDays * 0.42).toFixed(1)} Cr</strong>
+              </div>
+            </div>
+
+            {relevantDecisions.length > 0 && (
+              <div className="mt-2 pt-2 border-t border-emerald-200 text-[11px]">
+                <strong className="text-slate-900">Latest Committed Action:</strong>{' '}
+                <span className="text-slate-700">{relevantDecisions[0].actionTaken} (Assigned to: {relevantDecisions[0].officerName}, Due: {relevantDecisions[0].targetDueDate})</span>
               </div>
             )}
           </div>
 
-          {/* Recommended Action */}
+          {/* Historical Precedent */}
           <div className="space-y-2">
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1">
-              4. Immediate Action Plan & Direction
+              4. Comparable Precedent & Resolution Insight
+            </h2>
+            {project.precedents.length > 0 && (
+              <div className="text-xs text-slate-700 p-3 bg-slate-50 border border-slate-200 rounded-lg">
+                <strong>{project.precedents[0].projectName} ({project.precedents[0].distanceKm} km away in {project.precedents[0].stateDistrict}):</strong>
+                <p className="mt-1">{project.precedents[0].successfulIntervention}</p>
+                <div className="text-[11px] text-emerald-800 font-medium mt-1">
+                  Outcome: {project.precedents[0].finalOutcome}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Recommended Direction */}
+          <div className="space-y-2">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1">
+              5. Immediate Statutory Direction & Cadastral Action
             </h2>
             <p className="text-xs text-slate-700">
-              Convene a joint review meeting within 10 days involving the District Land Acquisition Officer (DLAO), Sub-Registrar, and Forest Division to harmonize Section 26 fair market valuation and expedite pending clearances.
+              Direct the Competent Authority (CALA Satara) to convene the District Level Negotiation Committee (DLNC) within 10 days. Expedite joint re-survey of disputed parcel Gut No. 418/2 (ULPIN: MH270412889201) to verify co-parcener share and update Section 3G award schedule before 336-day clock expiry.
             </p>
           </div>
 
