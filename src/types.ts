@@ -386,7 +386,7 @@ export interface OcrCorrectionLog {
 
 export type AppTheme = 'dark' | 'light' | 'high-contrast';
 export type AppFontSize = 'normal' | 'large' | 'extra-large';
-export type AppView = 'OFFICER' | 'CITIZEN' | 'GIS' | 'ANALYTICS' | 'TRUST_REGISTRY';
+export type AppView = 'OFFICER' | 'CITIZEN' | 'GIS' | 'ANALYTICS' | 'TRUST_REGISTRY' | 'MODEL_EVALUATION' | 'MANAGEMENT_ATTENTION' | 'DATA';
 export type UserRole = 'OFFICER' | 'CITIZEN' | 'GIS';
 
 export type RBACRole = 
@@ -498,6 +498,11 @@ export interface TemporalSnapshot {
   modelOutput: ProjectModelOutput;
   dataPassports: DataPassport[];
   triggerEvent?: string;
+  actualOutcome?: {
+    finalDelayMonths: number;
+    finalOutcome: string;
+    resolutionDate: string;
+  };
 }
 
 export interface WhatChangedDiff {
@@ -625,4 +630,253 @@ export interface InterventionPlaybook {
   ownerRole: string;
   typicalResolutionDays: number;
   successCriteria: string;
+}
+
+// ============================================
+// V8 UPGRADE TYPES - Real Data + Validation + Production Intelligence
+// ============================================
+
+export type DataMode = 'DEMO' | 'REAL_DATA';
+
+export type SourceClassification = 'CONNECTED' | 'IMPORTED' | 'PUBLIC_REFERENCE' | 'DEMO';
+
+export type AbstentionReason =
+  | 'FEATURE_COVERAGE_LOW'
+  | 'STAGE_UNSUPPORTED'
+  | 'TRAINING_COVERAGE_POOR'
+  | 'MISSING_CRITICAL_EVIDENCE'
+  | 'OUT_OF_RANGE_SCENARIO'
+  | 'EXCESSIVE_UNCERTAINTY'
+  | 'INSUFFICIENT_DATA';
+
+export interface ImportedDataset {
+  id: string;
+  name: string;
+  filename: string;
+  fileSize: number;
+  fileType: 'CSV' | 'XLSX' | 'JSON';
+  encoding: string;
+  rowCount: number;
+  columns: string[];
+  importedAt: string;
+  sourceClassification: SourceClassification;
+  schemaVersion: string;
+  validationStatus: 'PENDING' | 'PASSED' | 'FAILED' | 'PARTIAL';
+  columnMappings: DatasetColumnMapping[];
+}
+
+export interface DatasetColumnMapping {
+  sourceColumn: string;
+  lumeField: string;
+  confidence: number;
+  autoDetected: boolean;
+  sampleValues: string[];
+}
+
+export interface DatasetValidationReport {
+  datasetId: string;
+  totalRecords: number;
+  validRecords: number;
+  incompleteRecords: number;
+  rejectedRecords: number;
+  duplicateGroups: number;
+  dateInconsistencies: number;
+  unknownStageLabels: number;
+  missingCoordinates: number;
+  invalidCoordinates: number;
+  contradictoryStatuses: number;
+  validationErrors: ValidationError[];
+  validationTimestamp: string;
+  coveragePct: number;
+}
+
+export interface ValidationError {
+  recordIndex: number;
+  field: string;
+  severity: 'ERROR' | 'WARNING' | 'INFO';
+  message: string;
+  currentValue: string;
+}
+
+export interface DataConflict {
+  id: string;
+  projectId: string;
+  field: string;
+  fieldLabel: string;
+  sourceA: { value: string | number; source: string; timestamp: string };
+  sourceB: { value: string | number; source: string; timestamp: string };
+  resolution: 'SOURCE_PRIORITY' | 'LATEST_WINS' | 'MANUAL_REVIEW' | 'PENDING';
+  selectedValue: string | number;
+  reason: string;
+  detectedAt: string;
+  resolvedAt?: string;
+  conflictType: 'STATUS' | 'DATE' | 'LOCATION' | 'DUPLICATE_ENTITY' | 'MISSING_SOURCE' | 'STALE_SOURCE' | 'CONTRADICTORY_STAGE' | 'IDENTITY_MISMATCH';
+}
+
+export interface MaterialChange {
+  id: string;
+  projectId: string;
+  field: string;
+  previousValue: string | number;
+  currentValue: string | number;
+  changeType: 'STAGE_TRANSITION' | 'NEW_DEPENDENCY' | 'DEPENDENCY_RESOLVED' | 'INACTIVITY' | 'COMPENSATION_CHANGE' | 'DISPUTE_CHANGE' | 'MILESTONE_APPROACHING' | 'MILESTONE_MISSED' | 'CRITICALITY_CHANGE' | 'EVIDENCE_STALE' | 'CONFLICT_RESOLVED';
+  materialityScore: number;
+  materialityLevel: 'INFORMATIONAL' | 'MATERIAL' | 'CRITICAL';
+  detectedAt: string;
+  affectedFeatures: string[];
+  triggersRescore: boolean;
+}
+
+export interface PredictionEvaluation {
+  predictionId: string;
+  projectId: string;
+  predictionTimestamp: string;
+  snapshotId: string;
+  modelVersion: string;
+  predictedProbability: number;
+  actualOutcome: boolean;
+  predictedMissDays: number;
+  actualMissDays: number;
+  isCorrect: boolean;
+  calibrationBin: number;
+  featureSnapshot: Record<string, number>;
+  sourceTimestamps: Record<string, string>;
+}
+
+export interface ModelEvaluationRun {
+  id: string;
+  runTimestamp: string;
+  trainingPeriod: string;
+  validationPeriod: string;
+  holdoutPeriod: string;
+  datasetSize: number;
+  baselineAuc: number;
+  baselineBrier: number;
+  championAuc: number;
+  championBrier: number;
+  championPrAuc: number;
+  calibrationError: number;
+  precisionAtK: number;
+  recallAtK: number;
+  medianWarningLeadTimeDays: number;
+  coveragePct: number;
+  insufficientDataMetrics: string[];
+}
+
+export interface AttentionBudget {
+  totalCases: number;
+  selectedCases: number;
+  budgetLimit: number;
+  selectionMethod: 'IPI_TOP_N' | 'URGENCY_FIRST' | 'EVIDENCE_FIRST';
+  excludedByConfidence: number;
+  excludedByAbstention: number;
+  includedAbstained: number;
+}
+
+export interface QueueExplanation {
+  projectId: string;
+  rank: number;
+  ipiScore: number;
+  contributions: {
+    urgency: number;
+    criticality: number;
+    actionability: number;
+    riskMovement: number;
+  };
+  primaryReason: string;
+  secondaryReason: string;
+  downstreamImpact: 'HIGH' | 'MEDIUM' | 'LOW';
+  evidenceQuality: EvidenceHealthState;
+  confidenceNote?: string;
+}
+
+export interface OutcomeRecord {
+  id: string;
+  projectId: string;
+  actionId: string;
+  actionTaken: string;
+  owner: string;
+  startDate: string;
+  expectedResult: string;
+  actualResult: string;
+  resolutionDate: string;
+  outcomeStatus: 'SUCCESS' | 'PARTIAL' | 'FAILED' | 'PENDING';
+  resolutionTimeDays: number;
+  recordCreatedAt: string;
+}
+
+export interface InstitutionalMemory {
+  id: string;
+  signalType: string;
+  predictionSnapshot: string;
+  recommendation: string;
+  humanAction: string;
+  outcome: string;
+  outcomeRecordId: string;
+  projectId: string;
+  interventionType: string;
+  resolutionTimeDays: number;
+  createdAt: string;
+  reusableInsight: string;
+}
+
+export interface ManagementInsight {
+  id: string;
+  type: 'TOP_THREAT' | 'EMERGING_CLUSTER' | 'RISK_INCREASE' | 'MILESTONE_APPROACHING' | 'REPEATED_BOTTLENECK' | 'UNRESOLVED_HIGH_CRIT';
+  title: string;
+  description: string;
+  affectedProjectIds: string[];
+  severity: 'CRITICAL' | 'HIGH' | 'MEDIUM';
+  detectedAt: string;
+  recommendedDiscussion: string;
+}
+
+export interface PortfolioHealthV8 extends PortfolioHealthMetrics {
+  whyPortfolioAtRisk: Array<{ category: string; pct: number; projectCount: number }>;
+  dataFreshnessPct: number;
+  modelCoveragePct: number;
+  evidenceHealthPct: number;
+}
+
+export interface DistrictIntelligence {
+  district: string;
+  state: string;
+  projectCount: number;
+  medianStageDuration: number;
+  delayRate: number;
+  highRiskPct: number;
+  medianWarningLeadTime: number;
+  recurringDependencies: string[];
+  actionConversionRate: number;
+  outcomeResolutionTime: number;
+  bottleneckHotspot: string;
+}
+
+export interface CalibrationPoint {
+  predictedBucket: string;
+  predictedRange: number;
+  observedRate: number;
+  sampleSize: number;
+  coveragePct: number;
+}
+
+export interface TemporalIntegrityCheck {
+  snapshotId: string;
+  projectId: string;
+  featureEffectiveAt: string;
+  predictionTimestamp: string;
+  isCompliant: boolean;
+  violatedFeatures?: string[];
+}
+
+export interface PerformanceMetrics {
+  initialDashboardRender: number;
+  projectRoomLoad: number;
+  predictionCalculation: number;
+  datasetImport: number;
+  validationDuration: number;
+  reconciliationDuration: number;
+  precedentRetrieval: number;
+  gisFiltering: number;
+  actionQueueCalculation: number;
 }

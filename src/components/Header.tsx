@@ -11,7 +11,11 @@ import {
   Sun,
   Moon,
   Eye,
-  BarChart3
+  BarChart3,
+  Activity,
+  Database,
+  Brain,
+  Cpu,
 } from 'lucide-react';
 import { AppTheme, AppFontSize, AppView } from '../types';
 
@@ -92,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
-                LUME <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium">v7.0</span>
+                LUME <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium">v9.0</span>
               </h1>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
@@ -103,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Persona Mode Switcher: Officer vs Citizen vs GIS vs Model */}
+        {/* Persona Mode Switcher: V9 Navigation */}
         <div className="flex items-center bg-slate-800/90 p-1 rounded-xl border border-slate-700/80 shadow-inner">
           <button
             id="nav-officer-btn"
@@ -115,25 +119,20 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <Building2 className="w-3.5 h-3.5" />
-            <span>{language === 'HI' ? 'अधिकारी कमान केंद्र' : 'Officer Intelligence'}</span>
+            <span>{language === 'HI' ? 'कमान केंद्र' : 'Command Center'}</span>
           </button>
 
           <button
-            id="nav-citizen-btn"
-            onClick={() => onSelectView('CITIZEN')}
+            id="nav-management-btn"
+            onClick={() => onSelectView('MANAGEMENT_ATTENTION')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              currentView === 'CITIZEN'
+              currentView === 'MANAGEMENT_ATTENTION'
                 ? 'bg-amber-600 text-white shadow-sm'
                 : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
             }`}
           >
-            <Users className="w-3.5 h-3.5" />
-            <span className="flex items-center gap-1">
-              {language === 'HI' ? 'जन-सेवा नागरिक पोर्टल' : 'Citizen Jan-Seva'}
-              <span className="hidden sm:inline-block px-1.5 py-0.2 bg-amber-400/20 text-amber-300 text-[10px] rounded-full">
-                {language === 'HI' ? 'सभी उम्र' : 'All Ages'}
-              </span>
-            </span>
+            <Activity className="w-3.5 h-3.5" />
+            <span>{language === 'HI' ? 'प्रबंधन' : 'Management'}</span>
           </button>
 
           <button
@@ -146,20 +145,33 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">{language === 'HI' ? 'जीआईएस उपग्रह' : 'GIS Satellite'}</span>
+            <span className="hidden md:inline">{language === 'HI' ? 'मानचित्र' : 'Map'}</span>
           </button>
 
           <button
-            id="nav-analytics-btn"
-            onClick={() => onSelectView('ANALYTICS')}
+            id="nav-model-btn"
+            onClick={() => onSelectView('MODEL_EVALUATION')}
             className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              currentView === 'ANALYTICS'
-                ? 'bg-teal-700 text-white shadow-sm'
+              currentView === 'MODEL_EVALUATION'
+                ? 'bg-purple-600 text-white shadow-sm'
                 : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
             }`}
           >
-            <BarChart3 className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">{language === 'HI' ? 'तुलनात्मक' : 'Analytics'}</span>
+            <Brain className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">{language === 'HI' ? 'मॉडल' : 'Model'}</span>
+          </button>
+
+          <button
+            id="nav-data-btn"
+            onClick={() => onSelectView('DATA')}
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              currentView === 'DATA'
+                ? 'bg-blue-600 text-white shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+            }`}
+          >
+            <Database className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">{language === 'HI' ? 'डेटा' : 'Data'}</span>
           </button>
 
           <button
@@ -172,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">{language === 'HI' ? 'विश्वास व मॉडल' : 'Trust Registry'}</span>
+            <span className="hidden md:inline">{language === 'HI' ? 'विश्वास' : 'Trust'}</span>
           </button>
         </div>
 

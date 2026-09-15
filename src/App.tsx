@@ -14,6 +14,10 @@ import { ComparativeAnalyticsView } from './components/ComparativeAnalyticsView'
 import { AlertsFeedDrawer } from './components/AlertsFeedDrawer';
 import { IPIConfiguratorModal } from './components/IPIConfiguratorModal';
 import { DemoTourGuide, TOUR_STEPS } from './components/DemoTourGuide';
+import { DataImportWizard } from './components/DataImportWizard';
+import { ModelEvaluationScreen } from './components/ModelEvaluationScreen';
+import { ManagementAttentionView } from './components/ManagementAttentionView';
+import { DataManagementView } from './components/DataManagementView';
 import { MOCK_PROJECTS, MOCK_CITIZEN_PARCELS, MOCK_DECISION_LOGS } from './data/mockData';
 import { 
   LandAcquisitionProject, 
@@ -25,7 +29,10 @@ import {
   UserRole,
   AppView,
   RBACRole,
-  IPIWeights
+  IPIWeights,
+  DataMode,
+  ImportedDataset,
+  DatasetValidationReport,
 } from './types';
 import { ShieldCheck, HeartHandshake, Compass, Sparkles, HelpCircle } from 'lucide-react';
 
@@ -85,6 +92,12 @@ export default function App() {
   // Tour State
   const [isTourActive, setIsTourActive] = useState(false);
   const [tourStepIndex, setTourStepIndex] = useState(0);
+
+  // V8: Data Mode & Import State
+  const [dataMode, setDataMode] = useState<DataMode>('DEMO');
+  const [isImportWizardOpen, setIsImportWizardOpen] = useState(false);
+  const [importedDatasets, setImportedDatasets] = useState<ImportedDataset[]>([]);
+  const [validationReports, setValidationReports] = useState<DatasetValidationReport[]>([]);
 
   // Mutable state for decision logs
   const [decisionLogs, setDecisionLogs] = useState<DecisionLogEntry[]>(() => {
@@ -179,6 +192,21 @@ export default function App() {
     localStorage.setItem('lume_ipi_weights', JSON.stringify(newWeights));
   };
 
+  // V8: Import Complete Handler
+  const handleImportComplete = (dataset: ImportedDataset, report: DatasetValidationReport) => {
+    setImportedDatasets(prev => [...prev, dataset]);
+    setValidationReports(prev => [...prev, report]);
+    setDataMode('REAL_DATA');
+    localStorage.setItem('lume_data_mode', 'REAL_DATA');
+  };
+
+  // V8: Data Mode Toggle Handler
+  const handleToggleDataMode = () => {
+    const newMode = dataMode === 'DEMO' ? 'REAL_DATA' : 'DEMO';
+    setDataMode(newMode);
+    localStorage.setItem('lume_data_mode', newMode);
+  };
+
   // Tour Navigation Controller
   const handleStartTour = () => {
     setIsTourActive(true);
@@ -195,7 +223,7 @@ export default function App() {
       setSelectedProjectId(null);
     }
     if (step.targetTab) {
-      setSelectedProjectTab(step.targetTab as any);
+      setSelectedProjectTab(step.targetTab as 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET');
     }
   };
 
@@ -371,6 +399,8 @@ export default function App() {
               onOpenGIS={() => setCurrentView('GIS')}
               language={language}
               onOpenIPIModal={() => setIsIPIModalOpen(true)}
+              dataMode={dataMode}
+              onOpenImport={() => setIsImportWizardOpen(true)}
             />
           )
         )}
@@ -408,7 +438,44 @@ export default function App() {
             language={language}
           />
         )}
+
+        {/* V8: VIEW 6: MODEL EVALUATION */}
+        {currentView === 'MODEL_EVALUATION' && (
+          <ModelEvaluationScreen
+            projects={projects}
+            language={language}
+          />
+        )}
+
+        {/* V8: VIEW 7: MANAGEMENT ATTENTION */}
+        {currentView === 'MANAGEMENT_ATTENTION' && (
+          <ManagementAttentionView
+            projects={projects}
+            onSelectProject={handleSelectProject}
+            language={language}
+          />
+        )}
+
+        {/* V9: VIEW 8: DATA IMPORT & MANAGEMENT */}
+        {currentView === 'DATA' && (
+          <DataManagementView
+            language={language}
+            dataMode={dataMode}
+            importedDatasets={importedDatasets}
+            validationReports={validationReports}
+            onOpenImport={() => setIsImportWizardOpen(true)}
+            onToggleDataMode={handleToggleDataMode}
+          />
+        )}
       </main>
+
+      {/* V8: Data Import Wizard */}
+      <DataImportWizard
+        isOpen={isImportWizardOpen}
+        onClose={() => setIsImportWizardOpen(false)}
+        onImportComplete={handleImportComplete}
+        language={language}
+      />
 
       {/* Floating 7-Minute SIH Demo Tour Guide */}
       {isTourActive && (

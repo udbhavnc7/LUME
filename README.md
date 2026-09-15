@@ -1368,3 +1368,29 @@ an autonomous decision-maker.
               └──────► Better future intelligence
 
 **LUME --- From records to foresight. From foresight to action.**
+
+---
+
+## Quick Start & Deployment
+
+### Local Development
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Run development server with HMR
+npm run dev
+
+# 3. Typecheck
+npm run typecheck
+
+# 4. Production build
+npm run build
+
+# 5. Preview production build locally
+npm run preview
+```
+
+### Production Deployment
+For complete production deployment instructions (Render static site, custom domain, PWA caching, security headers, rollback procedures), see **[DEPLOYMENT.md](file:///c:/Users/LENOVO/LUME/LUME/DEPLOYMENT.md)**.
+

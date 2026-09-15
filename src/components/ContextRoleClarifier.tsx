@@ -89,7 +89,7 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
     }
   };
 
-  const viewDetails = {
+  const viewDetails: Record<AppView, { title: string; tag: string; color: string; icon: typeof Building2; summary: string; alternatePrompt: string; alternateLabel: string; alternateTarget: AppView }> = {
     OFFICER: {
       title: language === 'HI' ? 'अधिकारी कमान केंद्र' : 'Officer Intelligence & Command Center',
       tag: language === 'HI' ? 'प्रशासनिक व निर्णय मोड' : 'Decision Mode',
@@ -149,7 +149,43 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
       alternatePrompt: language === 'HI' ? 'सक्रिय परियोजनाओं का प्रबंधन करें:' : 'Manage active corridor acquisitions:',
       alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
       alternateTarget: 'OFFICER' as AppView
-    }
+    },
+    MODEL_EVALUATION: {
+      title: language === 'HI' ? 'मॉडल मूल्यांकन' : 'Model Evaluation & Calibration',
+      tag: language === 'HI' ? 'मूल्यांकन मोड' : 'Evaluation Mode',
+      color: 'violet',
+      icon: ShieldCheck,
+      summary: language === 'HI'
+        ? 'मॉडल का प्रदर्शन, अंशांकन वक्र, और पूर्वानुमान सटीकता विश्लेषण।'
+        : 'Model performance metrics, calibration curves, precision@K, recall@K, and temporal holdout evaluation.',
+      alternatePrompt: language === 'HI' ? 'कमान केंद्र पर लौटें:' : 'Back to Command Center?',
+      alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
+      alternateTarget: 'OFFICER' as AppView
+    },
+    MANAGEMENT_ATTENTION: {
+      title: language === 'HI' ? 'प्रबंधन ध्यान' : 'Management Attention Dashboard',
+      tag: language === 'HI' ? 'प्रबंधन मोड' : 'Executive Mode',
+      color: 'rose',
+      icon: Scale,
+      summary: language === 'HI'
+        ? 'पोर्टफोलियो-स्तरीय जोखिम सारांश और अनसुलझी उच्च-प्राथमिकता परियोजनाएँ।'
+        : 'Portfolio-level risk insights, emerging threat clusters, and unresolved high-criticality dependencies.',
+      alternatePrompt: language === 'HI' ? 'कमान केंद्र पर लौटें:' : 'Back to Command Center?',
+      alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
+      alternateTarget: 'OFFICER' as AppView
+    },
+    DATA: {
+      title: language === 'HI' ? 'डेटा प्रबंधन' : 'Data Import & Management',
+      tag: language === 'HI' ? 'डेटा मोड' : 'Data Mode',
+      color: 'cyan',
+      icon: Info,
+      summary: language === 'HI'
+        ? 'डेटा सेट आयात, सत्यापन रिपोर्ट, और स्रोत वर्गीकरण प्रबंधन।'
+        : 'Dataset import, validation reports, column mapping, and source classification management.',
+      alternatePrompt: language === 'HI' ? 'कमान केंद्र पर लौटें:' : 'Back to Command Center?',
+      alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
+      alternateTarget: 'OFFICER' as AppView
+    },
   };
 
   const current = viewDetails[currentView];

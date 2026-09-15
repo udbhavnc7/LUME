@@ -247,10 +247,10 @@ export function getCachedStatutoryRules(): StatutoryRuleCacheItem[] {
 /**
  * Retrieves cached cadastral land reference data
  */
-export function getCachedCadastralParcels() {
+export function getCachedCadastralParcels(): typeof DEFAULT_OFFLINE_CADASTRAL_PARCELS {
   try {
     const raw = localStorage.getItem(CADASTRAL_PARCELS_CACHE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) return JSON.parse(raw) as typeof DEFAULT_OFFLINE_CADASTRAL_PARCELS;
   } catch (e) {
     console.warn('Error reading cached cadastral parcels:', e);
   }

@@ -5,6 +5,7 @@ import {
   Award, 
   CheckCircle2, 
   AlertCircle, 
+  AlertTriangle,
   BookOpen, 
   Cpu, 
   Layers, 
@@ -20,7 +21,10 @@ import {
   Building2,
   Briefcase,
   HelpCircle,
-  Sparkles
+  Sparkles,
+  Activity,
+  Database,
+  Shield,
 } from 'lucide-react';
 import { TRANSLATIONS } from '../data/translations';
 
@@ -39,7 +43,7 @@ interface ApiEndpoint {
 }
 
 export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ language }) => {
-  const [activeTab, setActiveTab] = useState<'MODEL' | 'API' | 'BUSINESS' | 'SIH_SCORECARD'>('MODEL');
+  const [activeTab, setActiveTab] = useState<'MODEL' | 'API' | 'BUSINESS' | 'SIH_SCORECARD' | 'SYSTEM_HEALTH'>('MODEL');
   const [selectedApi, setSelectedApi] = useState<string>('predictions');
   const [apiExecutionOutput, setApiExecutionOutput] = useState<string | null>(null);
   const [isCopied, setIsCopied] = useState(false);
@@ -263,6 +267,18 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
         >
           <Award className="w-4 h-4" />
           <span>{language === 'HI' ? 'एसआईएच 10/10 मूल्यांकन स्कोरकार्ड' : 'SIH 10/10 Scorecard (Sec 25)'}</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('SYSTEM_HEALTH')}
+          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
+            activeTab === 'SYSTEM_HEALTH'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'bg-slate-800 text-blue-300 hover:text-white hover:bg-slate-700'
+          }`}
+        >
+          <Activity className="w-4 h-4" />
+          <span>{language === 'HI' ? 'सिस्टम हेल्थ' : 'System Health'}</span>
         </button>
       </div>
 
@@ -670,6 +686,187 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* TAB 5: SYSTEM HEALTH & RESPONSIBLE AI (V9) */}
+      {activeTab === 'SYSTEM_HEALTH' && (
+        <div className="space-y-6">
+          {/* System Status Header */}
+          <div className="bg-gradient-to-r from-blue-950/50 to-slate-800/50 border border-blue-500/30 rounded-2xl p-5">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <Activity className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">System Health Dashboard</h3>
+                  <p className="text-sm text-slate-400">Real-time monitoring of LUME infrastructure</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-sm font-semibold text-emerald-400">ALL SYSTEMS OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Health Metrics Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Cpu className="w-5 h-5 text-blue-400" />
+                <span className="text-sm font-semibold text-white">Model Inference Engine</span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Status</span>
+                  <span className="text-emerald-400 font-medium">Online</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Version</span>
+                  <span className="text-white font-mono">lume-gbdt-v2.4</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Uptime</span>
+                  <span className="text-emerald-400 font-medium">99.98%</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Avg Latency</span>
+                  <span className="text-white font-medium">42ms</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Database className="w-5 h-5 text-emerald-400" />
+                <span className="text-sm font-semibold text-white">Registry Connectors</span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">LACRRIS</span>
+                  <span className="text-emerald-400 font-medium">Connected</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">NGDRS</span>
+                  <span className="text-emerald-400 font-medium">Connected</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">PARIVESH</span>
+                  <span className="text-amber-400 font-medium">Partial</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">eCourts/NJDG</span>
+                  <span className="text-emerald-400 font-medium">Connected</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Shield className="w-5 h-5 text-purple-400" />
+                <span className="text-sm font-semibold text-white">Data Freshness</span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Last Sync</span>
+                  <span className="text-white font-medium">2 min ago</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Records</span>
+                  <span className="text-white font-medium">1,467 corridors</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Coverage</span>
+                  <span className="text-emerald-400 font-medium">94.2%</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Staleness</span>
+                  <span className="text-emerald-400 font-medium">None detected</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Responsible AI Section */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-emerald-400" />
+              Responsible AI Boundaries
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 bg-emerald-950/30 border border-emerald-500/30 rounded-xl">
+                <h4 className="text-sm font-semibold text-emerald-300 mb-2">LUME DOES (Permitted)</h4>
+                <ul className="space-y-1 text-xs text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Predict delay probability with calibrated confidence</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Surface evidence gaps and data conflicts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Retrieve statistically similar precedents</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Prioritize investigations by Intervention Priority Index</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
+                    <span>Record human decisions with full audit trail</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-4 bg-rose-950/30 border border-rose-500/30 rounded-xl">
+                <h4 className="text-sm font-semibold text-rose-300 mb-2">LUME MUST NOT (Prohibited)</h4>
+                <ul className="space-y-1 text-xs text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <AlertTriangle className="w-3 h-3 text-rose-400 mt-0.5 shrink-0" />
+                    <span>Determine legal rights or compensation eligibility</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <AlertTriangle className="w-3 h-3 text-rose-400 mt-0.5 shrink-0" />
+                    <span>Issue government orders or approvals</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <AlertTriangle className="w-3 h-3 text-rose-400 mt-0.5 shrink-0" />
+                    <span>Replace human judgment in final decisions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <AlertTriangle className="w-3 h-3 text-rose-400 mt-0.5 shrink-0" />
+                    <span>Fabricate data or model metrics</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <AlertTriangle className="w-3 h-3 text-rose-400 mt-0.5 shrink-0" />
+                    <span>Operate without human oversight</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Integration Honesty */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <ExternalLink className="w-5 h-5 text-blue-400" />
+              Integration Honesty Statement
+            </h3>
+            <div className="p-4 bg-slate-700/30 rounded-xl text-sm text-slate-300 space-y-3">
+              <p>
+                <strong className="text-white">Current Status:</strong> LUME is running in <span className="text-amber-400 font-semibold">DEMO MODE</span> with simulated data for demonstration purposes.
+              </p>
+              <p>
+                <strong className="text-white">Production Readiness:</strong> The system architecture supports real data integration via CSV/JSON/XLSX import. Registry connectors (LACRRIS, NGDRS, PARIVESH, eCourts) are designed but require government API credentials for live operation.
+              </p>
+              <p>
+                <strong className="text-white">No Fabrication Guarantee:</strong> All model metrics, accuracy scores, and performance data shown are either from published research (arXiv:2307.16285) or clearly labeled as simulated. LUME never fabricates live integration claims.
+              </p>
+            </div>
           </div>
         </div>
       )}

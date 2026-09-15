@@ -1,14 +1,15 @@
 import React, { useState, useMemo } from 'react';
-import { LandAcquisitionProject, ActionQueueItem, PortfolioHealthMetrics } from '../types';
+import { LandAcquisitionProject, ActionQueueItem, PortfolioHealthMetrics, QueueExplanation, AttentionBudget, DataMode } from '../types';
 import { buildActionQueue, calculatePortfolioHealth } from '../services/dataPipeline';
+import { buildActionQueueV8 } from '../services/actionQueueV8';
 import { MOCK_DECISION_LOGS } from '../data/mockData';
-import { 
-  AlertTriangle, 
-  Clock, 
-  TrendingUp, 
-  ChevronRight, 
-  Layers, 
-  Scale, 
+import {
+  AlertTriangle,
+  Clock,
+  TrendingUp,
+  ChevronRight,
+  Layers,
+  Scale,
   AlertCircle,
   MapPin,
   Sliders,
@@ -24,6 +25,9 @@ import {
   ShieldCheck,
   TrendingDown,
   Info,
+  Brain,
+  ChevronDown,
+  Upload,
 } from 'lucide-react';
 
 interface PortfolioCommandCenterProps {
@@ -32,6 +36,8 @@ interface PortfolioCommandCenterProps {
   onOpenGIS: () => void;
   language: 'EN' | 'HI';
   onOpenIPIModal?: () => void;
+  dataMode?: DataMode;
+  onOpenImport?: () => void;
 }
 
 export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
@@ -39,17 +45,25 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
   onSelectProject,
   onOpenGIS,
   language,
-  onOpenIPIModal
+  onOpenIPIModal,
+  dataMode = 'DEMO',
+  onOpenImport
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterPriority, setFilterPriority] = useState<string>('ALL');
   const [showDataHealth, setShowDataHealth] = useState(false);
+  const [attentionBudget, setAttentionBudget] = useState<number>(10);
+  const [showQueueExplanation, setShowQueueExplanation] = useState<string | null>(null);
 
-  const actionQueue = useMemo(() => buildActionQueue(projects, MOCK_DECISION_LOGS), [projects]);
-  const portfolioHealth = useMemo(() => calculatePortfolioHealth(projects, actionQueue, MOCK_DECISION_LOGS), [projects, actionQueue]);
+  const { queue: fullQueue } = useMemo(() => buildActionQueueV8(projects, MOCK_DECISION_LOGS, 999), [projects]);
+  const { queue: selectedQueue, explanations, budget } = useMemo(
+    () => buildActionQueueV8(projects, MOCK_DECISION_LOGS, attentionBudget),
+    [projects, attentionBudget]
+  );
+  const portfolioHealth = useMemo(() => calculatePortfolioHealth(projects, fullQueue, MOCK_DECISION_LOGS), [projects, fullQueue]);
 
-  const filteredQueue = actionQueue.filter(item => {
-    const matchesSearch = 
+  const filteredQueue = selectedQueue.filter(item => {
+    const matchesSearch =
       item.projectTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.projectCode.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.district.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -89,7 +103,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* V7: Control Tower Header */}
+      {/* V8: Control Tower Header */}
       <div className="bg-gradient-to-r from-amber-500/15 via-slate-800 to-emerald-500/15 border border-amber-500/30 rounded-2xl p-4 shadow-sm">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-start gap-3">
@@ -99,26 +113,42 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                  {language === 'HI' ? 'अधिग्रहण नियंत्रण टॉवर' : 'Acquisition Control Tower — Action Queue'}
+                  {language === 'HI' ? 'अधिग्रहण नियंत्रण टॉवर' : 'Acquisition Control Tower'}
                 </span>
                 <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30">
-                  V7 Live
+                  V9
+                </span>
+                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${
+                  dataMode === 'DEMO'
+                    ? 'bg-blue-500/20 text-blue-300 border-blue-500/30'
+                    : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                }`}>
+                  {dataMode === 'DEMO' ? 'DEMO MODE' : 'REAL DATA'}
                 </span>
               </div>
               <p className="text-xs text-slate-300 mt-0.5 max-w-4xl leading-relaxed">
                 {language === 'HI'
-                  ? 'ल्यूमे अब बताता है कि कहां ध्यान देना है, न कि केवल क्या मौजूद है। प्राथमिकता स्कोर = तत्कालता × महत्वपूर्णता × कार्यान्वयनीयता।'
-                  : 'LUME now tells officers where attention is needed, not just what exists. Priority scored by urgency × criticality × actionability. Every decision has a next-best investigation.'}
+                  ? 'ल्यूमे अब बताता है कि कहां ध्यान देना है, न कि केवल क्या मौजूद है। प्राथमिकता स्कोर = तत्कालता x महत्वपूर्णता x कार्यान्वयनीयता।'
+                  : 'LUME now tells officers where attention is needed, not just what exists. Priority scored by urgency x criticality x actionability. Every decision has a next-best investigation.'}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
+            {dataMode === 'REAL_DATA' && onOpenImport && (
+              <button
+                onClick={onOpenImport}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-sm transition-colors cursor-pointer"
+              >
+                <Upload className="w-3.5 h-3.5" />
+                <span>{language === 'HI' ? 'डेटा आयात' : 'Import Data'}</span>
+              </button>
+            )}
             <button
               onClick={() => setShowDataHealth(!showDataHealth)}
               className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border rounded-xl shadow-sm transition-colors cursor-pointer ${
-                showDataHealth 
-                  ? 'bg-emerald-600 text-white border-emerald-500' 
+                showDataHealth
+                  ? 'bg-emerald-600 text-white border-emerald-500'
                   : 'bg-slate-800 hover:bg-slate-700 text-emerald-300 border-emerald-500/30'
               }`}
             >
@@ -255,7 +285,56 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
         </div>
       )}
 
-      {/* V7: Filter & Search Bar */}
+      {/* V8: Attention Budget Selector */}
+      <div className="bg-slate-800/90 border border-amber-500/30 rounded-2xl p-4 shadow-sm">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <Brain className="w-4 h-4 text-amber-400" />
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+              {language === 'HI' ? 'ध्यान बजट' : 'Attention Budget'}
+            </span>
+            <span className="text-[10px] text-slate-400">
+              {language === 'HI'
+                ? `आज आप ${budget.selectedCases} मामलों पर ध्यान दे सकते हैं`
+                : `${budget.selectedCases} cases selected for today's attention`}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] text-slate-400">
+              {language === 'HI' ? 'सीमा:' : 'Budget:'}
+            </span>
+            {[5, 10, 20].map(limit => (
+              <button
+                key={limit}
+                onClick={() => setAttentionBudget(limit)}
+                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors cursor-pointer ${
+                  attentionBudget === limit
+                    ? 'bg-amber-500 text-slate-950'
+                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                }`}
+              >
+                {limit}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-3 text-xs">
+          <div className="bg-slate-900/60 border border-slate-800 rounded-lg p-2 text-center">
+            <div className="text-slate-400 text-[10px]">{language === 'HI' ? 'कुल मामले' : 'Total Cases'}</div>
+            <div className="text-white font-bold">{budget.totalCases}</div>
+          </div>
+          <div className="bg-slate-900/60 border border-slate-800 rounded-lg p-2 text-center">
+            <div className="text-slate-400 text-[10px]">{language === 'HI' ? 'चयनित' : 'Selected'}</div>
+            <div className="text-emerald-400 font-bold">{budget.selectedCases}</div>
+          </div>
+          <div className="bg-slate-900/60 border border-slate-800 rounded-lg p-2 text-center">
+            <div className="text-slate-400 text-[10px]">{language === 'HI' ? 'बहिष्कृत' : 'Excluded'}</div>
+            <div className="text-amber-400 font-bold">{budget.totalCases - budget.selectedCases}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* V8: Filter & Search Bar */}
       <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-3.5 flex flex-wrap items-center justify-between gap-3 shadow-sm">
         <div className="relative flex-1 min-w-[240px]">
           <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -285,14 +364,14 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
         </div>
       </div>
 
-      {/* V7: Action Queue List — Sorted by IPI Score */}
+      {/* V8: Action Queue List - Sorted by IPI Score */}
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs text-slate-400 px-1">
           <span className="flex items-center gap-2">
             <Zap className="w-3.5 h-3.5 text-amber-400" />
-            Action Queue — {filteredQueue.length} items ranked by IPI Score
+            Action Queue - {filteredQueue.length} items ranked by IPI Score (Evidence-Weighted)
           </span>
-          <span className="font-mono text-[11px]">Urgency × Criticality × Actionability</span>
+          <span className="font-mono text-[11px]">Urgency x Criticality x Actionability</span>
         </div>
 
         <div className="grid grid-cols-1 gap-3.5">
@@ -301,14 +380,16 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
             const riskGauge = getRiskGauge(100 - item.daysToMilestone);
             const daysLeft = item.daysToMilestone;
             const isClockCritical = daysLeft <= 60;
+            const explanation = explanations.find(e => e.projectId === item.projectId);
+            const isExplanationOpen = showQueueExplanation === item.projectId;
+            const rank = explanations.find(e => e.projectId === item.projectId)?.rank || 0;
 
             return (
               <div
                 key={item.id}
-                onClick={() => onSelectProject(item.projectId)}
                 className={`group bg-slate-800/90 hover:bg-slate-800 border rounded-2xl p-4 sm:p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-black/40 ${
-                  item.status === 'OVERDUE' 
-                    ? 'border-rose-500/50 hover:border-rose-400/60' 
+                  item.status === 'OVERDUE'
+                    ? 'border-rose-500/50 hover:border-rose-400/60'
                     : item.priority === 'CRITICAL'
                     ? 'border-rose-500/30 hover:border-rose-400/50'
                     : 'border-slate-700 hover:border-emerald-500/50'
@@ -318,6 +399,10 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                   {/* Left: Project Info + What Changed */}
                   <div className="space-y-2 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
+                      {/* Rank Badge */}
+                      <span className="w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 font-mono text-[10px] font-bold flex items-center justify-center shrink-0">
+                        {rank}
+                      </span>
                       {/* Priority Badge */}
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${getPriorityStyle(item.priority)}`}>
                         {item.priority === 'CRITICAL' && <AlertTriangle className="w-2.5 h-2.5 inline mr-0.5" />}
@@ -345,7 +430,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                       {item.projectTitle}
                     </h3>
 
-                    {/* V7: What Changed? */}
+                    {/* V8: What Changed? */}
                     <div className="flex items-center gap-2 text-xs">
                       <Info className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                       <span className="text-slate-400">Next:</span>
@@ -367,6 +452,21 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                       <Target className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                       <span className="font-medium">{item.recommendedAction}</span>
                     </div>
+
+                    {/* V8: Why is this #N? Toggle */}
+                    {explanation && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowQueueExplanation(isExplanationOpen ? null : item.projectId);
+                        }}
+                        className="flex items-center gap-1.5 text-[10px] text-amber-400 hover:text-amber-300 font-semibold transition-colors"
+                      >
+                        <Brain className="w-3 h-3" />
+                        Why is this #{rank}?
+                        <ChevronDown className={`w-3 h-3 transition-transform ${isExplanationOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                    )}
                   </div>
 
                   {/* Right: Scores & Action */}
@@ -398,6 +498,71 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                     </div>
                   </div>
                 </div>
+
+                {/* V8: Queue Explanation Panel */}
+                {isExplanationOpen && explanation && (
+                  <div
+                    onClick={(e) => e.stopPropagation()}
+                    className="mt-4 bg-slate-900/80 border border-amber-500/30 rounded-xl p-4 space-y-3"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Brain className="w-4 h-4 text-amber-400" />
+                        <span className="text-xs font-bold text-amber-400">
+                          Why is this #{explanation.rank}?
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => setShowQueueExplanation(null)}
+                        className="text-slate-400 hover:text-white text-xs"
+                      >
+                        Close
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                      <div className="bg-slate-800 rounded-lg p-2 text-center">
+                        <div className="text-[10px] text-slate-400">IPI Score</div>
+                        <div className="text-lg font-bold text-amber-400">{explanation.ipiScore}</div>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-2 text-center">
+                        <div className="text-[10px] text-slate-400">Urgency</div>
+                        <div className="text-lg font-bold text-white">{explanation.contributions.urgency}</div>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-2 text-center">
+                        <div className="text-[10px] text-slate-400">Criticality</div>
+                        <div className="text-lg font-bold text-white">{explanation.contributions.criticality}</div>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-2 text-center">
+                        <div className="text-[10px] text-slate-400">Actionability</div>
+                        <div className="text-lg font-bold text-white">{explanation.contributions.actionability}</div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2 text-xs">
+                      <div className="bg-blue-950/30 border border-blue-800/50 rounded-lg p-2.5">
+                        <span className="text-blue-400 font-semibold">Primary reason: </span>
+                        <span className="text-slate-200">{explanation.primaryReason}</span>
+                      </div>
+                      <div className="bg-slate-800 border border-slate-700 rounded-lg p-2.5">
+                        <span className="text-slate-400 font-semibold">Secondary reason: </span>
+                        <span className="text-slate-200">{explanation.secondaryReason}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1">
+                        <span>Downstream impact: <strong className="text-white">{explanation.downstreamImpact}</strong></span>
+                        <span>Evidence: <strong className={`${
+                          explanation.evidenceQuality === 'GREEN' ? 'text-emerald-400' :
+                          explanation.evidenceQuality === 'AMBER' ? 'text-amber-400' : 'text-rose-400'
+                        }`}>{explanation.evidenceQuality}</strong></span>
+                      </div>
+                      {explanation.confidenceNote && (
+                        <div className="bg-amber-950/30 border border-amber-800/50 rounded-lg p-2.5 text-amber-300">
+                          {explanation.confidenceNote}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}

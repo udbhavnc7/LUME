@@ -77,11 +77,23 @@ export default defineConfig(() => {
           ],
         },
         devOptions: {
-          enabled: true, // Enables service worker in development / AI Studio preview
-          type: 'module',
+          enabled: false, // Disabled in dev to prevent caching issues
         },
       }),
     ],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom'],
+            'vendor-charts': ['recharts'],
+            'vendor-icons': ['lucide-react'],
+            'vendor-motion': ['motion'],
+            'vendor-pdf': ['jspdf'],
+          },
+        },
+      },
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
@@ -93,3 +105,4 @@ export default defineConfig(() => {
     },
   };
 });
+

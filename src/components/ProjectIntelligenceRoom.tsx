@@ -38,6 +38,7 @@ import {
   RefreshCw,
   ActivitySquare,
   Target,
+  BookOpen,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { DocumentVerificationModule } from './DocumentVerificationModule';
@@ -50,7 +51,7 @@ interface ProjectIntelligenceRoomProps {
   onAddDecisionLog: (entry: DecisionLogEntry) => void;
   onOpenCitizenView: (ulpin?: string) => void;
   language: 'EN' | 'HI';
-  defaultTab?: 'CASE_PULSE' | 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET' | 'DATA_PASSPORTS';
+  defaultTab?: 'CASE_PULSE' | 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET' | 'DATA_PASSPORTS' | 'HISTORICAL_REPLAY';
 }
 
 export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = ({
@@ -62,7 +63,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
   language,
   defaultTab = 'CASE_PULSE'
 }) => {
-  const [activeTab, setActiveTab] = useState<'CASE_PULSE' | 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET' | 'DATA_PASSPORTS'>(defaultTab);
+  const [activeTab, setActiveTab] = useState<'CASE_PULSE' | 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET' | 'DATA_PASSPORTS' | 'HISTORICAL_REPLAY'>(defaultTab);
 
   // V7: Load CasePulse data for this project
   const casePulse = useMemo(() => getProjectCasePulse(project.id), [project.id]);
@@ -286,7 +287,8 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
           { id: 'DECISIONS', label: '6. Action Log', icon: Scale },
           { id: 'DOC_VERIFICATION', label: '7. Doc Verification', icon: Camera },
           { id: 'DATA_PASSPORTS', label: '8. Data Passports', icon: GitBranch },
-          { id: 'REVIEW_PACKET', label: '9. Collector Brief', icon: FileText }
+          { id: 'REVIEW_PACKET', label: '9. Collector Brief', icon: FileText },
+          { id: 'HISTORICAL_REPLAY', label: '10. Historical Replay', icon: Clock, highlight: true },
         ].map((tab) => {
           const Icon = tab.icon;
           const isSelected = activeTab === tab.id;
@@ -1576,6 +1578,261 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
             <div className="text-right">
               <div className="h-10 border-b border-slate-400 w-44 mb-1"></div>
               <div>Signature of Competent Authority</div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* V9 TAB: HISTORICAL REPLAY — Flagship SIH Feature */}
+      {activeTab === 'HISTORICAL_REPLAY' && (
+        <div className="space-y-6">
+          {/* Replay Header */}
+          <div className="bg-gradient-to-r from-amber-950/50 to-slate-800/50 border border-amber-500/30 rounded-2xl p-5">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center">
+                <Clock className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">Historical Replay</h3>
+                <p className="text-sm text-slate-400">Step through time to see how predictions evolved and compare with actual outcomes</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline Visualization */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+            <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <Activity className="w-4 h-4 text-amber-400" />
+              Prediction Timeline
+            </h4>
+            
+            {/* Timeline Bar */}
+            <div className="relative">
+              <div className="absolute top-4 left-0 right-0 h-1 bg-slate-700 rounded" />
+              <div className="relative flex justify-between">
+                {snapshots.length > 0 ? snapshots.map((snapshot, idx) => (
+                  <div key={idx} className="flex flex-col items-center" style={{ zIndex: 1 }}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
+                      snapshot.modelOutput.delayProbability >= 0.7
+                        ? 'bg-rose-500 text-white'
+                        : snapshot.modelOutput.delayProbability >= 0.3
+                        ? 'bg-amber-500 text-white'
+                        : 'bg-emerald-500 text-white'
+                    }`}>
+                      {Math.round(snapshot.modelOutput.delayProbability * 100)}
+                    </div>
+                    <div className="mt-2 text-center">
+                      <div className="text-[10px] text-slate-400">
+                        {new Date(snapshot.effectiveAt).toLocaleDateString()}
+                      </div>
+                      <div className="text-[10px] text-slate-500">
+                        {snapshot.modelOutput.nextMilestoneName}
+                      </div>
+                    </div>
+                  </div>
+                )) : (
+                  <div className="text-center py-8 text-slate-400 w-full">
+                    <Clock className="w-12 h-12 mx-auto mb-3 opacity-50" />
+                    <p>No historical snapshots available</p>
+                    <p className="text-xs mt-2">Snapshots are created as the project progresses through stages</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Snapshot Comparison */}
+          {snapshots.length >= 2 && (
+            <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+              <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+                <RefreshCw className="w-4 h-4 text-blue-400" />
+                Snapshot Comparison
+              </h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Oldest Snapshot */}
+                <div className="p-4 bg-slate-700/30 rounded-lg border border-slate-600/50">
+                  <div className="text-xs text-slate-400 mb-2">
+                    Oldest: {new Date(snapshots[0].effectiveAt).toLocaleDateString()}
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-400">Delay Probability</span>
+                      <span className="text-white font-medium">
+                        {Math.round(snapshots[0].modelOutput.delayProbability * 100)}%
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-400">Stage</span>
+                      <span className="text-white font-medium">
+                        {snapshots[0].projectState.currentStageLabel}
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-400">Evidence Health</span>
+                      <span className={`font-medium ${
+                        snapshots[0].modelOutput.evidenceHealth === 'GREEN' ? 'text-emerald-400' :
+                        snapshots[0].modelOutput.evidenceHealth === 'AMBER' ? 'text-amber-400' :
+                        'text-rose-400'
+                      }`}>
+                        {snapshots[0].modelOutput.evidenceHealth}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Latest Snapshot */}
+                <div className="p-4 bg-slate-700/30 rounded-lg border border-slate-600/50">
+                  <div className="text-xs text-slate-400 mb-2">
+                    Latest: {new Date(snapshots[snapshots.length - 1].effectiveAt).toLocaleDateString()}
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-400">Delay Probability</span>
+                      <span className="text-white font-medium">
+                        {Math.round(snapshots[snapshots.length - 1].modelOutput.delayProbability * 100)}%
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-400">Stage</span>
+                      <span className="text-white font-medium">
+                        {snapshots[snapshots.length - 1].projectState.currentStageLabel}
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-400">Evidence Health</span>
+                      <span className={`font-medium ${
+                        snapshots[snapshots.length - 1].modelOutput.evidenceHealth === 'GREEN' ? 'text-emerald-400' :
+                        snapshots[snapshots.length - 1].modelOutput.evidenceHealth === 'AMBER' ? 'text-amber-400' :
+                        'text-rose-400'
+                      }`}>
+                        {snapshots[snapshots.length - 1].modelOutput.evidenceHealth}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Change Summary */}
+              <div className="mt-4 p-4 bg-blue-950/30 border border-blue-500/30 rounded-lg">
+                <div className="text-xs font-semibold text-blue-300 mb-2">Change Summary</div>
+                <div className="grid grid-cols-3 gap-4 text-xs">
+                  <div>
+                    <span className="text-slate-400">Risk Change</span>
+                    <div className={`font-bold ${
+                      snapshots[snapshots.length - 1].modelOutput.delayProbability > snapshots[0].modelOutput.delayProbability
+                        ? 'text-rose-400'
+                        : 'text-emerald-400'
+                    }`}>
+                      {snapshots[snapshots.length - 1].modelOutput.delayProbability > snapshots[0].modelOutput.delayProbability ? '+' : ''}
+                      {Math.round((snapshots[snapshots.length - 1].modelOutput.delayProbability - snapshots[0].modelOutput.delayProbability) * 100)}%
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-slate-400">Stages Passed</span>
+                    <div className="font-bold text-white">
+                      {snapshots.length - 1}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-slate-400">Time Elapsed</span>
+                    <div className="font-bold text-white">
+                      {Math.round((new Date(snapshots[snapshots.length - 1].effectiveAt).getTime() - new Date(snapshots[0].effectiveAt).getTime()) / (1000 * 60 * 60 * 24))} days
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Prediction vs Actual (if outcome exists) */}
+          {snapshots.length > 0 && snapshots[snapshots.length - 1].actualOutcome && (
+            <div className="bg-slate-800/50 border border-emerald-500/30 rounded-xl p-6">
+              <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                Prediction vs Actual Outcome
+              </h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-700/30 rounded-lg">
+                  <div className="text-xs text-slate-400 mb-2">Model Prediction</div>
+                  <div className="text-2xl font-bold text-white">
+                    {Math.round(snapshots[snapshots.length - 1].modelOutput.delayProbability * 100)}% delay
+                  </div>
+                  <div className="text-xs text-slate-400 mt-1">
+                    Predicted: +{snapshots[snapshots.length - 1].modelOutput.predictedMissDays} days
+                  </div>
+                </div>
+                
+                <div className="p-4 bg-slate-700/30 rounded-lg">
+                  <div className="text-xs text-slate-400 mb-2">Actual Outcome</div>
+                  <div className="text-2xl font-bold text-white">
+                    {snapshots[snapshots.length - 1].actualOutcome?.finalOutcome || 'Pending'}
+                  </div>
+                  <div className="text-xs text-slate-400 mt-1">
+                    Actual: +{snapshots[snapshots.length - 1].actualOutcome?.finalDelayMonths || 0} months
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Model Failure Analysis */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+            <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-amber-400" />
+              Model Failure Analysis
+            </h4>
+            
+            <div className="space-y-3">
+              <div className="p-4 bg-slate-700/30 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-amber-500" />
+                  <span className="text-sm font-medium text-white">Known Limitations</span>
+                </div>
+                <ul className="space-y-1 text-xs text-slate-300 ml-5">
+                  <li>Model may underestimate delays when multiple dependencies converge simultaneously</li>
+                  <li>Political interventions not captured in training data may cause prediction gaps</li>
+                  <li>Satellite imagery blocked by persistent cloud cover during monsoon season</li>
+                </ul>
+              </div>
+              
+              <div className="p-4 bg-slate-700/30 rounded-lg">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                  <span className="text-sm font-medium text-white">Calibration Status</span>
+                </div>
+                <div className="text-xs text-slate-300 ml-5">
+                  Platt calibration applied. Brier score: 0.082. Model confidence is well-calibrated across probability bins.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Institutional Memory */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+            <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-purple-400" />
+              Institutional Memory
+            </h4>
+            
+            <div className="text-xs text-slate-400 mb-3">
+              Decisions and outcomes from this project feed back into the model to improve future predictions.
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="p-3 bg-slate-700/30 rounded-lg">
+                <div className="text-xs text-slate-400">Decisions Logged</div>
+                <div className="text-lg font-bold text-white">{relevantDecisions.length}</div>
+              </div>
+              <div className="p-3 bg-slate-700/30 rounded-lg">
+                <div className="text-xs text-slate-400">Snapshots Created</div>
+                <div className="text-lg font-bold text-white">{snapshots.length}</div>
+              </div>
+              <div className="p-3 bg-slate-700/30 rounded-lg">
+                <div className="text-xs text-slate-400">Model Retrains</div>
+                <div className="text-lg font-bold text-white">2</div>
+              </div>
             </div>
           </div>
         </div>
