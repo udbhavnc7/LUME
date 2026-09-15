@@ -2,6 +2,8 @@
 
 Land-Acquisition Uncertainty Intervention-Management Engine
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/udbhavnc7/LUME)
+
 LUME turns government records into foresight, foresight into
 prioritized action, and completed projects into institutional
 memory.
