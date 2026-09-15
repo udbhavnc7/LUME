@@ -86,18 +86,21 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
         {/* Brand & Logo */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => onSelectView('OFFICER')}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-emerald-600 to-teal-700 p-0.5 shadow-lg shadow-emerald-950/40 flex items-center justify-center">
-            <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-              <span className="font-extrabold text-lg tracking-wider text-amber-400">L</span>
-              <span className="font-extrabold text-lg text-emerald-400">U</span>
-              <span className="font-extrabold text-sm text-teal-300">ME</span>
-            </div>
+          <div className="h-10 px-3 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shadow-sm logo-badge">
+            <img
+              src="/logo-dark.png"
+              alt="LUME Logo"
+              className="h-6 w-auto object-contain app-logo-dark"
+            />
+            <img
+              src="/logo-light.png"
+              alt="LUME Logo"
+              className="h-6 w-auto object-contain app-logo-light hidden"
+            />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
-                LUME <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium">v9.0</span>
-              </h1>
+              <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium">v9.0</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
               {language === 'HI' 

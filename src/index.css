@@ -33,11 +33,36 @@
    LIGHT THEME: GovTech Pristine Institutional Light
    High contrast, no washed-out letters, no awkward gray-on-gray
    ========================================================= */
+/* =========================================================
+   LIGHT THEME: GovTech Institutional Light Mode
+   High contrast, WCAG AA/AAA compliance, crisp borders
+   ========================================================= */
 .app-theme-light {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
+/* Logo switching between themes */
+.app-theme-light .app-logo-dark {
+  display: none !important;
+}
+.app-theme-light .app-logo-light {
+  display: block !important;
+}
+.app-theme-dark .app-logo-dark,
+.app-theme-high-contrast .app-logo-dark {
+  display: block !important;
+}
+.app-theme-dark .app-logo-light,
+.app-theme-high-contrast .app-logo-light {
+  display: none !important;
+}
+.app-theme-light .logo-badge {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Header in light mode */
 .app-theme-light header {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
@@ -53,13 +78,14 @@
 
 .app-theme-light header .bg-slate-900 {
   background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
   color: #0f172a !important;
 }
 
 .app-theme-light header .bg-slate-800,
 .app-theme-light header .bg-slate-800\/90 {
-  background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
   color: #0f172a !important;
 }
 
@@ -72,66 +98,30 @@
   color: #475569 !important;
 }
 
-/* Light theme cards and panels */
-.app-theme-light .bg-slate-950 {
+/* Light theme cards and panels (all opacity variants) */
+.app-theme-light [class*="bg-slate-950"] {
   background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
   color: #0f172a !important;
 }
 
-.app-theme-light .bg-slate-900,
-.app-theme-light .bg-slate-900\/90,
-.app-theme-light .bg-slate-900\/80,
-.app-theme-light .bg-slate-900\/95,
-.app-theme-light .bg-slate-900\/70 {
+.app-theme-light [class*="bg-slate-900"] {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
   color: #0f172a !important;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
 }
 
-.app-theme-light .bg-slate-800,
-.app-theme-light .bg-slate-800\/80,
-.app-theme-light .bg-slate-800\/90,
-.app-theme-light .bg-slate-800\/95,
-.app-theme-light .bg-slate-800\/70 {
+.app-theme-light [class*="bg-slate-800"] {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
   color: #0f172a !important;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
 }
 
-/* Typography in light mode */
+/* Universal text contrast rules */
 .app-theme-light .text-white {
   color: #0f172a !important;
-}
-
-/* Ensure solid action buttons with colored/dark backgrounds keep crisp white text in light mode */
-.app-theme-light button.bg-emerald-600,
-.app-theme-light button.bg-emerald-700,
-.app-theme-light button.bg-teal-600,
-.app-theme-light button.bg-teal-700,
-.app-theme-light button.bg-slate-800,
-.app-theme-light button.bg-slate-900,
-.app-theme-light [class*="bg-emerald-600"] button,
-.app-theme-light [class*="bg-teal-600"] button,
-.app-theme-light button[class*="bg-emerald"],
-.app-theme-light button[class*="bg-teal"],
-.app-theme-light button[class*="bg-slate-900"],
-.app-theme-light button[class*="bg-slate-800"] {
-  color: #ffffff !important;
-}
-
-.app-theme-light button.bg-emerald-600 *,
-.app-theme-light button.bg-emerald-700 *,
-.app-theme-light button.bg-teal-600 *,
-.app-theme-light button.bg-teal-700 *,
-.app-theme-light button.bg-slate-800 *,
-.app-theme-light button.bg-slate-900 *,
-.app-theme-light button[class*="bg-emerald"] *,
-.app-theme-light button[class*="bg-teal"] *,
-.app-theme-light button[class*="bg-slate-900"] *,
-.app-theme-light button[class*="bg-slate-800"] * {
-  color: #ffffff !important;
 }
 
 .app-theme-light .text-slate-100,
@@ -145,10 +135,52 @@
   color: #475569 !important;
 }
 
-.app-theme-light .border-slate-800,
-.app-theme-light .border-slate-700,
-.app-theme-light .border-slate-700\/80,
-.app-theme-light .border-slate-700\/60 {
+/* Solid action buttons and badges KEEP crisp white text */
+.app-theme-light button.bg-emerald-600,
+.app-theme-light button.bg-emerald-700,
+.app-theme-light button.bg-emerald-500,
+.app-theme-light button.bg-teal-600,
+.app-theme-light button.bg-teal-700,
+.app-theme-light button.bg-rose-600,
+.app-theme-light button.bg-rose-500,
+.app-theme-light button.bg-blue-600,
+.app-theme-light button.bg-indigo-600,
+.app-theme-light [class*="bg-emerald-600"],
+.app-theme-light [class*="bg-teal-600"],
+.app-theme-light [class*="bg-rose-600"],
+.app-theme-light [class*="bg-blue-600"] {
+  color: #ffffff !important;
+}
+
+.app-theme-light button.bg-emerald-600 *,
+.app-theme-light button.bg-emerald-700 *,
+.app-theme-light button.bg-emerald-500 *,
+.app-theme-light button.bg-teal-600 *,
+.app-theme-light button.bg-teal-700 *,
+.app-theme-light button.bg-rose-600 *,
+.app-theme-light button.bg-rose-500 *,
+.app-theme-light button.bg-blue-600 *,
+.app-theme-light button.bg-indigo-600 *,
+.app-theme-light [class*="bg-emerald-600"] *,
+.app-theme-light [class*="bg-teal-600"] *,
+.app-theme-light [class*="bg-rose-600"] *,
+.app-theme-light [class*="bg-blue-600"] * {
+  color: #ffffff !important;
+}
+
+/* Amber buttons/tabs with dark text */
+.app-theme-light [class*="bg-amber-500"],
+.app-theme-light [class*="bg-amber-400"] {
+  background-color: #f59e0b !important;
+  color: #0f172a !important;
+}
+.app-theme-light [class*="bg-amber-500"] *,
+.app-theme-light [class*="bg-amber-400"] * {
+  color: #0f172a !important;
+}
+
+/* Borders */
+.app-theme-light [class*="border-slate-"] {
   border-color: #e2e8f0 !important;
 }
 
@@ -163,7 +195,7 @@
 
 .app-theme-light input::placeholder,
 .app-theme-light textarea::placeholder {
-  color: #94a3b8 !important;
+  color: #64748b !important;
 }
 
 .app-theme-light footer {
@@ -177,70 +209,56 @@
   color: #0f172a !important;
 }
 
-/* Semantic Status Badges in Light Mode */
-.app-theme-light .bg-rose-950\/60,
-.app-theme-light .bg-rose-950\/40,
-.app-theme-light .bg-rose-950\/20 {
-  background-color: #fff1f2 !important;
+/* Semantic Badges: Rich contrast in light mode */
+.app-theme-light [class*="bg-rose-950"] {
+  background-color: #ffe4e6 !important;
   border-color: #fecdd3 !important;
   color: #9f1239 !important;
 }
-
-.app-theme-light .text-rose-300,
-.app-theme-light .text-rose-400 {
+.app-theme-light .text-rose-400,
+.app-theme-light .text-rose-300 {
   color: #be123c !important;
 }
 
-.app-theme-light .bg-amber-950\/60,
-.app-theme-light .bg-amber-950\/40,
-.app-theme-light .bg-amber-950\/20 {
-  background-color: #fffbeb !important;
+.app-theme-light [class*="bg-amber-950"] {
+  background-color: #fef3c7 !important;
   border-color: #fde68a !important;
   color: #92400e !important;
 }
-
-.app-theme-light .text-amber-300,
-.app-theme-light .text-amber-400 {
+.app-theme-light .text-amber-400,
+.app-theme-light .text-amber-300 {
   color: #b45309 !important;
 }
 
-.app-theme-light .bg-emerald-950\/80,
-.app-theme-light .bg-emerald-950\/40,
-.app-theme-light .bg-emerald-950\/20 {
-  background-color: #ecfdf5 !important;
+.app-theme-light [class*="bg-emerald-950"] {
+  background-color: #d1fae5 !important;
   border-color: #a7f3d0 !important;
   color: #065f46 !important;
 }
-
-.app-theme-light .text-emerald-300,
-.app-theme-light .text-emerald-400 {
+.app-theme-light .text-emerald-400,
+.app-theme-light .text-emerald-300 {
   color: #047857 !important;
 }
 
-.app-theme-light .bg-teal-950\/80,
-.app-theme-light .bg-teal-950\/60,
-.app-theme-light .bg-teal-950\/40,
-.app-theme-light .bg-teal-950\/20 {
-  background-color: #f0fdfa !important;
+.app-theme-light [class*="bg-teal-950"] {
+  background-color: #ccfbf1 !important;
   border-color: #99f6e4 !important;
   color: #115e59 !important;
 }
-
-.app-theme-light .text-teal-300,
-.app-theme-light .text-teal-400 {
+.app-theme-light .text-teal-400,
+.app-theme-light .text-teal-300 {
   color: #0f766e !important;
 }
 
-.app-theme-light .bg-indigo-950\/40,
-.app-theme-light .bg-indigo-950\/20 {
-  background-color: #eef2ff !important;
+.app-theme-light [class*="bg-blue-950"],
+.app-theme-light [class*="bg-indigo-950"] {
+  background-color: #e0e7ff !important;
   border-color: #c7d2fe !important;
   color: #3730a3 !important;
 }
-
-.app-theme-light .text-indigo-300,
+.app-theme-light .text-blue-400,
 .app-theme-light .text-indigo-400 {
-  color: #4338ca !important;
+  color: #2563eb !important;
 }
 
 /* =========================================================

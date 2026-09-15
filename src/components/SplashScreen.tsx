@@ -62,35 +62,19 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
       <div className="absolute w-[360px] h-[360px] rounded-full border border-amber-500/20 animate-pulse pointer-events-none" />
 
       <div className="relative z-10 max-w-lg w-full mx-4 p-8 text-center flex flex-col items-center space-y-6">
-        {/* Emblem */}
-        <div className="relative">
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-amber-500 via-emerald-500 to-teal-500 p-1 shadow-2xl shadow-emerald-500/30 ring-4 ring-emerald-500/20 flex items-center justify-center">
-            <div className="w-full h-full bg-slate-900/90 backdrop-blur-md rounded-[20px] flex items-center justify-center">
-              <Shield className="w-10 h-10 text-amber-400 drop-shadow-md animate-pulse" />
-            </div>
-          </div>
-          <span className="absolute -bottom-2 -right-2 bg-emerald-500 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full shadow border border-slate-900">
-            v7.0
+        {/* Official LUME Logo */}
+        <div className="py-2 flex flex-col items-center gap-3">
+          <img
+            src="/logo-dark.png"
+            alt="LUME Logo"
+            className="h-16 sm:h-20 w-auto object-contain drop-shadow-xl animate-pulse"
+          />
+          <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-xs px-3 py-0.5 rounded-full shadow">
+            v9.0
           </span>
         </div>
 
-        {/* LUME Animated Typography */}
         <div className="space-y-2">
-          <div className="flex items-center justify-center gap-1">
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-amber-400 drop-shadow-sm transition-all duration-500 hover:scale-110">
-              L
-            </span>
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-emerald-400 drop-shadow-sm transition-all duration-500 hover:scale-110">
-              U
-            </span>
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-teal-300 drop-shadow-sm transition-all duration-500 hover:scale-110">
-              M
-            </span>
-            <span className="text-5xl sm:text-6xl font-black tracking-widest text-white drop-shadow-sm transition-all duration-500 hover:scale-110">
-              E
-            </span>
-          </div>
-
           <h2 className="text-sm sm:text-base font-bold text-slate-200 tracking-wide uppercase">
             {language === 'HI'
               ? 'भूमि अधिग्रहण अनिश्चितता एवं हस्तक्षेप प्रबंधन इंजन'

@@ -54,6 +54,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
   const [showDataHealth, setShowDataHealth] = useState(false);
   const [attentionBudget, setAttentionBudget] = useState<number>(10);
   const [showQueueExplanation, setShowQueueExplanation] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'QUEUE' | 'ALL_PROJECTS'>('QUEUE');
 
   const { queue: fullQueue } = useMemo(() => buildActionQueueV8(projects, MOCK_DECISION_LOGS, 999), [projects]);
   const { queue: selectedQueue, explanations, budget } = useMemo(
@@ -63,14 +64,30 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
   const portfolioHealth = useMemo(() => calculatePortfolioHealth(projects, fullQueue, MOCK_DECISION_LOGS), [projects, fullQueue]);
 
   const filteredQueue = selectedQueue.filter(item => {
-    const matchesSearch =
-      item.projectTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.projectCode.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.district.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.authority.toLowerCase().includes(searchQuery.toLowerCase());
+    const q = searchQuery.toLowerCase();
+    const matchesSearch = !searchQuery ||
+      item.projectTitle.toLowerCase().includes(q) ||
+      item.projectCode.toLowerCase().includes(q) ||
+      item.district.toLowerCase().includes(q) ||
+      item.authority.toLowerCase().includes(q);
     const matchesPriority = filterPriority === 'ALL' || item.priority === filterPriority;
     return matchesSearch && matchesPriority;
   });
+
+  const filteredProjects = useMemo(() => {
+    return projects.filter(p => {
+      const q = searchQuery.toLowerCase();
+      const matchesSearch = !searchQuery ||
+        p.title.toLowerCase().includes(q) ||
+        (p.titleHindi && p.titleHindi.toLowerCase().includes(q)) ||
+        p.projectCode.toLowerCase().includes(q) ||
+        p.district.toLowerCase().includes(q) ||
+        p.state.toLowerCase().includes(q) ||
+        p.authority.toLowerCase().includes(q);
+      const matchesPriority = filterPriority === 'ALL' || p.criticality === filterPriority;
+      return matchesSearch && matchesPriority;
+    });
+  }, [projects, searchQuery, filterPriority]);
 
   const totalBudgetCr = projects.reduce((sum, p) => sum + p.estimatedBudgetCr, 0);
   const totalLandowners = projects.reduce((sum, p) => sum + p.affectedLandownersCount, 0);
@@ -177,14 +194,19 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
 
       {/* V7: Portfolio Health Dashboard */}
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-3.5">
-        <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 shadow-sm">
+        <div 
+          onClick={() => setViewMode(prev => prev === 'ALL_PROJECTS' ? 'QUEUE' : 'ALL_PROJECTS')}
+          className="bg-slate-800/80 border border-slate-700/80 hover:border-emerald-500/60 rounded-2xl p-4 shadow-sm cursor-pointer transition-all hover:scale-[1.01]"
+          title={language === 'HI' ? 'सभी परियोजनाओं की सूची देखें' : 'Click to view all projects directory'}
+        >
           <div className="flex items-center justify-between text-slate-400 text-xs font-medium">
             <span>{language === 'HI' ? 'सक्रिय परियोजनाएं' : 'Active Portfolios'}</span>
-            <Layers className="w-4 h-4 text-slate-400" />
+            <Layers className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="text-2xl font-extrabold text-white mt-2">{portfolioHealth.totalProjects}</div>
-          <div className="text-[11px] text-slate-400 mt-1">
-            <span className="text-emerald-400 font-semibold">1,941 central base</span> tracked
+          <div className="text-[11px] text-slate-400 mt-1 flex items-center justify-between">
+            <span><strong className="text-emerald-400">1,941 central base</strong> tracked</span>
+            <span className="text-[10px] text-emerald-400 font-semibold underline">View All →</span>
           </div>
         </div>
 
@@ -364,210 +386,365 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
         </div>
       </div>
 
-      {/* V8: Action Queue List - Sorted by IPI Score */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between text-xs text-slate-400 px-1">
-          <span className="flex items-center gap-2">
-            <Zap className="w-3.5 h-3.5 text-amber-400" />
-            Action Queue - {filteredQueue.length} items ranked by IPI Score (Evidence-Weighted)
-          </span>
-          <span className="font-mono text-[11px]">Urgency x Criticality x Actionability</span>
+      {/* View Switcher: Action Queue vs All Projects Directory */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700/80 pb-3">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setViewMode('QUEUE')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              viewMode === 'QUEUE'
+                ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                : 'bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700'
+            }`}
+          >
+            <Zap className="w-3.5 h-3.5" />
+            <span>{language === 'HI' ? 'प्राथमिकता कार्य सूची' : 'Action Queue (IPI Ranked)'}</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-black/20 font-mono">
+              {filteredQueue.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setViewMode('ALL_PROJECTS')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              viewMode === 'ALL_PROJECTS'
+                ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20'
+                : 'bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700'
+            }`}
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>{language === 'HI' ? 'समस्त परियोजनाएं' : 'All Projects Directory'}</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-black/20 font-mono">
+              {filteredProjects.length}
+            </span>
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 gap-3.5">
-          {filteredQueue.map((item) => {
-            const riskPct = Math.round(item.urgencyScore);
-            const riskGauge = getRiskGauge(100 - item.daysToMilestone);
-            const daysLeft = item.daysToMilestone;
-            const isClockCritical = daysLeft <= 60;
-            const explanation = explanations.find(e => e.projectId === item.projectId);
-            const isExplanationOpen = showQueueExplanation === item.projectId;
-            const rank = explanations.find(e => e.projectId === item.projectId)?.rank || 0;
+        <div className="text-xs text-slate-400">
+          {viewMode === 'QUEUE' 
+            ? (language === 'HI' ? 'परियोजना में प्रवेश करने के लिए किसी भी कार्ड पर क्लिक करें' : 'Click any card to enter Project Intelligence Room')
+            : (language === 'HI' ? 'समस्त परियोजनाओं की सूची एवं सीधा प्रवेश' : 'All statutory infrastructure project workspaces')}
+        </div>
+      </div>
 
-            return (
-              <div
-                key={item.id}
-                className={`group bg-slate-800/90 hover:bg-slate-800 border rounded-2xl p-4 sm:p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-black/40 ${
-                  item.status === 'OVERDUE'
-                    ? 'border-rose-500/50 hover:border-rose-400/60'
-                    : item.priority === 'CRITICAL'
-                    ? 'border-rose-500/30 hover:border-rose-400/50'
-                    : 'border-slate-700 hover:border-emerald-500/50'
-                }`}
-              >
-                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-                  {/* Left: Project Info + What Changed */}
-                  <div className="space-y-2 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      {/* Rank Badge */}
-                      <span className="w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 font-mono text-[10px] font-bold flex items-center justify-center shrink-0">
-                        {rank}
-                      </span>
-                      {/* Priority Badge */}
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${getPriorityStyle(item.priority)}`}>
-                        {item.priority === 'CRITICAL' && <AlertTriangle className="w-2.5 h-2.5 inline mr-0.5" />}
-                        {item.priority}
-                      </span>
-                      {/* IPI Score */}
-                      <span className="text-[10px] font-mono font-bold text-amber-400 bg-amber-950/80 border border-amber-800/60 px-2 py-0.5 rounded">
-                        IPI: {item.ipiScore}
-                      </span>
-                      {/* Status */}
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${getStatusStyle(item.status)}`}>
-                        {item.status === 'OVERDUE' && <AlertTriangle className="w-2.5 h-2.5 inline mr-0.5" />}
-                        {item.status.replace('_', ' ')}
-                      </span>
-                      {/* Project Code */}
-                      <span className="font-mono text-xs text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-700">
-                        {item.projectCode}
-                      </span>
-                      {/* Legal Route */}
-                      <span className="text-[10px] text-slate-400">{item.authority}</span>
-                      <span className="text-[10px] text-slate-400">{item.district}, {item.state}</span>
+      {/* V8: Action Queue List - Sorted by IPI Score */}
+      {viewMode === 'QUEUE' && (
+        <div className="space-y-3">
+          <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+            <span className="flex items-center gap-2">
+              <Zap className="w-3.5 h-3.5 text-amber-400" />
+              Action Queue - {filteredQueue.length} items ranked by IPI Score (Evidence-Weighted)
+            </span>
+            <span className="font-mono text-[11px]">Urgency x Criticality x Actionability</span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3.5">
+            {filteredQueue.map((item) => {
+              const riskPct = Math.round(item.urgencyScore);
+              const riskGauge = getRiskGauge(100 - item.daysToMilestone);
+              const daysLeft = item.daysToMilestone;
+              const isClockCritical = daysLeft <= 60;
+              const explanation = explanations.find(e => e.projectId === item.projectId);
+              const isExplanationOpen = showQueueExplanation === item.projectId;
+              const rank = explanations.find(e => e.projectId === item.projectId)?.rank || 0;
+
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => onSelectProject(item.projectId)}
+                  className={`group bg-slate-800/90 hover:bg-slate-800 border rounded-2xl p-4 sm:p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-black/40 ${
+                    item.status === 'OVERDUE'
+                      ? 'border-rose-500/50 hover:border-rose-400/60'
+                      : item.priority === 'CRITICAL'
+                      ? 'border-rose-500/30 hover:border-rose-400/50'
+                      : 'border-slate-700 hover:border-emerald-500/50'
+                  }`}
+                  title="Click to enter Project Intelligence Room"
+                >
+                  <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+                    {/* Left: Project Info + What Changed */}
+                    <div className="space-y-2 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {/* Rank Badge */}
+                        <span className="w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 font-mono text-[10px] font-bold flex items-center justify-center shrink-0">
+                          {rank}
+                        </span>
+                        {/* Priority Badge */}
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${getPriorityStyle(item.priority)}`}>
+                          {item.priority === 'CRITICAL' && <AlertTriangle className="w-2.5 h-2.5 inline mr-0.5" />}
+                          {item.priority}
+                        </span>
+                        {/* IPI Score */}
+                        <span className="text-[10px] font-mono font-bold text-amber-400 bg-amber-950/80 border border-amber-800/60 px-2 py-0.5 rounded">
+                          IPI: {item.ipiScore}
+                        </span>
+                        {/* Status */}
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${getStatusStyle(item.status)}`}>
+                          {item.status === 'OVERDUE' && <AlertTriangle className="w-2.5 h-2.5 inline mr-0.5" />}
+                          {item.status.replace('_', ' ')}
+                        </span>
+                        {/* Project Code */}
+                        <span className="font-mono text-xs text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-700">
+                          {item.projectCode}
+                        </span>
+                        {/* Legal Route */}
+                        <span className="text-[10px] text-slate-400">{item.authority}</span>
+                        <span className="text-[10px] text-slate-400">{item.district}, {item.state}</span>
+                      </div>
+
+                      <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
+                        {item.projectTitle}
+                      </h3>
+
+                      {/* V8: What Changed? */}
+                      <div className="flex items-center gap-2 text-xs">
+                        <Info className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                        <span className="text-slate-400">Next:</span>
+                        <span className="text-slate-200 font-medium">{item.nextMilestone}</span>
+                        <span className="text-slate-400">•</span>
+                        <span className={`font-semibold ${isClockCritical ? 'text-rose-400' : 'text-slate-200'}`}>
+                          {item.daysToMilestone}d horizon
+                        </span>
+                      </div>
+
+                      {/* Top Driver */}
+                      <div className="text-xs text-slate-300 bg-slate-900/60 border border-slate-800/80 rounded-lg px-2.5 py-1 flex items-center gap-2">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span className="truncate">{item.topDriver}</span>
+                      </div>
+
+                      {/* Recommended Action */}
+                      <div className="text-xs text-amber-300/90 bg-amber-950/30 border border-amber-800/40 rounded-lg px-2.5 py-1 flex items-center gap-2">
+                        <Target className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                        <span className="font-medium">{item.recommendedAction}</span>
+                      </div>
+
+                      {/* V8: Why is this #N? Toggle */}
+                      {explanation && (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowQueueExplanation(isExplanationOpen ? null : item.projectId);
+                          }}
+                          className="flex items-center gap-1.5 text-[10px] text-amber-400 hover:text-amber-300 font-semibold transition-colors cursor-pointer"
+                        >
+                          <Brain className="w-3 h-3" />
+                          Why is this #{rank}?
+                          <ChevronDown className={`w-3 h-3 transition-transform ${isExplanationOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                      )}
                     </div>
 
-                    <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
-                      {item.projectTitle}
-                    </h3>
+                    {/* Right: Scores & Action */}
+                    <div className="flex items-center gap-4 shrink-0 border-t lg:border-t-0 lg:border-l border-slate-700/80 pt-3 lg:pt-0 lg:pl-5 w-full lg:w-auto justify-between lg:justify-end">
+                      {/* Risk Gauge */}
+                      <div className={`p-3 rounded-xl border text-center min-w-[100px] ${riskGauge.bg}`}>
+                        <div className="text-[10px] uppercase font-bold tracking-wider">Risk</div>
+                        <div className={`text-2xl font-black mt-0.5 ${riskGauge.class}`}>
+                          {riskGauge.label}
+                        </div>
+                      </div>
 
-                    {/* V8: What Changed? */}
-                    <div className="flex items-center gap-2 text-xs">
-                      <Info className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                      <span className="text-slate-400">Next:</span>
-                      <span className="text-slate-200 font-medium">{item.nextMilestone}</span>
-                      <span className="text-slate-400">•</span>
-                      <span className={`font-semibold ${isClockCritical ? 'text-rose-400' : 'text-slate-200'}`}>
-                        {item.daysToMilestone}d horizon
-                      </span>
-                    </div>
+                      {/* Owner & Due */}
+                      <div className="text-right space-y-1">
+                        <div className="text-[10px] text-slate-400">Owner</div>
+                        <div className="text-xs font-semibold text-white max-w-[140px] truncate">{item.owner}</div>
+                        <div className="text-[10px] text-slate-400">Due: {item.dueDate}</div>
+                        {item.escalationLevel > 1 && (
+                          <div className="text-[10px] text-rose-400 font-bold flex items-center gap-1 justify-end">
+                            <ArrowUpRight className="w-3 h-3" />
+                            ESCALATED
+                          </div>
+                        )}
+                      </div>
 
-                    {/* Top Driver */}
-                    <div className="text-xs text-slate-300 bg-slate-900/60 border border-slate-800/80 rounded-lg px-2.5 py-1 flex items-center gap-2">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span className="truncate">{item.topDriver}</span>
-                    </div>
-
-                    {/* Recommended Action */}
-                    <div className="text-xs text-amber-300/90 bg-amber-950/30 border border-amber-800/40 rounded-lg px-2.5 py-1 flex items-center gap-2">
-                      <Target className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                      <span className="font-medium">{item.recommendedAction}</span>
-                    </div>
-
-                    {/* V8: Why is this #N? Toggle */}
-                    {explanation && (
+                      {/* Drill-down Arrow */}
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          setShowQueueExplanation(isExplanationOpen ? null : item.projectId);
+                          onSelectProject(item.projectId);
                         }}
-                        className="flex items-center gap-1.5 text-[10px] text-amber-400 hover:text-amber-300 font-semibold transition-colors"
+                        title="Enter Project Intelligence Room"
+                        className="w-9 h-9 rounded-full bg-slate-700 group-hover:bg-emerald-600 text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
                       >
-                        <Brain className="w-3 h-3" />
-                        Why is this #{rank}?
-                        <ChevronDown className={`w-3 h-3 transition-transform ${isExplanationOpen ? 'rotate-180' : ''}`} />
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                       </button>
-                    )}
+                    </div>
                   </div>
 
-                  {/* Right: Scores & Action */}
-                  <div className="flex items-center gap-4 shrink-0 border-t lg:border-t-0 lg:border-l border-slate-700/80 pt-3 lg:pt-0 lg:pl-5 w-full lg:w-auto justify-between lg:justify-end">
-                    {/* Risk Gauge */}
-                    <div className={`p-3 rounded-xl border text-center min-w-[100px] ${riskGauge.bg}`}>
-                      <div className="text-[10px] uppercase font-bold tracking-wider">Risk</div>
-                      <div className={`text-2xl font-black mt-0.5 ${riskGauge.class}`}>
-                        {riskGauge.label}
+                  {/* V8: Queue Explanation Panel */}
+                  {isExplanationOpen && explanation && (
+                    <div
+                      onClick={(e) => e.stopPropagation()}
+                      className="mt-4 bg-slate-900/80 border border-amber-500/30 rounded-xl p-4 space-y-3"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Brain className="w-4 h-4 text-amber-400" />
+                          <span className="text-xs font-bold text-amber-400">
+                            Why is this #{explanation.rank}?
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => setShowQueueExplanation(null)}
+                          className="text-slate-400 hover:text-white text-xs cursor-pointer"
+                        >
+                          Close
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <div className="bg-slate-800 rounded-lg p-2 text-center">
+                          <div className="text-[10px] text-slate-400">IPI Score</div>
+                          <div className="text-lg font-bold text-amber-400">{explanation.ipiScore}</div>
+                        </div>
+                        <div className="bg-slate-800 rounded-lg p-2 text-center">
+                          <div className="text-[10px] text-slate-400">Urgency</div>
+                          <div className="text-lg font-bold text-white">{explanation.contributions.urgency}</div>
+                        </div>
+                        <div className="bg-slate-800 rounded-lg p-2 text-center">
+                          <div className="text-[10px] text-slate-400">Criticality</div>
+                          <div className="text-lg font-bold text-white">{explanation.contributions.criticality}</div>
+                        </div>
+                        <div className="bg-slate-800 rounded-lg p-2 text-center">
+                          <div className="text-[10px] text-slate-400">Actionability</div>
+                          <div className="text-lg font-bold text-white">{explanation.contributions.actionability}</div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2 text-xs">
+                        <div className="bg-blue-950/30 border border-blue-800/50 rounded-lg p-2.5">
+                          <span className="text-blue-400 font-semibold">Primary reason: </span>
+                          <span className="text-slate-200">{explanation.primaryReason}</span>
+                        </div>
+                        <div className="bg-slate-800 border border-slate-700 rounded-lg p-2.5">
+                          <span className="text-slate-400 font-semibold">Secondary reason: </span>
+                          <span className="text-slate-200">{explanation.secondaryReason}</span>
+                        </div>
+                        <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1">
+                          <span>Downstream impact: <strong className="text-white">{explanation.downstreamImpact}</strong></span>
+                          <span>Evidence: <strong className={`${
+                            explanation.evidenceQuality === 'GREEN' ? 'text-emerald-400' :
+                            explanation.evidenceQuality === 'AMBER' ? 'text-amber-400' : 'text-rose-400'
+                          }`}>{explanation.evidenceQuality}</strong></span>
+                        </div>
+                        {explanation.confidenceNote && (
+                          <div className="bg-amber-950/30 border border-amber-800/50 rounded-lg p-2.5 text-amber-300">
+                            {explanation.confidenceNote}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* View 2: All Projects Directory */}
+      {viewMode === 'ALL_PROJECTS' && (
+        <div className="space-y-3">
+          <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+            <span className="flex items-center gap-2">
+              <Layers className="w-3.5 h-3.5 text-emerald-400" />
+              All Projects Directory — {filteredProjects.length} Infrastructure Projects
+            </span>
+            <span className="text-[11px] text-emerald-400 font-medium">
+              Click any project to enter its dedicated intelligence room
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3.5">
+            {filteredProjects.map((project) => {
+              const delayPct = Math.round(project.modelOutput.delayProbability * 100);
+
+              return (
+                <div
+                  key={project.id}
+                  onClick={() => onSelectProject(project.id)}
+                  className="group bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 rounded-2xl p-4 sm:p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-black/40"
+                  title="Click to enter Project Intelligence Room"
+                >
+                  <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+                    {/* Left: Project Details */}
+                    <div className="space-y-2 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {/* Criticality Badge */}
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${getPriorityStyle(project.criticality)}`}>
+                          {project.criticality === 'CRITICAL' && <AlertTriangle className="w-2.5 h-2.5 inline mr-0.5" />}
+                          {project.criticality}
+                        </span>
+                        {/* Project Code */}
+                        <span className="font-mono text-xs text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-700">
+                          {project.projectCode}
+                        </span>
+                        {/* Route */}
+                        <span className="text-[10px] text-slate-400 font-medium">
+                          {project.processRoute.replace('_', ' ')}
+                        </span>
+                        {/* Location */}
+                        <span className="text-[10px] text-slate-400">
+                          {project.district}, {project.state}
+                        </span>
+                      </div>
+
+                      <div>
+                        <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug">
+                          {language === 'HI' && project.titleHindi ? project.titleHindi : project.title}
+                        </h3>
+                        <div className="text-xs text-slate-400 mt-0.5">
+                          {project.authority} • {project.tehsil ? `${project.tehsil} Tehsil • ` : ''}{project.totalAreaHectares} Ha • {project.affectedLandownersCount.toLocaleString()} Landowners
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-3 text-xs pt-1">
+                        <div className="bg-slate-900/60 border border-slate-800 rounded-lg px-2.5 py-1 text-slate-300 flex items-center gap-1.5">
+                          <span className="text-slate-400">Stage:</span>
+                          <span className="font-semibold text-emerald-400">{project.currentStageLabel}</span>
+                        </div>
+                        <div className="bg-slate-900/60 border border-slate-800 rounded-lg px-2.5 py-1 text-slate-300 flex items-center gap-1.5">
+                          <span className="text-slate-400">Clock:</span>
+                          <span className="font-semibold text-slate-200">{project.currentStageElapsedDays} / {project.statutoryClockMaxDays}d</span>
+                        </div>
+                        <div className="bg-slate-900/60 border border-slate-800 rounded-lg px-2.5 py-1 text-slate-300 flex items-center gap-1.5">
+                          <span className="text-slate-400">Budget:</span>
+                          <span className="font-semibold text-amber-300">₹{project.estimatedBudgetCr} Cr</span>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Owner & Due */}
-                    <div className="text-right space-y-1">
-                      <div className="text-[10px] text-slate-400">Owner</div>
-                      <div className="text-xs font-semibold text-white max-w-[140px] truncate">{item.owner}</div>
-                      <div className="text-[10px] text-slate-400">Due: {item.dueDate}</div>
-                      {item.escalationLevel > 1 && (
-                        <div className="text-[10px] text-rose-400 font-bold flex items-center gap-1 justify-end">
-                          <ArrowUpRight className="w-3 h-3" />
-                          ESCALATED
+                    {/* Right: Risk & Enter Button */}
+                    <div className="flex items-center gap-4 shrink-0 border-t lg:border-t-0 lg:border-l border-slate-700/80 pt-3 lg:pt-0 lg:pl-5 w-full lg:w-auto justify-between lg:justify-end">
+                      <div className="text-center">
+                        <div className="text-[10px] text-slate-400 uppercase font-bold">Delay Risk</div>
+                        <div className={`text-xl font-black mt-0.5 ${
+                          delayPct >= 70 ? 'text-rose-400' : delayPct >= 40 ? 'text-amber-400' : 'text-emerald-400'
+                        }`}>
+                          {delayPct}%
                         </div>
-                      )}
-                    </div>
+                        <div className="text-[10px] text-slate-400">+{project.modelOutput.predictedMissDays}d miss</div>
+                      </div>
 
-                    {/* Drill-down Arrow */}
-                    <div className="w-8 h-8 rounded-full bg-slate-700 group-hover:bg-emerald-600 text-white flex items-center justify-center transition-colors">
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onSelectProject(project.id);
+                        }}
+                        className="flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-950/40 cursor-pointer group-hover:scale-105"
+                      >
+                        <span>{language === 'HI' ? 'परियोजना में प्रवेश करें' : 'Enter Project Room'}</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </div>
-
-                {/* V8: Queue Explanation Panel */}
-                {isExplanationOpen && explanation && (
-                  <div
-                    onClick={(e) => e.stopPropagation()}
-                    className="mt-4 bg-slate-900/80 border border-amber-500/30 rounded-xl p-4 space-y-3"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Brain className="w-4 h-4 text-amber-400" />
-                        <span className="text-xs font-bold text-amber-400">
-                          Why is this #{explanation.rank}?
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => setShowQueueExplanation(null)}
-                        className="text-slate-400 hover:text-white text-xs"
-                      >
-                        Close
-                      </button>
-                    </div>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                      <div className="bg-slate-800 rounded-lg p-2 text-center">
-                        <div className="text-[10px] text-slate-400">IPI Score</div>
-                        <div className="text-lg font-bold text-amber-400">{explanation.ipiScore}</div>
-                      </div>
-                      <div className="bg-slate-800 rounded-lg p-2 text-center">
-                        <div className="text-[10px] text-slate-400">Urgency</div>
-                        <div className="text-lg font-bold text-white">{explanation.contributions.urgency}</div>
-                      </div>
-                      <div className="bg-slate-800 rounded-lg p-2 text-center">
-                        <div className="text-[10px] text-slate-400">Criticality</div>
-                        <div className="text-lg font-bold text-white">{explanation.contributions.criticality}</div>
-                      </div>
-                      <div className="bg-slate-800 rounded-lg p-2 text-center">
-                        <div className="text-[10px] text-slate-400">Actionability</div>
-                        <div className="text-lg font-bold text-white">{explanation.contributions.actionability}</div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2 text-xs">
-                      <div className="bg-blue-950/30 border border-blue-800/50 rounded-lg p-2.5">
-                        <span className="text-blue-400 font-semibold">Primary reason: </span>
-                        <span className="text-slate-200">{explanation.primaryReason}</span>
-                      </div>
-                      <div className="bg-slate-800 border border-slate-700 rounded-lg p-2.5">
-                        <span className="text-slate-400 font-semibold">Secondary reason: </span>
-                        <span className="text-slate-200">{explanation.secondaryReason}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1">
-                        <span>Downstream impact: <strong className="text-white">{explanation.downstreamImpact}</strong></span>
-                        <span>Evidence: <strong className={`${
-                          explanation.evidenceQuality === 'GREEN' ? 'text-emerald-400' :
-                          explanation.evidenceQuality === 'AMBER' ? 'text-amber-400' : 'text-rose-400'
-                        }`}>{explanation.evidenceQuality}</strong></span>
-                      </div>
-                      {explanation.confidenceNote && (
-                        <div className="bg-amber-950/30 border border-amber-800/50 rounded-lg p-2.5 text-amber-300">
-                          {explanation.confidenceNote}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* V7: Portfolio KPIs Footer */}
       <div className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-4">
