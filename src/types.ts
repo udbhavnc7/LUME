@@ -427,3 +427,202 @@ export interface SupportTicket {
   createdAt: string;
   assignedOfficer?: string;
 }
+
+// ============================================
+// V7 UPGRADE TYPES - Real-Data & Production Evolution
+// ============================================
+
+export type DataSourceTier = 'A' | 'B' | 'C';
+export type RefreshMode = 'DAILY' | 'EVENT_DRIVEN' | 'MANUAL' | 'SCHEDULED';
+export type ReliabilityClass = 'VERIFIED_OPERATIONAL' | 'PUBLIC' | 'DEMO_SEED';
+export type ConflictPolicy = 'SOURCE_OF_TRUTH_HIERARCHY' | 'LATEST_WINS' | 'MANUAL_REVIEW';
+export type PrivacyClass = 'PUBLIC' | 'INTERNAL' | 'RESTRICTED';
+export type PipelineStage = 
+  | 'CONNECT' 
+  | 'VALIDATE' 
+  | 'NORMALIZE' 
+  | 'RECONCILE' 
+  | 'SNAPSHOT' 
+  | 'ENRICH' 
+  | 'SCORE' 
+  | 'PUBLISH' 
+  | 'ACTIVATE' 
+  | 'LEARN';
+export type PipelineStatus = 'PENDING' | 'RUNNING' | 'COMPLETED' | 'FAILED' | 'SKIPPED';
+
+export interface DataPassport {
+  sourceIdentity: string;
+  authority: string;
+  schemaVersion: string;
+  refreshMode: RefreshMode;
+  coverage: string;
+  freshness: string;
+  reliabilityClass: ReliabilityClass;
+  conflictPolicy: ConflictPolicy;
+  privacyClass: PrivacyClass;
+  effectiveTimeSupport: boolean;
+  tier: DataSourceTier;
+  lastIngestedAt: string;
+  recordsProcessed: number;
+  validationErrors: number;
+}
+
+export interface PipelineStep {
+  stage: PipelineStage;
+  status: PipelineStatus;
+  startedAt?: string;
+  completedAt?: string;
+  recordsIn: number;
+  recordsOut: number;
+  errors: string[];
+  warnings: string[];
+}
+
+export interface PipelineRun {
+  id: string;
+  projectId: string;
+  sourceIdentity: string;
+  steps: PipelineStep[];
+  overallStatus: PipelineStatus;
+  startedAt: string;
+  completedAt?: string;
+  trigger: 'SCHEDULED' | 'EVENT_DRIVEN' | 'MANUAL';
+}
+
+export interface TemporalSnapshot {
+  id: string;
+  projectId: string;
+  effectiveAt: string;
+  ingestedAt: string;
+  projectState: LandAcquisitionProject;
+  modelOutput: ProjectModelOutput;
+  dataPassports: DataPassport[];
+  triggerEvent?: string;
+}
+
+export interface WhatChangedDiff {
+  field: string;
+  fieldLabel: string;
+  previousValue: string | number | boolean;
+  currentValue: string | number | boolean;
+  changeType: 'INCREASE' | 'DECREASE' | 'STATE_CHANGE' | 'NEW_EVIDENCE' | 'EVIDENCE_IMPROVED' | 'EVIDENCE_DEGRADED';
+  significance: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  daysSinceLastReview: number;
+  attributableFeatures?: string[];
+}
+
+export interface CasePulse {
+  projectId: string;
+  lastReviewedAt: string;
+  lastReviewedBy: string;
+  whatChanged: WhatChangedDiff[];
+  riskTrajectory: Array<{ date: string; probability: number }>;
+  evidenceHealthTrend: Array<{ date: string; health: EvidenceHealthState }>;
+  materialEvents: Array<{
+    id: string;
+    timestamp: string;
+    type: 'EVIDENCE_UPDATE' | 'DEPENDENCY_CHANGE' | 'STAGE_TRANSITION' | 'MILESTONE_UPDATE' | 'NEW_PRECEDENT' | 'EXTERNAL_SIGNAL';
+    description: string;
+    source: string;
+    impact: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  }>;
+}
+
+export interface ActionQueueItem {
+  id: string;
+  projectId: string;
+  projectCode: string;
+  projectTitle: string;
+  authority: string;
+  district: string;
+  state: string;
+  priority: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'STANDARD';
+  urgencyScore: number;
+  criticalityScore: number;
+  actionabilityScore: number;
+  ipiScore: number;
+  riskLevel: EvidenceHealthState;
+  nextMilestone: string;
+  daysToMilestone: number;
+  topDriver: string;
+  recommendedAction: string;
+  actionCategory: DecisionLogEntry['category'];
+  owner: string;
+  ownerRole: string;
+  dueDate: string;
+  status: 'ASSIGNED' | 'IN_PROGRESS' | 'COMPLETED' | 'OVERDUE';
+  createdAt: string;
+  lastUpdatedAt: string;
+  escalationLevel: number;
+}
+
+export interface RiskTrajectoryPoint {
+  date: string;
+  delayProbability: number;
+  predictedMissDays: number;
+  evidenceHealth: EvidenceHealthState;
+  modelCoverage: ProjectModelOutput['modelCoverage'];
+}
+
+export interface PortfolioHealthMetrics {
+  totalProjects: number;
+  criticalRiskCount: number;
+  highRiskCount: number;
+  mediumRiskCount: number;
+  lowRiskCount: number;
+  avgEvidenceHealth: EvidenceHealthState;
+  dataFreshnessScore: number;
+  modelCoverageScore: number;
+  actionQueueBacklog: number;
+  overdueActions: number;
+  completedActionsThisWeek: number;
+  medianWarningLeadTimeDays: number;
+  precisionAtK: number;
+  recallAtK: number;
+}
+
+export interface DataHealthScreen {
+  sourceIdentity: string;
+  tier: DataSourceTier;
+  rowCount: number;
+  missingFieldsPct: number;
+  freshnessHours: number;
+  routeCoverage: Record<string, number>;
+  labelCoverage: number;
+  lastSync: string;
+  validationErrors: number;
+  schemaVersion: string;
+}
+
+export interface ReplayState {
+  projectId: string;
+  snapshotId: string;
+  effectiveAt: string;
+  projectState: LandAcquisitionProject;
+  modelOutput: ProjectModelOutput;
+  dataPassports: DataPassport[];
+  actualOutcome?: {
+    finalDelayMonths: number;
+    finalOutcome: string;
+    resolutionDate: string;
+  };
+}
+
+export type ActionPriorityType = 
+  | 'DOCUMENTATION_GAP'
+  | 'STALLED_DEPENDENCY'
+  | 'UPCOMING_WINDOW'
+  | 'DISPUTE_SIGNAL'
+  | 'DATA_CONFLICT'
+  | 'CRITICAL_PROJECT';
+
+export interface InterventionPlaybook {
+  priorityType: ActionPriorityType;
+  trigger: string;
+  suggestedFollowUp: string;
+  expectedInfoValue: 'HIGH' | 'MEDIUM' | 'LOW';
+  investigationSteps: string[];
+  ownerRole: string;
+  typicalResolutionDays: number;
+  successCriteria: string;
+}

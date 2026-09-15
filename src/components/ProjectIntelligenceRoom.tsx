@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   LandAcquisitionProject, 
   DecisionLogEntry, 
-  ScenarioInput 
+  ScenarioInput,
+  CasePulse,
+  WhatChangedDiff,
+  DataPassport,
+  PipelineRun,
 } from '../types';
 import { 
   ArrowLeft, 
@@ -26,10 +30,18 @@ import {
   Zap,
   TrendingDown,
   Building,
-  Camera
+  Camera,
+  Activity,
+  TrendingUp,
+  GitBranch,
+  Eye,
+  RefreshCw,
+  ActivitySquare,
+  Target,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { DocumentVerificationModule } from './DocumentVerificationModule';
+import { getProjectCasePulse, getProjectSnapshots, getProjectPipelineRuns, V7_DATA_PASSPORTS } from '../data/mockDataV7';
 
 interface ProjectIntelligenceRoomProps {
   project: LandAcquisitionProject;
@@ -38,7 +50,7 @@ interface ProjectIntelligenceRoomProps {
   onAddDecisionLog: (entry: DecisionLogEntry) => void;
   onOpenCitizenView: (ulpin?: string) => void;
   language: 'EN' | 'HI';
-  defaultTab?: 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET';
+  defaultTab?: 'CASE_PULSE' | 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET' | 'DATA_PASSPORTS';
 }
 
 export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = ({
@@ -48,9 +60,14 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
   onAddDecisionLog,
   onOpenCitizenView,
   language,
-  defaultTab = 'OVERVIEW'
+  defaultTab = 'CASE_PULSE'
 }) => {
-  const [activeTab, setActiveTab] = useState<'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET'>(defaultTab);
+  const [activeTab, setActiveTab] = useState<'CASE_PULSE' | 'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET' | 'DATA_PASSPORTS'>(defaultTab);
+
+  // V7: Load CasePulse data for this project
+  const casePulse = useMemo(() => getProjectCasePulse(project.id), [project.id]);
+  const snapshots = useMemo(() => getProjectSnapshots(project.id), [project.id]);
+  const pipelineRuns = useMemo(() => getProjectPipelineRuns(project.id), [project.id]);
 
   // Scenario Lab State
   const [scenarioInput, setScenarioInput] = useState<ScenarioInput>({
@@ -258,16 +275,18 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
         </div>
       </div>
 
-      {/* Tabs Bar */}
+      {/* V7 Tabs Bar */}
       <div className="flex items-center gap-1.5 border-b border-slate-800 pb-2 overflow-x-auto">
         {[
-          { id: 'OVERVIEW', label: '1. Critical Path & Delay Causes', icon: Layers },
-          { id: 'EVIDENCE', label: '2. SHAP Evidence Trace', icon: ShieldCheck },
-          { id: 'PRECEDENTS', label: '3. Precedent Intelligence', icon: History },
-          { id: 'SCENARIO', label: '4. Scenario Lab (What-If)', icon: Sliders, highlight: true },
-          { id: 'DECISIONS', label: '5. Priority Queue & Action Log', icon: Scale },
-          { id: 'DOC_VERIFICATION', label: '6. Document Verification (Scan & Cross-Ref)', icon: Camera, highlight: true },
-          { id: 'REVIEW_PACKET', label: '7. One-Page Review Brief', icon: FileText }
+          { id: 'CASE_PULSE', label: '1. Case Pulse', icon: Activity, highlight: true },
+          { id: 'OVERVIEW', label: '2. Critical Path', icon: Layers },
+          { id: 'EVIDENCE', label: '3. Evidence Trace', icon: ShieldCheck },
+          { id: 'PRECEDENTS', label: '4. Precedents', icon: History },
+          { id: 'SCENARIO', label: '5. Scenario Lab', icon: Sliders, highlight: true },
+          { id: 'DECISIONS', label: '6. Action Log', icon: Scale },
+          { id: 'DOC_VERIFICATION', label: '7. Doc Verification', icon: Camera },
+          { id: 'DATA_PASSPORTS', label: '8. Data Passports', icon: GitBranch },
+          { id: 'REVIEW_PACKET', label: '9. Collector Brief', icon: FileText }
         ].map((tab) => {
           const Icon = tab.icon;
           const isSelected = activeTab === tab.id;
@@ -293,7 +312,502 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
         })}
       </div>
 
-      {/* TAB 1: OVERVIEW & CRITICAL PATH */}
+      {/* V7 TAB: CASE PULSE — The Signature UI */}
+      {activeTab === 'CASE_PULSE' && (
+        <div className="space-y-5">
+          {/* V7: Case Pulse Compact Operational View */}
+          {casePulse && (
+            <>
+              {/* Header Block: Project ID, Route, District, Criticality, Last Updated */}
+              <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm space-y-4">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-xs text-slate-300 bg-slate-900 px-2.5 py-0.5 rounded border border-slate-700">
+                      {project.projectCode}
+                    </span>
+                    <span className="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-700/60 px-2 py-0.5 rounded-full">
+                      {project.processRoute.replace('_', ' ')}
+                    </span>
+                    <span className="text-xs text-slate-400">
+                      {project.district}, {project.state}
+                    </span>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                      project.criticality === 'CRITICAL' ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' :
+                      project.criticality === 'HIGH' ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' :
+                      'bg-slate-700 text-slate-300 border-slate-600'
+                    }`}>
+                      {project.criticality}
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-slate-400 flex items-center gap-2">
+                    <Eye className="w-3.5 h-3.5" />
+                    Last reviewed: {new Date(casePulse.lastReviewedAt).toLocaleDateString()} by {casePulse.lastReviewedBy}
+                  </div>
+                </div>
+
+                {/* Status Block: Current Stage + Stage Age + Expected Window + Days Remaining/Overdue */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+                    <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1">
+                      <Layers className="w-3 h-3 text-emerald-400" />
+                      Current Stage
+                    </div>
+                    <div className="text-sm font-bold text-white mt-1">{project.currentStageLabel}</div>
+                    <div className="text-xs text-slate-400 mt-1">
+                      Stage age: <span className="text-white font-semibold">{project.currentStageElapsedDays} days</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+                    <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1">
+                      <Target className="w-3 h-3 text-amber-400" />
+                      Next Milestone
+                    </div>
+                    <div className="text-sm font-bold text-white mt-1">{project.modelOutput.nextMilestoneName}</div>
+                    <div className="text-xs text-slate-400 mt-1">
+                      Target: <span className="text-white font-semibold">{project.modelOutput.targetDeadlineDate}</span>
+                    </div>
+                  </div>
+
+                  <div className={`rounded-xl p-4 ${
+                    daysLeft <= 0 ? 'bg-rose-950/60 border border-rose-600/50' :
+                    daysLeft <= 60 ? 'bg-amber-950/60 border border-amber-600/50' :
+                    'bg-emerald-950/60 border border-emerald-600/50'
+                  }`}>
+                    <div className={`text-[10px] uppercase font-bold flex items-center gap-1 ${
+                      daysLeft <= 0 ? 'text-rose-400' : daysLeft <= 60 ? 'text-amber-400' : 'text-emerald-400'
+                    }`}>
+                      <Clock className="w-3 h-3" />
+                      {daysLeft <= 0 ? 'OVERDUE' : 'Days Remaining'}
+                    </div>
+                    <div className={`text-2xl font-black mt-1 ${
+                      daysLeft <= 0 ? 'text-rose-300' : daysLeft <= 60 ? 'text-amber-300' : 'text-emerald-300'
+                    }`}>
+                      {daysLeft > 0 ? daysLeft : Math.abs(daysLeft)}
+                    </div>
+                    <div className="text-[10px] text-slate-400">
+                      {project.currentStageElapsedDays} / {project.statutoryClockMaxDays} days elapsed
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Risk Block: Next-milestone miss probability + 7/30-day risk trajectory */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+                  <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 mb-3">
+                    <AlertTriangle className="w-3 h-3 text-rose-400" />
+                    Risk — Next-Milestone Miss Probability
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className={`p-4 rounded-xl border text-center min-w-[120px] ${
+                      project.modelOutput.delayProbability >= 0.7
+                        ? 'bg-rose-950/40 border-rose-600/50 text-rose-300'
+                        : project.modelOutput.delayProbability >= 0.3
+                        ? 'bg-amber-950/40 border-amber-600/50 text-amber-300'
+                        : 'bg-emerald-950/40 border-emerald-600/50 text-emerald-300'
+                    }`}>
+                      <div className="text-[10px] uppercase font-bold">Delay Risk</div>
+                      <div className="text-3xl font-black mt-0.5">{Math.round(project.modelOutput.delayProbability * 100)}%</div>
+                      <div className="text-[10px] font-medium opacity-80">+{project.modelOutput.predictedMissDays}d overage</div>
+                    </div>
+                    <div className="flex-1 space-y-2">
+                      <div className="text-xs text-slate-400">
+                        <span className="font-semibold text-white">{project.modelOutput.predictedMissDays}</span> predicted miss days
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        Horizon: <span className="font-semibold text-white">{project.modelOutput.horizonDays} days</span>
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        Coverage: <span className="font-semibold text-white">{project.modelOutput.modelCoverage}</span>
+                      </div>
+                      {/* Risk Trajectory Mini Chart */}
+                      <div className="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                        <div className="text-[10px] text-slate-500 mb-1">Risk Trajectory (last 6 snapshots)</div>
+                        <div className="flex items-end gap-1 h-8">
+                          {casePulse.riskTrajectory.slice(-6).map((point, idx) => (
+                            <div
+                              key={idx}
+                              className={`flex-1 rounded-t ${
+                                point.probability >= 0.7 ? 'bg-rose-500' :
+                                point.probability >= 0.3 ? 'bg-amber-500' : 'bg-emerald-500'
+                              }`}
+                              style={{ height: `${Math.max(10, point.probability * 100)}%` }}
+                              title={`${Math.round(point.probability * 100)}% on ${new Date(point.date).toLocaleDateString()}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Evidence Block: GREEN/AMBER/RED + what is missing or stale */}
+                <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+                  <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 mb-3">
+                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                    Evidence Health
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className={`px-3 py-1 rounded-full text-sm font-bold ${
+                      project.modelOutput.evidenceHealth === 'GREEN'
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                        : project.modelOutput.evidenceHealth === 'AMBER'
+                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                        : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                    }`}>
+                      ● {project.modelOutput.evidenceHealth}
+                    </span>
+                    <span className="text-xs text-slate-400">Health Score</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                    {project.modelOutput.evidenceHealthReason}
+                  </p>
+                  <div className="bg-slate-900/80 border border-slate-800 rounded-lg p-3 text-[11px] text-slate-400">
+                    <strong className="text-slate-300">What is missing or stale:</strong>
+                    <ul className="mt-1 space-y-1">
+                      {project.modelOutput.evidenceHealth === 'GREEN' && (
+                        <li className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                          All primary registry feeds synced within 3 days
+                        </li>
+                      )}
+                      {project.modelOutput.evidenceHealth === 'AMBER' && (
+                        <>
+                          <li className="flex items-center gap-1.5">
+                            <AlertTriangle className="w-3 h-3 text-amber-400" />
+                            eCourts case metadata not natively tagged with project IDs
+                          </li>
+                          <li className="flex items-center gap-1.5">
+                            <AlertTriangle className="w-3 h-3 text-amber-400" />
+                            Satellite NDVI refresh pending (3-day delay)
+                          </li>
+                        </>
+                      )}
+                      <li className="flex items-center gap-1.5">
+                        <Activity className="w-3 h-3 text-blue-400" />
+                        Model version: {project.modelOutput.modelVersion}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* What Changed? Block */}
+              <div className="bg-slate-800/90 border border-blue-500/30 rounded-2xl p-5 shadow-sm">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-[10px] uppercase font-bold text-blue-400 flex items-center gap-1">
+                    <RefreshCw className="w-3 h-3" />
+                    What Changed? — Intelligence Diff
+                  </div>
+                  <span className="text-[11px] text-slate-400">
+                    Comparing current vs last reviewed snapshot
+                  </span>
+                </div>
+                {casePulse.whatChanged.length === 0 ? (
+                  <div className="text-xs text-slate-400 text-center py-4 bg-slate-900/40 rounded-xl border border-slate-800">
+                    No material changes detected since last review.
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    {casePulse.whatChanged.slice(0, 5).map((diff, idx) => (
+                      <div key={idx} className={`border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
+                        diff.significance === 'CRITICAL' ? 'bg-rose-950/30 border-rose-700/50' :
+                        diff.significance === 'HIGH' ? 'bg-amber-950/30 border-amber-700/50' :
+                        'bg-slate-900/60 border-slate-700/80'
+                      }`}>
+                        <div className="flex items-center gap-2">
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                            diff.significance === 'CRITICAL' ? 'bg-rose-500 text-white' :
+                            diff.significance === 'HIGH' ? 'bg-amber-500 text-slate-950' :
+                            'bg-slate-700 text-slate-300'
+                          }`}>
+                            {diff.significance}
+                          </span>
+                          <span className="text-xs font-bold text-white">{diff.fieldLabel}</span>
+                        </div>
+                        <div className="text-xs text-slate-300">
+                          <span className="text-slate-500">Was:</span> {String(diff.previousValue)}
+                          <span className="text-slate-500 mx-1">→</span>
+                          <span className="text-white font-semibold">{String(diff.currentValue)}</span>
+                          <span className="text-slate-500 ml-2">({diff.daysSinceLastReview}d ago)</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Why + Blocker + Precedent + Action Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Why: Top 3 drivers with source references */}
+                <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+                  <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 mb-3">
+                    <Info className="w-3 h-3 text-blue-400" />
+                    Why — Top 3 Risk Drivers
+                  </div>
+                  <div className="space-y-2">
+                    {project.modelOutput.shapDrivers.slice(0, 3).map((driver, idx) => (
+                      <div key={idx} className="bg-slate-900/60 border border-slate-800 rounded-lg p-3 text-xs space-y-1">
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-white">#{idx + 1} {driver.humanDescription}</span>
+                          <span className={`font-mono font-bold ${driver.contribution > 0 ? 'text-rose-400' : 'text-emerald-400'}`}>
+                            {driver.contribution > 0 ? '+' : ''}{driver.contribution.toFixed(2)}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2 text-[10px] text-slate-400">
+                          <span>Source: <strong className="text-slate-300">{driver.evidenceSource}</strong></span>
+                          <span>•</span>
+                          <span>Freshness: {driver.freshness}</span>
+                          <span>•</span>
+                          <span className={`font-bold ${driver.reliability === 'HIGH' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                            {driver.reliability}
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-slate-300">{driver.observation}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Blocker: Critical dependency + owner + downstream reach */}
+                <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+                  <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 mb-3">
+                    <AlertTriangle className="w-3 h-3 text-amber-400" />
+                    Blocker — Critical Dependencies
+                  </div>
+                  <div className="space-y-2">
+                    {project.dependencies.filter(d => d.status === 'CRITICAL').slice(0, 2).map((dep) => (
+                      <div key={dep.id} className="bg-rose-950/30 border border-rose-700/50 rounded-lg p-3 text-xs space-y-1">
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-white">{dep.type.replace('_', ' ')}</span>
+                          <span className="text-[10px] font-mono text-slate-400">via {dep.sourceSystem}</span>
+                        </div>
+                        <div className="text-[11px] text-slate-200">{dep.description}</div>
+                        <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1">
+                          <span>Owning: <strong className="text-white">{dep.ownerDepartment}</strong></span>
+                          <span>Pending: <strong className="text-amber-400">{dep.daysPending} days</strong></span>
+                        </div>
+                        <div className="text-[10px] text-amber-300">Downstream: {dep.downstreamImpact}</div>
+                      </div>
+                    ))}
+                    {project.dependencies.filter(d => d.status === 'CRITICAL').length === 0 && (
+                      <div className="text-xs text-slate-400 text-center py-3">No critical blockers detected.</div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Precedent + Action Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Precedent: Best comparable cases + outcome */}
+                <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+                  <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 mb-3">
+                    <History className="w-3 h-3 text-emerald-400" />
+                    Precedent — Best Comparable Cases
+                  </div>
+                  <div className="space-y-2">
+                    {project.precedents.slice(0, 2).map((prec) => (
+                      <div key={prec.id} className="bg-emerald-950/30 border border-emerald-800/50 rounded-lg p-3 text-xs space-y-1">
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-white">{prec.projectName}</span>
+                          <span className="text-[10px] font-bold text-emerald-400">{Math.round(prec.similarityScore * 100)}% match</span>
+                        </div>
+                        <div className="text-[11px] text-slate-300">{prec.finalOutcome}</div>
+                        <div className="text-[10px] text-emerald-300 font-medium">
+                          Intervention: {prec.successfulIntervention}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action: Recommended investigation priority + owner + due date */}
+                <div className="bg-slate-800/90 border border-amber-500/30 rounded-2xl p-5 shadow-sm">
+                  <div className="text-[10px] uppercase font-bold text-amber-400 flex items-center gap-1 mb-3">
+                    <Target className="w-3 h-3" />
+                    Action — Recommended Investigation
+                  </div>
+                  <div className="space-y-3">
+                    <div className="bg-amber-950/30 border border-amber-700/50 rounded-lg p-3 text-xs">
+                      <div className="font-bold text-white mb-1">Recommended Follow-up</div>
+                      <div className="text-slate-200">
+                        {project.dependencies.some(d => d.type === 'COMPENSATION_DISPUTE' && d.status === 'CRITICAL')
+                          ? 'Initiate compensation revision using Sec 26 top-50% deed parity formula'
+                          : project.dependencies.some(d => d.type === 'FOREST_CLEARANCE' && d.status === 'CRITICAL')
+                          ? 'Escalate PARIVESH clearance via inter-departmental nodal officer'
+                          : project.dependencies.some(d => d.type === 'GRAM_SABHA_CONSENT' && d.status === 'CRITICAL')
+                          ? 'Schedule Gram Sabha with clarified R&R site'
+                          : 'Review critical path and escalate if needed'}
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-[11px]">
+                      <div className="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                        <div className="text-slate-500">Owner</div>
+                        <div className="text-white font-semibold">{relevantDecisions[0]?.officerName || 'District Collector / CALA'}</div>
+                      </div>
+                      <div className="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                        <div className="text-slate-500">Due Date</div>
+                        <div className="text-white font-semibold">{relevantDecisions[0]?.targetDueDate || '2026-09-25'}</div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setActiveTab('DECISIONS')}
+                      className="w-full py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-colors"
+                    >
+                      <Scale className="w-3.5 h-3.5" />
+                      Open Action Queue
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Audit: Model/data snapshot + last decision event */}
+              <div className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-4">
+                <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 mb-2">
+                  <FileText className="w-3 h-3" />
+                  Audit Trail
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px] text-slate-400">
+                  <div>
+                    <span className="text-slate-500">Model:</span> <span className="text-slate-200">{project.modelOutput.modelVersion}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Last updated:</span> <span className="text-slate-200">{new Date(project.modelOutput.lastUpdated).toLocaleDateString()}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Snapshots:</span> <span className="text-slate-200">{snapshots.length} stored</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Pipeline runs:</span> <span className="text-slate-200">{pipelineRuns.length} completed</span>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {/* V7 TAB: DATA PASSPORTS */}
+      {activeTab === 'DATA_PASSPORTS' && (
+        <div className="space-y-5">
+          <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                  <GitBranch className="w-4 h-4 text-emerald-400" />
+                  Data Passport — Source Provenance & Trust
+                </h3>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Every imported dataset, file or API feed gets a Data Passport before it can influence a prediction.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {V7_DATA_PASSPORTS.map((passport) => (
+                <div key={passport.sourceIdentity} className="bg-slate-900/80 border border-slate-700/80 rounded-xl p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-white">{passport.sourceIdentity.replace(/_/g, ' ')}</span>
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border ${
+                      passport.reliabilityClass === 'VERIFIED_OPERATIONAL'
+                        ? 'bg-emerald-950 text-emerald-300 border-emerald-800'
+                        : passport.reliabilityClass === 'PUBLIC'
+                        ? 'bg-blue-950 text-blue-300 border-blue-800'
+                        : 'bg-amber-950 text-amber-300 border-amber-800'
+                    }`}>
+                      Tier {passport.tier}
+                    </span>
+                  </div>
+                  <div className="space-y-1.5 text-[11px] text-slate-400">
+                    <div className="flex justify-between">
+                      <span>Authority:</span>
+                      <span className="text-slate-200 text-right max-w-[60%] truncate">{passport.authority}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Schema:</span>
+                      <span className="text-slate-200">{passport.schemaVersion}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Refresh:</span>
+                      <span className="text-slate-200">{passport.refreshMode}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Coverage:</span>
+                      <span className="text-slate-200">{passport.coverage}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Freshness:</span>
+                      <span className="text-slate-200">{passport.freshness}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Records:</span>
+                      <span className="text-slate-200">{passport.recordsProcessed.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Errors:</span>
+                      <span className={passport.validationErrors > 0 ? 'text-amber-400' : 'text-emerald-400'}>
+                        {passport.validationErrors}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Conflict Policy:</span>
+                      <span className="text-slate-200">{passport.conflictPolicy.replace(/_/g, ' ')}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Privacy:</span>
+                      <span className="text-slate-200">{passport.privacyClass}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Point-in-time:</span>
+                      <span className={passport.effectiveTimeSupport ? 'text-emerald-400' : 'text-slate-500'}>
+                        {passport.effectiveTimeSupport ? 'Supported' : 'Not supported'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pipeline Runs */}
+          <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+            <h3 className="text-sm font-bold text-white flex items-center gap-2 mb-4">
+              <Activity className="w-4 h-4 text-emerald-400" />
+              Pipeline Runs — {pipelineRuns.length} recent
+            </h3>
+            <div className="space-y-3">
+              {pipelineRuns.slice(-3).reverse().map((run) => (
+                <div key={run.id} className="bg-slate-900/80 border border-slate-700/80 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                        run.overallStatus === 'COMPLETED' ? 'bg-emerald-500 text-white' : 'bg-amber-500 text-slate-950'
+                      }`}>
+                        {run.overallStatus}
+                      </span>
+                      <span className="text-xs text-slate-400">{run.sourceIdentity}</span>
+                    </div>
+                    <span className="text-[10px] font-mono text-slate-400">{run.trigger}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {run.steps.map((step) => (
+                      <div key={step.stage} className={`text-[10px] px-2 py-0.5 rounded border ${
+                        step.status === 'COMPLETED' ? 'bg-emerald-950 text-emerald-300 border-emerald-800' :
+                        step.status === 'RUNNING' ? 'bg-blue-950 text-blue-300 border-blue-800' :
+                        'bg-slate-800 text-slate-400 border-slate-700'
+                      }`}>
+                        {step.stage}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* V7 TAB: OVERVIEW & CRITICAL PATH (renamed to TAB 2) */}
       {activeTab === 'OVERVIEW' && (
         <div className="space-y-5">
           {/* Milestone Target & Evidence Health Header */}
