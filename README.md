@@ -7,7 +7,6 @@
 ### **Statutory Land Acquisition Foresight & Intervention Decision Engine**
 *Turning government records into early bottleneck foresight, foresight into prioritized executive action, and completed acquisitions into institutional memory.*
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/udbhavnc7/LUME)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8_Strict-blue.svg?logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.3-61dafb.svg?logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.4-646CFF.svg?logo=vite)](https://vitejs.dev/)
