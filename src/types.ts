@@ -1,5 +1,31 @@
 export type ProcessRoute = 'RFCTLARR_2013' | 'NH_ACT_SEC3' | 'STATE_SPECIFIC';
 
+export type FactClassification = 'SOURCED' | 'COMPUTED';
+
+export type FactReviewStatus = 'confirmed' | 'pending' | 'rejected';
+
+export interface SourcedFactProvenance {
+  classification: 'SOURCED';
+  sourceName: string;
+  sourceUrl: string;
+  asOf: string;
+  extractionMethod: string;
+  confidence: number;
+  reviewStatus: FactReviewStatus;
+}
+
+export interface ComputedFactProvenance {
+  classification: 'COMPUTED';
+  sourceName: string;
+  asOf: string;
+  inputFactIds: string[];
+  formulaVersion: string;
+  sampleSize?: number;
+  reviewStatus: FactReviewStatus;
+}
+
+export type FactProvenance = SourcedFactProvenance | ComputedFactProvenance;
+
 export type EvidenceHealthState = 'GREEN' | 'AMBER' | 'RED';
 
 export type ProjectCriticality = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'STANDARD';

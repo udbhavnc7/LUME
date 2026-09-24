@@ -1,5 +1,6 @@
-import { ArrowUpRight, ChevronRight, CircleDot, Clock3, Landmark, MapPinned, ShieldCheck, Sparkles, Target, TrendingUp, Upload, Zap } from 'lucide-react';
+import { ArrowUpRight, CircleDot, Clock3, Landmark, MapPinned, ShieldCheck, Sparkles, Target, TrendingUp, Upload, Zap } from 'lucide-react';
 import { DataMode, LandAcquisitionProject } from '../types';
+import { Fact } from './Fact';
 import { ThreeSignalField } from './ThreeSignalField';
 
 interface CommandCenterHeroProps {
@@ -36,7 +37,7 @@ export function CommandCenterHero({
           <span className="live-dot" />
           <span>{language === 'HI' ? 'राष्ट्रीय अधिग्रहण इंटेलिजेंस' : 'National acquisition intelligence'}</span>
           <span className="command-hero__eyebrow-divider" />
-          <span>{language === 'HI' ? 'अंतिम सिंक 08:42 IST' : 'Last sync 08:42 IST'}</span>
+          <span>{language === 'HI' ? 'स्रोत ताज़गी उपलब्ध नहीं' : 'Source freshness unavailable'}</span>
         </div>
         <h1 id="command-hero-title" className="command-hero__title">
           {language === 'HI' ? 'अगला बाधा पहले दिखाइए।' : 'See the next bottleneck before it arrives.'}
@@ -83,34 +84,34 @@ export function CommandCenterHero({
         </div>
         <div className="signal-field__label signal-field__label--bottom">
           <span className="signal-field__label-line" />
-          <span>52 NODES / 1,467 PRECEDENTS</span>
+          <Fact value="1,467 PRECEDENTS" provenance={null} absentLabel="PRECEDENT COUNT ABSENT" />
         </div>
         <div className="signal-field__status">
           <span className="signal-field__status-icon"><TrendingUp size={14} /></span>
-          <span><strong>+18.4%</strong> foresight coverage</span>
+          <span><Fact value="+18.4% foresight coverage" provenance={null} absentLabel="COVERAGE ABSENT" /></span>
         </div>
       </div>
 
       <div className="command-hero__metrics">
         <div className="hero-metric">
           <div className="hero-metric__icon hero-metric__icon--mint"><Landmark size={16} /></div>
-          <div><span>{language === 'HI' ? 'निगरानी में मूल्य' : 'Value monitored'}</span><strong>₹{budgetLabel} Cr</strong></div>
-          <small>+12.8%</small>
+          <div><span>{language === 'HI' ? 'निगरानी में मूल्य' : 'Value monitored'}</span><strong><Fact value={`₹${budgetLabel} Cr`} provenance={null} /></strong></div>
+          <small><Fact value="+12.8%" provenance={null} absentLabel="ABSENT" /></small>
         </div>
         <div className="hero-metric">
           <div className="hero-metric__icon hero-metric__icon--gold"><Clock3 size={16} /></div>
-          <div><span>{language === 'HI' ? 'घड़ी-जोखिम' : 'Clock risk'}</span><strong>{criticalAlertsCount} <em>alerts</em></strong></div>
-          <small className="is-gold">needs action</small>
+          <div><span>{language === 'HI' ? 'घड़ी-जोखिम' : 'Clock risk'}</span><strong><Fact value={`${criticalAlertsCount} alerts`} provenance={null} /></strong></div>
+          <small className="is-gold"><Fact value="needs action" provenance={null} absentLabel="ABSENT" /></small>
         </div>
         <div className="hero-metric">
           <div className="hero-metric__icon hero-metric__icon--coral"><ShieldCheck size={16} /></div>
-          <div><span>{language === 'HI' ? 'उच्च जोखिम' : 'High-risk corridors'}</span><strong>{highRiskCount} <em>of {projects.length}</em></strong></div>
-          <small className="is-coral">{averageRisk}% avg risk</small>
+          <div><span>{language === 'HI' ? 'उच्च जोखिम' : 'High-risk corridors'}</span><strong><Fact value={`${highRiskCount} of ${projects.length}`} provenance={null} /></strong></div>
+          <small className="is-coral"><Fact value={`${averageRisk}% avg risk`} provenance={null} absentLabel="ABSENT" /></small>
         </div>
         <div className="hero-metric">
           <div className="hero-metric__icon hero-metric__icon--blue"><Sparkles size={16} /></div>
-          <div><span>{language === 'HI' ? 'प्रभावित परिवार' : 'Families in scope'}</span><strong>{totalFamilies.toLocaleString()}</strong></div>
-          <small>across {projects.length} projects</small>
+          <div><span>{language === 'HI' ? 'प्रभावित परिवार' : 'Families in scope'}</span><strong><Fact value={totalFamilies.toLocaleString()} provenance={null} /></strong></div>
+          <small><Fact value={`across ${projects.length} projects`} provenance={null} absentLabel="ABSENT" /></small>
         </div>
       </div>
     </section>
