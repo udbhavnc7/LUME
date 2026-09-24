@@ -8,9 +8,9 @@
     "build": "next build",
     "preview": "npx -y serve out -s -l 3000",
     "start": "npx -y serve out -s -l 3000",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "test": "tsx --test tests/statutoryClockEngine.test.ts tests/compensationCalculator.test.ts tests/caseFileService.test.ts tests/importProvenance.test.ts tests/insufficientDataState.test.tsx tests/survivalService.test.ts tests/freshnessAndCaseFiles.test.tsx",
-    "lint": "tsc --noEmit && npm run lint:data-contract",
+    "lint": "npm run typecheck && npm run lint:data-contract",
     "lint:data-contract": "node scripts/check-data-contract.mjs"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
     "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
     "autoprefixer": "^10.4.21",
     "dotenv": "^17.2.3",
     "esbuild": "^0.25.0",

@@ -92,7 +92,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
 
           <div className="flex items-center gap-1.5 font-mono text-xs text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 px-3 py-1 rounded-full">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>52 NODES / 1,467 PRECEDENTS</span>
+            <span>DEMO SEED · PRECEDENTS ABSENT</span>
           </div>
         </div>
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { assetUrl } from '../utils/assetUrl';
 
 interface ThreeLumeConstellationProps {
   progress: number; // 0 to 100
@@ -77,7 +78,7 @@ export function ThreeLumeConstellation({ progress, onLetterComplete }: ThreeLume
   useEffect(() => {
     // Preload the official logo image
     const img = new Image();
-    img.src = '/logo-dark.png';
+    img.src = assetUrl('/logo-dark.png');
     img.onload = () => {
       logoImgRef.current = img;
     };

@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import '../src/index.css';
 import '../src/lume.css';
+import { assetUrl } from '../src/utils/assetUrl';
 
 export const metadata: Metadata = {
   title: 'LUME | Acquisition Intelligence',
   description: 'Evidence-weighted statutory land acquisition foresight and intervention command center.',
   applicationName: 'LUME',
-  manifest: '/manifest.webmanifest',
+  manifest: assetUrl('/manifest.webmanifest'),
   icons: {
-    icon: '/icon.svg',
-    apple: '/pwa-192x192.png',
+    icon: assetUrl('/icon.svg'),
+    apple: assetUrl('/pwa-192x192.png'),
   },
 };
 

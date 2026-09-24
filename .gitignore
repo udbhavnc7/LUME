@@ -8,6 +8,7 @@ coverage/
 !.env.example
 .next/
 out/
+dev-dist/
 tsconfig.tsbuildinfo
 next-env.d.ts
 *.tsbuildinfo

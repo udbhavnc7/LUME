@@ -30,19 +30,18 @@ export function CommandCenterHero({
     : 0;
   const budgetLabel = totalBudgetCr >= 1000 ? `${(totalBudgetCr / 1000).toFixed(1)}k` : totalBudgetCr.toFixed(0);
 
-  // Confirmed valid Fact Provenance metadata for audited statutory telemetry
   const statutoryProvenance: FactProvenance = {
     classification: 'COMPUTED',
-    sourceName: 'NHAI PMIS & MoRTH Land Acquisition Lake',
-    asOf: '2026-09-24T08:42:00.000Z',
+    sourceName: dataMode === 'DEMO' ? 'SIH26017 demo seed (DEMO mode)' : 'Local import (no backend sync)',
+    asOf: '2026-09-07T06:00:00Z',
     reviewStatus: 'confirmed',
-    formulaVersion: 'IPI-v9.4-statutory-agg',
-    inputFactIds: ['nhai-pmis-budget', 'land-survey-parcels', 'gazette-notif-dates'],
+    formulaVersion: 'hero-aggregate-v1',
+    inputFactIds: projects.map((project) => project.id),
     sampleSize: projects.length,
   };
 
-  const precedentCount = `${projects.length > 0 ? projects.length * 10 + 2 : 52} NODES / 1,467 PRECEDENTS`;
-  const syncTime = '08:42 IST';
+  const precedentCount = `${projects.reduce((sum, project) => sum + project.precedents.length, 0)} DEMO PRECEDENTS`;
+  const syncLabel = dataMode === 'DEMO' ? 'DEMO seed' : 'local session only';
 
   return (
     <section className="command-hero relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-slate-950 via-slate-900 to-[#071a16] shadow-2xl p-6 md:p-8" aria-labelledby="command-hero-title">
@@ -56,7 +55,7 @@ export function CommandCenterHero({
           <span>{language === 'HI' ? 'राष्ट्रीय अधिग्रहण इंटेलिजेंस' : 'National Acquisition Intelligence'}</span>
           <span className="command-hero__eyebrow-divider text-slate-600">•</span>
           <span className="text-emerald-300/80 font-mono">
-            {language === 'HI' ? `अंतिम सिंक ${syncTime}` : `Live Sync ${syncTime}`}
+            {language === 'HI' ? `डेटा मोड ${syncLabel}` : `Data mode: ${syncLabel}`}
           </span>
         </div>
 
@@ -142,7 +141,7 @@ export function CommandCenterHero({
           </div>
           <div className="signal-field__status flex items-center gap-1.5 px-2.5 py-1 bg-emerald-950/60 border border-emerald-500/40 rounded-lg backdrop-blur-md text-emerald-300 text-xs font-bold font-mono">
             <TrendingUp size={13} className="text-emerald-400" />
-            <Fact value="+18.4% foresight coverage" provenance={statutoryProvenance} />
+            <span>{dataMode === 'DEMO' ? 'DEMO seed data' : 'local data only'}</span>
           </div>
         </div>
       </div>
@@ -162,7 +161,7 @@ export function CommandCenterHero({
               <Fact value={`₹${budgetLabel} Cr`} provenance={statutoryProvenance} />
             </strong>
             <small className="text-[11px] font-semibold text-emerald-400 font-mono bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/50">
-              +12.8%
+              {projects.length} projects
             </small>
           </div>
         </div>

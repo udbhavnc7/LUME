@@ -1,4 +1,5 @@
 import React from 'react';
+import { assetUrl } from '../utils/assetUrl';
 import { 
   Building2, 
   Users, 
@@ -91,12 +92,12 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => onSelectView('OFFICER')}>
           <div className="h-10 px-3 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shadow-sm logo-badge">
             <img
-              src="/logo-dark.png"
+              src={assetUrl('/logo-dark.png')}
               alt="LUME Logo"
               className="h-6 w-auto object-contain app-logo-dark"
             />
             <img
-              src="/logo-light.png"
+              src={assetUrl('/logo-light.png')}
               alt="LUME Logo"
               className="h-6 w-auto object-contain app-logo-light hidden"
             />

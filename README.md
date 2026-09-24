@@ -233,7 +233,7 @@ Click the badge below to deploy to Render as an edge-cached static site with aut
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/udbhavnc7/LUME)
 
-### Blueprint Specification ([render.yaml](file:///c:/Users/LENOVO/LUME/LUME/render.yaml))
+### Blueprint Specification ([render.yaml](./render.yaml))
 LUME includes an infrastructure-as-code blueprint pre-configured with:
 - **Build Command**: `npm run build`
 - **Publish Directory**: `./out`
