@@ -69,30 +69,30 @@ const TrustAndModelRegistry = ({ language })=>{
             method: 'GET',
             path: '/api/v1/predictions/{project_id}',
             category: 'Predictive Inference',
-            description: 'Outputs calibrated delay probability, next evaluated milestone, predicted overrun days, SHAP feature attributions, and evidence health flag.',
+            description: 'Outputs delay probability (when reference set allows), next milestone, predicted overrun days, evidence drivers, and evidence health flag. Abstains with INSUFFICIENT_DATA when n is below threshold.',
             sampleResponse: {
                 project_id: 'proj-nh44-blr-hyd',
-                calibrated_delay_probability: 0.78,
-                brier_score_confidence: 0.082,
+                delay_probability: 0.78,
+                brier_score: null,
                 next_evaluated_milestone: 'Section 3D Final Acquisition Declaration',
                 horizon_days: 60,
                 predicted_miss_days: 74,
                 evidence_health: 'AMBER',
                 evidence_notes: 'PARIVESH wildlife NOC pending stage-1 review',
-                shap_drivers: [
+                evidence_drivers: [
                     {
                         feature: 'valuation_gap_pct',
-                        shap_contribution: +0.31,
+                        contribution: +0.31,
                         description: 'Circle rate vs market ask exceeds 36%'
                     },
                     {
                         feature: 'pending_noc_western_ghats',
-                        shap_contribution: +0.26,
+                        contribution: +0.26,
                         description: 'Forest/wildlife clearance in pending queue'
                     },
                     {
                         feature: 'joint_khata_disputes',
-                        shap_contribution: +0.14,
+                        contribution: +0.14,
                         description: '18 succession disputes unresolved'
                     }
                 ]
@@ -229,7 +229,7 @@ const TrustAndModelRegistry = ({ language })=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xs text-slate-300 leading-relaxed max-w-4xl",
-                        children: language === 'HI' ? 'ल्यूमे कोई ब्लैक-बॉक्स एआई नहीं है। यह 4.2 मिलियन भारतीय अदालती मामलों (arXiv:2307.16285) पर कैलिब्रेटेड ग्रेडिएंट-बूस्टेड डिसिजन ट्री और मोनोटोनिक दिशा-निर्देशों पर आधारित है।' : 'LUME does not use generic black-box AI. It applies gradient-boosted decision trees calibrated against peer-reviewed empirical benchmarks on 4.2 million Indian court cases, strictly constrained to ensure monotonic directional realism.'
+                        children: language === 'HI' ? 'ल्यूमे काल्पनिक मॉडल मेट्रिक्स नहीं दिखाता। सांविधिक घड़ियाँ निश्चित हैं; भविष्यवाणी केवल पर्याप्त स्रोत-पुष्ट संदर्भ-सेट पर दिखती है, अन्यथा अनिर्णय।' : 'LUME never shows fixed marketing accuracy numbers. Statutory clocks are deterministic. Prediction metrics appear only as COMPUTED outputs from confirmed evaluation runs with sample sizes, or as INSUFFICIENT_DATA.'
                     }, void 0, false, {
                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                         lineNumber: 215,
@@ -397,7 +397,7 @@ const TrustAndModelRegistry = ({ language })=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-[11px] text-slate-400 mt-1",
-                                        children: "arXiv:2307.16285 on 4.2M Indian cases"
+                                        children: "Awaiting confirmed evaluation run (n required)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                         lineNumber: 293,
@@ -421,8 +421,8 @@ const TrustAndModelRegistry = ({ language })=>{
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-2xl font-black text-emerald-400 mt-1",
-                                        children: "84.2%"
+                                        className: "text-2xl font-black text-amber-400 mt-1",
+                                        children: "INSUFFICIENT_DATA"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                         lineNumber: 300,
@@ -454,8 +454,8 @@ const TrustAndModelRegistry = ({ language })=>{
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "text-2xl font-black text-white mt-1",
-                                        children: "0.082"
+                                        className: "text-2xl font-black text-amber-400 mt-1",
+                                        children: "ABSENT"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                         lineNumber: 308,
@@ -463,7 +463,7 @@ const TrustAndModelRegistry = ({ language })=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-[11px] text-slate-400 mt-1",
-                                        children: "Platt / Isotonic calibrated probabilities"
+                                        children: "Shown only after a confirmed calibration run"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                         lineNumber: 309,
@@ -548,29 +548,13 @@ const TrustAndModelRegistry = ({ language })=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 className: "text-white",
-                                                children: "Academic Citation:"
+                                                children: "Academic context (not a LUME metric):"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                                 lineNumber: 334,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
-                                            " Bhatnagar, M. et al., ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                                children: '"Predicting delays in Indian lower courts using AutoML and Decision Forests,"'
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
-                                                lineNumber: 334,
-                                                columnNumber: 98
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            " arXiv:2307.16285 (2023) and ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                                children: "Journal of Big Data"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
-                                                lineNumber: 334,
-                                                columnNumber: 213
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            " (2025). Validated that gradient-boosted decision trees on Indian case metadata achieve superior calibration and explainability compared to unconstrained deep neural networks."
+                                            " Related public literature on Indian court delay prediction (e.g. arXiv:2307.16285) is cited for background only. LUME does not restate those papers' accuracy figures as LUME performance."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
@@ -675,7 +659,7 @@ const TrustAndModelRegistry = ({ language })=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-slate-300 text-[11px]",
-                                                children: "Recent, complete records synced from authorized registries (NGDRS, LACRRIS, PARIVESH) within supported training distribution. Normal probability display with SHAP trace."
+                                                children: "Recent, complete records synced from authorized registries (NGDRS, LACRRIS, PARIVESH) within supported training distribution. Normal probability display with evidence-driver trace when reference set allows."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                                 lineNumber: 360,
@@ -1519,11 +1503,11 @@ const TrustAndModelRegistry = ({ language })=>{
                             {
                                 num: '03',
                                 title: 'Empirical Machine Learning Rigor',
-                                proof: 'Calibrated gradient-boosted decision trees bench-marked against 4.2M Indian court cases (arXiv:2307.16285), Platt-calibrated to Brier score 0.082.'
+                                proof: 'Deterministic statutory clocks plus abstaining prediction layer. Metrics computed from confirmed runs with n and intervals — no fixed Brier/accuracy marketing numbers.'
                             },
                             {
                                 num: '04',
-                                title: 'SHAP Explainability & Trust',
+                                title: 'Evidence Explainability & Trust',
                                 proof: 'Every prediction accompanied by ranked feature contributions with underlying evidence field pointers and reliability tags.'
                             },
                             {
@@ -2063,8 +2047,8 @@ const TrustAndModelRegistry = ({ language })=>{
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-white font-medium",
-                                                        children: "1,467 corridors"
+                                                        className: "text-amber-400 font-medium",
+                                                        children: "ABSENT (no confirmed source sync)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                                         lineNumber: 779,
@@ -2088,8 +2072,8 @@ const TrustAndModelRegistry = ({ language })=>{
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-emerald-400 font-medium",
-                                                        children: "94.2%"
+                                                        className: "text-amber-400 font-medium",
+                                                        children: "ABSENT"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                                         lineNumber: 783,
@@ -2113,8 +2097,8 @@ const TrustAndModelRegistry = ({ language })=>{
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-emerald-400 font-medium",
-                                                        children: "None detected"
+                                                        className: "text-amber-400 font-medium",
+                                                        children: "Unknown until sync"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                                         lineNumber: 787,
@@ -2192,7 +2176,7 @@ const TrustAndModelRegistry = ({ language })=>{
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: "Predict delay probability with calibrated confidence"
+                                                                children: "Predict delay probability only when reference set n allows; otherwise abstain"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/TrustAndModelRegistry.tsx",
                                                                 lineNumber: 805,
@@ -2537,7 +2521,7 @@ const TrustAndModelRegistry = ({ language })=>{
                                                 lineNumber: 867,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
-                                            " All model metrics, accuracy scores, and performance data shown are either from published research (arXiv:2307.16285) or clearly labeled as simulated. LUME never fabricates live integration claims."
+                                            " All model metrics are either COMPUTED from confirmed evaluation runs with sample size, or shown as ABSENT / INSUFFICIENT_DATA. No fixed accuracy or Brier marketing numbers are shipped."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/TrustAndModelRegistry.tsx",

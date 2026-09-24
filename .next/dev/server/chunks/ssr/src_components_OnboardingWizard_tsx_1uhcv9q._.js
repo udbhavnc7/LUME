@@ -954,7 +954,7 @@ const OnboardingWizard = ({ initialPrefs, onComplete, onSkip })=>{
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    children: "Machine Learning Delay Prevention (arXiv:2307.16285)"
+                                                    children: "Statutory Clock & Evidence Delay Prevention"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/OnboardingWizard.tsx",
                                                     lineNumber: 470,
@@ -968,7 +968,7 @@ const OnboardingWizard = ({ initialPrefs, onComplete, onSkip })=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xs text-slate-300 leading-relaxed",
-                                            children: "Trained on 4.2 million Indian court cases and registry timelines. Flags forest clearances (PARIVESH), revenue mutation delays, and valuation gaps before RFCTLARR Section 11 (12-month SIA clock) lapses."
+                                            children: "Surfaces statutory clock risk and evidence gaps from confirmed facts. Prediction metrics appear only when computed from a sufficient reference set; otherwise the UI shows INSUFFICIENT_DATA."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/OnboardingWizard.tsx",
                                             lineNumber: 472,

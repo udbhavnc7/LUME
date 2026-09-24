@@ -28,9 +28,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ModelEv
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ManagementAttentionView$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ManagementAttentionView.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DataManagementView$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/DataManagementView.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CommandCenterHero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/CommandCenterHero.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/data/demoData.ts [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$seedData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/data/seedData.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-question-mark.js [app-client] (ecmascript) <export default as HelpCircle>");
 ;
 var _s = __turbopack_context__.k.signature();
+;
 ;
 ;
 ;
@@ -132,11 +135,11 @@ function App() {
     const [decisionLogs, setDecisionLogs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         "App.useState": ()=>{
             const saved = readStoredValue('lume_decision_logs');
-            return saved ? JSON.parse(saved) : MOCK_DECISION_LOGS;
+            return saved ? JSON.parse(saved) : __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$seedData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DEMO_DECISION_LOGS"];
         }
     }["App.useState"]);
-    const [projects] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(MOCK_PROJECTS);
-    const [parcels] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(MOCK_CITIZEN_PARCELS);
+    const [projects] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$seedData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DEMO_PROJECTS"]);
+    const [parcels] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$seedData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DEMO_CITIZEN_PARCELS"]);
     // When splash completes, check if onboarding is needed
     const handleSplashComplete = ()=>{
         setShowSplash(false);
@@ -296,7 +299,7 @@ function App() {
                 onComplete: handleSplashComplete
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 290,
+                lineNumber: 293,
                 columnNumber: 9
             }, this),
             showOnboarding && !showSplash && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$OnboardingWizard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["OnboardingWizard"], {
@@ -312,7 +315,7 @@ function App() {
                 onSkip: ()=>setShowOnboarding(false)
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 298,
+                lineNumber: 301,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HelpSupportModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HelpSupportModal"], {
@@ -329,7 +332,7 @@ function App() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 313,
+                lineNumber: 316,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AlertsFeedDrawer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertsFeedDrawer"], {
@@ -342,7 +345,7 @@ function App() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 328,
+                lineNumber: 331,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$IPIConfiguratorModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IPIConfiguratorModal"], {
@@ -353,14 +356,14 @@ function App() {
                 language: language
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 339,
+                lineNumber: 342,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$OfflineStatutoryBar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["OfflineStatutoryBar"], {
                 language: language
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 348,
+                lineNumber: 351,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Header"], {
@@ -386,7 +389,7 @@ function App() {
                 onOpenAlerts: ()=>setIsAlertsOpen(true)
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 351,
+                lineNumber: 354,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ContextRoleClarifier$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ContextRoleClarifier"], {
@@ -401,7 +404,7 @@ function App() {
                 onSelectRole: setActiveRole
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 375,
+                lineNumber: 378,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -417,7 +420,7 @@ function App() {
                         defaultTab: selectedProjectTab
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 392,
+                        lineNumber: 395,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                         children: [
@@ -431,7 +434,7 @@ function App() {
                                 onOpenImport: ()=>setIsImportWizardOpen(true)
                             }, void 0, false, {
                                 fileName: "[project]/src/App.tsx",
-                                lineNumber: 403,
+                                lineNumber: 406,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PortfolioCommandCenter$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PortfolioCommandCenter"], {
@@ -444,13 +447,13 @@ function App() {
                                 onOpenImport: ()=>setIsImportWizardOpen(true)
                             }, void 0, false, {
                                 fileName: "[project]/src/App.tsx",
-                                lineNumber: 412,
+                                lineNumber: 415,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 402,
+                        lineNumber: 405,
                         columnNumber: 13
                     }, this)),
                     currentView === 'CITIZEN' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CitizenTransparencyPortal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CitizenTransparencyPortal"], {
@@ -460,7 +463,7 @@ function App() {
                         onSwitchToOfficer: ()=>setCurrentView('OFFICER')
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 427,
+                        lineNumber: 430,
                         columnNumber: 11
                     }, this),
                     currentView === 'GIS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$GISIntelligenceView$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["GISIntelligenceView"], {
@@ -469,7 +472,7 @@ function App() {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 437,
+                        lineNumber: 440,
                         columnNumber: 11
                     }, this),
                     currentView === 'ANALYTICS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ComparativeAnalyticsView$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ComparativeAnalyticsView"], {
@@ -477,14 +480,14 @@ function App() {
                         onSelectProject: handleSelectProject
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 446,
+                        lineNumber: 449,
                         columnNumber: 11
                     }, this),
                     currentView === 'TRUST_REGISTRY' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrustAndModelRegistry$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TrustAndModelRegistry"], {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 454,
+                        lineNumber: 457,
                         columnNumber: 11
                     }, this),
                     currentView === 'MODEL_EVALUATION' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ModelEvaluationScreen$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ModelEvaluationScreen"], {
@@ -492,7 +495,7 @@ function App() {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 461,
+                        lineNumber: 464,
                         columnNumber: 11
                     }, this),
                     currentView === 'MANAGEMENT_ATTENTION' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ManagementAttentionView$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ManagementAttentionView"], {
@@ -501,7 +504,7 @@ function App() {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 469,
+                        lineNumber: 472,
                         columnNumber: 11
                     }, this),
                     currentView === 'DATA' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DataManagementView$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DataManagementView"], {
@@ -513,13 +516,13 @@ function App() {
                         onToggleDataMode: handleToggleDataMode
                     }, void 0, false, {
                         fileName: "[project]/src/App.tsx",
-                        lineNumber: 478,
+                        lineNumber: 481,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 388,
+                lineNumber: 391,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DataImportWizard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DataImportWizard"], {
@@ -529,7 +532,7 @@ function App() {
                 language: language
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 490,
+                lineNumber: 493,
                 columnNumber: 7
             }, this),
             isTourActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DemoTourGuide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DemoTourGuide"], {
@@ -540,7 +543,7 @@ function App() {
                 onGoToStep: handleGoToTourStep
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 499,
+                lineNumber: 502,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -556,7 +559,7 @@ function App() {
                                     children: "L"
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 512,
+                                    lineNumber: 515,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -568,7 +571,7 @@ function App() {
                                                     children: "LUME • Land-Acquisition Uncertainty Intervention-Management Engine"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/App.tsx",
-                                                    lineNumber: 517,
+                                                    lineNumber: 520,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -576,13 +579,13 @@ function App() {
                                                     children: "GovTech 2026"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/App.tsx",
-                                                    lineNumber: 518,
+                                                    lineNumber: 521,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/App.tsx",
-                                            lineNumber: 516,
+                                            lineNumber: 519,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -590,19 +593,19 @@ function App() {
                                             children: "Ministry of Rural Development • RFCTLARR 2013 & NHAI Sec 3 Statutory Grounding"
                                         }, void 0, false, {
                                             fileName: "[project]/src/App.tsx",
-                                            lineNumber: 522,
+                                            lineNumber: 525,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 515,
+                                    lineNumber: 518,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/App.tsx",
-                            lineNumber: 511,
+                            lineNumber: 514,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -616,27 +619,27 @@ function App() {
                                             className: "w-3.5 h-3.5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/App.tsx",
-                                            lineNumber: 533,
+                                            lineNumber: 536,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: language === 'HI' ? 'सहायता एवं अक्सर पूछे जाने वाले प्रश्न' : 'FAQs & Helpline'
                                         }, void 0, false, {
                                             fileName: "[project]/src/App.tsx",
-                                            lineNumber: 534,
+                                            lineNumber: 537,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 529,
+                                    lineNumber: 532,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "•"
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 536,
+                                    lineNumber: 539,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -645,14 +648,14 @@ function App() {
                                     children: language === 'HI' ? 'आईपीआई फॉर्मूला (F09)' : 'IPI Formula'
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 537,
+                                    lineNumber: 540,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "•"
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 543,
+                                    lineNumber: 546,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -661,14 +664,14 @@ function App() {
                                     children: language === 'HI' ? 'पुनः परिचय (Onboarding)' : 'Revisit Setup'
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 544,
+                                    lineNumber: 547,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "•"
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 550,
+                                    lineNumber: 553,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -677,50 +680,50 @@ function App() {
                                     children: language === 'HI' ? 'ल्युमे परिचय स्क्रीन' : 'Replay Splash'
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 551,
+                                    lineNumber: 554,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "•"
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 557,
+                                    lineNumber: 560,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>setCurrentView('TRUST_REGISTRY'),
                                     className: "text-teal-400 hover:underline cursor-pointer",
-                                    children: "arXiv:2307.16285 Grounding"
+                                    children: "Data & Provenance"
                                 }, void 0, false, {
                                     fileName: "[project]/src/App.tsx",
-                                    lineNumber: 558,
+                                    lineNumber: 561,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/App.tsx",
-                            lineNumber: 528,
+                            lineNumber: 531,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/App.tsx",
-                    lineNumber: 510,
+                    lineNumber: 513,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/App.tsx",
-                lineNumber: 509,
+                lineNumber: 512,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/App.tsx",
-        lineNumber: 287,
+        lineNumber: 290,
         columnNumber: 5
     }, this);
 }
-_s(App, "rAaKzTF43STpmJhDQRmsFIp/dvg=");
+_s(App, "lLG39PDC6aZHyWiVDF69H/L5Onc=");
 _c = App;
 var _c;
 __turbopack_context__.k.register(_c, "App");
@@ -3551,7 +3554,7 @@ const CORE_STATUTORY_PROVISIONS = [
         title: 'Preliminary Notification Publication',
         mandate: 'Publication of preliminary notification in Official Gazette, two daily newspapers (one in regional language), and Gram Panchayat office.',
         limitationPeriodDays: 365,
-        penaltyOnLapse: 'If Section 19(1) declaration is not issued within 12 months, the entire acquisition proceeding lapses.',
+        penaltyOnLapse: 'If no declaration under Section 19 is made within 12 months of Section 11 publication, the preliminary notification lapses (Section 19(7)). VERIFY against bare Act text.',
         applicableMultiplier: 'Market Value benchmark date frozen at date of Sec 11 publication.'
     },
     {
@@ -3579,9 +3582,9 @@ const CORE_STATUTORY_PROVISIONS = [
         statute: 'RFCTLARR_2013',
         section: 'Section 25',
         title: 'Collector’s Award Limitation Period',
-        mandate: 'Collector shall make an award within a period of twelve months from the date of the publication of the declaration under Section 19.',
-        limitationPeriodDays: 365,
-        penaltyOnLapse: 'Lapse of entire proceedings under Section 25 proviso if award not pronounced within 12 months.'
+        mandate: 'Award must be made within two years from the date of publication of the declaration under Section 19; this is a separate clock from the Section 19(7) twelve-month declaration clock. VERIFY against bare Act text before operational reliance.',
+        limitationPeriodDays: 730,
+        penaltyOnLapse: 'Proceedings lapse under Section 25 if the award is not made within two years of the Section 19 declaration.'
     },
     {
         id: 'rfctlarr-sec30',

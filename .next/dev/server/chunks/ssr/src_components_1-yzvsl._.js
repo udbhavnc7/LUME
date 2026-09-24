@@ -778,7 +778,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Fact$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fact"], {
-                                value: "1,467 PRECEDENTS",
+                                value: String(projects.length),
                                 provenance: null,
                                 absentLabel: "PRECEDENT COUNT ABSENT"
                             }, void 0, false, {
@@ -1244,7 +1244,7 @@ const ContextRoleClarifier = ({ currentView, onSelectView, language, onOpenHelp,
             tag: language === 'HI' ? 'पारदर्शिता व ऑडिट मोड' : 'Auditable ML Grounding',
             color: 'slate',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"],
-            summary: language === 'HI' ? '4.2 मिलियन भारतीय अदालती मामलों (arXiv:2307.16285) पर आधारित मॉडल का वैज्ञानिक प्रमाण एवं मोनोटोनिक संवेदनशीलता।' : 'Empirical model benchmarking against 4.2M judicial and infrastructure records (arXiv:2307.16285) with strict monotonic constraints.',
+            summary: language === 'HI' ? 'स्रोत-सत्यापित सांविधिक घड़ियाँ, निर्दिष्ट अनिश्चितता, और प्रमाण-सहित चालक — बिना आविष्कृत मॉडल मेट्रिक्स के।' : 'Evidence-weighted delay drivers with explicit abstention when reference sets are too small — no invented accuracy claims.',
             alternatePrompt: language === 'HI' ? 'सक्रिय परियोजनाओं का प्रबंधन करें:' : 'Manage active corridor acquisitions:',
             alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
             alternateTarget: 'OFFICER'
@@ -1734,7 +1734,7 @@ const ContextRoleClarifier = ({ currentView, onSelectView, language, onOpenHelp,
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                             className: "text-white block mb-1",
-                                            children: "2. Delay Forecasting (SHAP)"
+                                            children: "2. Delay Forecasting (Evidence Drivers)"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ContextRoleClarifier.tsx",
                                             lineNumber: 377,
@@ -1859,9 +1859,9 @@ const TOUR_STEPS = [
         id: 3,
         timeWindow: '3:00 - 4:00',
         title: '4. Evidence Trace & Precedent Memory',
-        subhead: 'Proving Why with SHAP and Comparable History',
-        pitchScript: '"Every prediction carries provenance. The SHAP attribution engine traces back to NGDRS sale deeds showing a 36% compensation gap, and High Court writ petitions. In the Precedent tab, we see the Khed-Chiplun 4-laning corridor faced this exact issue 95 km away and resolved it via Lok Adalat."',
-        actionHint: 'Check the Evidence Health indicator (GREEN) and the Precedent match similarity of 92%.',
+        subhead: 'Proving Why with Evidence Drivers and Comparable History',
+        pitchScript: '"Every prediction carries provenance. Evidence drivers link to source fields with reliability tags. The Precedent / backtest tab lists reconstructed case files with URLs and hashes — empty until verified gazette data is loaded."',
+        actionHint: 'Check Evidence Health and the case-file registry size (live count, ABSENT until verified).',
         targetView: 'OFFICER',
         targetTab: 'EVIDENCE',
         targetProjectId: 'proj-nh48-pune-satara'
@@ -4435,8 +4435,8 @@ const Header = ({ currentView, onSelectView, language, onToggleLanguage, fontSiz
                         className: "flex items-center gap-3 text-[11px]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "hidden sm:inline text-emerald-400 font-medium",
-                                children: "● Precedent Graph: 1,467+ Corridors"
+                                className: "hidden sm:inline text-slate-400 font-medium",
+                                children: "● Precedent registry: pending verified case files"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
                                 lineNumber: 72,
@@ -4517,8 +4517,8 @@ const Header = ({ currentView, onSelectView, language, onToggleLanguage, fontSiz
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center gap-2",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium",
-                                            children: "v9.0"
+                                            className: "text-xs px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded font-mono font-medium",
+                                            children: "Pilot-ready prototype"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
                                             lineNumber: 103,
@@ -5998,7 +5998,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertTriangle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/triangle-alert.js [app-ssr] (ecmascript) <export default as AlertTriangle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-ssr] (ecmascript) <export default as ShieldCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$services$2f$modelEvaluationService$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/services/modelEvaluationService.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/data/mockDataV7.ts [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/data/demoDataV7.ts [app-ssr] (ecmascript) <locals>");
 ;
 ;
 ;
@@ -6008,7 +6008,7 @@ const ModelEvaluationScreen = ({ projects, language })=>{
     const historicalSnapshots = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         const snapshots = {};
         for (const p of projects){
-            snapshots[p.id] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectSnapshots"])(p.id);
+            snapshots[p.id] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectSnapshots"])(p.id);
         }
         return snapshots;
     }, [
@@ -7307,7 +7307,7 @@ const SplashScreen = ({ onComplete, language = 'EN' })=>{
                 }
                 const next = prev + 12;
                 if (next > 40 && next <= 70) {
-                    setPhaseText(language === 'HI' ? 'उपग्रह एनडीवीआई एवं अदालती पूर्ववृत्त विश्लेषण...' : 'Calibrating Sentinel-2 NDVI & 4.2M judicial delay baselines...');
+                    setPhaseText(language === 'HI' ? 'स्रोत-सत्यापित समयरेखा एवं ताज़गी जाँच...' : 'Checking source provenance & data freshness...');
                 } else if (next > 70) {
                     setPhaseText(language === 'HI' ? 'पारदर्शिता एवं निर्णय प्रणाली तैयार है।' : 'Readying citizen transparency & officer command center...');
                 }
@@ -7458,8 +7458,8 @@ const SplashScreen = ({ onComplete, language = 'EN' })=>{
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-xs px-3 py-0.5 rounded-full shadow",
-                                children: "v9.0"
+                                className: "bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono font-bold text-xs px-3 py-0.5 rounded-full shadow",
+                                children: "Pilot-ready prototype"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/SplashScreen.tsx",
                                 lineNumber: 72,

@@ -64,7 +64,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useIndexedDB
 const DocumentVerificationModule = ({ project, language, onAddDecisionLog, onOpenCitizenView })=>{
     // Find matching preset record for current project or default to the first
     const projectPreset = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PRESET_SCANNED_DOCUMENTS"].find((d)=>d.projectId === project.id) || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PRESET_SCANNED_DOCUMENTS"][0];
-    const projectDbRecord = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_DATABASE_RECORDS"][project.id] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_DATABASE_RECORDS"]['proj-nh48-pune-satara'];
+    const projectDbRecord = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEMO_DATABASE_RECORDS"][project.id] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEMO_DATABASE_RECORDS"]['proj-nh48-pune-satara'];
     // Main UI State
     const [currentMode, setCurrentMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('SIDE_BY_SIDE');
     const [documentsList, setDocumentsList] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PRESET_SCANNED_DOCUMENTS"]);
@@ -198,7 +198,7 @@ const DocumentVerificationModule = ({ project, language, onAddDecisionLog, onOpe
     // Update records when project changes
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const matchedDoc = documentsList.find((d)=>d.projectId === project.id) || documentsList[0];
-        const matchedDb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_DATABASE_RECORDS"][project.id] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_DATABASE_RECORDS"]['proj-nh48-pune-satara'];
+        const matchedDb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEMO_DATABASE_RECORDS"][project.id] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEMO_DATABASE_RECORDS"]['proj-nh48-pune-satara'];
         setActiveDocument(matchedDoc);
         setDatabaseRecord(matchedDb);
     }, [
@@ -387,7 +387,7 @@ const DocumentVerificationModule = ({ project, language, onAddDecisionLog, onOpe
     // Select a preset land record
     const handleSelectPreset = (doc)=>{
         setActiveDocument(doc);
-        const matchedDb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_DATABASE_RECORDS"][doc.projectId] || databaseRecord;
+        const matchedDb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEMO_DATABASE_RECORDS"][doc.projectId] || databaseRecord;
         setDatabaseRecord(matchedDb);
         setCapturedPhotoUrl(doc.imageThumbnailUrl || null);
         setCurrentMode('SIDE_BY_SIDE');
@@ -1571,7 +1571,7 @@ const DocumentVerificationModule = ({ project, language, onAddDecisionLog, onOpe
                                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>{
                                                 setActiveDocument(doc);
-                                                const matchingDb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_DATABASE_RECORDS"][doc.projectId] || projectDbRecord;
+                                                const matchingDb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$documentVerificationData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEMO_DATABASE_RECORDS"][doc.projectId] || projectDbRecord;
                                                 setDatabaseRecord(matchingDb);
                                             },
                                             className: `px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all whitespace-nowrap ${isSelected ? 'bg-teal-500 text-slate-950 font-extrabold shadow-sm ring-2 ring-teal-400/50' : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-700/80 hover:border-slate-600'}`,

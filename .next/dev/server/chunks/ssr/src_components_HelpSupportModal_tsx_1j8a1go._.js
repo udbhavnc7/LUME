@@ -70,7 +70,7 @@ const HelpSupportModal = ({ isOpen, onClose, language, onOpenTutorial, onReplayS
         {
             category: 'LAW',
             q: language === 'HI' ? 'ल्युमे का एआई मॉडल किस डेटा पर आधारित है?' : 'What empirical dataset grounds the LUME Machine Learning model?',
-            a: language === 'HI' ? 'ल्युमे का मॉडल भाटनागर एवं सहयोगियों (arXiv:2307.16285 / जर्नल ऑफ बिग डेटा 2025) के शोध पर आधारित है, जिसे 4.2 मिलियन भारतीय अदालती और इंफ्रास्ट्रक्चर मामलों पर परखा गया है। यह 84.2% सटीकता के साथ विलंब का पूर्वानुमान करता है और मोनोटोनिक बाधाओं के साथ काम करता है।' : 'LUME is benchmarked against peer-reviewed empirical research by Bhatnagar et al. (arXiv:2307.16285, 2023 / Journal of Big Data 2025) across 4.2 million Indian lower court and infrastructure delay records. It achieves 84.2% holdout accuracy and enforces monotonic non-increasing risk constraints.'
+            a: language === 'HI' ? 'ल्युमे सांविधिक घड़ियाँ निश्चित गणना से निकालता है और जब संदर्भ डेटा अपर्याप्त हो तो स्पष्ट रूप से अनिर्णय दिखाता है। कोई आविष्कृत सटीकता या प्रशिक्षण दावा प्रदर्शित नहीं होता।' : 'LUME computes statutory clocks deterministically and abstains when evidence coverage is too low. Accuracy, Brier, and calibration metrics show only when computed from confirmed source data — never as fixed marketing numbers.'
         }
     ];
     // Troubleshooting Solutions
@@ -1067,7 +1067,7 @@ const HelpSupportModal = ({ isOpen, onClose, language, onOpenTutorial, onReplayS
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-slate-400 leading-snug",
-                                                    children: 'Navigate to "Officer Intelligence" > Pick an acquisition corridor > Inspect SHAP drivers > Open "Scenario Lab" to test compensation adjustments > Commit to Decision Log.'
+                                                    children: 'Navigate to "Officer Intelligence" > Pick an acquisition corridor > Inspect evidence drivers > Open "Scenario Lab" to test compensation adjustments > Commit to Decision Log.'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/HelpSupportModal.tsx",
                                                     lineNumber: 507,

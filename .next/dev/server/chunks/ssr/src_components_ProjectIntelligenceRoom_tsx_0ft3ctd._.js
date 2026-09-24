@@ -32,7 +32,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript) <export default as BookOpen>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$canvas$2d$confetti$2f$dist$2f$confetti$2e$module$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/canvas-confetti/dist/confetti.module.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DocumentVerificationModule$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/DocumentVerificationModule.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/data/mockDataV7.ts [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/data/demoDataV7.ts [app-ssr] (ecmascript) <locals>");
 ;
 ;
 ;
@@ -42,13 +42,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e
 const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionLog, onOpenCitizenView, language, defaultTab = 'CASE_PULSE' })=>{
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(defaultTab);
     // V7: Load CasePulse data for this project
-    const casePulse = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectCasePulse"])(project.id), [
+    const casePulse = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectCasePulse"])(project.id), [
         project.id
     ]);
-    const snapshots = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectSnapshots"])(project.id), [
+    const snapshots = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectSnapshots"])(project.id), [
         project.id
     ]);
-    const pipelineRuns = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectPipelineRuns"])(project.id), [
+    const pipelineRuns = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["getProjectPipelineRuns"])(project.id), [
         project.id
     ]);
     // Scenario Lab State
@@ -324,7 +324,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         lineNumber: 218,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                    project.processRoute === 'NH_ACT_SEC3' ? 'NHAI 336-Day Clock' : 'RFCTLARR Sec 11 12-Month Clock'
+                                                    project.processRoute === 'NH_ACT_SEC3' ? 'NHAI 336-Day Policy Benchmark' : 'Project stage clock (demo elapsed)'
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
@@ -351,6 +351,63 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
                                                 lineNumber: 224,
                                                 columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "mt-2 space-y-1 text-[10px]",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex justify-between gap-2 text-slate-400",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                children: "Sec 19(7) 12-month declaration"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 229,
+                                                                columnNumber: 19
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-amber-400 font-bold",
+                                                                children: "ABSENT · RULE_NOT_VERIFIED"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 230,
+                                                                columnNumber: 19
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 228,
+                                                        columnNumber: 17
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex justify-between gap-2 text-slate-400",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                children: "Sec 25 2-year award (separate)"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 233,
+                                                                columnNumber: 19
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-amber-400 font-bold",
+                                                                children: "ABSENT · RULE_NOT_VERIFIED"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 234,
+                                                                columnNumber: 19
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 232,
+                                                        columnNumber: 17
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                lineNumber: 227,
+                                                columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
@@ -366,7 +423,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Predicted Miss"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 245,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -377,7 +434,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 236,
+                                                lineNumber: 246,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -389,13 +446,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 237,
+                                                lineNumber: 247,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 230,
+                                        lineNumber: 240,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
@@ -418,7 +475,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "Statutory Process Sequence & Current Progression"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 244,
+                                lineNumber: 254,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -476,7 +533,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 267,
+                                                lineNumber: 277,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -484,7 +541,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: stage.label
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 268,
+                                                lineNumber: 278,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             stage.active && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -492,25 +549,25 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "● Active Stage"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 270,
+                                                lineNumber: 280,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, stage.id, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 259,
+                                        lineNumber: 269,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0));
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 247,
+                                lineNumber: 257,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 243,
+                        lineNumber: 253,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -586,33 +643,33 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 className: "w-3.5 h-3.5"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 307,
+                                lineNumber: 317,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: tab.label
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 308,
+                                lineNumber: 318,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             tab.highlight && !isSelected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 310,
+                                lineNumber: 320,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, tab.id, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 296,
+                        lineNumber: 306,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0));
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 280,
+                lineNumber: 290,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'CASE_PULSE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -633,7 +690,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: project.projectCode
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 327,
+                                                    lineNumber: 337,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -641,7 +698,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: project.processRoute.replace('_', ' ')
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 330,
+                                                    lineNumber: 340,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -653,7 +710,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 333,
+                                                    lineNumber: 343,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -661,13 +718,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: project.criticality
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 336,
+                                                    lineNumber: 346,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 326,
+                                            lineNumber: 336,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -677,7 +734,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3.5 h-3.5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 345,
+                                                    lineNumber: 355,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Last reviewed: ",
@@ -687,13 +744,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 344,
+                                            lineNumber: 354,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 325,
+                                    lineNumber: 335,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -709,14 +766,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             className: "w-3 h-3 text-emerald-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 354,
+                                                            lineNumber: 364,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Current Stage"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 353,
+                                                    lineNumber: 363,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -724,7 +781,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: project.currentStageLabel
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 357,
+                                                    lineNumber: 367,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -739,19 +796,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 359,
+                                                            lineNumber: 369,
                                                             columnNumber: 34
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 358,
+                                                    lineNumber: 368,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 352,
+                                            lineNumber: 362,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -764,14 +821,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             className: "w-3 h-3 text-amber-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 365,
+                                                            lineNumber: 375,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Next Milestone"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 364,
+                                                    lineNumber: 374,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -779,7 +836,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: project.modelOutput.nextMilestoneName
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 368,
+                                                    lineNumber: 378,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -791,19 +848,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: project.modelOutput.targetDeadlineDate
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 380,
                                                             columnNumber: 31
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 379,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 363,
+                                            lineNumber: 373,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -816,14 +873,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             className: "w-3 h-3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 382,
+                                                            lineNumber: 392,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         daysLeft <= 0 ? 'OVERDUE' : 'Days Remaining'
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 379,
+                                                    lineNumber: 389,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -831,7 +888,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: daysLeft > 0 ? daysLeft : Math.abs(daysLeft)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 385,
+                                                    lineNumber: 395,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -844,25 +901,25 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 390,
+                                                    lineNumber: 400,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 374,
+                                            lineNumber: 384,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 351,
+                                    lineNumber: 361,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 324,
+                            lineNumber: 334,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -878,14 +935,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3 text-rose-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 401,
+                                                    lineNumber: 411,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Risk — Next-Milestone Miss Probability"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 400,
+                                            lineNumber: 410,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -899,7 +956,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Delay Risk"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 412,
+                                                            lineNumber: 422,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -910,7 +967,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 413,
+                                                            lineNumber: 423,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -922,13 +979,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 414,
+                                                            lineNumber: 424,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 405,
+                                                    lineNumber: 415,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -942,14 +999,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: project.modelOutput.predictedMissDays
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 418,
+                                                                    lineNumber: 428,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 " predicted miss days"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 417,
+                                                            lineNumber: 427,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -964,13 +1021,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 421,
+                                                                    lineNumber: 431,
                                                                     columnNumber: 34
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 420,
+                                                            lineNumber: 430,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -982,13 +1039,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: project.modelOutput.modelCoverage
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 424,
+                                                                    lineNumber: 434,
                                                                     columnNumber: 35
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 423,
+                                                            lineNumber: 433,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -999,7 +1056,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: "Risk Trajectory (last 6 snapshots)"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 428,
+                                                                    lineNumber: 438,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1012,36 +1069,36 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                             title: `${Math.round(point.probability * 100)}% on ${new Date(point.date).toLocaleDateString()}`
                                                                         }, idx, false, {
                                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                            lineNumber: 431,
+                                                                            lineNumber: 441,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 429,
+                                                                    lineNumber: 439,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 427,
+                                                            lineNumber: 437,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 416,
+                                                    lineNumber: 426,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 414,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 399,
+                                    lineNumber: 409,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1054,14 +1111,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3 text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 450,
+                                                    lineNumber: 460,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Evidence Health"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 449,
+                                            lineNumber: 459,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1075,7 +1132,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 454,
+                                                    lineNumber: 464,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1083,13 +1140,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Health Score"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 463,
+                                                    lineNumber: 473,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 453,
+                                            lineNumber: 463,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1097,7 +1154,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: project.modelOutput.evidenceHealthReason
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 465,
+                                            lineNumber: 475,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1108,7 +1165,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "What is missing or stale:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 469,
+                                                    lineNumber: 479,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1121,14 +1178,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     className: "w-3 h-3 text-emerald-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 473,
+                                                                    lineNumber: 483,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 "All primary registry feeds synced within 3 days"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 472,
+                                                            lineNumber: 482,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         project.modelOutput.evidenceHealth === 'AMBER' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1140,14 +1197,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                             className: "w-3 h-3 text-amber-400"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                            lineNumber: 480,
+                                                                            lineNumber: 490,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         "eCourts case metadata not natively tagged with project IDs"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 479,
+                                                                    lineNumber: 489,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1157,20 +1214,20 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                             className: "w-3 h-3 text-amber-400"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                            lineNumber: 484,
+                                                                            lineNumber: 494,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         "Satellite NDVI refresh pending (3-day delay)"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 483,
+                                                                    lineNumber: 493,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 478,
+                                                            lineNumber: 488,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1180,7 +1237,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     className: "w-3 h-3 text-blue-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 490,
+                                                                    lineNumber: 500,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 "Model version: ",
@@ -1188,31 +1245,31 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 489,
+                                                            lineNumber: 499,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 470,
+                                                    lineNumber: 480,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 468,
+                                            lineNumber: 478,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 448,
+                                    lineNumber: 458,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 398,
+                            lineNumber: 408,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1228,14 +1285,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 502,
+                                                    lineNumber: 512,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "What Changed? — Intelligence Diff"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 501,
+                                            lineNumber: 511,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1243,13 +1300,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Comparing current vs last reviewed snapshot"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 505,
+                                            lineNumber: 515,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 500,
+                                    lineNumber: 510,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 casePulse.whatChanged.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1257,7 +1314,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                     children: "No material changes detected since last review."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 510,
+                                    lineNumber: 520,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-2",
@@ -1272,7 +1329,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: diff.significance
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 522,
+                                                            lineNumber: 532,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1280,13 +1337,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: diff.fieldLabel
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 529,
+                                                            lineNumber: 539,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 521,
+                                                    lineNumber: 531,
                                                     columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1297,7 +1354,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Was:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 532,
+                                                            lineNumber: 542,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         " ",
@@ -1307,7 +1364,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "→"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 533,
+                                                            lineNumber: 543,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1315,7 +1372,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: String(diff.currentValue)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 534,
+                                                            lineNumber: 544,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1327,30 +1384,30 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 535,
+                                                            lineNumber: 545,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 531,
+                                                    lineNumber: 541,
                                                     columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, idx, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 516,
+                                            lineNumber: 526,
                                             columnNumber: 23
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 514,
+                                    lineNumber: 524,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 499,
+                            lineNumber: 509,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,14 +1423,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3 text-blue-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 548,
+                                                    lineNumber: 558,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Why — Top 3 Risk Drivers"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 547,
+                                            lineNumber: 557,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1394,7 +1451,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 555,
+                                                                    lineNumber: 565,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1405,13 +1462,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 556,
+                                                                    lineNumber: 566,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 554,
+                                                            lineNumber: 564,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1425,20 +1482,20 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                             children: driver.evidenceSource
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                            lineNumber: 561,
+                                                                            lineNumber: 571,
                                                                             columnNumber: 41
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 561,
+                                                                    lineNumber: 571,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "•"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 562,
+                                                                    lineNumber: 572,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1448,14 +1505,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 563,
+                                                                    lineNumber: 573,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "•"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 564,
+                                                                    lineNumber: 574,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1463,13 +1520,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: driver.reliability
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 565,
+                                                                    lineNumber: 575,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 560,
+                                                            lineNumber: 570,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1477,24 +1534,24 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: driver.observation
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 569,
+                                                            lineNumber: 579,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, idx, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 553,
+                                                    lineNumber: 563,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 551,
+                                            lineNumber: 561,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 546,
+                                    lineNumber: 556,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1507,14 +1564,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3 text-amber-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 578,
+                                                    lineNumber: 588,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Blocker — Critical Dependencies"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 577,
+                                            lineNumber: 587,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1531,7 +1588,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                         children: dep.type.replace('_', ' ')
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                        lineNumber: 585,
+                                                                        lineNumber: 595,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1542,13 +1599,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                        lineNumber: 586,
+                                                                        lineNumber: 596,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 584,
+                                                                lineNumber: 594,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1556,7 +1613,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: dep.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 588,
+                                                                lineNumber: 598,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1570,13 +1627,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                                 children: dep.ownerDepartment
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                                lineNumber: 590,
+                                                                                lineNumber: 600,
                                                                                 columnNumber: 41
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                        lineNumber: 590,
+                                                                        lineNumber: 600,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1590,19 +1647,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                                lineNumber: 591,
+                                                                                lineNumber: 601,
                                                                                 columnNumber: 42
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                        lineNumber: 591,
+                                                                        lineNumber: 601,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 589,
+                                                                lineNumber: 599,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1613,13 +1670,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 593,
+                                                                lineNumber: 603,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, dep.id, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 583,
+                                                        lineNumber: 593,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))),
                                                 project.dependencies.filter((d)=>d.status === 'CRITICAL').length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1627,25 +1684,25 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "No critical blockers detected."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 597,
+                                                    lineNumber: 607,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 581,
+                                            lineNumber: 591,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 576,
+                                    lineNumber: 586,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 544,
+                            lineNumber: 554,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1661,14 +1718,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3 text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 608,
+                                                    lineNumber: 618,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Precedent — Best Comparable Cases"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 607,
+                                            lineNumber: 617,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1684,7 +1741,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: prec.projectName
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 615,
+                                                                    lineNumber: 625,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1695,13 +1752,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 616,
+                                                                    lineNumber: 626,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 614,
+                                                            lineNumber: 624,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1709,7 +1766,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: prec.finalOutcome
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 618,
+                                                            lineNumber: 628,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1720,24 +1777,24 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 619,
+                                                            lineNumber: 629,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, prec.id, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 613,
+                                                    lineNumber: 623,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 611,
+                                            lineNumber: 621,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 606,
+                                    lineNumber: 616,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1750,14 +1807,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-3 h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 630,
+                                                    lineNumber: 640,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Action — Recommended Investigation"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 629,
+                                            lineNumber: 639,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1771,7 +1828,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Recommended Follow-up"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 635,
+                                                            lineNumber: 645,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1779,13 +1836,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: project.dependencies.some((d)=>d.type === 'COMPENSATION_DISPUTE' && d.status === 'CRITICAL') ? 'Initiate compensation revision using Sec 26 top-50% deed parity formula' : project.dependencies.some((d)=>d.type === 'FOREST_CLEARANCE' && d.status === 'CRITICAL') ? 'Escalate PARIVESH clearance via inter-departmental nodal officer' : project.dependencies.some((d)=>d.type === 'GRAM_SABHA_CONSENT' && d.status === 'CRITICAL') ? 'Schedule Gram Sabha with clarified R&R site' : 'Review critical path and escalate if needed'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 636,
+                                                            lineNumber: 646,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 634,
+                                                    lineNumber: 644,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1799,7 +1856,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: "Owner"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 648,
+                                                                    lineNumber: 658,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1807,13 +1864,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: relevantDecisions[0]?.officerName || 'District Collector / CALA'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 649,
+                                                                    lineNumber: 659,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 647,
+                                                            lineNumber: 657,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1824,7 +1881,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: "Due Date"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 652,
+                                                                    lineNumber: 662,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1832,19 +1889,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: relevantDecisions[0]?.targetDueDate || '2026-09-25'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 653,
+                                                                    lineNumber: 663,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 651,
+                                                            lineNumber: 661,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 646,
+                                                    lineNumber: 656,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1855,32 +1912,32 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             className: "w-3.5 h-3.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 660,
+                                                            lineNumber: 670,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Open Action Queue"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 656,
+                                                    lineNumber: 666,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 633,
+                                            lineNumber: 643,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 628,
+                                    lineNumber: 638,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 604,
+                            lineNumber: 614,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1893,14 +1950,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             className: "w-3 h-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 670,
+                                            lineNumber: 680,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Audit Trail"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 669,
+                                    lineNumber: 679,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1913,7 +1970,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Model:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 675,
+                                                    lineNumber: 685,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " ",
@@ -1922,13 +1979,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: project.modelOutput.modelVersion
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 675,
+                                                    lineNumber: 685,
                                                     columnNumber: 68
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 674,
+                                            lineNumber: 684,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1938,7 +1995,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Last updated:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 678,
+                                                    lineNumber: 688,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " ",
@@ -1947,13 +2004,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: new Date(project.modelOutput.lastUpdated).toLocaleDateString()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 678,
+                                                    lineNumber: 688,
                                                     columnNumber: 75
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 677,
+                                            lineNumber: 687,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1963,7 +2020,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Snapshots:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 681,
+                                                    lineNumber: 691,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " ",
@@ -1975,13 +2032,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 681,
+                                                    lineNumber: 691,
                                                     columnNumber: 72
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 680,
+                                            lineNumber: 690,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1991,7 +2048,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Pipeline runs:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 684,
+                                                    lineNumber: 694,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " ",
@@ -2003,36 +2060,36 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 684,
+                                                    lineNumber: 694,
                                                     columnNumber: 76
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 683,
+                                            lineNumber: 693,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 673,
+                                    lineNumber: 683,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 668,
+                            lineNumber: 678,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                    lineNumber: 322,
+                    lineNumber: 332,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 319,
+                lineNumber: 329,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'DATA_PASSPORTS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2052,14 +2109,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-4 h-4 text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 700,
+                                                    lineNumber: 710,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Data Passport — Source Provenance & Trust"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 699,
+                                            lineNumber: 709,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2067,23 +2124,23 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Every imported dataset, file or API feed gets a Data Passport before it can influence a prediction."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 703,
+                                            lineNumber: 713,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 698,
+                                    lineNumber: 708,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 697,
+                                lineNumber: 707,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
-                                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$mockDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["V7_DATA_PASSPORTS"].map((passport)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$demoDataV7$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["V7_DATA_PASSPORTS"].map((passport)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "bg-slate-900/80 border border-slate-700/80 rounded-xl p-4 space-y-3",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2094,7 +2151,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: passport.sourceIdentity.replace(/_/g, ' ')
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 712,
+                                                        lineNumber: 722,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2105,13 +2162,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 713,
+                                                        lineNumber: 723,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 711,
+                                                lineNumber: 721,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2124,7 +2181,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Authority:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 725,
+                                                                lineNumber: 735,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2132,13 +2189,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: passport.authority
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 726,
+                                                                lineNumber: 736,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 724,
+                                                        lineNumber: 734,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2148,7 +2205,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Schema:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 729,
+                                                                lineNumber: 739,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2156,13 +2213,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: passport.schemaVersion
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 730,
+                                                                lineNumber: 740,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 728,
+                                                        lineNumber: 738,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2172,7 +2229,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Refresh:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 733,
+                                                                lineNumber: 743,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2180,13 +2237,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: passport.refreshMode
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 734,
+                                                                lineNumber: 744,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 732,
+                                                        lineNumber: 742,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2196,7 +2253,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Coverage:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 737,
+                                                                lineNumber: 747,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2204,13 +2261,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: passport.coverage
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 738,
+                                                                lineNumber: 748,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 736,
+                                                        lineNumber: 746,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2220,7 +2277,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Freshness:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 741,
+                                                                lineNumber: 751,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2228,13 +2285,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: passport.freshness
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 742,
+                                                                lineNumber: 752,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 740,
+                                                        lineNumber: 750,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2244,60 +2301,12 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Records:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 745,
-                                                                columnNumber: 23
-                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-slate-200",
-                                                                children: passport.recordsProcessed.toLocaleString()
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 746,
-                                                                columnNumber: 23
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 744,
-                                                        columnNumber: 21
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "flex justify-between",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: "Errors:"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 749,
-                                                                columnNumber: 23
-                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: passport.validationErrors > 0 ? 'text-amber-400' : 'text-emerald-400',
-                                                                children: passport.validationErrors
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 750,
-                                                                columnNumber: 23
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 748,
-                                                        columnNumber: 21
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "flex justify-between",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: "Conflict Policy:"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
                                                                 lineNumber: 755,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "text-slate-200",
-                                                                children: passport.conflictPolicy.replace(/_/g, ' ')
+                                                                children: passport.recordsProcessed.toLocaleString()
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
                                                                 lineNumber: 756,
@@ -2313,15 +2322,15 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "flex justify-between",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: "Privacy:"
+                                                                children: "Errors:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
                                                                 lineNumber: 759,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-slate-200",
-                                                                children: passport.privacyClass
+                                                                className: passport.validationErrors > 0 ? 'text-amber-400' : 'text-emerald-400',
+                                                                children: passport.validationErrors
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
                                                                 lineNumber: 760,
@@ -2337,10 +2346,58 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "flex justify-between",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                children: "Conflict Policy:"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 765,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-slate-200",
+                                                                children: passport.conflictPolicy.replace(/_/g, ' ')
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 766,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 764,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex justify-between",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                children: "Privacy:"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 769,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-slate-200",
+                                                                children: passport.privacyClass
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 770,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 768,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex justify-between",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Point-in-time:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 763,
+                                                                lineNumber: 773,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2348,36 +2405,36 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: passport.effectiveTimeSupport ? 'Supported' : 'Not supported'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 764,
+                                                                lineNumber: 774,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 762,
+                                                        lineNumber: 772,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 723,
+                                                lineNumber: 733,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, passport.sourceIdentity, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 710,
+                                        lineNumber: 720,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 708,
+                                lineNumber: 718,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 696,
+                        lineNumber: 706,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2390,7 +2447,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-4 h-4 text-emerald-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 777,
+                                        lineNumber: 787,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Pipeline Runs — ",
@@ -2399,7 +2456,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 776,
+                                lineNumber: 786,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2418,7 +2475,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: run.overallStatus
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 785,
+                                                                lineNumber: 795,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2426,13 +2483,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: run.sourceIdentity
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 790,
+                                                                lineNumber: 800,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 784,
+                                                        lineNumber: 794,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2440,13 +2497,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: run.trigger
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 792,
+                                                        lineNumber: 802,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 783,
+                                                lineNumber: 793,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2456,35 +2513,35 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: step.stage
                                                     }, step.stage, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 796,
+                                                        lineNumber: 806,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 794,
+                                                lineNumber: 804,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, run.id, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 782,
+                                        lineNumber: 792,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 780,
+                                lineNumber: 790,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 775,
+                        lineNumber: 785,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 695,
+                lineNumber: 705,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'OVERVIEW' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2501,7 +2558,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Targeted Upcoming Milestone"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 818,
+                                        lineNumber: 828,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2509,7 +2566,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: project.modelOutput.nextMilestoneName
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 819,
+                                        lineNumber: 829,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2519,7 +2576,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 className: "w-3.5 h-3.5 text-emerald-400"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 823,
+                                                lineNumber: 833,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2530,25 +2587,25 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: project.modelOutput.targetDeadlineDate
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 824,
+                                                        lineNumber: 834,
                                                         columnNumber: 43
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 824,
+                                                lineNumber: 834,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 822,
+                                        lineNumber: 832,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 817,
+                                lineNumber: 827,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2559,7 +2616,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Evidence Health & Registry Provenance"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 829,
+                                        lineNumber: 839,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2574,7 +2631,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 831,
+                                                lineNumber: 841,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2582,13 +2639,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: project.modelOutput.modelCoverage
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 838,
+                                                lineNumber: 848,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 830,
+                                        lineNumber: 840,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2596,13 +2653,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: project.modelOutput.evidenceHealthReason
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 840,
+                                        lineNumber: 850,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 828,
+                                lineNumber: 838,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2613,7 +2670,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "RFCTLARR Sec 10 Multi-Crop Exposure"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 846,
+                                        lineNumber: 856,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2623,12 +2680,12 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: project.multiCropIrrigatedExposure ? 'FLAGGED: Irrigated Multi-Crop' : 'Non-Irrigated / Single Crop'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 848,
+                                            lineNumber: 858,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 847,
+                                        lineNumber: 857,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2640,19 +2697,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 856,
+                                        lineNumber: 866,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 845,
+                                lineNumber: 855,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 816,
+                        lineNumber: 826,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2670,14 +2727,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "w-4 h-4 text-emerald-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 867,
+                                                        lineNumber: 877,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     "Critical Path Dependency Intelligence (F06)"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 866,
+                                                lineNumber: 876,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2685,13 +2742,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Isolates conditions blocking downstream milestone execution, with owning departments and statutory age."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 870,
+                                                lineNumber: 880,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 865,
+                                        lineNumber: 875,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2702,13 +2759,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 874,
+                                        lineNumber: 884,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 864,
+                                lineNumber: 874,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2727,7 +2784,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: dep.status
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 891,
+                                                                lineNumber: 901,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2735,7 +2792,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: dep.type.replace('_', ' ')
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 896,
+                                                                lineNumber: 906,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2746,13 +2803,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 897,
+                                                                lineNumber: 907,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 890,
+                                                        lineNumber: 900,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2762,7 +2819,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 className: "w-3.5 h-3.5 text-amber-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 903,
+                                                                lineNumber: 913,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2776,13 +2833,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                        lineNumber: 904,
+                                                                        lineNumber: 914,
                                                                         columnNumber: 38
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 904,
+                                                                lineNumber: 914,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             dep.statutoryLimitDays && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2793,19 +2850,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 906,
+                                                                lineNumber: 916,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 902,
+                                                        lineNumber: 912,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 889,
+                                                lineNumber: 899,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2813,7 +2870,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: dep.description
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 911,
+                                                lineNumber: 921,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2826,7 +2883,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Owning Department: "
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 917,
+                                                                lineNumber: 927,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2834,13 +2891,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: dep.ownerDepartment
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 918,
+                                                                lineNumber: 928,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 916,
+                                                        lineNumber: 926,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2850,7 +2907,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Downstream Reach: "
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 921,
+                                                                lineNumber: 931,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2858,42 +2915,42 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: dep.downstreamImpact
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 922,
+                                                                lineNumber: 932,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 920,
+                                                        lineNumber: 930,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 915,
+                                                lineNumber: 925,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, dep.id, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 881,
+                                        lineNumber: 891,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 879,
+                                lineNumber: 889,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 863,
+                        lineNumber: 873,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 814,
+                lineNumber: 824,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'EVIDENCE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2913,28 +2970,28 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-4 h-4 text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 939,
+                                                    lineNumber: 949,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
-                                                "SHAP Explainability & Source Evidence Trace (F04 / F11)"
+                                                "Evidence Drivers & Source Trace (F04 / F11)"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 938,
+                                            lineNumber: 948,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xs text-slate-400",
-                                            children: "Every prediction carries verifiable evidence. Feature weights mirror the validated Indian court delay methodology (Bhatnagar et al. arXiv:2307.16285)."
+                                            children: "Every driver links to evidence fields with reliability tags. Attribution method is labeled explicitly — no SHAP claim unless a SHAP-compatible model is shipped."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 942,
+                                            lineNumber: 952,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 937,
+                                    lineNumber: 947,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2945,13 +3002,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 946,
+                                    lineNumber: 956,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 936,
+                            lineNumber: 946,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2962,7 +3019,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                     children: "Evidence Chain:"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 953,
+                                    lineNumber: 963,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2970,13 +3027,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                     children: "Prediction → Driver → Source Registry Field → Effective Timestamp → Freshness → Feature Attribution → Action Context"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 954,
+                                    lineNumber: 964,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 952,
+                            lineNumber: 962,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3001,7 +3058,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 967,
+                                                            lineNumber: 977,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -3009,13 +3066,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: driver.humanDescription
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 970,
+                                                            lineNumber: 980,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 966,
+                                                    lineNumber: 976,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3024,19 +3081,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "text-[11px] font-mono text-slate-400",
                                                             children: [
-                                                                "SHAP: ",
+                                                                "Contribution: ",
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                     className: isPositive ? 'text-rose-400' : 'text-emerald-400',
                                                                     children: isPositive ? `+${driver.contribution.toFixed(2)}` : driver.contribution.toFixed(2)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 977,
-                                                                    columnNumber: 33
+                                                                    lineNumber: 987,
+                                                                    columnNumber: 41
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 976,
+                                                            lineNumber: 986,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3047,19 +3104,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 981,
+                                                            lineNumber: 991,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 975,
+                                                    lineNumber: 985,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 965,
+                                            lineNumber: 975,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3071,12 +3128,12 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 993,
+                                                lineNumber: 1003,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 992,
+                                            lineNumber: 1002,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3089,7 +3146,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Source:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1002,
+                                                            lineNumber: 1012,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         " ",
@@ -3098,13 +3155,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: driver.evidenceSource
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1002,
+                                                            lineNumber: 1012,
                                                             columnNumber: 73
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1001,
+                                                    lineNumber: 1011,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3114,7 +3171,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Field:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1005,
+                                                            lineNumber: 1015,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         " ",
@@ -3123,13 +3180,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: driver.evidenceField
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1005,
+                                                            lineNumber: 1015,
                                                             columnNumber: 72
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1004,
+                                                    lineNumber: 1014,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3139,7 +3196,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Freshness:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1008,
+                                                            lineNumber: 1018,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         " ",
@@ -3148,13 +3205,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: driver.freshness
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1008,
+                                                            lineNumber: 1018,
                                                             columnNumber: 76
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1007,
+                                                    lineNumber: 1017,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3164,7 +3221,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Observation:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1011,
+                                                            lineNumber: 1021,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         " ",
@@ -3173,42 +3230,42 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: driver.observation
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1011,
+                                                            lineNumber: 1021,
                                                             columnNumber: 78
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1010,
+                                                    lineNumber: 1020,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1000,
+                                            lineNumber: 1010,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, idx, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 964,
+                                    lineNumber: 974,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0));
                             })
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 958,
+                            lineNumber: 968,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                    lineNumber: 935,
+                    lineNumber: 945,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 934,
+                lineNumber: 944,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'PRECEDENTS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3227,14 +3284,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 className: "w-4 h-4 text-emerald-400"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1029,
+                                                lineNumber: 1039,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Precedent Intelligence & Institutional Memory (F07 / Section 13)"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1028,
+                                        lineNumber: 1038,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3242,207 +3299,242 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Retrieves comparable completed historical acquisitions based on analytical similarity, statutory route, and proximity — showing what delayed them and how they resolved."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1032,
+                                        lineNumber: 1042,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1027,
+                                lineNumber: 1037,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 1026,
+                            lineNumber: 1036,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-1 gap-4",
-                            children: project.precedents.map((prec)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-slate-900/80 border border-slate-700/80 rounded-xl p-4 space-y-3",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "bg-slate-900/60 border border-slate-700 rounded-xl p-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-col sm:flex-row sm:items-center justify-between gap-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center gap-2",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-xs font-bold text-white",
-                                                                    children: prec.projectName
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 1044,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-[11px] text-emerald-400 font-bold bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full",
-                                                                    children: [
-                                                                        Math.round(prec.similarityScore * 100),
-                                                                        "% Similarity Match"
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 1045,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1043,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "text-xs text-slate-400 mt-0.5",
-                                                            children: [
-                                                                prec.stateDistrict,
-                                                                " • ",
-                                                                prec.authority,
-                                                                " • ",
-                                                                prec.distanceKm,
-                                                                " km away • Resolved ",
-                                                                prec.resolvedYear
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1049,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1042,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-xs text-slate-300 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 text-right",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "text-[10px] text-slate-400",
-                                                            children: "Initial Delay Experienced"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1055,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                            className: "text-amber-400",
-                                                            children: [
-                                                                prec.initialDelayMonths,
-                                                                " Months Overrun"
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1056,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1054,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
+                                            className: "text-xs font-bold text-white mb-1",
+                                            children: "Verified reconstructed case files"
+                                        }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1041,
-                                            columnNumber: 19
+                                            lineNumber: 1050,
+                                            columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-wrap items-center gap-1.5",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-[10px] uppercase font-bold text-slate-500",
-                                                    children: "Shared Factors:"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1062,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                prec.matchingFactors.map((factor, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700",
-                                                        children: factor
-                                                    }, idx, false, {
-                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1064,
-                                                        columnNumber: 23
-                                                    }, ("TURBOPACK compile-time value", void 0)))
-                                            ]
-                                        }, void 0, true, {
+                                            className: "text-2xl font-black text-amber-400",
+                                            children: "ABSENT"
+                                        }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1061,
-                                            columnNumber: 19
+                                            lineNumber: 1051,
+                                            columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-emerald-950/30 border border-emerald-800/50 rounded-lg p-3 text-xs space-y-1",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "font-bold text-emerald-400 flex items-center gap-1",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
-                                                            className: "w-3.5 h-3.5"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1073,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        "What Successfully Unblocked It:"
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1072,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-slate-200",
-                                                    children: prec.successfulIntervention
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1076,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-[11px] text-emerald-300 font-medium pt-1",
-                                                    children: [
-                                                        "Outcome: ",
-                                                        prec.finalOutcome,
-                                                        " (Estimated ₹",
-                                                        Math.abs(prec.costImpactCr),
-                                                        " Cr interest carry avoided)"
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1079,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-[11px] text-slate-400 mt-1",
+                                            children: "Live registry count and backtest appear only when case files are reconstructed from primary sources (URL + SHA-256 per event)."
+                                        }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1071,
-                                            columnNumber: 19
+                                            lineNumber: 1052,
+                                            columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
-                                }, prec.id, true, {
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1040,
-                                    columnNumber: 17
-                                }, ("TURBOPACK compile-time value", void 0)))
-                        }, void 0, false, {
+                                    lineNumber: 1049,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                project.precedents.map((prec)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-slate-900/80 border border-slate-700/80 rounded-xl p-4 space-y-3",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex flex-col sm:flex-row sm:items-center justify-between gap-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex items-center gap-2",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-xs font-bold text-white",
+                                                                        children: prec.projectName
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                        lineNumber: 1061,
+                                                                        columnNumber: 25
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-[11px] text-emerald-400 font-bold bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full",
+                                                                        children: [
+                                                                            Math.round(prec.similarityScore * 100),
+                                                                            "% Similarity Match"
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                        lineNumber: 1062,
+                                                                        columnNumber: 25
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 1060,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "text-xs text-slate-400 mt-0.5",
+                                                                children: [
+                                                                    prec.stateDistrict,
+                                                                    " • ",
+                                                                    prec.authority,
+                                                                    " • ",
+                                                                    prec.distanceKm,
+                                                                    " km away • Resolved ",
+                                                                    prec.resolvedYear
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 1066,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 1059,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-xs text-slate-300 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 text-right",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "text-[10px] text-slate-400",
+                                                                children: "Initial Delay Experienced"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 1072,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                                className: "text-amber-400",
+                                                                children: [
+                                                                    prec.initialDelayMonths,
+                                                                    " Months Overrun"
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 1073,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 1071,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                lineNumber: 1058,
+                                                columnNumber: 19
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex flex-wrap items-center gap-1.5",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-[10px] uppercase font-bold text-slate-500",
+                                                        children: "Shared Factors:"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 1079,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    prec.matchingFactors.map((factor, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700",
+                                                            children: factor
+                                                        }, idx, false, {
+                                                            fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                            lineNumber: 1081,
+                                                            columnNumber: 23
+                                                        }, ("TURBOPACK compile-time value", void 0)))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                lineNumber: 1078,
+                                                columnNumber: 19
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "bg-emerald-950/30 border border-emerald-800/50 rounded-lg p-3 text-xs space-y-1",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "font-bold text-emerald-400 flex items-center gap-1",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+                                                                className: "w-3.5 h-3.5"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                                lineNumber: 1090,
+                                                                columnNumber: 23
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            "What Successfully Unblocked It:"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 1089,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-slate-200",
+                                                        children: prec.successfulIntervention
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 1093,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-[11px] text-emerald-300 font-medium pt-1",
+                                                        children: [
+                                                            "Outcome: ",
+                                                            prec.finalOutcome,
+                                                            " (Estimated ₹",
+                                                            Math.abs(prec.costImpactCr),
+                                                            " Cr interest carry avoided)"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                        lineNumber: 1096,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                                lineNumber: 1088,
+                                                columnNumber: 19
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, prec.id, true, {
+                                        fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
+                                        lineNumber: 1057,
+                                        columnNumber: 17
+                                    }, ("TURBOPACK compile-time value", void 0)))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 1038,
+                            lineNumber: 1048,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                    lineNumber: 1025,
+                    lineNumber: 1035,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 1024,
+                lineNumber: 1034,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'SCENARIO' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3457,7 +3549,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                     className: "w-5 h-5 text-blue-400 shrink-0 mt-0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1096,
+                                    lineNumber: 1113,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3467,7 +3559,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Scientific Boundary & Monotonic Guarantee (Section 14 & 14.1)"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1098,
+                                            lineNumber: 1115,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3475,7 +3567,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: '"A scenario is a modelled sensitivity under stated assumptions. It shows the model\'s learned historical correlation between an input and delay outcomes — it becomes a causal claim only after a separate evaluation design establishes causality."'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1101,
+                                            lineNumber: 1118,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3483,24 +3575,24 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Enforced via gradient-boosted monotonic constraints: higher compensation parity or resolving NOCs strictly non-increases delay probability."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1104,
+                                            lineNumber: 1121,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1097,
+                                    lineNumber: 1114,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 1095,
+                            lineNumber: 1112,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1094,
+                        lineNumber: 1111,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3519,14 +3611,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "w-4 h-4 text-amber-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1117,
+                                                        lineNumber: 1134,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     "Intervention Levers & Assumptions"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1116,
+                                                lineNumber: 1133,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3534,13 +3626,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Supported Features Only"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1120,
+                                                lineNumber: 1137,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1115,
+                                        lineNumber: 1132,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3556,7 +3648,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "1. Compensation Rate Adjustment (RFCTLARR Section 26 Parity)"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1127,
+                                                                lineNumber: 1144,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3570,13 +3662,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1130,
+                                                                lineNumber: 1147,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1126,
+                                                        lineNumber: 1143,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3588,13 +3680,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1134,
+                                                        lineNumber: 1151,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1125,
+                                                lineNumber: 1142,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3610,7 +3702,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 className: "w-full accent-amber-400 cursor-pointer"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1139,
+                                                lineNumber: 1156,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3620,33 +3712,33 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "1.0x (Registrar circle minimum)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1153,
+                                                        lineNumber: 1170,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "1.25x (Recent deed median)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1154,
+                                                        lineNumber: 1171,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "1.5x (Top 50% Sec 26 ceiling)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1155,
+                                                        lineNumber: 1172,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1152,
+                                                lineNumber: 1169,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1124,
+                                        lineNumber: 1141,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3659,7 +3751,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "2. Expedited Forest & Environmental NOC (PARIVESH Escalation)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1162,
+                                                        lineNumber: 1179,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3667,13 +3759,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Deploy dedicated nodal liaison officer to clear Western Ghats / wildlife clearances."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1165,
+                                                        lineNumber: 1182,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1161,
+                                                lineNumber: 1178,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3686,13 +3778,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: scenarioInput.additionalNOCResources ? 'Expedited Active' : 'Standard Queue'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1169,
+                                                lineNumber: 1186,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1160,
+                                        lineNumber: 1177,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3705,7 +3797,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "3. Village Lok Adalat & Joint-Khata Succession Camp"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1188,
+                                                        lineNumber: 1205,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3713,13 +3805,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Conduct on-site succession affidavits with Lekhpal squads to eliminate family court disputes."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1191,
+                                                        lineNumber: 1208,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1187,
+                                                lineNumber: 1204,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3732,13 +3824,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: scenarioInput.specialGrievanceCamp ? 'Camp Scheduled' : 'Standard Notice'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1195,
+                                                lineNumber: 1212,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1186,
+                                        lineNumber: 1203,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3752,7 +3844,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "4. Crop Harvest Grace Window (Prevents Physical Agitation)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1214,
+                                                        lineNumber: 1231,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3763,13 +3855,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1217,
+                                                        lineNumber: 1234,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1213,
+                                                lineNumber: 1230,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3785,13 +3877,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 className: "w-full accent-teal-400 cursor-pointer"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1221,
+                                                lineNumber: 1238,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1212,
+                                        lineNumber: 1229,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3806,13 +3898,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Reset All Levers to Current Baseline"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1236,
+                                        lineNumber: 1253,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1114,
+                                lineNumber: 1131,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3826,7 +3918,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Modelled Sensitivity Outcome"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1253,
+                                                lineNumber: 1270,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3840,7 +3932,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Current Baseline"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1260,
+                                                                lineNumber: 1277,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3851,7 +3943,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1261,
+                                                                lineNumber: 1278,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3863,13 +3955,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1264,
+                                                                lineNumber: 1281,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1259,
+                                                        lineNumber: 1276,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3880,7 +3972,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Scenario Result"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1268,
+                                                                lineNumber: 1285,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3891,7 +3983,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1269,
+                                                                lineNumber: 1286,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3903,19 +3995,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1272,
+                                                                lineNumber: 1289,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1267,
+                                                        lineNumber: 1284,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1258,
+                                                lineNumber: 1275,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3929,7 +4021,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Projected Delay Averted:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1281,
+                                                                lineNumber: 1298,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -3939,7 +4031,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                         className: "w-3.5 h-3.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                        lineNumber: 1283,
+                                                                        lineNumber: 1300,
                                                                         columnNumber: 23
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "~",
@@ -3948,13 +4040,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1282,
+                                                                lineNumber: 1299,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1280,
+                                                        lineNumber: 1297,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3965,7 +4057,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Carrying Cost Savings (MoSPI rate):"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1289,
+                                                                lineNumber: 1306,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -3977,13 +4069,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1290,
+                                                                lineNumber: 1307,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1288,
+                                                        lineNumber: 1305,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3994,7 +4086,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Intervention Priority Index (IPI):"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1296,
+                                                                lineNumber: 1313,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -4005,19 +4097,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1297,
+                                                                lineNumber: 1314,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1295,
+                                                        lineNumber: 1312,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1279,
+                                                lineNumber: 1296,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4029,26 +4121,26 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1309,
+                                                        lineNumber: 1326,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Apply Assumptions to Intervention Queue"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1310,
+                                                        lineNumber: 1327,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1304,
+                                                lineNumber: 1321,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1252,
+                                        lineNumber: 1269,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4059,32 +4151,32 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Human Decision Owner Boundary:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1316,
+                                                lineNumber: 1333,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "LUME evaluates the correlation and prioritizes where to direct state resources. Authorized officials retain sole authority for legal, compensation, and administrative orders."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1315,
+                                        lineNumber: 1332,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1251,
+                                lineNumber: 1268,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1112,
+                        lineNumber: 1129,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 1092,
+                lineNumber: 1109,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'DECISIONS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4104,14 +4196,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-4 h-4 text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1332,
+                                                    lineNumber: 1349,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Assign Priority Intervention (F09 / F13)"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1331,
+                                            lineNumber: 1348,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4119,13 +4211,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Logs human administrative decision into immutable audit trail with scheduled follow-up due date."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1335,
+                                            lineNumber: 1352,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1330,
+                                    lineNumber: 1347,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 actionSuccessMsg && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4135,20 +4227,20 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             className: "w-4 h-4 text-emerald-400 shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1342,
+                                            lineNumber: 1359,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Decision logged successfully in the institutional memory audit trail!"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1343,
+                                            lineNumber: 1360,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1341,
+                                    lineNumber: 1358,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -4162,7 +4254,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Intervention Category"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1349,
+                                                    lineNumber: 1366,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -4175,7 +4267,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "RFCTLARR Sec 26 Rate Revision & Top-50% Deed Parity"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1355,
+                                                            lineNumber: 1372,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -4183,7 +4275,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Village Lok Adalat / Joint-Khata Succession Camp"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1356,
+                                                            lineNumber: 1373,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -4191,7 +4283,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "PARIVESH Inter-Departmental NOC Escalation"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1357,
+                                                            lineNumber: 1374,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -4199,7 +4291,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "Gram Sabha Quorum & Consent Hearing"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1358,
+                                                            lineNumber: 1375,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -4207,19 +4299,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             children: "High-Level Review with District Collector"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1359,
+                                                            lineNumber: 1376,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1350,
+                                                    lineNumber: 1367,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1348,
+                                            lineNumber: 1365,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4229,7 +4321,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Assignee Officer / Agency"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1364,
+                                                    lineNumber: 1381,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -4240,13 +4332,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     placeholder: "e.g. District Land Acquisition Officer (DLAO)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1365,
+                                                    lineNumber: 1382,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1363,
+                                            lineNumber: 1380,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4256,7 +4348,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Target Resolution Due Date"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1375,
+                                                    lineNumber: 1392,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -4266,13 +4358,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-emerald-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1376,
+                                                    lineNumber: 1393,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1374,
+                                            lineNumber: 1391,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4282,7 +4374,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Action Notes / Terms"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1385,
+                                                    lineNumber: 1402,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -4293,13 +4385,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-emerald-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1386,
+                                                    lineNumber: 1403,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1384,
+                                            lineNumber: 1401,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4310,32 +4402,32 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1399,
+                                                    lineNumber: 1416,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Record & Commit Decision to Log"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1400,
+                                                    lineNumber: 1417,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1395,
+                                            lineNumber: 1412,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1347,
+                                    lineNumber: 1364,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 1329,
+                            lineNumber: 1346,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4351,7 +4443,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-4 h-4 text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1409,
+                                                    lineNumber: 1426,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Accountable Decision History (",
@@ -4360,7 +4452,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1408,
+                                            lineNumber: 1425,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4368,13 +4460,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Section 17 Audit Compliant"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1412,
+                                            lineNumber: 1429,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1407,
+                                    lineNumber: 1424,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4384,7 +4476,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "No decisions logged yet for this project. Use the form to assign an action."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1417,
+                                        lineNumber: 1434,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)) : relevantDecisions.map((entry)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "bg-slate-900/80 border border-slate-700/80 rounded-xl p-4 space-y-2",
@@ -4400,7 +4492,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: entry.status
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 1425,
+                                                                    lineNumber: 1442,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4408,7 +4500,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     children: entry.officerName
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 1430,
+                                                                    lineNumber: 1447,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4420,13 +4512,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                    lineNumber: 1431,
+                                                                    lineNumber: 1448,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1424,
+                                                            lineNumber: 1441,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4437,13 +4529,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                            lineNumber: 1433,
+                                                            lineNumber: 1450,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1423,
+                                                    lineNumber: 1440,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4451,7 +4543,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: entry.actionTaken
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1438,
+                                                    lineNumber: 1455,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 entry.scenarioAssumptionsTested && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4459,7 +4551,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: entry.scenarioAssumptionsTested
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1443,
+                                                    lineNumber: 1460,
                                                     columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4472,35 +4564,35 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1448,
+                                                    lineNumber: 1465,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, entry.id, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1422,
+                                            lineNumber: 1439,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1415,
+                                    lineNumber: 1432,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 1406,
+                            lineNumber: 1423,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                    lineNumber: 1327,
+                    lineNumber: 1344,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 1326,
+                lineNumber: 1343,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'DOC_VERIFICATION' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DocumentVerificationModule$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DocumentVerificationModule"], {
@@ -4510,7 +4602,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                 onOpenCitizenView: onOpenCitizenView
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 1462,
+                lineNumber: 1479,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'REVIEW_PACKET' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4526,7 +4618,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Government of India • Ministry of Rural Development • DoLR / LACRRIS Intelligence"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1476,
+                                        lineNumber: 1493,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -4534,7 +4626,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "EXECUTIVE PROJECT REVIEW BRIEF (F12)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1479,
+                                        lineNumber: 1496,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4542,13 +4634,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "For the Attention of: District Collector & Competent Authority (CALA)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1482,
+                                        lineNumber: 1499,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1475,
+                                lineNumber: 1492,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4562,7 +4654,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1488,
+                                        lineNumber: 1505,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4570,19 +4662,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Generated by LUME Decision Layer v7.0"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1489,
+                                        lineNumber: 1506,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1487,
+                                lineNumber: 1504,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1474,
+                        lineNumber: 1491,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4595,7 +4687,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Project Code:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1496,
+                                        lineNumber: 1513,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -4603,13 +4695,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: project.projectCode
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1497,
+                                        lineNumber: 1514,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1495,
+                                lineNumber: 1512,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4619,7 +4711,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Legal Route:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1500,
+                                        lineNumber: 1517,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -4627,13 +4719,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: project.processRoute.replace('_', ' ')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1501,
+                                        lineNumber: 1518,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1499,
+                                lineNumber: 1516,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4643,7 +4735,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Location:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1504,
+                                        lineNumber: 1521,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -4655,13 +4747,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1505,
+                                        lineNumber: 1522,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1503,
+                                lineNumber: 1520,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4671,7 +4763,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Total Area / Landowners:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1508,
+                                        lineNumber: 1525,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -4684,19 +4776,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1509,
+                                        lineNumber: 1526,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1507,
+                                lineNumber: 1524,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1494,
+                        lineNumber: 1511,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4707,7 +4799,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "1. Predictive Delay Assessment"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1515,
+                                lineNumber: 1532,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4721,13 +4813,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: project.modelOutput.nextMilestoneName
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1520,
+                                                lineNumber: 1537,
                                                 columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1519,
+                                        lineNumber: 1536,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4741,7 +4833,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1522,
+                                        lineNumber: 1539,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4755,7 +4847,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1526,
+                                                lineNumber: 1543,
                                                 columnNumber: 44
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " (Elapsed: ",
@@ -4766,19 +4858,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1525,
+                                        lineNumber: 1542,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1518,
+                                lineNumber: 1535,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1514,
+                        lineNumber: 1531,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4789,7 +4881,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "2. Primary Evidence Drivers (Source Attributed)"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1533,
+                                lineNumber: 1550,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -4806,7 +4898,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1539,
+                                                lineNumber: 1556,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4815,7 +4907,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: d.humanDescription
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1541,
+                                                        lineNumber: 1558,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4829,30 +4921,30 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1542,
+                                                        lineNumber: 1559,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1540,
+                                                lineNumber: 1557,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1538,
+                                        lineNumber: 1555,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1536,
+                                lineNumber: 1553,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1532,
+                        lineNumber: 1549,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4863,7 +4955,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "3. Comparable Precedent & Resolution Insight"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1551,
+                                lineNumber: 1568,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             project.precedents.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4878,7 +4970,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1556,
+                                        lineNumber: 1573,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4886,19 +4978,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: project.precedents[0].successfulIntervention
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1557,
+                                        lineNumber: 1574,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1555,
+                                lineNumber: 1572,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1550,
+                        lineNumber: 1567,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4909,7 +5001,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "4. Immediate Action Plan & Direction"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1564,
+                                lineNumber: 1581,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4917,13 +5009,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "Convene a joint review meeting within 10 days involving the District Land Acquisition Officer (DLAO), Sub-Registrar, and Forest Division to harmonize Section 26 fair market valuation and expedite pending clearances."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1567,
+                                lineNumber: 1584,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1563,
+                        lineNumber: 1580,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4935,7 +5027,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Verified by: LUME Platform Intelligence Engine"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1575,
+                                        lineNumber: 1592,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4943,13 +5035,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Security Hash: SHA256-LUME-7029-CONFIDENTIAL"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1576,
+                                        lineNumber: 1593,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1574,
+                                lineNumber: 1591,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4959,32 +5051,32 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "h-10 border-b border-slate-400 w-44 mb-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1579,
+                                        lineNumber: 1596,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: "Signature of Competent Authority"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1580,
+                                        lineNumber: 1597,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1578,
+                                lineNumber: 1595,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1573,
+                        lineNumber: 1590,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 1472,
+                lineNumber: 1489,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'HISTORICAL_REPLAY' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5001,12 +5093,12 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-6 h-6 text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1593,
+                                        lineNumber: 1610,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1592,
+                                    lineNumber: 1609,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5016,7 +5108,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Historical Replay"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1596,
+                                            lineNumber: 1613,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5024,24 +5116,24 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                             children: "Step through time to see how predictions evolved and compare with actual outcomes"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1597,
+                                            lineNumber: 1614,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                    lineNumber: 1595,
+                                    lineNumber: 1612,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                            lineNumber: 1591,
+                            lineNumber: 1608,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1590,
+                        lineNumber: 1607,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5054,14 +5146,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-4 h-4 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1605,
+                                        lineNumber: 1622,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Prediction Timeline"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1604,
+                                lineNumber: 1621,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5071,7 +5163,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "absolute top-4 left-0 right-0 h-1 bg-slate-700 rounded"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1611,
+                                        lineNumber: 1628,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5087,7 +5179,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: Math.round(snapshot.modelOutput.delayProbability * 100)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1615,
+                                                        lineNumber: 1632,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5098,7 +5190,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: new Date(snapshot.effectiveAt).toLocaleDateString()
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1625,
+                                                                lineNumber: 1642,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5106,19 +5198,19 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: snapshot.modelOutput.nextMilestoneName
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1628,
+                                                                lineNumber: 1645,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1624,
+                                                        lineNumber: 1641,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, idx, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1614,
+                                                lineNumber: 1631,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "text-center py-8 text-slate-400 w-full",
@@ -5127,14 +5219,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     className: "w-12 h-12 mx-auto mb-3 opacity-50"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1635,
+                                                    lineNumber: 1652,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "No historical snapshots available"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1636,
+                                                    lineNumber: 1653,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5142,30 +5234,30 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                     children: "Snapshots are created as the project progresses through stages"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                    lineNumber: 1637,
+                                                    lineNumber: 1654,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                            lineNumber: 1634,
+                                            lineNumber: 1651,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1612,
+                                        lineNumber: 1629,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1610,
+                                lineNumber: 1627,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1603,
+                        lineNumber: 1620,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     snapshots.length >= 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5178,14 +5270,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-4 h-4 text-blue-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1648,
+                                        lineNumber: 1665,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Snapshot Comparison"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1647,
+                                lineNumber: 1664,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5202,7 +5294,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1655,
+                                                lineNumber: 1672,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5216,7 +5308,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Delay Probability"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1660,
+                                                                lineNumber: 1677,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5227,13 +5319,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1661,
+                                                                lineNumber: 1678,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1659,
+                                                        lineNumber: 1676,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5244,7 +5336,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Stage"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1666,
+                                                                lineNumber: 1683,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5252,13 +5344,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: snapshots[0].projectState.currentStageLabel
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1667,
+                                                                lineNumber: 1684,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1665,
+                                                        lineNumber: 1682,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5269,7 +5361,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Evidence Health"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1672,
+                                                                lineNumber: 1689,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5277,25 +5369,25 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: snapshots[0].modelOutput.evidenceHealth
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1673,
+                                                                lineNumber: 1690,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1671,
+                                                        lineNumber: 1688,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1658,
+                                                lineNumber: 1675,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1654,
+                                        lineNumber: 1671,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5309,7 +5401,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1686,
+                                                lineNumber: 1703,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5323,7 +5415,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Delay Probability"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1691,
+                                                                lineNumber: 1708,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5334,13 +5426,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1692,
+                                                                lineNumber: 1709,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1690,
+                                                        lineNumber: 1707,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5351,7 +5443,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Stage"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1697,
+                                                                lineNumber: 1714,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5359,13 +5451,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: snapshots[snapshots.length - 1].projectState.currentStageLabel
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1698,
+                                                                lineNumber: 1715,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1696,
+                                                        lineNumber: 1713,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5376,7 +5468,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: "Evidence Health"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1703,
+                                                                lineNumber: 1720,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5384,31 +5476,31 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                                 children: snapshots[snapshots.length - 1].modelOutput.evidenceHealth
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                                lineNumber: 1704,
+                                                                lineNumber: 1721,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1702,
+                                                        lineNumber: 1719,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1689,
+                                                lineNumber: 1706,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1685,
+                                        lineNumber: 1702,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1652,
+                                lineNumber: 1669,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5419,7 +5511,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         children: "Change Summary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1718,
+                                        lineNumber: 1735,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5432,7 +5524,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Risk Change"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1721,
+                                                        lineNumber: 1738,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5444,13 +5536,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1722,
+                                                        lineNumber: 1739,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1720,
+                                                lineNumber: 1737,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5460,7 +5552,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Stages Passed"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1732,
+                                                        lineNumber: 1749,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5468,13 +5560,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: snapshots.length - 1
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1733,
+                                                        lineNumber: 1750,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1731,
+                                                lineNumber: 1748,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5484,7 +5576,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Time Elapsed"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1738,
+                                                        lineNumber: 1755,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5495,31 +5587,31 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1739,
+                                                        lineNumber: 1756,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1737,
+                                                lineNumber: 1754,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1719,
+                                        lineNumber: 1736,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1717,
+                                lineNumber: 1734,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1646,
+                        lineNumber: 1663,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     snapshots.length > 0 && snapshots[snapshots.length - 1].actualOutcome && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5532,14 +5624,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-4 h-4 text-emerald-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1752,
+                                        lineNumber: 1769,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Prediction vs Actual Outcome"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1751,
+                                lineNumber: 1768,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5553,7 +5645,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Model Prediction"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1758,
+                                                lineNumber: 1775,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5564,7 +5656,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1759,
+                                                lineNumber: 1776,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5576,13 +5668,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1762,
+                                                lineNumber: 1779,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1757,
+                                        lineNumber: 1774,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5593,7 +5685,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Actual Outcome"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1768,
+                                                lineNumber: 1785,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5601,7 +5693,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: snapshots[snapshots.length - 1].actualOutcome?.finalOutcome || 'Pending'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1769,
+                                                lineNumber: 1786,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5613,25 +5705,25 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1772,
+                                                lineNumber: 1789,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1767,
+                                        lineNumber: 1784,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1756,
+                                lineNumber: 1773,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1750,
+                        lineNumber: 1767,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5644,14 +5736,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-4 h-4 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1783,
+                                        lineNumber: 1800,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Model Failure Analysis"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1782,
+                                lineNumber: 1799,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5667,7 +5759,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "w-3 h-3 rounded-full bg-amber-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1790,
+                                                        lineNumber: 1807,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5675,13 +5767,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Known Limitations"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1791,
+                                                        lineNumber: 1808,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1789,
+                                                lineNumber: 1806,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -5691,33 +5783,33 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Model may underestimate delays when multiple dependencies converge simultaneously"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1794,
+                                                        lineNumber: 1811,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                         children: "Political interventions not captured in training data may cause prediction gaps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1795,
+                                                        lineNumber: 1812,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                         children: "Satellite imagery blocked by persistent cloud cover during monsoon season"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1796,
+                                                        lineNumber: 1813,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1793,
+                                                lineNumber: 1810,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1788,
+                                        lineNumber: 1805,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5730,7 +5822,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         className: "w-3 h-3 rounded-full bg-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1802,
+                                                        lineNumber: 1819,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5738,39 +5830,39 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                         children: "Calibration Status"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                        lineNumber: 1803,
+                                                        lineNumber: 1820,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1801,
+                                                lineNumber: 1818,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-xs text-slate-300 ml-5",
-                                                children: "Platt calibration applied. Brier score: 0.082. Model confidence is well-calibrated across probability bins."
+                                                children: "Calibration metrics are computed on Model Evaluation from confirmed evaluation runs. Until a run exists with sufficient n, status is ABSENT / INSUFFICIENT_DATA."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1805,
+                                                lineNumber: 1822,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1800,
+                                        lineNumber: 1817,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1787,
+                                lineNumber: 1804,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1781,
+                        lineNumber: 1798,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5783,14 +5875,14 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                         className: "w-4 h-4 text-purple-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1815,
+                                        lineNumber: 1832,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Institutional Memory"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1814,
+                                lineNumber: 1831,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5798,7 +5890,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                 children: "Decisions and outcomes from this project feed back into the model to improve future predictions."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1819,
+                                lineNumber: 1836,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5812,7 +5904,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Decisions Logged"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1825,
+                                                lineNumber: 1842,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5820,13 +5912,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: relevantDecisions.length
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1826,
+                                                lineNumber: 1843,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1824,
+                                        lineNumber: 1841,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5837,7 +5929,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Snapshots Created"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1829,
+                                                lineNumber: 1846,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5845,13 +5937,13 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: snapshots.length
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1830,
+                                                lineNumber: 1847,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1828,
+                                        lineNumber: 1845,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5862,7 +5954,7 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "Model Retrains"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1833,
+                                                lineNumber: 1850,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5870,31 +5962,31 @@ const ProjectIntelligenceRoom = ({ project, onBack, decisionLogs, onAddDecisionL
                                                 children: "2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                                lineNumber: 1834,
+                                                lineNumber: 1851,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                        lineNumber: 1832,
+                                        lineNumber: 1849,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                                lineNumber: 1823,
+                                lineNumber: 1840,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                        lineNumber: 1813,
+                        lineNumber: 1830,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectIntelligenceRoom.tsx",
-                lineNumber: 1588,
+                lineNumber: 1605,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         ]
