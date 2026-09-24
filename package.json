@@ -9,7 +9,8 @@
     "preview": "npx -y serve out -s -l 3000",
     "start": "npx -y serve out -s -l 3000",
     "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit && npm run lint:data-contract",
+    "lint:data-contract": "node scripts/check-data-contract.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
