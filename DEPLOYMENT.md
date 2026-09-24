@@ -9,7 +9,22 @@ LUME is architected as a static-exported Next.js application with a client-side 
 
 ## 2. Deployment Architecture
 
-### Target Platform: Render Static Site (Recommended)
+### Primary: GitHub Pages (live)
+**Live URL:** https://udbhavnc7.github.io/LUME/
+
+```
+┌─────────────────┐   push main   ┌──────────────────────┐   ┌────────────────────┐
+│ Git Repository  ├──────────────►│ pages.yml            ├──►│ GitHub Pages CDN   │
+│ udbhavnc7/LUME  │               │ npm run build        │   │ /LUME/ (basePath)  │
+└─────────────────┘               │ actions/deploy-pages │   └────────────────────┘
+                                  └──────────────────────┘
+```
+
+- Workflow: `.github/workflows/pages.yml`
+- Build env: `NEXT_PUBLIC_BASE_PATH=/LUME` (wired through `next.config.mjs` + `src/utils/assetUrl.ts`)
+- Repo setting: Settings → Pages → Source = **GitHub Actions**
+
+### Optional: Render Static Site
 Because LUME runs as a static Next.js export with self-contained deterministic ML inference engines and IndexedDB storage, deploying as a **Render Static Site** provides:
 - Instant CDN distribution across global edges
 - Zero server management overhead

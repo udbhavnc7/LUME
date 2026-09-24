@@ -228,6 +228,14 @@ docker compose up -d
 
 ## 🌐 Production Deployment
 
+### Live site (GitHub Pages)
+**https://udbhavnc7.github.io/LUME/**
+
+Deploys automatically on every push to `main` via `.github/workflows/pages.yml`
+(`next build` with `NEXT_PUBLIC_BASE_PATH=/LUME`, then `actions/deploy-pages`).
+Pages must stay enabled with source **GitHub Actions**
+(https://github.com/udbhavnc7/LUME/settings/pages).
+
 ### 1-Click Render Deployment
 Click the badge below to deploy to Render as an edge-cached static site with automated HTTPS and PR previews:
 
