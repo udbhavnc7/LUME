@@ -18,8 +18,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/layers.js [app-client] (ecmascript) <export default as Layers>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-client] (ecmascript) <export default as ChevronRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-question-mark.js [app-client] (ecmascript) <export default as HelpCircle>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$InsufficientDataState$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/InsufficientDataState.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
+;
 ;
 ;
 const DataManagementView = ({ language, dataMode, importedDatasets, validationReports, onOpenImport, onToggleDataMode })=>{
@@ -37,7 +39,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                     className: "w-4 h-4 text-emerald-400"
                 }, void 0, false, {
                     fileName: "[project]/src/components/DataManagementView.tsx",
-                    lineNumber: 53,
+                    lineNumber: 54,
                     columnNumber: 29
                 }, ("TURBOPACK compile-time value", void 0));
             case 'FAILED':
@@ -45,7 +47,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                     className: "w-4 h-4 text-rose-400"
                 }, void 0, false, {
                     fileName: "[project]/src/components/DataManagementView.tsx",
-                    lineNumber: 54,
+                    lineNumber: 55,
                     columnNumber: 29
                 }, ("TURBOPACK compile-time value", void 0));
             case 'PARTIAL':
@@ -53,7 +55,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                     className: "w-4 h-4 text-amber-400"
                 }, void 0, false, {
                     fileName: "[project]/src/components/DataManagementView.tsx",
-                    lineNumber: 55,
+                    lineNumber: 56,
                     columnNumber: 30
                 }, ("TURBOPACK compile-time value", void 0));
             default:
@@ -61,7 +63,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                     className: "w-4 h-4 text-slate-400"
                 }, void 0, false, {
                     fileName: "[project]/src/components/DataManagementView.tsx",
-                    lineNumber: 56,
+                    lineNumber: 57,
                     columnNumber: 23
                 }, ("TURBOPACK compile-time value", void 0));
         }
@@ -81,14 +83,14 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-7 h-7 text-blue-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 67,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'डेटा प्रबंधन केंद्र' : 'Data Management Center'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 65,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -96,13 +98,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 children: language === 'HI' ? 'डेटा स्रोत, सत्यापन और आयात प्रबंधन' : 'Data sources, validation, and import management'
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 69,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -116,14 +118,14 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: `w-2 h-2 rounded-full ${dataMode === 'REAL_DATA' ? 'bg-white animate-pulse' : 'bg-slate-400'}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 86,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     dataMode === 'REAL_DATA' ? 'REAL DATA' : 'DEMO MODE'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 77,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -134,26 +136,26 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'डेटा आयात करें' : 'Import Data'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 90,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 75,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 63,
+                lineNumber: 64,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -167,18 +169,18 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 className: "w-5 h-5 text-white"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 111,
+                                lineNumber: 112,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
                                 className: "w-5 h-5 text-slate-300"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 113,
+                                lineNumber: 114,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/DataManagementView.tsx",
-                            lineNumber: 107,
+                            lineNumber: 108,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -189,7 +191,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                     children: dataMode === 'REAL_DATA' ? language === 'HI' ? 'वास्तविक डेटा मोड सक्रिय' : 'Real Data Mode Active' : language === 'HI' ? 'डेमो डेटा मोड' : 'Demo Data Mode'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 117,
+                                    lineNumber: 118,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -197,13 +199,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                     children: dataMode === 'REAL_DATA' ? language === 'HI' ? 'सत्यापित डेटा स्रोतों से वास्तविक पूर्वानुमान और विश्लेषण' : 'Live predictions and analysis from validated data sources' : language === 'HI' ? 'प्रदर्शन के लिए नकली डेटा का उपयोग कर रहा है' : 'Using simulated data for demonstration'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataManagementView.tsx",
-                            lineNumber: 116,
+                            lineNumber: 117,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -214,7 +216,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                     children: importedDatasets.length
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 130,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -222,24 +224,24 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                     children: language === 'HI' ? 'आयातित डेटासेट' : 'Imported Datasets'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 130,
+                                    lineNumber: 131,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataManagementView.tsx",
-                            lineNumber: 128,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/DataManagementView.tsx",
-                    lineNumber: 106,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 101,
+                lineNumber: 102,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -255,7 +257,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-4 h-4 text-blue-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 140,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -263,13 +265,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         children: language === 'HI' ? 'कुल रिकॉर्ड' : 'Total Records'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 141,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 138,
+                                lineNumber: 139,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -277,13 +279,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 children: totalRecords.toLocaleString()
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 142,
+                                lineNumber: 143,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 137,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -296,7 +298,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-4 h-4 text-emerald-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 147,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -304,13 +306,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         children: language === 'HI' ? 'औसत कवरेज' : 'Avg Coverage'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 148,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 145,
+                                lineNumber: 146,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -321,13 +323,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 149,
+                                lineNumber: 150,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 144,
+                        lineNumber: 145,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -340,7 +342,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-4 h-4 text-rose-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 154,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -348,13 +350,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         children: language === 'HI' ? 'त्रुटियां' : 'Errors'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 155,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 152,
+                                lineNumber: 153,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -362,13 +364,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 children: totalErrors
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 156,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 151,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -381,7 +383,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-4 h-4 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 161,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -389,13 +391,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         children: language === 'HI' ? 'चेतावनियां' : 'Warnings'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 162,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 159,
+                                lineNumber: 160,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -403,19 +405,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 children: totalWarnings
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 163,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 158,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 136,
+                lineNumber: 137,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -436,12 +438,12 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                         ]
                     }, tab, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 170,
+                        lineNumber: 171,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 168,
+                lineNumber: 169,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'OVERVIEW' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -457,14 +459,14 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-5 h-5 text-blue-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 193,
+                                        lineNumber: 194,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'डेटा स्रोत' : 'Data Sources'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 192,
+                                lineNumber: 193,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -480,7 +482,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         className: "w-3 h-3 rounded-full bg-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 200,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -488,13 +490,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "LACRRIS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 200,
+                                                        lineNumber: 201,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 198,
+                                                lineNumber: 199,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -502,7 +504,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "Land Acquisition Case Repository"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 202,
+                                                lineNumber: 203,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -510,13 +512,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "Connected"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 204,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 198,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -529,7 +531,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         className: "w-3 h-3 rounded-full bg-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 207,
+                                                        lineNumber: 208,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -537,13 +539,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "NGDRS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 209,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 206,
+                                                lineNumber: 207,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -551,7 +553,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "National Land Record Digitization"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 210,
+                                                lineNumber: 211,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -559,13 +561,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "Connected"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 211,
+                                                lineNumber: 212,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 205,
+                                        lineNumber: 206,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -578,7 +580,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         className: "w-3 h-3 rounded-full bg-amber-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 215,
+                                                        lineNumber: 216,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -586,13 +588,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "PARIVESH"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 216,
+                                                        lineNumber: 217,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 214,
+                                                lineNumber: 215,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -600,7 +602,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "Environmental Clearance Portal"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 218,
+                                                lineNumber: 219,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -608,25 +610,25 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "Partial"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 219,
+                                                lineNumber: 220,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 214,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 196,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 191,
+                        lineNumber: 192,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -639,48 +641,50 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-5 h-5 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 227,
+                                        lineNumber: 228,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'हाल की गतिविधि' : 'Recent Activity'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 226,
+                                lineNumber: 227,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-3",
                                 children: importedDatasets.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-center py-8 text-slate-400",
+                                    className: "space-y-3",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
-                                            className: "w-12 h-12 mx-auto mb-3 opacity-50"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 233,
-                                            columnNumber: 19
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: language === 'HI' ? 'अभी तक कोई डेटा आयात नहीं किया गया' : 'No data imported yet'
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$InsufficientDataState$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["InsufficientDataState"], {
+                                            language: language,
+                                            title: language === 'HI' ? 'कोई डेटा आयात नहीं' : 'No data imported yet',
+                                            description: language === 'HI' ? 'स्रोत-सहित आयातित डेटासेट उपलब्ध नहीं हैं।' : 'No imported datasets with recorded source provenance are available.'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
                                             lineNumber: 234,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: onOpenImport,
-                                            className: "mt-3 text-blue-400 hover:text-blue-300 text-sm font-medium",
-                                            children: language === 'HI' ? 'पहला डेटासेट आयात करें' : 'Import your first dataset'
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-center",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: onOpenImport,
+                                                className: "text-blue-400 hover:text-blue-300 text-sm font-medium",
+                                                children: language === 'HI' ? 'पहला डेटासेट आयात करें' : 'Import your first dataset'
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/DataManagementView.tsx",
+                                                lineNumber: 244,
+                                                columnNumber: 21
+                                            }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 235,
+                                            lineNumber: 243,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 232,
+                                    lineNumber: 233,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)) : importedDatasets.slice(0, 5).map((dataset)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center justify-between p-3 bg-slate-700/30 rounded-lg border border-slate-600/50",
@@ -696,7 +700,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: dataset.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 251,
+                                                                lineNumber: 261,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -710,19 +714,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 252,
+                                                                lineNumber: 262,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 260,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 248,
+                                                lineNumber: 258,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,35 +736,35 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: dataset.sourceClassification
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 258,
+                                                    lineNumber: 268,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 267,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, dataset.id, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 254,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 230,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 225,
+                        lineNumber: 226,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 189,
+                lineNumber: 190,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'DATASETS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -776,14 +780,14 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-5 h-5 text-blue-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 278,
+                                        lineNumber: 288,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'सभी डेटासेट' : 'All Datasets'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 277,
+                                lineNumber: 287,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -794,61 +798,54 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 295,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'नया आयात' : 'New Import'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 281,
+                                lineNumber: 291,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 276,
+                        lineNumber: 286,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     importedDatasets.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-center py-12 text-slate-400",
+                        className: "space-y-4",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
-                                className: "w-16 h-16 mx-auto mb-4 opacity-50"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$InsufficientDataState$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["InsufficientDataState"], {
+                                language: language,
+                                title: language === 'HI' ? 'कोई डेटासेट नहीं' : 'No datasets imported',
+                                description: language === 'HI' ? 'स्रोत-सहित आयातित डेटासेट उपलब्ध नहीं हैं। CSV या JSON फाइल आयात करें।' : 'No imported datasets with recorded source provenance are available. Import a CSV or JSON file with source metadata.'
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 292,
+                                lineNumber: 302,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg font-medium",
-                                children: "No datasets imported"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: onOpenImport,
+                                    className: "px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-colors",
+                                    children: language === 'HI' ? 'डेटा आयात करें' : 'Import Data'
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/DataManagementView.tsx",
+                                    lineNumber: 312,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 293,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm mt-2",
-                                children: "Import CSV, JSON, or XLSX files to get started"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 294,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: onOpenImport,
-                                className: "mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-colors",
-                                children: "Import Data"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 295,
+                                lineNumber: 311,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 291,
+                        lineNumber: 301,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-3",
@@ -870,7 +867,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: dataset.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 318,
+                                                                lineNumber: 336,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -884,19 +881,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 319,
+                                                                lineNumber: 337,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 317,
+                                                        lineNumber: 335,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 315,
+                                                lineNumber: 333,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -907,26 +904,26 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: dataset.validationStatus
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 325,
+                                                        lineNumber: 343,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                         className: `w-4 h-4 text-slate-400 transition-transform ${selectedDataset === dataset.id ? 'rotate-90' : ''}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 332,
+                                                        lineNumber: 350,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 324,
+                                                lineNumber: 342,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 314,
+                                        lineNumber: 332,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     selectedDataset === dataset.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -942,7 +939,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: "Source:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 342,
+                                                                lineNumber: 360,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -950,13 +947,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: dataset.sourceClassification
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 343,
+                                                                lineNumber: 361,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 341,
+                                                        lineNumber: 359,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -966,7 +963,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: "Encoding:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 346,
+                                                                lineNumber: 364,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -974,13 +971,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: dataset.encoding
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 347,
+                                                                lineNumber: 365,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 345,
+                                                        lineNumber: 363,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -990,7 +987,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: "Schema:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 350,
+                                                                lineNumber: 368,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -998,13 +995,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: dataset.schemaVersion
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 351,
+                                                                lineNumber: 369,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 349,
+                                                        lineNumber: 367,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1014,7 +1011,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: "Imported:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 354,
+                                                                lineNumber: 372,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1022,19 +1019,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: new Date(dataset.importedAt).toLocaleString()
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 355,
+                                                                lineNumber: 373,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 353,
+                                                        lineNumber: 371,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 340,
+                                                lineNumber: 358,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1044,7 +1041,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Columns:"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 359,
+                                                        lineNumber: 377,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1054,41 +1051,41 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: col
                                                             }, i, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 362,
+                                                                lineNumber: 380,
                                                                 columnNumber: 29
                                                             }, ("TURBOPACK compile-time value", void 0)))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 360,
+                                                        lineNumber: 378,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 358,
+                                                lineNumber: 376,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 339,
+                                        lineNumber: 357,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, dataset.id, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 305,
+                                lineNumber: 323,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 303,
+                        lineNumber: 321,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 275,
+                lineNumber: 285,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'VALIDATION' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1101,46 +1098,30 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 className: "w-5 h-5 text-emerald-400"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 380,
+                                lineNumber: 398,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             language === 'HI' ? 'सत्यापन रिपोर्ट' : 'Validation Reports'
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 379,
+                        lineNumber: 397,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     validationReports.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-center py-12 text-slate-400",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$check$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileCheck2$3e$__["FileCheck2"], {
-                                className: "w-16 h-16 mx-auto mb-4 opacity-50"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 386,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg font-medium",
-                                children: "No validation reports"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 387,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm mt-2",
-                                children: "Import data to see validation results"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 388,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
+                        className: "space-y-4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$InsufficientDataState$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["InsufficientDataState"], {
+                            language: language,
+                            title: language === 'HI' ? 'कोई सत्यापन रिपोर्ट नहीं' : 'No validation reports',
+                            description: language === 'HI' ? 'स्रोत-सहित डेटा आयात करने के बाद सत्यापन परिणाम यहां दिखाई देंगे।' : 'Validation results will appear here after importing data with source provenance.'
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/DataManagementView.tsx",
+                            lineNumber: 404,
+                            columnNumber: 15
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 385,
+                        lineNumber: 403,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-4",
@@ -1163,7 +1144,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: dataset?.name || 'Unknown Dataset'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 400,
+                                                                lineNumber: 424,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1171,19 +1152,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 children: new Date(report.validationTimestamp).toLocaleString()
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 401,
+                                                                lineNumber: 425,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 399,
+                                                        lineNumber: 423,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 397,
+                                                lineNumber: 421,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1197,7 +1178,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 407,
+                                                        lineNumber: 431,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1205,19 +1186,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Coverage"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 408,
+                                                        lineNumber: 432,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 406,
+                                                lineNumber: 430,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 396,
+                                        lineNumber: 420,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1231,7 +1212,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Total"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 414,
+                                                        lineNumber: 438,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1239,13 +1220,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: report.totalRecords.toLocaleString()
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 415,
+                                                        lineNumber: 439,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 413,
+                                                lineNumber: 437,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1256,7 +1237,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Valid"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 418,
+                                                        lineNumber: 442,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1264,13 +1245,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: report.validRecords.toLocaleString()
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 419,
+                                                        lineNumber: 443,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 417,
+                                                lineNumber: 441,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1281,7 +1262,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Incomplete"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 446,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1289,13 +1270,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: report.incompleteRecords
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 423,
+                                                        lineNumber: 447,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 421,
+                                                lineNumber: 445,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1306,7 +1287,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Rejected"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 426,
+                                                        lineNumber: 450,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1314,13 +1295,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: report.rejectedRecords
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 427,
+                                                        lineNumber: 451,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 425,
+                                                lineNumber: 449,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1331,7 +1312,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: "Duplicates"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 430,
+                                                        lineNumber: 454,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1339,19 +1320,19 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                         children: report.duplicateGroups
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 431,
+                                                        lineNumber: 455,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 429,
+                                                lineNumber: 453,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 412,
+                                        lineNumber: 436,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     report.validationErrors.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1362,7 +1343,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 children: "Recent Errors:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 437,
+                                                lineNumber: 461,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1374,7 +1355,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 className: "w-3 h-3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 441,
+                                                                lineNumber: 465,
                                                                 columnNumber: 31
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1386,42 +1367,42 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                                lineNumber: 442,
+                                                                lineNumber: 466,
                                                                 columnNumber: 31
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, i, true, {
                                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                                        lineNumber: 440,
+                                                        lineNumber: 464,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 438,
+                                                lineNumber: 462,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/DataManagementView.tsx",
-                                        lineNumber: 436,
+                                        lineNumber: 460,
                                         columnNumber: 23
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, report.datasetId, true, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 395,
+                                lineNumber: 419,
                                 columnNumber: 19
                             }, ("TURBOPACK compile-time value", void 0));
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 391,
+                        lineNumber: 415,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 378,
+                lineNumber: 396,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             activeTab === 'SETTINGS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1434,14 +1415,14 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                 className: "w-5 h-5 text-purple-400"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 459,
+                                lineNumber: 483,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             language === 'HI' ? 'डेटा सेटिंग्स' : 'Data Settings'
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 458,
+                        lineNumber: 482,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1459,7 +1440,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: "Data Mode"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 467,
+                                                    lineNumber: 491,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1467,13 +1448,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: "Switch between demo and real data"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 468,
+                                                    lineNumber: 492,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 466,
+                                            lineNumber: 490,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1482,18 +1463,18 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                             children: dataMode === 'REAL_DATA' ? 'Real Data' : 'Demo Mode'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 470,
+                                            lineNumber: 494,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 465,
+                                    lineNumber: 489,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 464,
+                                lineNumber: 488,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1508,7 +1489,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: "Auto-Validation"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 486,
+                                                    lineNumber: 510,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1516,13 +1497,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: "Automatically validate imported data"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 487,
+                                                    lineNumber: 511,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 485,
+                                            lineNumber: 509,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1531,23 +1512,23 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                 className: "absolute right-1 top-1 w-4 h-4 bg-white rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                                lineNumber: 490,
+                                                lineNumber: 514,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 489,
+                                            lineNumber: 513,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 484,
+                                    lineNumber: 508,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 483,
+                                lineNumber: 507,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1562,7 +1543,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: "Source Priority"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 498,
+                                                    lineNumber: 522,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1570,13 +1551,13 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                                     children: "Priority order for multi-source reconciliation"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                                    lineNumber: 499,
+                                                    lineNumber: 523,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 497,
+                                            lineNumber: 521,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1584,30 +1565,30 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                             children: "LACRRIS > NGDRS > PARIVESH"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataManagementView.tsx",
-                                            lineNumber: 501,
+                                            lineNumber: 525,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 496,
+                                    lineNumber: 520,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataManagementView.tsx",
-                                lineNumber: 495,
+                                lineNumber: 519,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/DataManagementView.tsx",
-                        lineNumber: 463,
+                        lineNumber: 487,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 457,
+                lineNumber: 481,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1619,7 +1600,7 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                             className: "w-5 h-5 text-slate-400 mt-0.5"
                         }, void 0, false, {
                             fileName: "[project]/src/components/DataManagementView.tsx",
-                            lineNumber: 513,
+                            lineNumber: 537,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1630,37 +1611,37 @@ const DataManagementView = ({ language, dataMode, importedDatasets, validationRe
                                     children: "About Data Management"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 515,
+                                    lineNumber: 539,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "Import your land acquisition data from CSV, JSON, or XLSX files. The system will automatically validate, map columns, and integrate data into the prediction pipeline. All imported data is classified by source type (CONNECTED, IMPORTED, PUBLIC_REFERENCE, DEMO) for transparency."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataManagementView.tsx",
-                                    lineNumber: 516,
+                                    lineNumber: 540,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataManagementView.tsx",
-                            lineNumber: 514,
+                            lineNumber: 538,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/DataManagementView.tsx",
-                    lineNumber: 512,
+                    lineNumber: 536,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/DataManagementView.tsx",
-                lineNumber: 511,
+                lineNumber: 535,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/DataManagementView.tsx",
-        lineNumber: 61,
+        lineNumber: 62,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

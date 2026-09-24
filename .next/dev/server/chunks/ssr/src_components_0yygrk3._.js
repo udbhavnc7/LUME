@@ -1826,6 +1826,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$services$2f$datasetSe
 ;
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024; // 50 MB
 const MAX_ROW_COUNT = 50000;
+const computeSha256Hex = async (content)=>{
+    const data = new TextEncoder().encode(content);
+    const digest = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(digest)).map((byte)=>byte.toString(16).padStart(2, '0')).join('');
+};
 const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
     const [currentStep, setCurrentStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('UPLOAD');
     const [dataset, setDataset] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -1835,6 +1840,14 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
     const [validationReport, setValidationReport] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isProcessing, setIsProcessing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [fileSha256, setFileSha256] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [sourceDraft, setSourceDraft] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        sourceName: '',
+        sourceUrl: '',
+        fetchedAt: '',
+        extractionMethod: ''
+    });
+    const [sourceErrors, setSourceErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const handleFileUpload = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async (e)=>{
         const file = e.target.files?.[0];
         if (!file) return;
@@ -1868,6 +1881,8 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                 setIsProcessing(false);
                 return;
             }
+            const sha256 = await computeSha256Hex(content);
+            setFileSha256(sha256);
             setHeaders(parsedHeaders);
             setRows(parsedRows);
             const detectedMappings = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$services$2f$datasetService$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["detectColumns"])(parsedHeaders);
@@ -1889,6 +1904,16 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
             setIsProcessing(false);
         }
     }, []);
+    const buildSourceMetadata = ()=>{
+        if (!fileSha256) return null;
+        return {
+            sourceName: sourceDraft.sourceName.trim(),
+            sourceUrl: sourceDraft.sourceUrl.trim(),
+            fetchedAt: sourceDraft.fetchedAt.trim(),
+            extractionMethod: sourceDraft.extractionMethod.trim(),
+            fileSha256
+        };
+    };
     const handleMappingChange = (index, lumeField)=>{
         setColumnMappings((prev)=>{
             const updated = [
@@ -1908,11 +1933,30 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
         report.datasetId = dataset.id;
         setValidationReport(report);
         dataset.validationStatus = report.rejectedRecords > 0 ? 'PARTIAL' : 'PASSED';
-        setCurrentStep('VALIDATION');
+        setCurrentStep('SOURCE');
+    };
+    const handleSourceContinue = ()=>{
+        const metadata = buildSourceMetadata();
+        const errors = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$services$2f$datasetService$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateImportProvenance"])(metadata);
+        setSourceErrors(errors);
+        if (errors.length === 0) {
+            setCurrentStep('VALIDATION');
+        }
     };
     const handleImport = ()=>{
         if (!dataset || !validationReport) return;
-        onImportComplete(dataset, validationReport);
+        const metadata = buildSourceMetadata();
+        const errors = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$services$2f$datasetService$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateImportProvenance"])(metadata);
+        setSourceErrors(errors);
+        if (errors.length > 0) {
+            setCurrentStep('SOURCE');
+            return;
+        }
+        const datasetWithSource = metadata ? {
+            ...dataset,
+            sourceMetadata: metadata
+        } : dataset;
+        onImportComplete(datasetWithSource, validationReport);
         onClose();
         resetWizard();
     };
@@ -1924,6 +1968,14 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
         setColumnMappings([]);
         setValidationReport(null);
         setError(null);
+        setFileSha256(null);
+        setSourceDraft({
+            sourceName: '',
+            sourceUrl: '',
+            fetchedAt: '',
+            extractionMethod: ''
+        });
+        setSourceErrors([]);
     };
     const steps = [
         {
@@ -1937,14 +1989,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
             num: 2
         },
         {
+            id: 'SOURCE',
+            label: language === 'HI' ? 'स्रोत' : 'Source',
+            num: 3
+        },
+        {
             id: 'VALIDATION',
             label: language === 'HI' ? 'सत्यापन' : 'Validation',
-            num: 3
+            num: 4
         },
         {
             id: 'IMPORT_DECISION',
             label: language === 'HI' ? 'आयात' : 'Import',
-            num: 4
+            num: 5
         }
     ];
     if (!isOpen) return null;
@@ -1965,12 +2022,12 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/DataImportWizard.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 232,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 231,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1980,7 +2037,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: language === 'HI' ? 'डेटा सेट आयात विज़ार्ड' : 'Dataset Import Wizard'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 181,
+                                            lineNumber: 235,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1988,19 +2045,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: language === 'HI' ? 'CSV, JSON फाइलें आयात करें' : 'Import CSV or JSON files into LUME'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 184,
+                                            lineNumber: 238,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 234,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 176,
+                            lineNumber: 230,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2010,18 +2067,18 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/DataImportWizard.tsx",
-                                lineNumber: 190,
+                                lineNumber: 244,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 189,
+                            lineNumber: 243,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                    lineNumber: 175,
+                    lineNumber: 229,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2030,7 +2087,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>{
-                                        if (step.id === 'UPLOAD' || step.id === 'MAPPING' && dataset || step.id === 'VALIDATION' && validationReport) {
+                                        if (step.id === 'UPLOAD' || step.id === 'MAPPING' && dataset || step.id === 'SOURCE' && dataset || step.id === 'VALIDATION' && validationReport) {
                                             setCurrentStep(step.id);
                                         }
                                     },
@@ -2041,32 +2098,32 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: step.num
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 212,
+                                            lineNumber: 271,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         step.label
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 198,
+                                    lineNumber: 252,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 idx < steps.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                     className: "w-3.5 h-3.5 text-slate-600 shrink-0"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 218,
+                                    lineNumber: 277,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, step.id, true, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 197,
+                            lineNumber: 251,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                    lineNumber: 195,
+                    lineNumber: 249,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2082,7 +2139,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             className: "w-10 h-10 text-slate-500 mx-auto mb-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 230,
+                                            lineNumber: 289,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2090,7 +2147,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: language === 'HI' ? 'फाइल यहां खींचें या क्लिक करें' : 'Drag file here or click to browse'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 231,
+                                            lineNumber: 290,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2098,7 +2155,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: language === 'HI' ? 'CSV या JSON फाइल समर्थित है' : 'Supports CSV and JSON files'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 293,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2108,7 +2165,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 238,
+                                                    lineNumber: 297,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 language === 'HI' ? 'फाइल चुनें' : 'Choose File',
@@ -2119,19 +2176,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     className: "hidden"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 240,
+                                                    lineNumber: 299,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 237,
+                                            lineNumber: 296,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 229,
+                                    lineNumber: 288,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 isProcessing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2139,7 +2196,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                     children: language === 'HI' ? 'प्रोसेसिंग...' : 'Processing file...'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 250,
+                                    lineNumber: 309,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2147,13 +2204,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                     children: error
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 256,
+                                    lineNumber: 315,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 228,
+                            lineNumber: 287,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         currentStep === 'MAPPING' && dataset && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2174,13 +2231,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: dataset.filename
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 268,
+                                                            lineNumber: 327,
                                                             columnNumber: 58
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 268,
+                                                    lineNumber: 327,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2192,19 +2249,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: dataset.rowCount.toLocaleString()
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 269,
+                                                            lineNumber: 328,
                                                             columnNumber: 58
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 269,
+                                                    lineNumber: 328,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 267,
+                                            lineNumber: 326,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2219,13 +2276,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: dataset.columns.length
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 272,
+                                                            lineNumber: 331,
                                                             columnNumber: 61
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 272,
+                                                    lineNumber: 331,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2237,25 +2294,25 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: dataset.fileType
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 273,
+                                                            lineNumber: 332,
                                                             columnNumber: 58
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 273,
+                                                    lineNumber: 332,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 271,
+                                            lineNumber: 330,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 266,
+                                    lineNumber: 325,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2269,7 +2326,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 278,
+                                            lineNumber: 337,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         columnMappings.map((mapping, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2283,7 +2340,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                                 children: mapping.sourceColumn
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                                lineNumber: 284,
+                                                                lineNumber: 343,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             mapping.sampleValues.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2294,20 +2351,20 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                                lineNumber: 286,
+                                                                lineNumber: 345,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 342,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                         className: "w-3.5 h-3.5 text-slate-500 shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                        lineNumber: 291,
+                                                        lineNumber: 350,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2320,7 +2377,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                                 children: "-- Skip --"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                                lineNumber: 297,
+                                                                lineNumber: 356,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             [
@@ -2349,13 +2406,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                                     children: field.replace(/_/g, ' ')
                                                                 }, field, false, {
                                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                                    lineNumber: 299,
+                                                                    lineNumber: 358,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                        lineNumber: 292,
+                                                        lineNumber: 351,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     mapping.confidence > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2366,70 +2423,70 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                        lineNumber: 303,
+                                                        lineNumber: 362,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, idx, true, {
                                                 fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                lineNumber: 282,
+                                                lineNumber: 341,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 277,
+                                    lineNumber: 336,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex justify-end gap-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>setCurrentStep('UPLOAD'),
+                                            onClick: ()=>setCurrentStep('MAPPING'),
                                             className: "px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-colors",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
                                                     className: "w-3.5 h-3.5 inline mr-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 318,
+                                                    lineNumber: 377,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Back"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 314,
+                                            lineNumber: 373,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: handleValidate,
+                                            onClick: handleSourceContinue,
                                             className: "px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-colors",
                                             children: [
-                                                language === 'HI' ? 'सत्यापित करें' : 'Validate',
+                                                language === 'HI' ? 'स्रोत सत्यापित करें' : 'Verify Source',
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                     className: "w-3.5 h-3.5 inline ml-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 326,
+                                                    lineNumber: 385,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 321,
+                                            lineNumber: 380,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 313,
+                                    lineNumber: 372,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 265,
+                            lineNumber: 324,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         currentStep === 'VALIDATION' && validationReport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2446,7 +2503,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Total Records"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 337,
+                                                    lineNumber: 396,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2454,13 +2511,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.totalRecords.toLocaleString()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 338,
+                                                    lineNumber: 397,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 336,
+                                            lineNumber: 395,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2471,7 +2528,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Valid"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 341,
+                                                    lineNumber: 400,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2479,13 +2536,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.validRecords.toLocaleString()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 342,
+                                                    lineNumber: 401,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 340,
+                                            lineNumber: 399,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2496,7 +2553,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Incomplete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 345,
+                                                    lineNumber: 404,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2504,13 +2561,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.incompleteRecords.toLocaleString()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 346,
+                                                    lineNumber: 405,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 344,
+                                            lineNumber: 403,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2521,7 +2578,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Rejected"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 349,
+                                                    lineNumber: 408,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2529,19 +2586,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.rejectedRecords.toLocaleString()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 350,
+                                                    lineNumber: 409,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 348,
+                                            lineNumber: 407,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 335,
+                                    lineNumber: 394,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2555,7 +2612,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Duplicate Groups"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 415,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2563,13 +2620,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.duplicateGroups
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 357,
+                                                    lineNumber: 416,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 355,
+                                            lineNumber: 414,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2580,7 +2637,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Date Inconsistencies"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 360,
+                                                    lineNumber: 419,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2588,13 +2645,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.dateInconsistencies
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 361,
+                                                    lineNumber: 420,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 359,
+                                            lineNumber: 418,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2605,7 +2662,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Unknown Stages"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 364,
+                                                    lineNumber: 423,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2613,13 +2670,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.unknownStageLabels
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 365,
+                                                    lineNumber: 424,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 363,
+                                            lineNumber: 422,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2630,7 +2687,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: "Invalid Coordinates"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 368,
+                                                    lineNumber: 427,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2638,19 +2695,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     children: validationReport.invalidCoordinates
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 428,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 367,
+                                            lineNumber: 426,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 354,
+                                    lineNumber: 413,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 validationReport.validationErrors.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2665,7 +2722,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 375,
+                                            lineNumber: 434,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2681,7 +2738,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                         ]
                                                     }, idx, true, {
                                                         fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                        lineNumber: 380,
+                                                        lineNumber: 439,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))),
                                                 validationReport.validationErrors.length > 20 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2693,19 +2750,19 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 389,
+                                                    lineNumber: 448,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 378,
+                                            lineNumber: 437,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 374,
+                                    lineNumber: 433,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2719,14 +2776,14 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     className: "w-3.5 h-3.5 inline mr-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 402,
+                                                    lineNumber: 461,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Back"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 398,
+                                            lineNumber: 457,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2738,25 +2795,25 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     className: "w-3.5 h-3.5 inline ml-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 410,
+                                                    lineNumber: 469,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 405,
+                                            lineNumber: 464,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 397,
+                                    lineNumber: 456,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 334,
+                            lineNumber: 393,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         currentStep === 'IMPORT_DECISION' && validationReport && dataset && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2770,7 +2827,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: "Import Summary"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 420,
+                                            lineNumber: 479,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2783,7 +2840,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: "Valid records: "
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 423,
+                                                            lineNumber: 482,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2791,13 +2848,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: validationReport.validRecords.toLocaleString()
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 424,
+                                                            lineNumber: 483,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 422,
+                                                    lineNumber: 481,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2807,7 +2864,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: "Rejected records: "
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 427,
+                                                            lineNumber: 486,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2815,13 +2872,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: validationReport.rejectedRecords.toLocaleString()
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 428,
+                                                            lineNumber: 487,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 426,
+                                                    lineNumber: 485,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2831,7 +2888,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: "Coverage: "
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 431,
+                                                            lineNumber: 490,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2842,13 +2899,13 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 432,
+                                                            lineNumber: 491,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 430,
+                                                    lineNumber: 489,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2858,7 +2915,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: "Data health: "
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 435,
+                                                            lineNumber: 494,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2866,25 +2923,25 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                             children: validationReport.rejectedRecords === 0 ? 'EXCELLENT' : validationReport.rejectedRecords < validationReport.totalRecords * 0.1 ? 'ACCEPTABLE' : 'NEEDS REVIEW'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                            lineNumber: 436,
+                                                            lineNumber: 495,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 434,
+                                                    lineNumber: 493,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 421,
+                                            lineNumber: 480,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 419,
+                                    lineNumber: 478,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2898,7 +2955,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                                    lineNumber: 452,
+                                                    lineNumber: 511,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Import Valid Records (",
@@ -2907,7 +2964,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 448,
+                                            lineNumber: 507,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2916,7 +2973,7 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: "Review Issues"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 455,
+                                            lineNumber: 514,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2925,36 +2982,36 @@ const DataImportWizard = ({ isOpen, onClose, onImportComplete, language })=>{
                                             children: "Cancel"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                                            lineNumber: 461,
+                                            lineNumber: 520,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                                    lineNumber: 447,
+                                    lineNumber: 506,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/DataImportWizard.tsx",
-                            lineNumber: 418,
+                            lineNumber: 477,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/DataImportWizard.tsx",
-                    lineNumber: 225,
+                    lineNumber: 284,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/DataImportWizard.tsx",
-            lineNumber: 173,
+            lineNumber: 227,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/DataImportWizard.tsx",
-        lineNumber: 172,
+        lineNumber: 226,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

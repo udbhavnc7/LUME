@@ -1703,7 +1703,9 @@ __turbopack_context__.s([
     "sanitizeCSVCell",
     ()=>sanitizeCSVCell,
     "validateDataset",
-    ()=>validateDataset
+    ()=>validateDataset,
+    "validateImportProvenance",
+    ()=>validateImportProvenance
 ]);
 const LUME_FIELD_DEFINITIONS = {
     project_id: {
@@ -2297,7 +2299,7 @@ function validateDataset(rows, headers, columnMappings) {
         coveragePct: Math.round(coveragePct * 10) / 10
     };
 }
-function createImportedDataset(filename, fileSize, fileType, headers, rowCount, mappings) {
+function createImportedDataset(filename, fileSize, fileType, headers, rowCount, mappings, sourceMetadata) {
     return {
         id: `ds-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
         name: filename.replace(/\.[^.]+$/, ''),
@@ -2311,8 +2313,46 @@ function createImportedDataset(filename, fileSize, fileType, headers, rowCount, 
         sourceClassification: 'IMPORTED',
         schemaVersion: 'v1.0',
         validationStatus: 'PENDING',
-        columnMappings: mappings
+        columnMappings: mappings,
+        sourceMetadata
     };
+}
+const SHA256_HEX = /^[a-f0-9]{64}$/i;
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const isNonEmpty = (value)=>typeof value === 'string' && value.trim().length > 0;
+const isValidHttpUrl = (value)=>{
+    try {
+        const parsed = new URL(value);
+        return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+    } catch  {
+        return false;
+    }
+};
+function validateImportProvenance(metadata) {
+    const errors = [];
+    if (!metadata) {
+        return [
+            'sourceMetadata is required'
+        ];
+    }
+    if (!isNonEmpty(metadata.sourceName)) errors.push('sourceName is required');
+    if (!isNonEmpty(metadata.sourceUrl)) {
+        errors.push('sourceUrl is required');
+    } else if (!isValidHttpUrl(metadata.sourceUrl)) {
+        errors.push('sourceUrl must be a valid http(s) URL');
+    }
+    if (!isNonEmpty(metadata.fetchedAt)) {
+        errors.push('fetchedAt is required');
+    } else if (!ISO_DATE.test(metadata.fetchedAt) || Number.isNaN(Date.parse(metadata.fetchedAt))) {
+        errors.push('fetchedAt must be a valid ISO date (YYYY-MM-DD)');
+    }
+    if (!isNonEmpty(metadata.extractionMethod)) errors.push('extractionMethod is required');
+    if (!isNonEmpty(metadata.fileSha256)) {
+        errors.push('fileSha256 is required');
+    } else if (!SHA256_HEX.test(metadata.fileSha256)) {
+        errors.push('fileSha256 must be a 64-character SHA-256 hex digest');
+    }
+    return errors;
 }
 function convertRowsToProjects(rows, headers, mappings) {
     return rows.map((row, idx)=>{
