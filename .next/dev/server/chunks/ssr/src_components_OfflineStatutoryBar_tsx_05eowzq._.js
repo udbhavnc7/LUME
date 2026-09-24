@@ -106,9 +106,9 @@ const OfflineStatutoryBar = ({ language = 'EN' })=>{
             variancePercentage: variance,
             fieldNotes: notes.trim() || 'Physical boundary inspection completed in offline field mode.',
             geotagCoordinates: {
-                lat: 18.5204 + (Math.random() - 0.5) * 0.05,
-                lng: 73.8567 + (Math.random() - 0.5) * 0.05,
-                accuracyMeters: 4.2
+                lat: 0,
+                lng: 0,
+                accuracyMeters: 0
             },
             statutoryCategory: fieldCategory,
             officerAttestation: 'CALA Field Survey Officer #4092',

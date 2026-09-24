@@ -99,7 +99,7 @@ export const CitizenTransparencyPortal: React.FC<CitizenTransparencyPortalProps>
       alert('Please provide name and phone number.');
       return;
     }
-    const receipt = `LUME-JAN-${Math.floor(100000 + Math.random() * 900000)}`;
+    const receipt = `LUME-JAN-${Date.now().toString(36).toUpperCase()}`;
     setSubmittedReceipt(receipt);
     confetti({ particleCount: 60, spread: 70, origin: { y: 0.7 } });
   };

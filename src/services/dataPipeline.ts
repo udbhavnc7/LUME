@@ -178,7 +178,7 @@ export function simulatePipelineRun(run: PipelineRun, project: LandAcquisitionPr
     updatedRun.steps[i] = {
       ...updatedRun.steps[i],
       status: 'COMPLETED',
-      completedAt: new Date(Date.now() + Math.random() * 200 + 50).toISOString(),
+      completedAt: new Date(Date.now() + (i + 1) * 50).toISOString(),
       recordsOut: project.dependencies.length + 1,
       warnings: updatedRun.steps[i].stage === 'RECONCILE' ? ['2 duplicate parcel records merged'] : [],
     };

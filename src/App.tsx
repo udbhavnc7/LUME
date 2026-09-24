@@ -19,7 +19,7 @@ import { ModelEvaluationScreen } from './components/ModelEvaluationScreen';
 import { ManagementAttentionView } from './components/ManagementAttentionView';
 import { DataManagementView } from './components/DataManagementView';
 import { CommandCenterHero } from './components/CommandCenterHero';
-import { MOCK_PROJECTS, MOCK_CITIZEN_PARCELS, MOCK_DECISION_LOGS } from './data/mockData';
+import { DEMO_PROJECTS, DEMO_CITIZEN_PARCELS, DEMO_DECISION_LOGS } from './data/demoData';
 import { 
   LandAcquisitionProject, 
   DecisionLogEntry, 

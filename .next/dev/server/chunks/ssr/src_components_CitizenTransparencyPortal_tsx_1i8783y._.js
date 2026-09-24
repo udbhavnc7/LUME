@@ -73,7 +73,7 @@ const CitizenTransparencyPortal = ({ parcels, initialUlpin, language, onSwitchTo
             alert('Please provide name and phone number.');
             return;
         }
-        const receipt = `LUME-JAN-${Math.floor(100000 + Math.random() * 900000)}`;
+        const receipt = `LUME-JAN-${Date.now().toString(36).toUpperCase()}`;
         setSubmittedReceipt(receipt);
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$canvas$2d$confetti$2f$dist$2f$confetti$2e$module$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])({
             particleCount: 60,
