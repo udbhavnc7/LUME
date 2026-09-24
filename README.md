@@ -338,5 +338,7 @@ Statutory clocks (Section 6 rule table) are computed deterministically and label
 
 <div align="center">
   <sub>LUME — From records to foresight. From foresight to action.</sub><br/>
-  <sub>Built for the Smart India Hackathon (SIH 2026) • Ministry of Rural Development problem statement — covering both RFCTLARR Act 2013 and NH Act 1956, multi-sector (highways, railways, power, industrial corridors)</sub>
+  <sub>Built for the Smart India Hackathon (SIH 2026) • Ministry of Rural Development problem statement — covering both RFCTLARR Act 2013 and NH Act 1956, multi-sector (highways, railways, power, industrial corridors)
+  </sub>
+  **POWERED BY TEAM VAPORLOGIC **
 </div>
