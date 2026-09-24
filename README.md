@@ -11,7 +11,7 @@
 [![React](https://img.shields.io/badge/React-18.3-61dafb.svg?logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.4-646CFF.svg?logo=vite)](https://vitejs.dev/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Offline_First-008080.svg?logo=pwa)](https://web.dev/progressive-web-apps/)
-[![Status](https://img.shields.io/badge/Release-v9.0_Production-success.svg)](#)
+[![Status](https://img.shields.io/badge/Status-Pilot_ready_prototype-yellow.svg)](#)
 
 </div>
 
@@ -34,6 +34,7 @@
 - [Quick Start & Local Setup](#-quick-start--local-setup)
 - [Production Deployment](#-production-deployment)
 - [Project Directory Structure](#-project-directory-structure)
+- [Data & Provenance](#-data--provenance)
 - [Responsible AI & Data Protection](#-responsible-ai--data-protection)
 
 ---
@@ -45,11 +46,11 @@ Major infrastructure corridors in India across highways (NHAI), railways, power 
 Government departments record massive operational data across fragmented registries (**NGDRS, PARIVESH, LACRRIS, e-Courts/NJDG, PM GatiShakti, Bhoomi Rashi**). However, **recording the current status is fundamentally different from forecasting where the next statutory bottleneck will occur.**
 
 **LUME** bridges this critical gap as an intelligent predictive decision layer that operates above existing systems:
-1. **Forecasts the exact milestone bottleneck** (e.g., Sec 19 declaration, Sec 26 market valuation, Sec 38 compensation disbursement) with a calibrated delay horizon (30/60/90 days).
-2. **Explains the drivers** using SHAP-inspired explainability across multi-source statutory evidence.
-3. **Matches historical precedents** from identical districts, agro-climatic zones, and legal routes.
+1. **Forecasts the next milestone bottleneck** (e.g., Sec 19 declaration, Sec 26 market valuation, Sec 38 compensation disbursement) with delay horizons (30/60/90 days) and explicit abstention when evidence is insufficient.
+2. **Explains the drivers** using evidence-based explainability across multi-source statutory evidence.
+3. **Matches historical precedents** from reconstructed case files across districts, agro-climatic zones, and legal routes.
 4. **Prioritizes executive interventions** via the **Intervention Priority Index (IPI)**.
-5. **Protects affected citizens** through bilingual, low-bandwidth, multi-generational transparency (RFCTLARR Sec 10 multi-crop protection, compensation breakdowns, voice assistance).
+5. **Protects affected citizens** through bilingual, low-bandwidth transparency (RFCTLARR Sec 10 multi-crop protection, compensation breakdowns, voice assistance).
 
 ---
 
@@ -60,14 +61,20 @@ Government departments record massive operational data across fragmented registr
 │                      Traditional State of Affairs                       │
 │                                                                         │
 │  "Project NH-48 is in Stage: Section 26 Valuation"                     │
-│  ✗ No lead warning that Section 19 12-month statutory clock is lapsing   │
-│  ✗ Unknown 38% valuation gap between stamp rates & sale deed top-50%   │
-│  ✗ Forest Stage-1 clearance pending 82 days with zero downstream alert  │
-│  ✗ Result: Project enters Section 25 lapse; acquisition must restart!   │
+│  ✗ No lead warning that Section 19 12-month declaration clock is lapsing│
+│  ✗ No lead warning that Section 25 2-year award clock is lapsing        │
+│  ✗ Valuation gap between stamp rates & sale deeds not surfaced         │
+│  ✗ Forest clearance delays with no downstream alert                     │
+│  ✗ Result: statutory lapse risk; acquisition must restart!              │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-When projects slip past statutory deadlines (e.g., 12 months between Sec 11 preliminary notification and Sec 19 declaration under RFCTLARR 2013, or 336 days under NHAI guidelines), **the entire acquisition proceedings lapse by law**, causing billions in capital lock-up and prolonged dispute for landowners.
+When projects slip past statutory deadlines, proceedings lapse by law and cause capital lock-up and prolonged dispute for landowners. The key RFCTLARR clocks are separate and must not be conflated:
+
+- **Sec 19(7) declaration clock:** the Sec 19 declaration must be made within **12 months** of the Sec 11 preliminary notification, or that notification lapses.
+- **Sec 25 award clock:** the award must be made within **2 years** of the Sec 19 declaration, or the proceedings lapse.
+
+The NH Act 1956 route has its own clocks (Sec 3D declaration within 1 year of Sec 3A publication). Separately, NHAI maintains a **336-day time-bound acquisition schedule** as a policy benchmark (primary circular pending verification) — it is not a statutory lapse provision.
 
 ---
 
@@ -81,9 +88,9 @@ LUME converts passive reporting into **proactive decision velocity**:
  └──────────┬───────────┘
             │
             ▼
- ┌──────────────────────┐
- │ Calibrated ML Engine │ (Statutory clock hazard models, 4.2M precedent base)
- └──────────┬───────────┘
+┌──────────────────────┐
+│ Rules & Evidence     │ (Deterministic statutory clocks + models with n, intervals)
+└──────────┬───────────┘
             │
             ▼
  ┌──────────────────────┐
@@ -129,15 +136,14 @@ A dedicated deep-dive command center for District Magistrates, Land Acquisition 
 - **Executive Review Packet**: 1-click generation of PDF/printable briefs for collectorate meetings.
 - **Document Verification Module**: Document OCR audit with SHA-256 tamper checks, anomaly tagging, and digital verification trails.
 
-### 3. Counterfactual Scenario Lab
-Enables administrators to test policy and operational interventions before committing administrative resources:
-- *What if compensation is raised to 1.35× circle rate?*
-- *What if Lok Adalat mediation resolves 60% of Section 15 objections?*
-- *What if fast-track environment bench clears RoW diversion in 30 days?*
-- Instant recalculation of delay probability, predicted milestone date, and fiscal impact.
+### 3. Scenario Lab
+Enables administrators to test operational interventions with exact, statutory math:
+- **Compensation calculator**: exact computation from sourced market value, state-notified multiplication factor, asset value, and 100% solatium (Sec 30) — no estimated multipliers; outputs ABSENT when a notified factor or rate is unavailable.
+- **Delay effects**: drawn only from historical evidence with reference set and *n* shown, otherwise "no evidence yet".
+- **Objection and clearance scenarios**: outcomes shown only when backed by documented precedent.
 
 ### 4. Institutional Precedent Matching Engine
-Queries historical cases across 28 states and 700+ districts with similarity scoring:
+Queries verified, reconstructed case files with similarity scoring (case count shown live from the database):
 - Matches by terrain, corridor type, process route (RFCTLARR vs NH Act), and grievance pattern.
 - Displays actual outcome, resolution lead time, and effective administrative orders used in the precedent.
 
@@ -145,13 +151,13 @@ Queries historical cases across 28 states and 700+ districts with similarity sco
 Designed for all citizens—including rural landowners, elders, and legal heirs:
 - **Bilingual Interface**: Seamless 1-click toggle between English and Hindi (हिन्दी).
 - **Visual Land Parcel Cards**: Clear breakdown of circle rate, market multiplier, solatium (100%), and R&R entitlement under First/Second Schedules.
-- **Section 10 Multi-Crop Safeguard**: Satellite NDVI tracking alerts when multi-crop agricultural land threshold is approached.
+- **Section 10 Multi-Crop Safeguard**: Satellite NDVI screening to flag candidate multi-crop areas for review — never a legal determination of multi-crop status.
 - **Voice & Accessibility**: Integrated screen reader, font scaler, high-contrast modes, and audio narration.
 - **Offline PWA**: Full offline caching via Workbox and IndexedDB for low-connectivity tehsil offices.
 
 ### 6. Model Governance, Calibration & Abstention
 Unlike black-box models, LUME enforces **strict responsible AI principles**:
-- **Explicit Abstention Protocol**: Automatically abstains from making predictions when evidence coverage is below threshold ($<65\%$), flagging "INSUFFICIENT_DATA" rather than hallucinating.
+- **Explicit Abstention Protocol**: Automatically abstains from making predictions when evidence coverage is below a configured threshold, flagging "INSUFFICIENT_DATA" rather than hallucinating.
 - **Temporal Split Validation**: Prevents data leakage by training only on pre-event snapshots and testing on post-event timelines.
 - **Probability Clamping & Determinism**: All hazard scores runtime-clamped to $[0, 1]$ with deterministic fallbacks.
 
@@ -163,10 +169,10 @@ LUME is engineered around India's statutory land acquisition frameworks:
 
 | Statute / Policy | Statutory Clocks & Provisions Monitored |
 |---|---|
-| **RFCTLARR Act 2013** | **Sec 4** (SIA appraisal), **Sec 11** (Preliminary notification), **Sec 15** (Objections hearing within 60 days), **Sec 19** (Declaration within 12 months), **Sec 26** (Market value determination), **Sec 30** (100% solatium), **Sec 38** (Compensation payment before possession) |
-| **National Highways Act 1956** | **Sec 3A** (Intention notice), **Sec 3C** (Hearing of objections), **Sec 3D** (Declaration of acquisition within 1 year), **Sec 3G** (CALA valuation award), **Sec 3H** (Deposit and payment) |
-| **NHAI April 2025 Standard** | 336-day accelerated corridor acquisition clock |
-| **RFCTLARR Section 10** | Food security mandate: multi-crop irrigated land acquisition caps |
+| **RFCTLARR Act 2013** | **Sec 4** (SIA appraisal), **Sec 11** (Preliminary notification), **Sec 15** (Objections hearing within 60 days of Sec 11), **Sec 19(7)** (Declaration within 12 months of Sec 11 — preliminary notification lapses if missed), **Sec 25** (Award within 2 years of Sec 19 — proceedings lapse if missed; separate clock from Sec 19), **Sec 26** (Market value determination), **Sec 30** (100% solatium), **Sec 38** (Compensation payment before possession) |
+| **National Highways Act 1956** | **Sec 3A** (Intention notice), **Sec 3C** (Hearing of objections), **Sec 3D** (Declaration of acquisition within 1 year of 3A), **Sec 3G** (CALA valuation award), **Sec 3H** (Deposit and payment) |
+| **NHAI time-bound acquisition schedule** | 336-day policy benchmark for corridor acquisition (not a statutory lapse provision; primary circular pending verification) |
+| **RFCTLARR Section 10** | Food security mandate: multi-crop irrigated land acquisition restrictions |
 
 ---
 
@@ -276,16 +282,38 @@ LUME/
 
 ---
 
+## 🔍 Data & Provenance
+
+Every value shown in LUME is exactly one of **SOURCED**, **COMPUTED**, or **ABSENT** (the Real-Data Contract):
+
+| Class | Meaning | Required metadata |
+|---|---|---|
+| **SOURCED** | Extracted or copied from a real document or dataset | source, URL, fetched-at, SHA-256 of the document, extraction method, confidence |
+| **COMPUTED** | Deterministic or statistical output derived from SOURCED inputs | list of input fact IDs, formula/model version, sample size where statistical |
+| **ABSENT** | Not available | the UI shows an explicit empty or "insufficient data" state |
+
+Enforcement:
+
+- **CI lint rule** fails the build if `src/` imports `faker`, uses `Math.random()` to produce displayed values, or imports any file matching `*mock*`.
+- **Runtime rule**: UI components render facts only via a `<Fact>` wrapper that requires a `provenance` prop; a fact without provenance renders as **ABSENT**.
+- **Freshness badges** ("Data as of…") and a **source link** appear on each screen.
+- LLMs may be used to *extract* fields from real documents, but each extracted field carries the source document, the exact source span, and a confidence. Low-confidence extractions go to a human-review queue and are not displayed as facts until confirmed.
+- Test fixtures live only under `/tests/`, are derived from real documents, and are never imported by production code.
+
+Statutory clocks (Section 6 rule table) are computed deterministically and labeled **STATUTORY**, kept separate from probabilistic outputs. Every rule row is verified against the bare Act and current amendments before it is coded.
+
+---
+
 ## 🛡 Responsible AI & Data Protection
 
 - **Human-in-the-Loop**: LUME is an advisory and foresight engine. It never makes autonomous legal, financial, or land takeover decisions.
 - **Explainability First**: Every risk percentage is accompanied by contributing factors, evidence quality scores, and comparison with empirical baselines.
-- **DPDP Act 2023 Compliant**: No Aadhaar or personal biometric citizen data is stored; parcel identifiers leverage statutory ULPIN and Gut numbers.
+- **DPDP Act 2023**: Designed for DPDP compliance; review pending. No Aadhaar or personal biometric citizen data is stored; parcel identifiers leverage statutory ULPIN and Gut numbers.
 - **Formula Injection Guard**: All uploaded CSV/JSON datasets are sanitized against spreadsheet formula injection attacks (`=`, `+`, `-`, `@`, `\t`).
 
 ---
 
 <div align="center">
   <sub>LUME — From records to foresight. From foresight to action.</sub><br/>
-  <sub>Built for the Smart India Hackathon (SIH 2026) • Ministry of Road Transport & Highways / NHAI</sub>
+  <sub>Built for the Smart India Hackathon (SIH 2026) • Ministry of Rural Development problem statement — covering both RFCTLARR Act 2013 and NH Act 1956, multi-sector (highways, railways, power, industrial corridors)</sub>
 </div>
