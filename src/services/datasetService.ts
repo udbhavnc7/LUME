@@ -5,6 +5,7 @@ import {
   ValidationError,
   LandAcquisitionProject,
   StageType,
+  ImportSourceMetadata,
 } from '../types';
 
 const LUME_FIELD_DEFINITIONS: Record<string, { label: string; required: boolean; type: 'string' | 'number' | 'date' }> = {
@@ -358,7 +359,8 @@ export function createImportedDataset(
   fileType: ImportedDataset['fileType'],
   headers: string[],
   rowCount: number,
-  mappings: DatasetColumnMapping[]
+  mappings: DatasetColumnMapping[],
+  sourceMetadata?: ImportSourceMetadata
 ): ImportedDataset {
   return {
     id: `ds-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -374,7 +376,50 @@ export function createImportedDataset(
     schemaVersion: 'v1.0',
     validationStatus: 'PENDING',
     columnMappings: mappings,
+    sourceMetadata,
   };
+}
+
+const SHA256_HEX = /^[a-f0-9]{64}$/i;
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+const isNonEmpty = (value: string | undefined | null): value is string =>
+  typeof value === 'string' && value.trim().length > 0;
+
+const isValidHttpUrl = (value: string): boolean => {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+};
+
+export function validateImportProvenance(
+  metadata: ImportSourceMetadata | undefined | null
+): string[] {
+  const errors: string[] = [];
+  if (!metadata) {
+    return ['sourceMetadata is required'];
+  }
+  if (!isNonEmpty(metadata.sourceName)) errors.push('sourceName is required');
+  if (!isNonEmpty(metadata.sourceUrl)) {
+    errors.push('sourceUrl is required');
+  } else if (!isValidHttpUrl(metadata.sourceUrl)) {
+    errors.push('sourceUrl must be a valid http(s) URL');
+  }
+  if (!isNonEmpty(metadata.fetchedAt)) {
+    errors.push('fetchedAt is required');
+  } else if (!ISO_DATE.test(metadata.fetchedAt) || Number.isNaN(Date.parse(metadata.fetchedAt))) {
+    errors.push('fetchedAt must be a valid ISO date (YYYY-MM-DD)');
+  }
+  if (!isNonEmpty(metadata.extractionMethod)) errors.push('extractionMethod is required');
+  if (!isNonEmpty(metadata.fileSha256)) {
+    errors.push('fileSha256 is required');
+  } else if (!SHA256_HEX.test(metadata.fileSha256)) {
+    errors.push('fileSha256 must be a 64-character SHA-256 hex digest');
+  }
+  return errors;
 }
 
 export function convertRowsToProjects(

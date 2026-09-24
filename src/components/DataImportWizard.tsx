@@ -17,6 +17,7 @@ import {
   ImportedDataset,
   DatasetColumnMapping,
   DatasetValidationReport,
+  ImportSourceMetadata,
 } from '../types';
 import {
   parseCSV,
@@ -24,6 +25,7 @@ import {
   detectColumns,
   validateDataset,
   createImportedDataset,
+  validateImportProvenance,
 } from '../services/datasetService';
 
 interface DataImportWizardProps {
@@ -33,10 +35,18 @@ interface DataImportWizardProps {
   language: 'EN' | 'HI';
 }
 
-type WizardStep = 'UPLOAD' | 'MAPPING' | 'VALIDATION' | 'IMPORT_DECISION';
+type WizardStep = 'UPLOAD' | 'MAPPING' | 'SOURCE' | 'VALIDATION' | 'IMPORT_DECISION';
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024; // 50 MB
 const MAX_ROW_COUNT = 50000;
+
+const computeSha256Hex = async (content: string): Promise<string> => {
+  const data = new TextEncoder().encode(content);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
+};
 
 export const DataImportWizard: React.FC<DataImportWizardProps> = ({
   isOpen,
@@ -52,6 +62,14 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
   const [validationReport, setValidationReport] = useState<DatasetValidationReport | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fileSha256, setFileSha256] = useState<string | null>(null);
+  const [sourceDraft, setSourceDraft] = useState({
+    sourceName: '',
+    sourceUrl: '',
+    fetchedAt: '',
+    extractionMethod: '',
+  });
+  const [sourceErrors, setSourceErrors] = useState<string[]>([]);
 
   const handleFileUpload = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -93,6 +111,8 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
         return;
       }
 
+      const sha256 = await computeSha256Hex(content);
+      setFileSha256(sha256);
       setHeaders(parsedHeaders);
       setRows(parsedRows);
 
@@ -125,6 +145,17 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
     }
   }, []);
 
+  const buildSourceMetadata = (): ImportSourceMetadata | null => {
+    if (!fileSha256) return null;
+    return {
+      sourceName: sourceDraft.sourceName.trim(),
+      sourceUrl: sourceDraft.sourceUrl.trim(),
+      fetchedAt: sourceDraft.fetchedAt.trim(),
+      extractionMethod: sourceDraft.extractionMethod.trim(),
+      fileSha256,
+    };
+  };
+
   const handleMappingChange = (index: number, lumeField: string) => {
     setColumnMappings(prev => {
       const updated = [...prev];
@@ -139,12 +170,31 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
     report.datasetId = dataset.id;
     setValidationReport(report);
     dataset.validationStatus = report.rejectedRecords > 0 ? 'PARTIAL' : 'PASSED';
-    setCurrentStep('VALIDATION');
+    setCurrentStep('SOURCE');
+  };
+
+  const handleSourceContinue = () => {
+    const metadata = buildSourceMetadata();
+    const errors = validateImportProvenance(metadata);
+    setSourceErrors(errors);
+    if (errors.length === 0) {
+      setCurrentStep('VALIDATION');
+    }
   };
 
   const handleImport = () => {
     if (!dataset || !validationReport) return;
-    onImportComplete(dataset, validationReport);
+    const metadata = buildSourceMetadata();
+    const errors = validateImportProvenance(metadata);
+    setSourceErrors(errors);
+    if (errors.length > 0) {
+      setCurrentStep('SOURCE');
+      return;
+    }
+    const datasetWithSource: ImportedDataset = metadata
+      ? { ...dataset, sourceMetadata: metadata }
+      : dataset;
+    onImportComplete(datasetWithSource, validationReport);
     onClose();
     resetWizard();
   };
@@ -157,13 +207,17 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
     setColumnMappings([]);
     setValidationReport(null);
     setError(null);
+    setFileSha256(null);
+    setSourceDraft({ sourceName: '', sourceUrl: '', fetchedAt: '', extractionMethod: '' });
+    setSourceErrors([]);
   };
 
   const steps: { id: WizardStep; label: string; num: number }[] = [
     { id: 'UPLOAD', label: language === 'HI' ? 'अपलोड' : 'Upload', num: 1 },
     { id: 'MAPPING', label: language === 'HI' ? 'मैपिंग' : 'Mapping', num: 2 },
-    { id: 'VALIDATION', label: language === 'HI' ? 'सत्यापन' : 'Validation', num: 3 },
-    { id: 'IMPORT_DECISION', label: language === 'HI' ? 'आयात' : 'Import', num: 4 },
+    { id: 'SOURCE', label: language === 'HI' ? 'स्रोत' : 'Source', num: 3 },
+    { id: 'VALIDATION', label: language === 'HI' ? 'सत्यापन' : 'Validation', num: 4 },
+    { id: 'IMPORT_DECISION', label: language === 'HI' ? 'आयात' : 'Import', num: 5 },
   ];
 
   if (!isOpen) return null;
@@ -197,7 +251,12 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
             <React.Fragment key={step.id}>
               <button
                 onClick={() => {
-                  if (step.id === 'UPLOAD' || (step.id === 'MAPPING' && dataset) || (step.id === 'VALIDATION' && validationReport)) {
+                  if (
+                    step.id === 'UPLOAD' ||
+                    (step.id === 'MAPPING' && dataset) ||
+                    (step.id === 'SOURCE' && dataset) ||
+                    (step.id === 'VALIDATION' && validationReport)
+                  ) {
                     setCurrentStep(step.id);
                   }
                 }}
@@ -329,7 +388,89 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
             </div>
           )}
 
-          {/* Step 3: Validation */}
+          {/* Step 3: Source provenance */}
+          {currentStep === 'SOURCE' && dataset && (
+            <div className="space-y-4">
+              <div className="bg-slate-800 rounded-xl p-4 text-xs space-y-1">
+                <div className="text-sm font-bold text-white mb-1">Source Provenance Required</div>
+                <p className="text-slate-400">
+                  Import is rejected unless source name, source URL, fetch date, extraction method, and file hash are recorded.
+                </p>
+                <div className="mt-2 text-slate-500 font-mono break-all">
+                  fileSha256: {fileSha256 ?? '—'}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label className="space-y-1 text-xs text-slate-400">
+                  Source name
+                  <input
+                    type="text"
+                    value={sourceDraft.sourceName}
+                    onChange={(e) => setSourceDraft(prev => ({ ...prev, sourceName: e.target.value }))}
+                    placeholder="e.g. Ministry circular export"
+                    className="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                  />
+                </label>
+                <label className="space-y-1 text-xs text-slate-400">
+                  Source URL (http/https)
+                  <input
+                    type="url"
+                    value={sourceDraft.sourceUrl}
+                    onChange={(e) => setSourceDraft(prev => ({ ...prev, sourceUrl: e.target.value }))}
+                    placeholder="https://…"
+                    className="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                  />
+                </label>
+                <label className="space-y-1 text-xs text-slate-400">
+                  Fetched at (YYYY-MM-DD)
+                  <input
+                    type="date"
+                    value={sourceDraft.fetchedAt}
+                    onChange={(e) => setSourceDraft(prev => ({ ...prev, fetchedAt: e.target.value }))}
+                    className="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                  />
+                </label>
+                <label className="space-y-1 text-xs text-slate-400">
+                  Extraction method
+                  <input
+                    type="text"
+                    value={sourceDraft.extractionMethod}
+                    onChange={(e) => setSourceDraft(prev => ({ ...prev, extractionMethod: e.target.value }))}
+                    placeholder="e.g. manual-csv-export"
+                    className="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                  />
+                </label>
+              </div>
+
+              {sourceErrors.length > 0 && (
+                <div className="bg-rose-950/50 border border-rose-700/50 rounded-xl p-3 text-xs text-rose-300 space-y-1">
+                  {sourceErrors.map((err) => (
+                    <div key={err}>{err}</div>
+                  ))}
+                </div>
+              )}
+
+              <div className="flex justify-end gap-2">
+                <button
+                  onClick={() => setCurrentStep('MAPPING')}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-colors"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5 inline mr-1" />
+                  Back
+                </button>
+                <button
+                  onClick={handleSourceContinue}
+                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-colors"
+                >
+                  {language === 'HI' ? 'स्रोत सत्यापित करें' : 'Verify Source'}
+                  <ArrowRight className="w-3.5 h-3.5 inline ml-1" />
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Step 4: Validation */}
           {currentStep === 'VALIDATION' && validationReport && (
             <div className="space-y-4">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs">
@@ -396,7 +537,7 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
 
               <div className="flex justify-end gap-2">
                 <button
-                  onClick={() => setCurrentStep('MAPPING')}
+                  onClick={() => setCurrentStep('SOURCE')}
                   className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-colors"
                 >
                   <ArrowLeft className="w-3.5 h-3.5 inline mr-1" />

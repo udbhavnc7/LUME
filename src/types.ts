@@ -675,6 +675,14 @@ export type AbstentionReason =
   | 'EXCESSIVE_UNCERTAINTY'
   | 'INSUFFICIENT_DATA';
 
+export interface ImportSourceMetadata {
+  sourceName: string;
+  sourceUrl: string;
+  fetchedAt: string;
+  extractionMethod: string;
+  fileSha256: string;
+}
+
 export interface ImportedDataset {
   id: string;
   name: string;
@@ -689,6 +697,7 @@ export interface ImportedDataset {
   schemaVersion: string;
   validationStatus: 'PENDING' | 'PASSED' | 'FAILED' | 'PARTIAL';
   columnMappings: DatasetColumnMapping[];
+  sourceMetadata?: ImportSourceMetadata;
 }
 
 export interface DatasetColumnMapping {
