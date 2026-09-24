@@ -108,11 +108,11 @@ export default function App() {
   // Mutable state for decision logs
   const [decisionLogs, setDecisionLogs] = useState<DecisionLogEntry[]>(() => {
     const saved = readStoredValue('lume_decision_logs');
-    return saved ? JSON.parse(saved) : MOCK_DECISION_LOGS;
+    return saved ? JSON.parse(saved) : DEMO_DECISION_LOGS;
   });
 
-  const [projects] = useState<LandAcquisitionProject[]>(MOCK_PROJECTS);
-  const [parcels] = useState<CitizenParcelRecord[]>(MOCK_CITIZEN_PARCELS);
+  const [projects] = useState<LandAcquisitionProject[]>(DEMO_PROJECTS);
+  const [parcels] = useState<CitizenParcelRecord[]>(DEMO_CITIZEN_PARCELS);
 
   // When splash completes, check if onboarding is needed
   const handleSplashComplete = () => {

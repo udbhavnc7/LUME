@@ -42,7 +42,7 @@ import {
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { DocumentVerificationModule } from './DocumentVerificationModule';
-import { getProjectCasePulse, getProjectSnapshots, getProjectPipelineRuns, V7_DATA_PASSPORTS } from '../data/mockDataV7';
+import { getProjectCasePulse, getProjectSnapshots, getProjectPipelineRuns, V7_DATA_PASSPORTS } from '../data/demoDataV7';
 
 interface ProjectIntelligenceRoomProps {
   project: LandAcquisitionProject;

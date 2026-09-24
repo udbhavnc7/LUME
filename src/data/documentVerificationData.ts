@@ -26,7 +26,7 @@ export interface DatabaseLandRecord {
   circleRatePerAcreLakh: number;
 }
 
-export const MOCK_DATABASE_RECORDS: Record<string, DatabaseLandRecord> = {
+export const DEMO_DATABASE_RECORDS: Record<string, DatabaseLandRecord> = {
   'proj-nh48-pune-satara': {
     ulpin: 'MH270412889201',
     surveyKhasraNo: 'Gut No. 418/2',

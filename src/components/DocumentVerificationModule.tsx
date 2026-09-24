@@ -14,7 +14,7 @@ import {
 } from '../types';
 import { 
   DatabaseLandRecord, 
-  MOCK_DATABASE_RECORDS, 
+  DEMO_DATABASE_RECORDS, 
   PRESET_SCANNED_DOCUMENTS,
   getDefaultOcrFields
 } from '../data/documentVerificationData';
@@ -99,7 +99,7 @@ export const DocumentVerificationModule: React.FC<DocumentVerificationModuleProp
 }) => {
   // Find matching preset record for current project or default to the first
   const projectPreset = PRESET_SCANNED_DOCUMENTS.find(d => d.projectId === project.id) || PRESET_SCANNED_DOCUMENTS[0];
-  const projectDbRecord = MOCK_DATABASE_RECORDS[project.id] || MOCK_DATABASE_RECORDS['proj-nh48-pune-satara'];
+  const projectDbRecord = DEMO_DATABASE_RECORDS[project.id] || DEMO_DATABASE_RECORDS['proj-nh48-pune-satara'];
 
   // Main UI State
   const [currentMode, setCurrentMode] = useState<ScanMode>('SIDE_BY_SIDE');
@@ -252,7 +252,7 @@ export const DocumentVerificationModule: React.FC<DocumentVerificationModuleProp
   // Update records when project changes
   useEffect(() => {
     const matchedDoc = documentsList.find(d => d.projectId === project.id) || documentsList[0];
-    const matchedDb = MOCK_DATABASE_RECORDS[project.id] || MOCK_DATABASE_RECORDS['proj-nh48-pune-satara'];
+    const matchedDb = DEMO_DATABASE_RECORDS[project.id] || DEMO_DATABASE_RECORDS['proj-nh48-pune-satara'];
     setActiveDocument(matchedDoc);
     setDatabaseRecord(matchedDb);
   }, [project.id]);
@@ -445,7 +445,7 @@ export const DocumentVerificationModule: React.FC<DocumentVerificationModuleProp
   // Select a preset land record
   const handleSelectPreset = (doc: ScannedDocumentRecord) => {
     setActiveDocument(doc);
-    const matchedDb = MOCK_DATABASE_RECORDS[doc.projectId] || databaseRecord;
+    const matchedDb = DEMO_DATABASE_RECORDS[doc.projectId] || databaseRecord;
     setDatabaseRecord(matchedDb);
     setCapturedPhotoUrl(doc.imageThumbnailUrl || null);
     setCurrentMode('SIDE_BY_SIDE');
@@ -1210,7 +1210,7 @@ export const DocumentVerificationModule: React.FC<DocumentVerificationModuleProp
                   key={doc.id}
                   onClick={() => {
                     setActiveDocument(doc);
-                    const matchingDb = MOCK_DATABASE_RECORDS[doc.projectId] || projectDbRecord;
+                    const matchingDb = DEMO_DATABASE_RECORDS[doc.projectId] || projectDbRecord;
                     setDatabaseRecord(matchingDb);
                   }}
                   className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all whitespace-nowrap ${

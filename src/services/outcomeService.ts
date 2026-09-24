@@ -1,6 +1,6 @@
 import { OutcomeRecord, InstitutionalMemory, DecisionLogEntry } from '../types';
 
-const MOCK_OUTCOMES: OutcomeRecord[] = [
+const DEMO_OUTCOMES: OutcomeRecord[] = [
   {
     id: 'out-01',
     projectId: 'proj-nh48-pune-satara',
@@ -59,11 +59,11 @@ export function recordOutcome(
 }
 
 export function getOutcomesForProject(projectId: string): OutcomeRecord[] {
-  return MOCK_OUTCOMES.filter(o => o.projectId === projectId);
+  return DEMO_OUTCOMES.filter(o => o.projectId === projectId);
 }
 
 export function getInstitutionalMemory(): InstitutionalMemory[] {
-  return MOCK_OUTCOMES.map(outcome => ({
+  return DEMO_OUTCOMES.map(outcome => ({
     id: `mem-${outcome.id}`,
     signalType: 'DEPENDENCY_RESOLVED',
     predictionSnapshot: 'Prior risk assessment showed elevated delay probability',

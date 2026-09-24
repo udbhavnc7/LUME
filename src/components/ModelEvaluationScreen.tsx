@@ -15,7 +15,7 @@ import {
   CalibrationPoint,
 } from '../types';
 import { evaluateModel, calculateCalibration } from '../services/modelEvaluationService';
-import { getProjectSnapshots } from '../data/mockDataV7';
+import { getProjectSnapshots } from '../data/demoDataV7';
 
 interface ModelEvaluationScreenProps {
   projects: LandAcquisitionProject[];

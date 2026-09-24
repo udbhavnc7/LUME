@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { LandAcquisitionProject, ActionQueueItem, PortfolioHealthMetrics, QueueExplanation, AttentionBudget, DataMode } from '../types';
 import { buildActionQueue, calculatePortfolioHealth } from '../services/dataPipeline';
 import { buildActionQueueV8 } from '../services/actionQueueV8';
-import { MOCK_DECISION_LOGS } from '../data/mockData';
+import { DEMO_DECISION_LOGS } from '../data/demoData';
 import {
   AlertTriangle,
   Clock,
@@ -56,12 +56,12 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
   const [showQueueExplanation, setShowQueueExplanation] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'QUEUE' | 'ALL_PROJECTS'>('QUEUE');
 
-  const { queue: fullQueue } = useMemo(() => buildActionQueueV8(projects, MOCK_DECISION_LOGS, 999), [projects]);
+  const { queue: fullQueue } = useMemo(() => buildActionQueueV8(projects, DEMO_DECISION_LOGS, 999), [projects]);
   const { queue: selectedQueue, explanations, budget } = useMemo(
-    () => buildActionQueueV8(projects, MOCK_DECISION_LOGS, attentionBudget),
+    () => buildActionQueueV8(projects, DEMO_DECISION_LOGS, attentionBudget),
     [projects, attentionBudget]
   );
-  const portfolioHealth = useMemo(() => calculatePortfolioHealth(projects, fullQueue, MOCK_DECISION_LOGS), [projects, fullQueue]);
+  const portfolioHealth = useMemo(() => calculatePortfolioHealth(projects, fullQueue, DEMO_DECISION_LOGS), [projects, fullQueue]);
 
   const filteredQueue = selectedQueue.filter(item => {
     const q = searchQuery.toLowerCase();

@@ -1,6 +1,6 @@
 import { LandAcquisitionProject, CitizenParcelRecord, DecisionLogEntry } from '../types';
 
-export const MOCK_PROJECTS: LandAcquisitionProject[] = [
+export const DEMO_PROJECTS: LandAcquisitionProject[] = [
   {
     id: 'proj-nh48-pune-satara',
     projectCode: 'NHAI/MH/2025/NH48-EXP-04',
@@ -562,7 +562,7 @@ export const MOCK_PROJECTS: LandAcquisitionProject[] = [
   }
 ];
 
-export const MOCK_CITIZEN_PARCELS: CitizenParcelRecord[] = [
+export const DEMO_CITIZEN_PARCELS: CitizenParcelRecord[] = [
   {
     ulpin: 'MH270412889201',
     surveyKhasraNo: 'Gut No. 418/2',
@@ -690,7 +690,7 @@ export const MOCK_CITIZEN_PARCELS: CitizenParcelRecord[] = [
   }
 ];
 
-export const MOCK_DECISION_LOGS: DecisionLogEntry[] = [
+export const DEMO_DECISION_LOGS: DecisionLogEntry[] = [
   {
     id: 'dec-01',
     projectId: 'proj-nh48-pune-satara',

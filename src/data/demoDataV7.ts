@@ -1,7 +1,6 @@
 /**
  * Demo V7 data layer — temporal snapshots, case pulses, pipeline runs.
- * Wraps mockDataV7.ts under clean DEMO-prefixed names for production import.
- * Uses deterministic snapshot generation (no Math.random for displayed values).
+ * Deterministic snapshot generation (no Math.random for displayed values).
  */
 import {
   LandAcquisitionProject,
@@ -23,7 +22,7 @@ import {
 
 /**
  * Generates deterministic historical snapshots for a project.
- * Uses seeded offsets instead of Math.random() to comply with the data contract.
+ * Uses seeded offsets instead of random values to comply with the data contract.
  */
 function generateHistoricalSnapshots(project: LandAcquisitionProject): TemporalSnapshot[] {
   const snapshots: TemporalSnapshot[] = [];
@@ -42,7 +41,7 @@ function generateHistoricalSnapshots(project: LandAcquisitionProject): TemporalS
     snapshotDate.setDate(snapshotDate.getDate() + i * 7);
 
     if (i > 0) {
-      // Deterministic variation: use seed + index instead of Math.random()
+      // Deterministic variation: use seed + index instead of random values
       const offset = ((seed * (i + 1) * 7) % 100) / 100; // 0..0.99 deterministic
       const probChange = (offset - 0.4) * 0.08;
       currentProbability = Math.max(0.05, Math.min(0.98, currentProbability + probChange));
