@@ -60,7 +60,7 @@ export const CORE_STATUTORY_PROVISIONS: StatutoryRuleCacheItem[] = [
     title: 'Preliminary Notification Publication',
     mandate: 'Publication of preliminary notification in Official Gazette, two daily newspapers (one in regional language), and Gram Panchayat office.',
     limitationPeriodDays: 365,
-    penaltyOnLapse: 'If Section 19(1) declaration is not issued within 12 months, the entire acquisition proceeding lapses.',
+    penaltyOnLapse: 'If no declaration under Section 19 is made within 12 months of Section 11 publication, the preliminary notification lapses (Section 19(7)). VERIFY against bare Act text.',
     applicableMultiplier: 'Market Value benchmark date frozen at date of Sec 11 publication.'
   },
   {
@@ -88,9 +88,9 @@ export const CORE_STATUTORY_PROVISIONS: StatutoryRuleCacheItem[] = [
     statute: 'RFCTLARR_2013',
     section: 'Section 25',
     title: 'Collector’s Award Limitation Period',
-    mandate: 'Collector shall make an award within a period of twelve months from the date of the publication of the declaration under Section 19.',
-    limitationPeriodDays: 365,
-    penaltyOnLapse: 'Lapse of entire proceedings under Section 25 proviso if award not pronounced within 12 months.'
+    mandate: 'Award must be made within two years from the date of publication of the declaration under Section 19; this is a separate clock from the Section 19(7) twelve-month declaration clock. VERIFY against bare Act text before operational reliance.',
+    limitationPeriodDays: 730,
+    penaltyOnLapse: 'Proceedings lapse under Section 25 if the award is not made within two years of the Section 19 declaration.'
   },
   {
     id: 'rfctlarr-sec30',

@@ -93,8 +93,8 @@ export const HelpSupportModal: React.FC<HelpSupportModalProps> = ({
       category: 'LAW',
       q: language === 'HI' ? 'ल्युमे का एआई मॉडल किस डेटा पर आधारित है?' : 'What empirical dataset grounds the LUME Machine Learning model?',
       a: language === 'HI'
-        ? 'ल्युमे का मॉडल भाटनागर एवं सहयोगियों (arXiv:2307.16285 / जर्नल ऑफ बिग डेटा 2025) के शोध पर आधारित है, जिसे 4.2 मिलियन भारतीय अदालती और इंफ्रास्ट्रक्चर मामलों पर परखा गया है। यह 84.2% सटीकता के साथ विलंब का पूर्वानुमान करता है और मोनोटोनिक बाधाओं के साथ काम करता है।'
-        : 'LUME is benchmarked against peer-reviewed empirical research by Bhatnagar et al. (arXiv:2307.16285, 2023 / Journal of Big Data 2025) across 4.2 million Indian lower court and infrastructure delay records. It achieves 84.2% holdout accuracy and enforces monotonic non-increasing risk constraints.'
+        ? 'ल्युमे सांविधिक घड़ियाँ निश्चित गणना से निकालता है और जब संदर्भ डेटा अपर्याप्त हो तो स्पष्ट रूप से अनिर्णय दिखाता है। कोई आविष्कृत सटीकता या प्रशिक्षण दावा प्रदर्शित नहीं होता।'
+        : 'LUME computes statutory clocks deterministically and abstains when evidence coverage is too low. Accuracy, Brier, and calibration metrics show only when computed from confirmed source data — never as fixed marketing numbers.'
     }
   ];
 
@@ -505,7 +505,7 @@ export const HelpSupportModal: React.FC<HelpSupportModalProps> = ({
                 <div className="p-3 bg-slate-800/50 border border-slate-800 rounded-xl space-y-1">
                   <strong className="text-emerald-400 block">For Officers & DMs:</strong>
                   <p className="text-slate-400 leading-snug">
-                    Navigate to "Officer Intelligence" &gt; Pick an acquisition corridor &gt; Inspect SHAP drivers &gt; Open "Scenario Lab" to test compensation adjustments &gt; Commit to Decision Log.
+                    Navigate to "Officer Intelligence" &gt; Pick an acquisition corridor &gt; Inspect evidence drivers &gt; Open "Scenario Lab" to test compensation adjustments &gt; Commit to Decision Log.
                   </p>
                 </div>
               </div>

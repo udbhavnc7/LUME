@@ -16,6 +16,8 @@ import {
   Database,
   Brain,
   Cpu,
+  FileText,
+  ClipboardList,
 } from 'lucide-react';
 import { AppTheme, AppFontSize, AppView } from '../types';
 
@@ -69,8 +71,8 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
         <div className="flex items-center gap-3 text-[11px]">
-          <span className="hidden sm:inline text-emerald-400 font-medium">
-            ● Precedent Graph: 1,467+ Corridors
+          <span className="hidden sm:inline text-slate-400 font-medium">
+            ● Precedent registry: pending verified case files
           </span>
           <button
             onClick={onOpenHelp}
@@ -100,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded font-mono font-medium">v9.0</span>
+              <span className="text-xs px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded font-mono font-medium">Pilot-ready prototype</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
               {language === 'HI' 
@@ -188,6 +190,32 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <ShieldCheck className="w-3.5 h-3.5" />
             <span className="hidden md:inline">{language === 'HI' ? 'विश्वास' : 'Trust'}</span>
+          </button>
+
+          <button
+            id="nav-case-files-btn"
+            onClick={() => onSelectView('CASE_FILES')}
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              currentView === 'CASE_FILES'
+                ? 'bg-teal-700 text-white shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+            }`}
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">{language === 'HI' ? 'केस' : 'Cases'}</span>
+          </button>
+
+          <button
+            id="nav-actions-btn"
+            onClick={() => onSelectView('ACTIONS')}
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              currentView === 'ACTIONS'
+                ? 'bg-orange-700 text-white shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+            }`}
+          >
+            <ClipboardList className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">{language === 'HI' ? 'कार्य' : 'Actions'}</span>
           </button>
         </div>
 

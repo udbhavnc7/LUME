@@ -166,7 +166,7 @@ export const TRANSLATIONS: Record<'EN' | 'HI', TranslationDictionary> = {
     elapsedOfMax: 'days elapsed of statutory ceiling',
 
     tabOverview: '1. Critical Path & Delay Causes',
-    tabEvidence: '2. SHAP Evidence Trace',
+    tabEvidence: '2. Evidence & Drivers Trace',
     tabPrecedents: '3. Precedent Intelligence',
     tabScenario: '4. Scenario Lab (What-If)',
     tabDecisions: '5. Priority Queue & Action Log',
@@ -268,7 +268,7 @@ export const TRANSLATIONS: Record<'EN' | 'HI', TranslationDictionary> = {
     elapsedOfMax: 'दिन वैधानिक सीमा में से व्यतीत',
 
     tabOverview: '1. महत्वपूर्ण पथ एवं विलंब कारण',
-    tabEvidence: '2. SHAP साक्ष्य सत्यापन',
+    tabEvidence: '2. साक्ष्य एवं चालक ट्रेस',
     tabPrecedents: '3. ऐतिहासिक नज़ीर एवं समाधान',
     tabScenario: '4. परिदृश्य प्रयोगशाला (What-If)',
     tabDecisions: '5. प्राथमिकता कार्य एवं निर्णय पंजी',

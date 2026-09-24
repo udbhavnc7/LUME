@@ -277,29 +277,34 @@ extraction notes + reviewer
 *Prioritized against SIH judging order: problem fit → innovation → working prototype → technical depth → practicality → impact → presentation.*
 
 ### Phase 0: credibility reset (before the next demo)
-- [ ] Remove mock data from the production path; add CI lint rule and the `<Fact>` provenance wrapper.
-- [ ] Rewrite README and pitch claims per Section 3.
-- [ ] Ship the deterministic clock engine (Section 6) and compensation calculator, each showing its legal reference.
+- [x] Remove mock data from the production path; add CI lint rule and the `<Fact>` provenance wrapper.
+- [x] Rewrite README and pitch claims per Section 3.
+- [x] Ship the deterministic clock engine (Section 6) and compensation calculator, each showing its legal reference.
 - [ ] Build 5 to 10 reconstructed case files (Section 8) and a working replay/backtest view.
-- [ ] Freshness badges, source links, and honest `INSUFFICIENT_DATA` states everywhere.
+  - [x] Empty registry + backtest view + INSUFFICIENT_DATA empty state (code ready)
+  - [ ] Populate 5–10 case files from primary sources (requires real gazette/source documents)
+- [x] Freshness badges, source links, and honest `INSUFFICIENT_DATA` states everywhere.
 - **Done when:** every visible number can be traced to a source or a formula, and a reviewer can click through to prove it.
 
 ### Phase 1: real pipeline
-- [ ] Backend, database, auth, audit log.
+- [x] Backend, database, auth, audit log (FastAPI + PostgreSQL schema scaffold under `server/`; runtime requires Postgres).
 - [ ] Gazette fetch → OCR → field extraction → review queue.
 - [ ] IPMD ingestion.
-- [ ] Kaplan–Meier strata with *n*/CI; Model Governance page.
+- [x] Kaplan–Meier strata with *n*/CI; Model Governance page (`survivalService` abstains when n &lt; 5; wired into Model Evaluation).
 - **Done when:** new gazette notifications appear as reviewed events without manual data entry beyond review.
 
 ### Phase 2: pilot
 - [ ] One district or agency pilot via MoU/RTI; playbook workflow with outcome logging.
+  - [x] Playbook action workflow UI (DRAFT status, empty until source-confirmed triggers)
 - [ ] Expert review of playbooks.
 - [ ] Citizen channels (SMS/WhatsApp) and regional language.
+  - [x] English/Hindi UI labels for action workflow and case-file views
 - **Done when:** at least one officer team runs a real review meeting from LUME's packet.
 
 ### Phase 3: commercialize
 - [ ] Private-sector land-readiness product; pricing validated with customer interviews.
 - [ ] Security/DPDP review; hosting compliance for government customers.
+  - [x] `COMPLIANCE.md` with honest maturity / DPDP / security status (review still pending)
 
 ---
 
@@ -319,12 +324,12 @@ extraction notes + reviewer
 
 ## 15. README corrections checklist
 
-- [ ] Remove or substantiate: "4.2M precedent base", "28 states and 700+ districts", "SHAP-inspired", "calibrated" (until calibration results exist).
-- [ ] Replace "Release v9.0 Production" with an honest maturity label.
-- [ ] Separate the Sec 19(7) 12-month declaration lapse from the Sec 25 two-year award lapse in all diagrams and text.
-- [ ] Reframe the footer for multi-statute, multi-sector use under the problem statement's ministry.
-- [ ] Change "DPDP Act 2023 Compliant" to "designed for DPDP compliance" until reviewed.
-- [ ] Add a "Data & Provenance" section describing the contract in Section 2.
+- [x] Remove or substantiate: "4.2M precedent base", "28 states and 700+ districts", "SHAP-inspired", "calibrated" (until calibration results exist).
+- [x] Replace "Release v9.0 Production" with an honest maturity label.
+- [x] Separate the Sec 19(7) 12-month declaration lapse from the Sec 25 two-year award lapse in all diagrams and text.
+- [x] Reframe the footer for multi-statute, multi-sector use under the problem statement's ministry.
+- [x] Change "DPDP Act 2023 Compliant" to "designed for DPDP compliance" until reviewed.
+- [x] Add a "Data & Provenance" section describing the contract in Section 2.
 
 ---
 

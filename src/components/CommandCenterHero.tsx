@@ -84,7 +84,7 @@ export function CommandCenterHero({
         </div>
         <div className="signal-field__label signal-field__label--bottom">
           <span className="signal-field__label-line" />
-          <Fact value="1,467 PRECEDENTS" provenance={null} absentLabel="PRECEDENT COUNT ABSENT" />
+          <Fact value={String(projects.length)} provenance={null} absentLabel="PRECEDENT COUNT ABSENT" />
         </div>
         <div className="signal-field__status">
           <span className="signal-field__status-icon"><TrendingUp size={14} /></span>

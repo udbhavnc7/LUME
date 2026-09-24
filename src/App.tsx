@@ -19,6 +19,9 @@ import { ModelEvaluationScreen } from './components/ModelEvaluationScreen';
 import { ManagementAttentionView } from './components/ManagementAttentionView';
 import { DataManagementView } from './components/DataManagementView';
 import { CommandCenterHero } from './components/CommandCenterHero';
+import { FreshnessBadge } from './components/FreshnessBadge';
+import { CaseFileBacktestView } from './components/CaseFileBacktestView';
+import { ActionWorkflow } from './components/ActionWorkflow';
 import { DEMO_PROJECTS, DEMO_CITIZEN_PARCELS, DEMO_DECISION_LOGS } from './data/demoData';
 import { 
   LandAcquisitionProject, 
@@ -384,6 +387,10 @@ export default function App() {
         onSelectRole={setActiveRole}
       />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-2">
+        <FreshnessBadge language={language} asOf={null} />
+      </div>
+
       {/* 8. Main App Canvas */}
       <main className="lume-main flex-1 space-y-6">
         {/* VIEW 1: OFFICER INTELLIGENCE */}
@@ -484,6 +491,14 @@ export default function App() {
             onToggleDataMode={handleToggleDataMode}
           />
         )}
+
+        {currentView === 'CASE_FILES' && (
+          <CaseFileBacktestView language={language} />
+        )}
+
+        {currentView === 'ACTIONS' && (
+          <ActionWorkflow language={language} />
+        )}
       </main>
 
       {/* V8: Data Import Wizard */}
@@ -559,7 +574,7 @@ export default function App() {
               onClick={() => setCurrentView('TRUST_REGISTRY')}
               className="text-teal-400 hover:underline cursor-pointer"
             >
-              arXiv:2307.16285 Grounding
+              Data & Provenance
             </button>
           </div>
         </div>

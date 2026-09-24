@@ -96,6 +96,50 @@
   color: var(--lume-mint-soft);
 }
 
+.lume-freshness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--lume-line);
+  border-radius: 999px;
+  background: rgba(114, 228, 197, 0.06);
+  color: var(--lume-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.lume-freshness-badge[data-freshness='present'] {
+  color: var(--lume-mint);
+  border-color: rgba(114, 228, 197, 0.35);
+}
+
+.lume-freshness-badge[data-freshness='absent'] {
+  color: var(--lume-gold);
+  border-color: rgba(244, 199, 107, 0.35);
+  background: rgba(244, 199, 107, 0.08);
+}
+
+.lume-freshness-badge__dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.lume-freshness-badge__source {
+  color: var(--lume-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.12rem;
+}
+
+.lume-freshness-badge__source:hover,
+.lume-freshness-badge__source:focus-visible {
+  color: var(--lume-mint-soft);
+}
+
 .lume-empty-state {
   display: flex;
   flex-direction: column;

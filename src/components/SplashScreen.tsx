@@ -23,7 +23,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
         const next = prev + 12;
         if (next > 40 && next <= 70) {
           setPhaseText(
-            language === 'HI' ? 'उपग्रह एनडीवीआई एवं अदालती पूर्ववृत्त विश्लेषण...' : 'Calibrating Sentinel-2 NDVI & 4.2M judicial delay baselines...'
+            language === 'HI' ? 'स्रोत-सत्यापित समयरेखा एवं ताज़गी जाँच...' : 'Checking source provenance & data freshness...'
           );
         } else if (next > 70) {
           setPhaseText(
@@ -69,8 +69,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
             alt="LUME Logo"
             className="h-16 sm:h-20 w-auto object-contain drop-shadow-xl animate-pulse"
           />
-          <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-xs px-3 py-0.5 rounded-full shadow">
-            v9.0
+          <span className="bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono font-bold text-xs px-3 py-0.5 rounded-full shadow">
+            Pilot-ready prototype
           </span>
         </div>
 

@@ -8,8 +8,8 @@
 *Turning government records into early bottleneck foresight, foresight into prioritized executive action, and completed acquisitions into institutional memory.*
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8_Strict-blue.svg?logo=typescript)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.3-61dafb.svg?logo=react)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-6.4-646CFF.svg?logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-19-61dafb.svg?logo=react)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black.svg?logo=next.js)](https://nextjs.org/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Offline_First-008080.svg?logo=pwa)](https://web.dev/progressive-web-apps/)
 [![Status](https://img.shields.io/badge/Status-Pilot_ready_prototype-yellow.svg)](#)
 
@@ -143,9 +143,9 @@ Enables administrators to test operational interventions with exact, statutory m
 - **Objection and clearance scenarios**: outcomes shown only when backed by documented precedent.
 
 ### 4. Institutional Precedent Matching Engine
-Queries verified, reconstructed case files with similarity scoring (case count shown live from the database):
-- Matches by terrain, corridor type, process route (RFCTLARR vs NH Act), and grievance pattern.
-- Displays actual outcome, resolution lead time, and effective administrative orders used in the precedent.
+Backtest and precedent search over **reconstructed case files** (registry starts empty until primary-source reconstruction; count is live from the registry):
+- Each case file requires source URL and SHA-256 per timeline event.
+- Displays outcome, duration, and interventions only when SOURCED.
 
 ### 5. Jan-Seva Citizen Transparency Portal
 Designed for all citizens—including rural landowners, elders, and legal heirs:
@@ -218,6 +218,10 @@ npm run build
 # 6. Preview production build locally
 npm run preview -- --port 3005
 # Access live production preview at http://localhost:3005
+
+# 7. Phase 1 API (optional): PostGIS + FastAPI
+docker compose up -d
+# API health: http://localhost:8000/health
 ```
 
 ---
@@ -255,14 +259,20 @@ LUME/
 │   │   ├── ProjectIntelligenceRoom.tsx# Detailed statutory project workspace
 │   │   ├── GISIntelligenceView.tsx    # Spatial corridor intelligence & land mapping
 │   │   ├── CitizenTransparencyPortal.tsx # Bilingual citizen Jan-Seva portal
-│   │   ├── ScenarioLab.tsx     # Counterfactual simulation engine
+│   │   ├── CaseFileBacktestView.tsx   # Reconstructed case-file backtest (empty until SOURCED)
+│   │   ├── ActionWorkflow.tsx         # Playbook actions (DRAFT pending expert review)
+│   │   ├── FreshnessBadge.tsx         # Per-screen data freshness / source link
 │   │   ├── SplashScreen.tsx    # Animated executive loading sequence
 │   │   ├── DataImportWizard.tsx# Hardened CSV/JSON dataset ingestion wizard
 │   │   └── DocumentVerificationModule.tsx # OCR & document tamper auditor
 │   ├── data/
-│   │   ├── mockData.ts         # Statutory project baselines & citizen parcels
-│   │   └── mockDataV7.ts       # Precedents, court records & tour sequences
+│   │   ├── seedData.ts         # Demo seed baselines (DEMO mode only)
+│   │   └── demoData.ts         # Re-exports seed data for DEMO mode
 │   ├── services/
+│   │   ├── statutoryClockEngine.ts    # Deterministic clocks (empty verified registry)
+│   │   ├── compensationCalculator.ts  # Exact formula (empty verified registry)
+│   │   ├── caseFileService.ts         # Case-file schema + empty registry
+│   │   ├── survivalService.ts         # Kaplan–Meier with n-threshold abstention
 │   │   ├── dataPipeline.ts     # IPI computation, data passports, health metrics
 │   │   ├── actionQueueV8.ts    # Evidence-weighted queue sorting & explanations
 │   │   ├── datasetService.ts   # Sanitized CSV parser & schema normalizer
@@ -273,11 +283,16 @@ LUME/
 │   ├── types.ts                # Strict domain types & interfaces
 │   ├── App.tsx                 # Main application controller & state machine
 │   ├── index.css               # GovTech design system, theme contrast & tokens
-│   └── main.tsx                # React entrypoint
+│   └── main.tsx                # React entrypoint (legacy Vite entry)
+├── server/                     # Phase 1 FastAPI + PostgreSQL scaffold
+│   ├── app/main.py             # Auth, facts, predictions (fail-closed), audit
+│   ├── schema.sql              # sources/documents/facts/events/predictions/actions/audit_log
+│   └── requirements.txt
+├── docker-compose.yml          # PostGIS + API local stack
+├── COMPLIANCE.md               # Honest maturity / DPDP / security status
 ├── DEPLOYMENT.md               # Detailed deployment & ops manual
 ├── render.yaml                 # Render Infrastructure-as-Code blueprint
-├── tsconfig.json               # Strict TypeScript configuration
-└── vite.config.ts              # Vite config with manual chunk splitting & PWA
+└── tsconfig.json               # Strict TypeScript configuration
 ```
 
 ---
@@ -294,21 +309,21 @@ Every value shown in LUME is exactly one of **SOURCED**, **COMPUTED**, or **ABSE
 
 Enforcement:
 
-- **CI lint rule** fails the build if `src/` imports `faker`, uses `Math.random()` to produce displayed values, or imports any file matching `*mock*`.
-- **Runtime rule**: UI components render facts only via a `<Fact>` wrapper that requires a `provenance` prop; a fact without provenance renders as **ABSENT**.
-- **Freshness badges** ("Data as of…") and a **source link** appear on each screen.
+- **CI lint rule** fails the build if `src/` imports `faker`, uses `Math.random()` for displayed values (ID generation exempt), or imports any file matching `*mock*`.
+- **Runtime rule**: UI components render facts via a `<Fact>` wrapper; a fact without confirmed provenance renders as **ABSENT**.
+- **Freshness badge** ("Data as of…" or "Freshness ABSENT") appears on the main shell; Fact rows add source links when provenance is confirmed.
 - LLMs may be used to *extract* fields from real documents, but each extracted field carries the source document, the exact source span, and a confidence. Low-confidence extractions go to a human-review queue and are not displayed as facts until confirmed.
 - Test fixtures live only under `/tests/`, are derived from real documents, and are never imported by production code.
 
-Statutory clocks (Section 6 rule table) are computed deterministically and labeled **STATUTORY**, kept separate from probabilistic outputs. Every rule row is verified against the bare Act and current amendments before it is coded.
+Statutory clocks (Section 6 rule table) are computed deterministically and labeled **STATUTORY**, kept separate from probabilistic outputs. Sec 19(7) 12-month and Sec 25 2-year clocks are modeled as separate rules. Every rule row is verified against the bare Act before it is added to the production registry (currently empty → UI shows `ABSENT / RULE_NOT_VERIFIED`).
 
 ---
 
 ## 🛡 Responsible AI & Data Protection
 
 - **Human-in-the-Loop**: LUME is an advisory and foresight engine. It never makes autonomous legal, financial, or land takeover decisions.
-- **Explainability First**: Every risk percentage is accompanied by contributing factors, evidence quality scores, and comparison with empirical baselines.
-- **DPDP Act 2023**: Designed for DPDP compliance; review pending. No Aadhaar or personal biometric citizen data is stored; parcel identifiers leverage statutory ULPIN and Gut numbers.
+- **Explainability First**: Risk outputs ship only with contributing factors, evidence quality, and reference-set size — or abstain as `INSUFFICIENT_DATA`.
+- **DPDP Act 2023**: Designed for DPDP compliance; review pending (see [COMPLIANCE.md](./COMPLIANCE.md)). No Aadhaar or personal biometric citizen data is stored; parcel identifiers use ULPIN / survey numbers.
 - **Formula Injection Guard**: All uploaded CSV/JSON datasets are sanitized against spreadsheet formula injection attacks (`=`, `+`, `-`, `@`, `\t`).
 
 ---

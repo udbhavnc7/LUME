@@ -412,7 +412,7 @@ export interface OcrCorrectionLog {
 
 export type AppTheme = 'dark' | 'light' | 'high-contrast';
 export type AppFontSize = 'normal' | 'large' | 'extra-large';
-export type AppView = 'OFFICER' | 'CITIZEN' | 'GIS' | 'ANALYTICS' | 'TRUST_REGISTRY' | 'MODEL_EVALUATION' | 'MANAGEMENT_ATTENTION' | 'DATA';
+export type AppView = 'OFFICER' | 'CITIZEN' | 'GIS' | 'ANALYTICS' | 'TRUST_REGISTRY' | 'MODEL_EVALUATION' | 'MANAGEMENT_ATTENTION' | 'DATA' | 'CASE_FILES' | 'ACTIONS';
 export type UserRole = 'OFFICER' | 'CITIZEN' | 'GIS';
 
 export type RBACRole = 

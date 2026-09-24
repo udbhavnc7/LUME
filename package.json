@@ -9,7 +9,7 @@
     "preview": "npx -y serve out -s -l 3000",
     "start": "npx -y serve out -s -l 3000",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/statutoryClockEngine.test.ts tests/compensationCalculator.test.ts tests/caseFileService.test.ts tests/importProvenance.test.ts tests/insufficientDataState.test.tsx",
+    "test": "tsx --test tests/statutoryClockEngine.test.ts tests/compensationCalculator.test.ts tests/caseFileService.test.ts tests/importProvenance.test.ts tests/insufficientDataState.test.tsx tests/survivalService.test.ts tests/freshnessAndCaseFiles.test.tsx",
     "lint": "tsc --noEmit && npm run lint:data-contract",
     "lint:data-contract": "node scripts/check-data-contract.mjs"
   },

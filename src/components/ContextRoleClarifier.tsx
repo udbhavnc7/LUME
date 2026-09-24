@@ -144,8 +144,8 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
       color: 'slate',
       icon: ShieldCheck,
       summary: language === 'HI'
-        ? '4.2 मिलियन भारतीय अदालती मामलों (arXiv:2307.16285) पर आधारित मॉडल का वैज्ञानिक प्रमाण एवं मोनोटोनिक संवेदनशीलता।'
-        : 'Empirical model benchmarking against 4.2M judicial and infrastructure records (arXiv:2307.16285) with strict monotonic constraints.',
+        ? 'स्रोत-सत्यापित सांविधिक घड़ियाँ, निर्दिष्ट अनिश्चितता, और प्रमाण-सहित चालक — बिना आविष्कृत मॉडल मेट्रिक्स के।'
+        : 'Evidence-weighted delay drivers with explicit abstention when reference sets are too small — no invented accuracy claims.',
       alternatePrompt: language === 'HI' ? 'सक्रिय परियोजनाओं का प्रबंधन करें:' : 'Manage active corridor acquisitions:',
       alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
       alternateTarget: 'OFFICER' as AppView
@@ -182,6 +182,30 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
       summary: language === 'HI'
         ? 'डेटा सेट आयात, सत्यापन रिपोर्ट, और स्रोत वर्गीकरण प्रबंधन।'
         : 'Dataset import, validation reports, column mapping, and source classification management.',
+      alternatePrompt: language === 'HI' ? 'कमान केंद्र पर लौटें:' : 'Back to Command Center?',
+      alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
+      alternateTarget: 'OFFICER' as AppView
+    },
+    CASE_FILES: {
+      title: language === 'HI' ? 'पुनर्निर्मित केस फ़ाइल' : 'Reconstructed Case Files',
+      tag: language === 'HI' ? 'बैकटेस्ट मोड' : 'Backtest Mode',
+      color: 'teal',
+      icon: Building2,
+      summary: language === 'HI'
+        ? 'गज़ट व स्रोत दस्तावेज़ों से पुनर्निर्मित समयरेखाएँ — प्रति घटना URL व SHA-256 अनिवार्य।'
+        : 'Timelines reconstructed from gazette and source documents — URL and SHA-256 required per event.',
+      alternatePrompt: language === 'HI' ? 'कमान केंद्र पर लौटें:' : 'Back to Command Center?',
+      alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
+      alternateTarget: 'OFFICER' as AppView
+    },
+    ACTIONS: {
+      title: language === 'HI' ? 'कार्य वर्कफ़्लो' : 'Action Workflow',
+      tag: language === 'HI' ? 'DRAFT प्लेबुक' : 'Draft Playbook',
+      color: 'amber',
+      icon: Building2,
+      summary: language === 'HI'
+        ? 'स्रोत-पुष्ट सांविधिक ट्रिगर तक DRAFT लेबल के साथ कार्य चरण।'
+        : 'Action steps labeled DRAFT until statutory triggers and owners are source-confirmed.',
       alternatePrompt: language === 'HI' ? 'कमान केंद्र पर लौटें:' : 'Back to Command Center?',
       alternateLabel: language === 'HI' ? 'कमान केंद्र' : 'Officer Intelligence',
       alternateTarget: 'OFFICER' as AppView
@@ -374,7 +398,7 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
               </div>
 
               <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
-                <strong className="text-white block mb-1">2. Delay Forecasting (SHAP)</strong>
+                <strong className="text-white block mb-1">2. Delay Forecasting (Evidence Drivers)</strong>
                 <p className="text-[11px] text-slate-400">
                   Instead of guessing, the ML model pinpoints the exact driver: e.g. forest clearance under PARIVESH, joint family succession, or a 36% valuation gap.
                 </p>

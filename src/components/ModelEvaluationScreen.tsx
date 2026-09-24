@@ -16,6 +16,8 @@ import {
 } from '../types';
 import { evaluateModel, calculateCalibration } from '../services/modelEvaluationService';
 import { getProjectSnapshots } from '../data/demoDataV7';
+import { kaplanMeier, SurvivalEstimate } from '../services/survivalService';
+import { InsufficientDataState } from './InsufficientDataState';
 
 interface ModelEvaluationScreenProps {
   projects: LandAcquisitionProject[];
@@ -38,6 +40,8 @@ export const ModelEvaluationScreen: React.FC<ModelEvaluationScreenProps> = ({
     () => evaluateModel(projects, historicalSnapshots),
     [projects, historicalSnapshots]
   );
+
+  const survival: SurvivalEstimate = useMemo(() => kaplanMeier([]), []);
 
   const getMetricStatus = (value: number, threshold: number, invert = false) => {
     const isGood = invert ? value < threshold : value > threshold;
@@ -175,6 +179,34 @@ export const ModelEvaluationScreen: React.FC<ModelEvaluationScreenProps> = ({
               {evaluation.baselineAuc > 0 ? `${(evaluation.baselineAuc * 100).toFixed(1)}%` : 'INSUFFICIENT DATA'}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Kaplan–Meier / Model Governance */}
+      <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
+        <div className="text-[10px] uppercase font-bold text-slate-400 mb-3 flex items-center gap-1">
+          <Activity className="w-3 h-3" />
+          Kaplan–Meier survival strata &amp; model governance
+        </div>
+        {survival.status === 'ABSENT' ? (
+          <InsufficientDataState
+            language={language}
+            title={language === 'HI' ? 'जीवित रहने का अनुमान अनुपलब्ध' : 'Survival estimate unavailable'}
+            description={
+              language === 'HI'
+                ? `n बहुत कम है (${survival.reason ?? 'EMPTY_REFERENCE_SET'})। प्रति जीवित रहने वक्र केवल पर्याप्त पुष्ट टाइमलाइन पर दिखता है।`
+                : `Reference set too small (${survival.reason ?? 'EMPTY_REFERENCE_SET'}). Curves and CIs render only from confirmed timelines with adequate n.`
+            }
+          />
+        ) : (
+          <div className="text-xs text-slate-300">
+            n={survival.n} • median={survival.medianDays ?? '—'}d
+          </div>
+        )}
+        <div className="mt-3 text-[11px] text-slate-400 space-y-1">
+          <p>Abstention threshold: n &lt; 5 → INSUFFICIENT_DATA (configurable).</p>
+          <p>Calibration, Brier, and AUC remain ABSENT until a confirmed evaluation run exists.</p>
+          <p>Playbooks and delay effects are labeled DRAFT: pending expert review.</p>
         </div>
       </div>
 

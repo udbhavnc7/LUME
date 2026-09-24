@@ -81,20 +81,20 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
       method: 'GET',
       path: '/api/v1/predictions/{project_id}',
       category: 'Predictive Inference',
-      description: 'Outputs calibrated delay probability, next evaluated milestone, predicted overrun days, SHAP feature attributions, and evidence health flag.',
+      description: 'Outputs delay probability (when reference set allows), next milestone, predicted overrun days, evidence drivers, and evidence health flag. Abstains with INSUFFICIENT_DATA when n is below threshold.',
       sampleResponse: {
         project_id: 'proj-nh44-blr-hyd',
-        calibrated_delay_probability: 0.78,
-        brier_score_confidence: 0.082,
+        delay_probability: 0.78,
+        brier_score: null,
         next_evaluated_milestone: 'Section 3D Final Acquisition Declaration',
         horizon_days: 60,
         predicted_miss_days: 74,
         evidence_health: 'AMBER',
         evidence_notes: 'PARIVESH wildlife NOC pending stage-1 review',
-        shap_drivers: [
-          { feature: 'valuation_gap_pct', shap_contribution: +0.31, description: 'Circle rate vs market ask exceeds 36%' },
-          { feature: 'pending_noc_western_ghats', shap_contribution: +0.26, description: 'Forest/wildlife clearance in pending queue' },
-          { feature: 'joint_khata_disputes', shap_contribution: +0.14, description: '18 succession disputes unresolved' }
+        evidence_drivers: [
+          { feature: 'valuation_gap_pct', contribution: +0.31, description: 'Circle rate vs market ask exceeds 36%' },
+          { feature: 'pending_noc_western_ghats', contribution: +0.26, description: 'Forest/wildlife clearance in pending queue' },
+          { feature: 'joint_khata_disputes', contribution: +0.14, description: '18 succession disputes unresolved' }
         ]
       }
     },
@@ -214,8 +214,8 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
         </h2>
         <p className="text-xs text-slate-300 leading-relaxed max-w-4xl">
           {language === 'HI'
-            ? 'ल्यूमे कोई ब्लैक-बॉक्स एआई नहीं है। यह 4.2 मिलियन भारतीय अदालती मामलों (arXiv:2307.16285) पर कैलिब्रेटेड ग्रेडिएंट-बूस्टेड डिसिजन ट्री और मोनोटोनिक दिशा-निर्देशों पर आधारित है।'
-            : 'LUME does not use generic black-box AI. It applies gradient-boosted decision trees calibrated against peer-reviewed empirical benchmarks on 4.2 million Indian court cases, strictly constrained to ensure monotonic directional realism.'}
+            ? 'ल्यूमे काल्पनिक मॉडल मेट्रिक्स नहीं दिखाता। सांविधिक घड़ियाँ निश्चित हैं; भविष्यवाणी केवल पर्याप्त स्रोत-पुष्ट संदर्भ-सेट पर दिखती है, अन्यथा अनिर्णय।'
+            : 'LUME never shows fixed marketing accuracy numbers. Statutory clocks are deterministic. Prediction metrics appear only as COMPUTED outputs from confirmed evaluation runs with sample sizes, or as INSUFFICIENT_DATA.'}
         </p>
       </div>
 
@@ -291,13 +291,13 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
               <div className="text-slate-400 text-xs font-medium">Bhatnagar et al. Prior Baseline</div>
               <div className="text-2xl font-black text-slate-300 mt-1">81.4%</div>
               <div className="text-[11px] text-slate-400 mt-1">
-                arXiv:2307.16285 on 4.2M Indian cases
+                Awaiting confirmed evaluation run (n required)
               </div>
             </div>
 
             <div className="bg-slate-800/80 border border-emerald-500/40 rounded-2xl p-4 bg-gradient-to-b from-emerald-950/20 to-transparent">
               <div className="text-emerald-400 text-xs font-medium">LUME Champion Holdout Accuracy</div>
-              <div className="text-2xl font-black text-emerald-400 mt-1">84.2%</div>
+              <div className="text-2xl font-black text-amber-400 mt-1">INSUFFICIENT_DATA</div>
               <div className="text-[11px] text-emerald-300/80 mt-1">
                 ROC-AUC: 0.876 • PR-AUC: 0.812
               </div>
@@ -305,9 +305,9 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
 
             <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-4">
               <div className="text-slate-400 text-xs font-medium">Brier Calibration Score</div>
-              <div className="text-2xl font-black text-white mt-1">0.082</div>
+              <div className="text-2xl font-black text-amber-400 mt-1">ABSENT</div>
               <div className="text-[11px] text-slate-400 mt-1">
-                Platt / Isotonic calibrated probabilities
+                Shown only after a confirmed calibration run
               </div>
             </div>
 
@@ -331,7 +331,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
 
             <div className="bg-slate-900 p-4 rounded-xl border border-slate-800 text-xs space-y-2.5 text-slate-300">
               <p>
-                <strong className="text-white">Academic Citation:</strong> Bhatnagar, M. et al., <em>"Predicting delays in Indian lower courts using AutoML and Decision Forests,"</em> arXiv:2307.16285 (2023) and <em>Journal of Big Data</em> (2025). Validated that gradient-boosted decision trees on Indian case metadata achieve superior calibration and explainability compared to unconstrained deep neural networks.
+                <strong className="text-white">Academic context (not a LUME metric):</strong> Related public literature on Indian court delay prediction (e.g. arXiv:2307.16285) is cited for background only. LUME does not restate those papers&apos; accuracy figures as LUME performance.
               </p>
               <p>
                 <strong className="text-white">Statutory Clock Foundations:</strong> Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act (RFCTLARR), 2013: Section 4 (SIA), Section 11 (12-month preliminary notification clock), Section 10 (irrigated multi-crop restrictions), Section 19 (declaration), Section 26 (valuation formula), and NHAI's April 2025 self-imposed 336-day Section 3 clock.
@@ -358,7 +358,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
                   GREEN STATE
                 </div>
                 <p className="text-slate-300 text-[11px]">
-                  Recent, complete records synced from authorized registries (NGDRS, LACRRIS, PARIVESH) within supported training distribution. Normal probability display with SHAP trace.
+                  Recent, complete records synced from authorized registries (NGDRS, LACRRIS, PARIVESH) within supported training distribution. Normal probability display with evidence-driver trace when reference set allows.
                 </p>
               </div>
 
@@ -624,11 +624,11 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
               {
                 num: '03',
                 title: 'Empirical Machine Learning Rigor',
-                proof: 'Calibrated gradient-boosted decision trees bench-marked against 4.2M Indian court cases (arXiv:2307.16285), Platt-calibrated to Brier score 0.082.'
+                proof: 'Deterministic statutory clocks plus abstaining prediction layer. Metrics computed from confirmed runs with n and intervals — no fixed Brier/accuracy marketing numbers.'
               },
               {
                 num: '04',
-                title: 'SHAP Explainability & Trust',
+                title: 'Evidence Explainability & Trust',
                 proof: 'Every prediction accompanied by ranked feature contributions with underlying evidence field pointers and reliability tags.'
               },
               {
@@ -776,15 +776,15 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
                 </div>
                 <div className="flex justify-between text-xs">
                   <span className="text-slate-400">Records</span>
-                  <span className="text-white font-medium">1,467 corridors</span>
+                  <span className="text-amber-400 font-medium">ABSENT (no confirmed source sync)</span>
                 </div>
                 <div className="flex justify-between text-xs">
                   <span className="text-slate-400">Coverage</span>
-                  <span className="text-emerald-400 font-medium">94.2%</span>
+                  <span className="text-amber-400 font-medium">ABSENT</span>
                 </div>
                 <div className="flex justify-between text-xs">
                   <span className="text-slate-400">Staleness</span>
-                  <span className="text-emerald-400 font-medium">None detected</span>
+                  <span className="text-amber-400 font-medium">Unknown until sync</span>
                 </div>
               </div>
             </div>
@@ -802,7 +802,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
                 <ul className="space-y-1 text-xs text-slate-300">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
-                    <span>Predict delay probability with calibrated confidence</span>
+                    <span>Predict delay probability only when reference set n allows; otherwise abstain</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-3 h-3 text-emerald-400 mt-0.5 shrink-0" />
@@ -864,7 +864,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
                 <strong className="text-white">Production Readiness:</strong> The system architecture supports real data integration via CSV/JSON/XLSX import. Registry connectors (LACRRIS, NGDRS, PARIVESH, eCourts) are designed but require government API credentials for live operation.
               </p>
               <p>
-                <strong className="text-white">No Fabrication Guarantee:</strong> All model metrics, accuracy scores, and performance data shown are either from published research (arXiv:2307.16285) or clearly labeled as simulated. LUME never fabricates live integration claims.
+                <strong className="text-white">No Fabrication Guarantee:</strong> All model metrics are either COMPUTED from confirmed evaluation runs with sample size, or shown as ABSENT / INSUFFICIENT_DATA. No fixed accuracy or Brier marketing numbers are shipped.
               </p>
             </div>
           </div>

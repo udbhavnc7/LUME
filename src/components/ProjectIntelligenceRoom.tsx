@@ -216,13 +216,23 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
             <div>
               <div className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1">
                 <Clock className="w-3 h-3 text-amber-400" />
-                {project.processRoute === 'NH_ACT_SEC3' ? 'NHAI 336-Day Clock' : 'RFCTLARR Sec 11 12-Month Clock'}
+                {project.processRoute === 'NH_ACT_SEC3' ? 'NHAI 336-Day Policy Benchmark' : 'Project stage clock (demo elapsed)'}
               </div>
               <div className="text-lg font-black text-white mt-0.5">
                 {daysLeft > 0 ? `${daysLeft} Days Left` : `${Math.abs(daysLeft)} Days Overdue`}
               </div>
               <div className="text-[10px] text-slate-400">
                 {project.currentStageElapsedDays} of {project.statutoryClockMaxDays} days elapsed
+              </div>
+              <div className="mt-2 space-y-1 text-[10px]">
+                <div className="flex justify-between gap-2 text-slate-400">
+                  <span>Sec 19(7) 12-month declaration</span>
+                  <span className="text-amber-400 font-bold">ABSENT · RULE_NOT_VERIFIED</span>
+                </div>
+                <div className="flex justify-between gap-2 text-slate-400">
+                  <span>Sec 25 2-year award (separate)</span>
+                  <span className="text-amber-400 font-bold">ABSENT · RULE_NOT_VERIFIED</span>
+                </div>
               </div>
             </div>
 
@@ -929,7 +939,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
         </div>
       )}
 
-      {/* TAB 2: SHAP EVIDENCE TRACE */}
+      {/* TAB 2: EVIDENCE DRIVER TRACE */}
       {activeTab === 'EVIDENCE' && (
         <div className="space-y-4">
           <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm">
@@ -937,10 +947,10 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
               <div>
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  SHAP Explainability & Source Evidence Trace (F04 / F11)
+                  Evidence Drivers & Source Trace (F04 / F11)
                 </h3>
                 <p className="text-xs text-slate-400">
-                  Every prediction carries verifiable evidence. Feature weights mirror the validated Indian court delay methodology (Bhatnagar et al. arXiv:2307.16285).
+                  Every driver links to evidence fields with reliability tags. Attribution method is labeled explicitly — no SHAP claim unless a SHAP-compatible model is shipped.
                 </p>
               </div>
               <div className="text-xs font-mono text-slate-400">
@@ -954,7 +964,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
               <span className="text-slate-400">Prediction → Driver → Source Registry Field → Effective Timestamp → Freshness → Feature Attribution → Action Context</span>
             </div>
 
-            {/* Ranked SHAP Drivers */}
+            {/* Ranked Evidence Drivers */}
             <div className="space-y-3 mt-4">
               {project.modelOutput.shapDrivers.map((driver, idx) => {
                 const isPositive = driver.contribution > 0;
@@ -974,7 +984,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
 
                       <div className="flex items-center gap-2">
                         <span className="text-[11px] font-mono text-slate-400">
-                          SHAP: <strong className={isPositive ? 'text-rose-400' : 'text-emerald-400'}>
+                          Contribution: <strong className={isPositive ? 'text-rose-400' : 'text-emerald-400'}>
                             {isPositive ? `+${driver.contribution.toFixed(2)}` : driver.contribution.toFixed(2)}
                           </strong>
                         </span>
@@ -1036,6 +1046,13 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
             </div>
 
             <div className="grid grid-cols-1 gap-4">
+              <div className="bg-slate-900/60 border border-slate-700 rounded-xl p-4">
+                <div className="text-xs font-bold text-white mb-1">Verified reconstructed case files</div>
+                <div className="text-2xl font-black text-amber-400">ABSENT</div>
+                <p className="text-[11px] text-slate-400 mt-1">
+                  Live registry count and backtest appear only when case files are reconstructed from primary sources (URL + SHA-256 per event).
+                </p>
+              </div>
               {project.precedents.map((prec) => (
                 <div key={prec.id} className="bg-slate-900/80 border border-slate-700/80 rounded-xl p-4 space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -1803,7 +1820,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
                   <span className="text-sm font-medium text-white">Calibration Status</span>
                 </div>
                 <div className="text-xs text-slate-300 ml-5">
-                  Platt calibration applied. Brier score: 0.082. Model confidence is well-calibrated across probability bins.
+                  Calibration metrics are computed on Model Evaluation from confirmed evaluation runs. Until a run exists with sufficient n, status is ABSENT / INSUFFICIENT_DATA.
                 </div>
               </div>
             </div>

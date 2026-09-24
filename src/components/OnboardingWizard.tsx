@@ -467,10 +467,10 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-amber-400 font-bold text-xs">
                     <Sparkles className="w-4 h-4" />
-                    <span>Machine Learning Delay Prevention (arXiv:2307.16285)</span>
+                    <span>Statutory Clock & Evidence Delay Prevention</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Trained on 4.2 million Indian court cases and registry timelines. Flags forest clearances (PARIVESH), revenue mutation delays, and valuation gaps before RFCTLARR Section 11 (12-month SIA clock) lapses.
+                    Surfaces statutory clock risk and evidence gaps from confirmed facts. Prediction metrics appear only when computed from a sufficient reference set; otherwise the UI shows INSUFFICIENT_DATA.
                   </p>
                   <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-[11px] font-mono text-emerald-400">
                     Statutory Alert: Section 11 clock countdown triggers at 90 days remaining.
