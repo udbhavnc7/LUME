@@ -24,9 +24,20 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - name: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /LUME
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee /tmp/next-build.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            echo "::error title=next build failed::exit $status — last log lines follow"
+            tail -n 60 /tmp/next-build.log | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+            exit "$status"
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
