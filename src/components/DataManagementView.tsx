@@ -20,6 +20,7 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import { DataMode, ImportedDataset, DatasetValidationReport } from '../types';
+import { InsufficientDataState } from './InsufficientDataState';
 
 interface DataManagementViewProps {
   language: 'EN' | 'HI';
@@ -229,15 +230,24 @@ export const DataManagementView: React.FC<DataManagementViewProps> = ({
             </h3>
             <div className="space-y-3">
               {importedDatasets.length === 0 ? (
-                <div className="text-center py-8 text-slate-400">
-                  <Database className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                  <p>{language === 'HI' ? 'अभी तक कोई डेटा आयात नहीं किया गया' : 'No data imported yet'}</p>
-                  <button
-                    onClick={onOpenImport}
-                    className="mt-3 text-blue-400 hover:text-blue-300 text-sm font-medium"
-                  >
-                    {language === 'HI' ? 'पहला डेटासेट आयात करें' : 'Import your first dataset'}
-                  </button>
+                <div className="space-y-3">
+                  <InsufficientDataState
+                    language={language}
+                    title={language === 'HI' ? 'कोई डेटा आयात नहीं' : 'No data imported yet'}
+                    description={
+                      language === 'HI'
+                        ? 'स्रोत-सहित आयातित डेटासेट उपलब्ध नहीं हैं।'
+                        : 'No imported datasets with recorded source provenance are available.'
+                    }
+                  />
+                  <div className="text-center">
+                    <button
+                      onClick={onOpenImport}
+                      className="text-blue-400 hover:text-blue-300 text-sm font-medium"
+                    >
+                      {language === 'HI' ? 'पहला डेटासेट आयात करें' : 'Import your first dataset'}
+                    </button>
+                  </div>
                 </div>
               ) : (
                 importedDatasets.slice(0, 5).map((dataset) => (
@@ -288,16 +298,24 @@ export const DataManagementView: React.FC<DataManagementViewProps> = ({
           </div>
           
           {importedDatasets.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">
-              <Database className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium">No datasets imported</p>
-              <p className="text-sm mt-2">Import CSV, JSON, or XLSX files to get started</p>
-              <button
-                onClick={onOpenImport}
-                className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-colors"
-              >
-                Import Data
-              </button>
+            <div className="space-y-4">
+              <InsufficientDataState
+                language={language}
+                title={language === 'HI' ? 'कोई डेटासेट नहीं' : 'No datasets imported'}
+                description={
+                  language === 'HI'
+                    ? 'स्रोत-सहित आयातित डेटासेट उपलब्ध नहीं हैं। CSV या JSON फाइल आयात करें।'
+                    : 'No imported datasets with recorded source provenance are available. Import a CSV or JSON file with source metadata.'
+                }
+              />
+              <div className="text-center">
+                <button
+                  onClick={onOpenImport}
+                  className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-colors"
+                >
+                  {language === 'HI' ? 'डेटा आयात करें' : 'Import Data'}
+                </button>
+              </div>
             </div>
           ) : (
             <div className="space-y-3">
@@ -382,10 +400,16 @@ export const DataManagementView: React.FC<DataManagementViewProps> = ({
           </h3>
           
           {validationReports.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">
-              <FileCheck2 className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium">No validation reports</p>
-              <p className="text-sm mt-2">Import data to see validation results</p>
+            <div className="space-y-4">
+              <InsufficientDataState
+                language={language}
+                title={language === 'HI' ? 'कोई सत्यापन रिपोर्ट नहीं' : 'No validation reports'}
+                description={
+                  language === 'HI'
+                    ? 'स्रोत-सहित डेटा आयात करने के बाद सत्यापन परिणाम यहां दिखाई देंगे।'
+                    : 'Validation results will appear here after importing data with source provenance.'
+                }
+              />
             </div>
           ) : (
             <div className="space-y-4">
