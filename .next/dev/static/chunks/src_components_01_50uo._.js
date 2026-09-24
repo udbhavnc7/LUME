@@ -519,34 +519,34 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 className: "live-dot"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 36,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: language === 'HI' ? 'राष्ट्रीय अधिग्रहण इंटेलिजेंस' : 'National acquisition intelligence'
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 37,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "command-hero__eyebrow-divider"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 38,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: language === 'HI' ? 'अंतिम सिंक 08:42 IST' : 'Last sync 08:42 IST'
+                                children: language === 'HI' ? 'स्रोत ताज़गी उपलब्ध नहीं' : 'Source freshness unavailable'
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 39,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 35,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -555,7 +555,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                         children: language === 'HI' ? 'अगला बाधा पहले दिखाइए।' : 'See the next bottleneck before it arrives.'
                     }, void 0, false, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -563,7 +563,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                         children: language === 'HI' ? 'विभिन्न रजिस्ट्री, अदालती और उपग्रह संकेतों को एक स्पष्ट कार्य-क्रम में बदलें — जहां ध्यान देना है, वहां तुरंत।' : 'LUME turns fragmented statutory records into a calm, evidence-weighted action queue for the people who can unblock a corridor.'
                     }, void 0, false, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -578,27 +578,27 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         strokeWidth: 2.2
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 52,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: language === 'HI' ? 'क्षेत्र देखें' : 'Explore live map'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 53,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 54,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 50,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, this),
                             onOpenIPIModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -609,20 +609,20 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 57,
+                                        lineNumber: 58,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: language === 'HI' ? 'IPI स्कोर देखें' : 'Tune IPI model'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 58,
+                                        lineNumber: 59,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 56,
+                                lineNumber: 57,
                                 columnNumber: 13
                             }, this),
                             dataMode === 'REAL_DATA' && onOpenImport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -633,26 +633,26 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 64,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: language === 'HI' ? 'डेटा आयात' : 'Import data'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 65,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 62,
+                                lineNumber: 63,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -664,28 +664,11 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 69,
-                                        columnNumber: 17
-                                    }, this),
-                                    " ",
-                                    language === 'HI' ? 'मानव-निरीक्षण निर्णय' : 'Human-in-the-loop decisions'
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 69,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$dot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CircleDot$3e$__["CircleDot"], {
-                                        size: 14
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/CommandCenterHero.tsx",
                                         lineNumber: 70,
                                         columnNumber: 17
                                     }, this),
                                     " ",
-                                    language === 'HI' ? 'स्पष्ट स्रोत' : 'Explainable by design'
+                                    language === 'HI' ? 'मानव-निरीक्षण निर्णय' : 'Human-in-the-loop decisions'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
@@ -694,7 +677,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"], {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$dot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CircleDot$3e$__["CircleDot"], {
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
@@ -702,23 +685,40 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         columnNumber: 17
                                     }, this),
                                     " ",
-                                    language === 'HI' ? 'ऑफलाइन तैयार' : 'Offline ready'
+                                    language === 'HI' ? 'स्पष्ट स्रोत' : 'Explainable by design'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
                                 lineNumber: 71,
                                 columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"], {
+                                        size: 14
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/CommandCenterHero.tsx",
+                                        lineNumber: 72,
+                                        columnNumber: 17
+                                    }, this),
+                                    " ",
+                                    language === 'HI' ? 'ऑफलाइन तैयार' : 'Offline ready'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/CommandCenterHero.tsx",
+                                lineNumber: 72,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -729,26 +729,26 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                         className: "signal-field__grid"
                     }, void 0, false, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "signal-field__halo signal-field__halo--one"
                     }, void 0, false, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "signal-field__halo signal-field__halo--two"
                     }, void 0, false, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ThreeSignalField$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThreeSignalField"], {}, void 0, false, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 79,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -758,20 +758,20 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 className: "signal-field__label-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 81,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "PORTFOLIO SIGNAL FIELD"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 82,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 80,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -781,20 +781,20 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 className: "signal-field__label-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 85,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "52 NODES / 1,467 PRECEDENTS"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 86,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 84,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -806,12 +806,12 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                     size: 14
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                    lineNumber: 89,
+                                    lineNumber: 90,
                                     columnNumber: 55
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 89,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -820,26 +820,26 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         children: "+18.4%"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 91,
                                         columnNumber: 17
                                     }, this),
                                     " foresight coverage"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 90,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 88,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                lineNumber: 75,
+                lineNumber: 76,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -854,12 +854,12 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 97,
                                     columnNumber: 70
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 96,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -868,7 +868,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         children: language === 'HI' ? 'निगरानी में मूल्य' : 'Value monitored'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -879,26 +879,26 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 90
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 97,
+                                lineNumber: 98,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                 children: "+12.8%"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 98,
+                                lineNumber: 99,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 95,
+                        lineNumber: 96,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -910,12 +910,12 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 102,
                                     columnNumber: 70
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 101,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,7 +924,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         children: language === 'HI' ? 'घड़ी-जोखिम' : 'Clock risk'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 103,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -935,19 +935,19 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                                 children: "alerts"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 103,
                                                 columnNumber: 108
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 103,
                                         columnNumber: 78
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 102,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
@@ -955,13 +955,13 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 children: "needs action"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 103,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 100,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -973,12 +973,12 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                    lineNumber: 106,
+                                    lineNumber: 107,
                                     columnNumber: 71
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 106,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -987,7 +987,7 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         children: language === 'HI' ? 'उच्च जोखिम' : 'High-risk corridors'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 107,
+                                        lineNumber: 108,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -1001,19 +1001,19 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 108,
                                                 columnNumber: 111
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 107,
+                                        lineNumber: 108,
                                         columnNumber: 87
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 107,
+                                lineNumber: 108,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
@@ -1024,13 +1024,13 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 108,
+                                lineNumber: 109,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 105,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1042,12 +1042,12 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 112,
                                     columnNumber: 70
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 111,
+                                lineNumber: 112,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1056,20 +1056,20 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                         children: language === 'HI' ? 'प्रभावित परिवार' : 'Families in scope'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 113,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                         children: totalFamilies.toLocaleString()
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 113,
                                         columnNumber: 90
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 112,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
@@ -1080,25 +1080,25 @@ function CommandCenterHero({ projects, criticalAlertsCount, language, dataMode, 
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                                lineNumber: 113,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CommandCenterHero.tsx",
-                        lineNumber: 110,
+                        lineNumber: 111,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CommandCenterHero.tsx",
-                lineNumber: 94,
+                lineNumber: 95,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/CommandCenterHero.tsx",
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
