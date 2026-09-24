@@ -5,6 +5,11 @@ services:
     buildCommand: npm run build
     staticPublishPath: ./out
     pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: NEXT_PUBLIC_BASE_PATH
+        value: ""
     headers:
       - path: /*
         name: X-Frame-Options
