@@ -1,53 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, ArrowRight, Activity, CheckCircle2, Satellite, Scale, Sparkles, Terminal } from 'lucide-react';
+import { ArrowRight, Sparkles, Terminal, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ThreeLumeConstellation } from './ThreeLumeConstellation';
 
 interface SplashScreenProps {
   onComplete: () => void;
   language?: 'EN' | 'HI';
 }
 
-interface TelemetryStep {
-  id: string;
-  labelEn: string;
-  labelHi: string;
-  targetPct: number;
-  system: string;
-}
-
-const TELEMETRY_STEPS: TelemetryStep[] = [
-  {
-    id: 'gis',
-    labelEn: 'ISRO Bhuvan & Sentinel-2 NDVI Multi-Crop Classification',
-    labelHi: 'इसरो भुवन एवं सेंटिनल-2 उपग्रह एनडीवीआई सत्यापन',
-    targetPct: 25,
-    system: 'GEO_SPATIAL',
-  },
-  {
-    id: 'clocks',
-    labelEn: 'RFCTLARR 2013 Sec 11 & NHAI 336-Day Statutory Engine',
-    labelHi: 'सांविधिक धारा 11 एवं एनएचएआई 336-दिवसीय समयसीमा इंजन',
-    targetPct: 55,
-    system: 'STATUTORY_CLOCK',
-  },
-  {
-    id: 'precedents',
-    labelEn: '1,467 High Court Precedents & Compensation Database',
-    labelHi: '1,467 उच्च न्यायालय नज़ीर एवं निष्पक्ष मुआवज़ा डेटाबेस',
-    targetPct: 80,
-    system: 'PRECEDENT_GRAPH',
-  },
-  {
-    id: 'janseva',
-    labelEn: 'Jan-Seva Multi-Generational Citizen Transparency Ready',
-    labelHi: 'जन-सेवा नागरिक पारदर्शिता एवं डीबीटी प्रणाली तैयार',
-    targetPct: 100,
-    system: 'JAN_SEVA',
-  },
-];
-
 export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language = 'EN' }) => {
   const [progress, setProgress] = useState(0);
-  const [currentStepIdx, setCurrentStepIdx] = useState(0);
+  const [activeLetter, setActiveLetter] = useState<'L' | 'U' | 'M' | 'E'>('L');
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
@@ -65,44 +27,33 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
     setIsExiting(true);
     setTimeout(() => {
       onComplete();
-    }, 600);
+    }, 500);
   };
 
   useEffect(() => {
+    // Smooth progress increment through all 4 letters in ~4 seconds
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(handleFinish, 500);
+          setTimeout(handleFinish, 450);
           return 100;
         }
-        const increment = 10;
-        const next = Math.min(100, prev + increment);
-
-        // Update active telemetry step
-        const stepIdx = TELEMETRY_STEPS.findIndex((s) => next <= s.targetPct);
-        if (stepIdx !== -1) {
-          setCurrentStepIdx(stepIdx);
-        } else {
-          setCurrentStepIdx(TELEMETRY_STEPS.length - 1);
-        }
-
-        return next;
+        return prev + 1;
       });
-    }, 140);
+    }, 38);
 
     return () => clearInterval(timer);
   }, []);
 
-  const activeStep = TELEMETRY_STEPS[currentStepIdx] || TELEMETRY_STEPS[0];
-
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-slate-950 text-white overflow-hidden select-none transition-all duration-600 ease-out ${isExiting ? 'opacity-0 scale-105 pointer-events-none blur-sm' : 'opacity-100 scale-100'
-        }`}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-slate-950 text-white overflow-hidden select-none transition-all duration-500 ease-out ${
+        isExiting ? 'opacity-0 scale-105 pointer-events-none blur-sm' : 'opacity-100 scale-100'
+      }`}
     >
-      {/* Dynamic Animated Ambient Background Grid & Glows */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
+      {/* Dynamic Cyber Grid & Atmosphere */}
+      <div className="absolute inset-0 pointer-events-none opacity-25">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="splash-grid" width="48" height="48" patternUnits="userSpaceOnUse">
@@ -110,8 +61,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
             </pattern>
             <radialGradient id="splash-glow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#10b981" stopOpacity="0.25" />
-              <stop offset="45%" stopColor="#0ea5e9" stopOpacity="0.15" />
-              <stop offset="70%" stopColor="#f59e0b" stopOpacity="0.1" />
+              <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.15" />
+              <stop offset="85%" stopColor="#f59e0b" stopOpacity="0.1" />
               <stop offset="100%" stopColor="#020617" stopOpacity="0.95" />
             </radialGradient>
           </defs>
@@ -120,126 +71,110 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete, language
         </svg>
       </div>
 
-      {/* Floating Animated Radar Pulse Rings */}
+      {/* Atmospheric Radar Rings */}
       <div
-        className="absolute w-[640px] h-[640px] rounded-full border border-emerald-500/15 animate-ping pointer-events-none"
-        style={{ animationDuration: '5s' }}
+        className="absolute w-[680px] h-[680px] rounded-full border border-emerald-500/15 animate-ping pointer-events-none"
+        style={{ animationDuration: '6s' }}
       />
       <div
-        className="absolute w-[460px] h-[460px] rounded-full border border-cyan-500/20 animate-pulse pointer-events-none"
-        style={{ animationDuration: '3s' }}
+        className="absolute w-[480px] h-[480px] rounded-full border border-cyan-500/20 animate-pulse pointer-events-none"
+        style={{ animationDuration: '3.5s' }}
       />
-      <div className="absolute w-[320px] h-[320px] rounded-full border border-amber-500/20 pointer-events-none" />
 
-      {/* Main Terminal HUD Window */}
-      <div className="relative z-10 max-w-xl w-full mx-4 p-8 sm:p-10 rounded-3xl bg-slate-900/85 border border-emerald-500/30 shadow-[0_0_80px_rgba(16,185,129,0.15)] backdrop-blur-2xl flex flex-col items-center text-center space-y-6">
-        {/* Top Government & System Metadata Banner */}
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] font-mono text-emerald-400">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>MINISTRY OF RURAL DEVELOPMENT • SIH26017</span>
-        </div>
+      {/* Main Container HUD */}
+      <div className="relative z-10 max-w-3xl w-full mx-4 p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-emerald-500/30 shadow-[0_0_80px_rgba(16,185,129,0.15)] backdrop-blur-2xl flex flex-col items-center text-center space-y-4">
+        {/* Top HUD Badges matching user signal field screenshot */}
+        <div className="flex flex-wrap items-center justify-between w-full gap-2 px-2">
+          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 border border-emerald-500/40 text-[11px] font-mono text-emerald-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+            <span>PORTFOLIO SIGNAL FIELD • STATUTORY CONSTELLATION</span>
+          </div>
 
-        {/* Central Glowing LUME Emblem */}
-        <div className="relative group">
-          <div className="absolute -inset-3 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse" />
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-slate-950 border border-emerald-500/40 flex items-center justify-center shadow-2xl p-4">
-            <img
-              src="/logo-dark.png"
-              alt="LUME Logo"
-              className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(52,211,153,0.4)]"
-            />
+          <div className="flex items-center gap-1.5 font-mono text-xs text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 px-3 py-1 rounded-full">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <span>52 NODES / 1,467 PRECEDENTS</span>
           </div>
         </div>
 
-        {/* Typography & Subtitles */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-center gap-2">
-            <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white font-sans">
-              LUME
-            </h1>
-            <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full">
-              V9 COMMAND TOWER
-            </span>
-          </div>
+        {/* 3D Interactive Three.js Scene: Words Forming L - U - M - E */}
+        <div className="w-full relative">
+          <ThreeLumeConstellation progress={progress} onLetterComplete={setActiveLetter} />
 
-          <h2 className="text-xs sm:text-sm font-bold text-slate-300 tracking-wide uppercase font-mono">
-            {language === 'HI'
-              ? 'भूमि अधिग्रहण अनिश्चितता एवं हस्तक्षेप प्रबंधन इंजन'
-              : 'Land-Acquisition Uncertainty Intervention Engine'}
-          </h2>
-
-          <p className="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
-            {language === 'HI'
-              ? 'सांविधिक समयसीमा ट्रैकिंग • उपग्रह एनडीवीआई सुरक्षा • नागरिक पारदर्शिता'
-              : 'Predictive statutory delay prevention, satellite NDVI verification & evidence-weighted corridor foresight'}
-          </p>
-        </div>
-
-        {/* Real-time Telemetry Sequence List */}
-        <div className="w-full bg-slate-950/70 border border-slate-800 rounded-2xl p-4 text-left space-y-2.5">
-          <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 pb-1.5 border-b border-slate-800/80">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
-              <Terminal className="w-3.5 h-3.5" />
-              SYSTEM TELEMETRY CALIBRATION
-            </span>
-            <span className="text-slate-400 font-bold">{progress}% READY</span>
-          </div>
-
-          <div className="space-y-1.5">
-            {TELEMETRY_STEPS.map((step, idx) => {
-              const isDone = progress > step.targetPct;
-              const isCurrent = progress <= step.targetPct && (idx === 0 || progress > TELEMETRY_STEPS[idx - 1].targetPct);
-
-              return (
-                <div
-                  key={step.id}
-                  className={`flex items-center justify-between text-xs px-2.5 py-1 rounded-lg transition-all ${isCurrent
-                      ? 'bg-emerald-950/50 border border-emerald-500/30 text-emerald-300 font-semibold'
-                      : isDone
-                        ? 'text-slate-400'
-                        : 'text-slate-600 opacity-60'
-                    }`}
-                >
-                  <div className="flex items-center gap-2 truncate pr-2">
-                    {isDone ? (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    ) : isCurrent ? (
-                      <Activity className="w-3.5 h-3.5 text-amber-400 shrink-0 animate-pulse" />
-                    ) : (
-                      <span className="w-3.5 h-3.5 rounded-full border border-slate-700 shrink-0" />
-                    )}
-                    <span className="truncate">
-                      {language === 'HI' ? step.labelHi : step.labelEn}
-                    </span>
-                  </div>
-                  <span className="font-mono text-[10px] shrink-0">
-                    {isDone ? (
-                      <span className="text-emerald-400 font-bold">OK</span>
-                    ) : isCurrent ? (
-                      <span className="text-amber-400 font-bold">SYNCING</span>
-                    ) : (
-                      <span className="text-slate-600">WAIT</span>
-                    )}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Dynamic Glowing Progress Bar */}
-        <div className="w-full space-y-2">
-          <div className="w-full bg-slate-950 h-2.5 rounded-full overflow-hidden border border-slate-800 relative p-0.5 shadow-inner">
-            <div
-              className="bg-gradient-to-r from-amber-500 via-emerald-400 to-cyan-400 h-full rounded-full transition-all duration-150 relative shadow-[0_0_12px_rgba(52,211,153,0.7)]"
-              style={{ width: `${progress}%` }}
-            >
-              <div className="absolute right-0 top-0 bottom-0 w-2 bg-white rounded-full animate-pulse" />
+          {/* Dynamic Floating Letter Assembly Status */}
+          <div className="absolute top-3 left-3 z-20 pointer-events-none">
+            <div className="bg-slate-950/85 border border-emerald-500/40 rounded-xl px-3 py-1 text-left font-mono text-[11px] text-emerald-300 backdrop-blur-md">
+              <span className="text-slate-400">Assembling: </span>
+              <strong className="text-emerald-400 font-bold">
+                {progress < 25
+                  ? 'Letter L [Litigations & Stays]'
+                  : progress < 50
+                  ? 'Letter U [ULPIN & Cadastral]'
+                  : progress < 75
+                  ? 'Letter M [Monitoring & Compensation]'
+                  : 'Letter E [Enactment & Execution]'}
+              </strong>
             </div>
           </div>
         </div>
 
-        {/* Instant Enter Button */}
+        {/* 4 Interactive Letter Assembly Checkpoints */}
+        <div className="grid grid-cols-4 gap-2 w-full pt-1">
+          {[
+            { letter: 'L', labelEn: 'Litigations', labelHi: 'अदालती मामले', threshold: 25 },
+            { letter: 'U', labelEn: 'ULPIN Records', labelHi: 'भू-आधार रिकॉर्ड', threshold: 50 },
+            { letter: 'M', labelEn: 'Monitoring', labelHi: 'निगरानी एवं मुआवज़ा', threshold: 75 },
+            { letter: 'E', labelEn: 'Enactment', labelHi: 'सांविधिक कार्यान्वयन', threshold: 100 },
+          ].map((item) => {
+            const isCompleted = progress >= item.threshold;
+            const isCurrent = progress >= item.threshold - 25 && progress < item.threshold;
+
+            return (
+              <div
+                key={item.letter}
+                className={`p-2 rounded-xl border text-center transition-all ${
+                  isCompleted
+                    ? 'bg-cyan-950/40 border-cyan-400/60 text-white shadow-[0_0_15px_rgba(56,189,248,0.25)]'
+                    : isCurrent
+                    ? 'bg-slate-900/90 border-cyan-400/80 text-white animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.2)]'
+                    : 'bg-slate-900/60 border-slate-800 text-slate-500'
+                }`}
+              >
+                <div className="text-xl font-black font-mono leading-none tracking-wider">
+                  {item.letter}
+                </div>
+                <div className="text-[10px] font-mono mt-1 truncate">
+                  {language === 'HI' ? item.labelHi : item.labelEn}
+                </div>
+                {isCompleted && (
+                  <div className="text-[9px] text-cyan-400 font-bold flex items-center justify-center gap-0.5 mt-0.5">
+                    <CheckCircle2 className="w-2.5 h-2.5 text-cyan-400" />
+                    <span>LOCKED</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Dynamic Progress Bar */}
+        <div className="w-full space-y-1.5 pt-1">
+          <div className="w-full bg-slate-950 h-2.5 rounded-full overflow-hidden border border-slate-800 relative p-0.5 shadow-inner">
+            <div
+              className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 h-full rounded-full transition-all duration-150 relative shadow-[0_0_14px_rgba(52,211,153,0.7)]"
+              style={{ width: `${progress}%` }}
+            >
+              <div className="absolute right-0 top-0 bottom-0 w-2.5 bg-white rounded-full animate-pulse" />
+            </div>
+          </div>
+          <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 px-1">
+            <span>{progress}% CONVERGENCE</span>
+            <span className="text-cyan-400 font-bold">
+              {progress >= 95 ? 'LUME LOGO CONSTELLATION ASSEMBLED' : 'SYNCHRONIZING STATUTORY CORPUS'}
+            </span>
+          </div>
+        </div>
+
+        {/* Instant Enter / Skip Button */}
         <button
           onClick={handleFinish}
           className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-slate-950 shadow-[0_0_20px_rgba(52,211,153,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.7)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
