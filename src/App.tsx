@@ -18,6 +18,7 @@ import { DataImportWizard } from './components/DataImportWizard';
 import { ModelEvaluationScreen } from './components/ModelEvaluationScreen';
 import { ManagementAttentionView } from './components/ManagementAttentionView';
 import { DataManagementView } from './components/DataManagementView';
+import { CommandCenterHero } from './components/CommandCenterHero';
 import { MOCK_PROJECTS, MOCK_CITIZEN_PARCELS, MOCK_DECISION_LOGS } from './data/mockData';
 import { 
   LandAcquisitionProject, 
@@ -36,6 +37,11 @@ import {
 } from './types';
 import { ShieldCheck, HeartHandshake, Compass, Sparkles, HelpCircle } from 'lucide-react';
 
+const readStoredValue = (key: string): string | null => {
+  if (typeof window === 'undefined') return null;
+  return window.localStorage.getItem(key);
+};
+
 export default function App() {
   const [currentView, setCurrentView] = useState<AppView>('OFFICER');
   const [activeRole, setActiveRole] = useState<RBACRole>('DISTRICT_OFFICER');
@@ -47,7 +53,7 @@ export default function App() {
   const [isAlertsOpen, setIsAlertsOpen] = useState<boolean>(false);
   const [isIPIModalOpen, setIsIPIModalOpen] = useState<boolean>(false);
   const [ipiWeights, setIpiWeights] = useState<IPIWeights>(() => {
-    const saved = localStorage.getItem('lume_ipi_weights');
+    const saved = readStoredValue('lume_ipi_weights');
     return saved ? JSON.parse(saved) : {
       w1RiskMovement: 0.35,
       w2Urgency: 0.30,
@@ -59,18 +65,18 @@ export default function App() {
 
   // Theme & Accessibility Preferences
   const [theme, setTheme] = useState<AppTheme>(() => {
-    const saved = localStorage.getItem('lume_theme');
+    const saved = readStoredValue('lume_theme');
     return (saved as AppTheme) || 'dark';
   });
   const [fontSize, setFontSize] = useState<AppFontSize>(() => {
-    const saved = localStorage.getItem('lume_font_size');
+    const saved = readStoredValue('lume_font_size');
     return (saved as AppFontSize) || 'normal';
   });
   const [highContrast, setHighContrast] = useState<boolean>(() => {
-    return localStorage.getItem('lume_high_contrast') === 'true';
+    return readStoredValue('lume_high_contrast') === 'true';
   });
   const [language, setLanguage] = useState<'EN' | 'HI'>(() => {
-    const saved = localStorage.getItem('lume_language');
+    const saved = readStoredValue('lume_language');
     return (saved as 'EN' | 'HI') || 'EN';
   });
 
@@ -83,7 +89,7 @@ export default function App() {
   // Onboarding Wizard State
   const [showOnboarding, setShowOnboarding] = useState<boolean>(false);
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean>(() => {
-    return localStorage.getItem('lume_onboarding_completed') === 'true';
+    return readStoredValue('lume_onboarding_completed') === 'true';
   });
 
   // Help & Support Modal State
@@ -101,7 +107,7 @@ export default function App() {
 
   // Mutable state for decision logs
   const [decisionLogs, setDecisionLogs] = useState<DecisionLogEntry[]>(() => {
-    const saved = localStorage.getItem('lume_decision_logs');
+    const saved = readStoredValue('lume_decision_logs');
     return saved ? JSON.parse(saved) : MOCK_DECISION_LOGS;
   });
 
@@ -278,7 +284,7 @@ export default function App() {
   const fontSizeClass = `font-size-${fontSize}`;
 
   return (
-    <div className={`min-h-screen ${activeThemeClass} ${fontSizeClass} bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950 transition-colors duration-200`}>
+    <div className={`lume-app-shell min-h-screen ${activeThemeClass} ${fontSizeClass} bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950 transition-colors duration-200`}>
       {/* 1. LUME Animated Splash Screen */}
       {showSplash && (
         <SplashScreen
@@ -379,7 +385,7 @@ export default function App() {
       />
 
       {/* 8. Main App Canvas */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+      <main className="lume-main flex-1 space-y-6">
         {/* VIEW 1: OFFICER INTELLIGENCE */}
         {currentView === 'OFFICER' && (
           selectedProjectId && activeProject ? (
@@ -393,16 +399,27 @@ export default function App() {
               defaultTab={selectedProjectTab}
             />
           ) : (
-            <PortfolioCommandCenter
+            <>
+              <CommandCenterHero
+                projects={projects}
+                criticalAlertsCount={criticalAlertsCount}
+                language={language}
+                dataMode={dataMode}
+                onOpenGIS={() => setCurrentView('GIS')}
+                onOpenIPIModal={() => setIsIPIModalOpen(true)}
+                onOpenImport={() => setIsImportWizardOpen(true)}
+              />
+              <PortfolioCommandCenter
               projects={projects}
               onSelectProject={handleSelectProject}
               onOpenGIS={() => setCurrentView('GIS')}
               language={language}
               onOpenIPIModal={() => setIsIPIModalOpen(true)}
-              dataMode={dataMode}
-              onOpenImport={() => setIsImportWizardOpen(true)}
-            />
-          )
+               dataMode={dataMode}
+               onOpenImport={() => setIsImportWizardOpen(true)}
+               />
+             </>
+           )
         )}
 
         {/* VIEW 2: CITIZEN JAN-SEVA TRANSPARENCY (Accessible for ALL AGES) */}

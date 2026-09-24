@@ -173,13 +173,13 @@ LUME is engineered around India's statutory land acquisition frameworks:
 ## 🛠 Technology Stack
 
 ```
-Frontend Architecture       : React 18.3 • TypeScript 5.8 (Strict Mode)
-Build Tool & Bundler        : Vite 6.4 (Custom Rollup Vendor Splitting)
-Styling & Design System     : TailwindCSS v4 • Lucide React Icons
-Data Visualization          : Recharts • HTML5 Canvas • SVG GIS overlays
-Offline Engine & Storage    : Vite PWA Plugin (Workbox SW) • IndexedDB • localStorage
+Frontend Architecture       : Next.js App Router • React 19 • TypeScript 5.8 (Strict Mode)
+Build & Export              : Next static export (`out/`) • Vite retained as legacy local fallback
+Styling & Design System     : Native CSS design system • Tailwind compatibility layer • Lucide React Icons
+3D Visualization            : Three.js signal field • Recharts • HTML5 Canvas • SVG GIS overlays
+Offline Engine & Storage    : PWA service worker • IndexedDB • localStorage
 Security & Export           : DOMPurify • JSPDF • HTML2Canvas • Formula Sanitization
-Deployment Runtime          : Render Static Site (Edge CDN) / Containerized Node
+Deployment Runtime          : Render Static Site (Edge CDN) / Static Node host
 ```
 
 ---
@@ -226,8 +226,8 @@ Click the badge below to deploy to Render as an edge-cached static site with aut
 ### Blueprint Specification ([render.yaml](file:///c:/Users/LENOVO/LUME/LUME/render.yaml))
 LUME includes an infrastructure-as-code blueprint pre-configured with:
 - **Build Command**: `npm run build`
-- **Publish Directory**: `./dist`
-- **SPA Rewrites**: `/*` $\rightarrow$ `/index.html`
+- **Publish Directory**: `./out`
+- **Static Export**: `output: 'export'` in `next.config.mjs`
 - **Security Headers**: `X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`
 
 ---

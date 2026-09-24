@@ -3,14 +3,14 @@
 ## 1. System Overview
 **LUME (Land Utility & Monitoring Engine)** is a statutory land acquisition risk monitoring and intelligence platform designed for major infrastructure projects under the **RFCTLARR Act 2013** and **National Highways Act 1956**.
 
-LUME is architected as an offline-first, high-performance client-side Single Page Application (SPA) with Progressive Web App (PWA) capabilities, service-worker precaching, and IndexedDB persistence.
+LUME is architected as a static-exported Next.js application with a client-side command center, PWA capabilities, service-worker precaching, and IndexedDB persistence.
 
 ---
 
 ## 2. Deployment Architecture
 
 ### Target Platform: Render Static Site (Recommended)
-Because LUME runs fully client-side with self-contained deterministic ML inference engines and IndexedDB storage, deploying as a **Render Static Site** provides:
+Because LUME runs as a static Next.js export with self-contained deterministic ML inference engines and IndexedDB storage, deploying as a **Render Static Site** provides:
 - Instant CDN distribution across global edges
 - Zero server management overhead
 - Automatic HTTPS with Let's Encrypt certificates
@@ -19,7 +19,7 @@ Because LUME runs fully client-side with self-contained deterministic ML inferen
 ```
 ┌─────────────────┐       ┌─────────────────┐       ┌───────────────────┐
 │ Git Repository  ├──────►│  Render Build   ├──────►│ Render Global CDN │
-│ (GitHub/GitLab) │       │ `npm run build` │       │ `dist/` directory │
+│ (GitHub/GitLab) │       │ `npm run build` │       │ `out/` directory  │
 └─────────────────┘       └─────────────────┘       └───────────────────┘
 ```
 
@@ -36,7 +36,7 @@ Because LUME runs fully client-side with self-contained deterministic ML inferen
    - **Branch**: `main`
    - **Root Directory**: Leave blank (root of repository)
    - **Build Command**: `npm run build`
-   - **Publish Directory**: `dist`
+   - **Publish Directory**: `out`
 5. Click **Create Static Site**.
 6. Render will automatically build the site and deploy to a `*.onrender.com` subdomain.
 
@@ -44,7 +44,7 @@ Because LUME runs fully client-side with self-contained deterministic ML inferen
 If your deployment requirements dictate a Node.js container with an active HTTP listener:
 - **Environment**: `Node`
 - **Build Command**: `npm run build`
-- **Start Command**: `npm start` (runs `npx serve -s dist -l $PORT`)
+   - **Start Command**: `npm start` (runs `npx serve -s out -l $PORT`)
 - **Port**: Render automatically provisions `$PORT`.
 
 ---
@@ -72,11 +72,11 @@ npm run typecheck
 # or
 npx tsc --noEmit
 
-# 2. Production Vite bundle build
-npm run build
+# 2. Production Next static export
+ npm run build
 
-# 3. Local preview test of production dist bundle
-npm run preview
+ # 3. Local preview test of production out directory
+ npm run preview
 ```
 
 ---

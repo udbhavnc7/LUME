@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "start": "npx -y serve dist -s -l 3000",
+    "dev": "next dev --port=3000",
+    "build": "next build",
+    "preview": "npx -y serve out -s -l 3000",
+    "start": "npx -y serve out -s -l 3000",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit"
   },
@@ -18,12 +18,15 @@
     "jspdf": "^4.2.1",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
+    "next": "^16.3.6",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
-    "recharts": "^3.10.1"
+    "recharts": "^3.10.1",
+    "three": "^0.186.0"
   },
   "devDependencies": {
     "@google/genai": "^2.4.0",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/canvas-confetti": "^1.9.0",
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",

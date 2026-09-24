@@ -189,6 +189,18 @@ export const DEFAULT_OFFLINE_CADASTRAL_PARCELS = [
  * Initializes and refreshes the offline statutory cache in localStorage
  */
 export function initStatutoryOfflineCache(): OfflineCacheStats {
+  if (typeof window === 'undefined') {
+    return {
+      lastUpdated: new Date().toISOString(),
+      rulesCount: CORE_STATUTORY_PROVISIONS.length,
+      parcelsCount: DEFAULT_OFFLINE_CADASTRAL_PARCELS.length,
+      draftsCount: 0,
+      pendingSyncCount: 0,
+      estimatedStorageKb: 45,
+      isReadyForFieldDuty: true
+    };
+  }
+
   try {
     // Seed statutory provisions if not present
     if (!localStorage.getItem(STATUTORY_RULES_CACHE_KEY)) {
@@ -235,6 +247,7 @@ export function initStatutoryOfflineCache(): OfflineCacheStats {
  * Retrieves cached statutory rules for field lookup
  */
 export function getCachedStatutoryRules(): StatutoryRuleCacheItem[] {
+  if (typeof window === 'undefined') return CORE_STATUTORY_PROVISIONS;
   try {
     const raw = localStorage.getItem(STATUTORY_RULES_CACHE_KEY);
     if (raw) return JSON.parse(raw);
@@ -248,6 +261,7 @@ export function getCachedStatutoryRules(): StatutoryRuleCacheItem[] {
  * Retrieves cached cadastral land reference data
  */
 export function getCachedCadastralParcels(): typeof DEFAULT_OFFLINE_CADASTRAL_PARCELS {
+  if (typeof window === 'undefined') return DEFAULT_OFFLINE_CADASTRAL_PARCELS;
   try {
     const raw = localStorage.getItem(CADASTRAL_PARCELS_CACHE_KEY);
     if (raw) return JSON.parse(raw) as typeof DEFAULT_OFFLINE_CADASTRAL_PARCELS;
@@ -261,6 +275,7 @@ export function getCachedCadastralParcels(): typeof DEFAULT_OFFLINE_CADASTRAL_PA
  * Retrieves all offline field survey drafts saved by officers
  */
 export function getOfflineFieldDrafts(): OfflineFieldSurveyDraft[] {
+  if (typeof window === 'undefined') return [];
   try {
     const raw = localStorage.getItem(OFFLINE_DRAFTS_CACHE_KEY);
     if (raw) return JSON.parse(raw);
@@ -325,6 +340,7 @@ export function deleteOfflineFieldDraft(id: string) {
  * Returns current cache statistics
  */
 export function getOfflineCacheStats(): OfflineCacheStats {
+  if (typeof window === 'undefined') return initStatutoryOfflineCache();
   try {
     const raw = localStorage.getItem(CACHE_METADATA_KEY);
     if (raw) {

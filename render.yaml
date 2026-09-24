@@ -3,7 +3,7 @@ services:
     name: lume
     runtime: static
     buildCommand: npm run build
-    staticPublishPath: ./dist
+    staticPublishPath: ./out
     pullRequestPreviewsEnabled: true
     headers:
       - path: /*
