@@ -152,16 +152,16 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
       <div className="flex flex-wrap items-center justify-between gap-3">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl text-xs font-semibold border border-slate-700 transition-colors"
+          className="group flex items-center gap-2 px-3.5 py-2 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white rounded-xl text-xs font-bold border border-slate-700/80 hover:border-emerald-500/50 shadow-sm hover:shadow-[0_0_12px_rgba(52,211,153,0.2)] transition-all duration-200 cursor-pointer"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Portfolio Command Center</span>
         </button>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5">
           <button
             onClick={() => setActiveTab('DOC_VERIFICATION')}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-teal-600/20 hover:bg-teal-600/30 text-teal-300 border border-teal-500/40 rounded-xl text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 bg-teal-500/15 hover:bg-teal-500/25 text-teal-300 hover:text-teal-200 border border-teal-500/40 rounded-xl text-xs font-bold shadow-[0_0_10px_rgba(20,184,166,0.15)] hover:shadow-[0_0_16px_rgba(20,184,166,0.3)] transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <Camera className="w-3.5 h-3.5 text-teal-400" />
             <span>Scan & Verify Records</span>
@@ -169,7 +169,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
 
           <button
             onClick={() => setActiveTab('REVIEW_PACKET')}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-xl text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-amber-500/40 rounded-xl text-xs font-bold shadow-sm transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <Printer className="w-3.5 h-3.5 text-amber-400" />
             <span>1-Page Collector Brief</span>
@@ -177,7 +177,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
 
           <button
             onClick={() => onOpenCitizenView()}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border border-amber-500/40 rounded-xl text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/40 rounded-xl text-xs font-bold shadow-[0_0_12px_rgba(245,158,11,0.2)] hover:shadow-[0_0_18px_rgba(245,158,11,0.4)] transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <UserCheck className="w-3.5 h-3.5 text-amber-400" />
             <span>View as Landowner Citizen</span>

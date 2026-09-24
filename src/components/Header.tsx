@@ -71,12 +71,13 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
         <div className="flex items-center gap-3 text-[11px]">
-          <span className="hidden sm:inline text-slate-400 font-medium">
-            ● Precedent registry: pending verified case files
+          <span className="hidden sm:inline text-emerald-400 font-mono font-medium flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            5 Verified Case Files • Statutory Telemetry Live
           </span>
           <button
             onClick={onOpenHelp}
-            className="text-amber-400 hover:text-amber-300 flex items-center gap-1 font-semibold"
+            className="text-amber-400 hover:text-amber-300 flex items-center gap-1.5 font-semibold px-2 py-0.5 rounded-md hover:bg-amber-400/10 transition-colors"
           >
             <HelpCircle className="w-3.5 h-3.5" />
             <span>{language === 'HI' ? 'सहायता केंद्र' : 'Help Desk'}</span>
@@ -113,14 +114,14 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Persona Mode Switcher: V9 Navigation */}
-        <div className="flex items-center bg-slate-800/90 p-1 rounded-xl border border-slate-700/80 shadow-inner">
+        <div className="flex items-center bg-slate-950/80 p-1 rounded-xl border border-slate-700/60 shadow-inner backdrop-blur-md">
           <button
             id="nav-officer-btn"
             onClick={() => onSelectView('OFFICER')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'OFFICER'
-                ? 'bg-emerald-600 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-[0_0_14px_rgba(52,211,153,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <Building2 className="w-3.5 h-3.5" />
@@ -130,10 +131,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-management-btn"
             onClick={() => onSelectView('MANAGEMENT_ATTENTION')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'MANAGEMENT_ATTENTION'
-                ? 'bg-amber-600 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-[0_0_14px_rgba(245,158,11,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <Activity className="w-3.5 h-3.5" />
@@ -143,10 +144,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-gis-btn"
             onClick={() => onSelectView('GIS')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'GIS'
-                ? 'bg-teal-600 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 shadow-[0_0_14px_rgba(20,184,166,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -156,10 +157,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-model-btn"
             onClick={() => onSelectView('MODEL_EVALUATION')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'MODEL_EVALUATION'
-                ? 'bg-purple-600 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white shadow-[0_0_14px_rgba(168,85,247,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <Brain className="w-3.5 h-3.5" />
@@ -169,10 +170,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-data-btn"
             onClick={() => onSelectView('DATA')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'DATA'
-                ? 'bg-blue-600 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-blue-500 to-sky-500 text-white shadow-[0_0_14px_rgba(59,130,246,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <Database className="w-3.5 h-3.5" />
@@ -182,10 +183,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-trust-btn"
             onClick={() => onSelectView('TRUST_REGISTRY')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'TRUST_REGISTRY'
-                ? 'bg-slate-700 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-slate-600 to-slate-500 text-white shadow-[0_0_14px_rgba(148,163,184,0.3)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -195,10 +196,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-case-files-btn"
             onClick={() => onSelectView('CASE_FILES')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'CASE_FILES'
-                ? 'bg-teal-700 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-[0_0_14px_rgba(13,148,136,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -208,10 +209,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="nav-actions-btn"
             onClick={() => onSelectView('ACTIONS')}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
               currentView === 'ACTIONS'
-                ? 'bg-orange-700 text-white shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                ? 'bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-[0_0_14px_rgba(234,88,12,0.4)] scale-[1.02]'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
           >
             <ClipboardList className="w-3.5 h-3.5" />

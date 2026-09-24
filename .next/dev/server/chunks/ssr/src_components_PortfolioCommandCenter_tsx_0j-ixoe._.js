@@ -125,194 +125,203 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
         className: "space-y-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-gradient-to-r from-amber-500/15 via-slate-800 to-emerald-500/15 border border-amber-500/30 rounded-2xl p-4 shadow-sm",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-col md:flex-row items-start md:items-center justify-between gap-4",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-start gap-3",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 mt-0.5",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Target$3e$__["Target"], {
-                                        className: "w-5 h-5"
+                className: "relative overflow-hidden bg-gradient-to-r from-amber-500/15 via-slate-900/90 to-emerald-500/15 border border-emerald-500/30 rounded-2xl p-5 shadow-lg backdrop-blur-md",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-0 right-0 w-64 h-32 bg-emerald-500/10 blur-2xl pointer-events-none"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                        lineNumber: 125,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-start gap-3.5",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/30 to-amber-600/10 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(245,158,11,0.25)]",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Target$3e$__["Target"], {
+                                            className: "w-5 h-5 animate-pulse"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                            lineNumber: 129,
+                                            columnNumber: 15
+                                        }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
                                         lineNumber: 128,
-                                        columnNumber: 15
+                                        columnNumber: 13
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs font-black uppercase tracking-wider text-amber-400 font-mono",
+                                                        children: language === 'HI' ? 'अधिग्रहण नियंत्रण टॉवर' : 'Acquisition Control Tower'
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                        lineNumber: 133,
+                                                        columnNumber: 17
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-500/40 shadow-[0_0_8px_rgba(52,211,153,0.3)]",
+                                                        children: "V9"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                        lineNumber: 136,
+                                                        columnNumber: 17
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: `text-[10px] font-bold px-2 py-0.5 rounded-full border ${dataMode === 'DEMO' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'}`,
+                                                        children: dataMode === 'DEMO' ? 'DEMO MODE' : 'REAL DATA'
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                        lineNumber: 139,
+                                                        columnNumber: 17
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 132,
+                                                columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-slate-300 mt-1 max-w-4xl leading-relaxed",
+                                                children: language === 'HI' ? 'ल्यूमे अब बताता है कि कहां ध्यान देना है, न कि केवल क्या मौजूद है। प्राथमिकता स्कोर = तत्कालता x महत्वपूर्णता x कार्यान्वयनीयता।' : 'LUME now tells officers where attention is needed, not just what exists. Priority scored by urgency x criticality x actionability. Every decision has a next-best investigation.'
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 147,
+                                                columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                        lineNumber: 131,
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 127,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center gap-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-xs font-bold uppercase tracking-wider text-amber-400",
-                                                    children: language === 'HI' ? 'अधिग्रहण नियंत्रण टॉवर' : 'Acquisition Control Tower'
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 132,
-                                                    columnNumber: 17
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "bg-emerald-500/20 text-emerald-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30",
-                                                    children: "V9"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 135,
-                                                    columnNumber: 17
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: `text-[10px] font-semibold px-2 py-0.5 rounded-full border ${dataMode === 'DEMO' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'}`,
-                                                    children: dataMode === 'DEMO' ? 'DEMO MODE' : 'REAL DATA'
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 138,
-                                                    columnNumber: 17
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 131,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-xs text-slate-300 mt-0.5 max-w-4xl leading-relaxed",
-                                            children: language === 'HI' ? 'ल्यूमे अब बताता है कि कहां ध्यान देना है, न कि केवल क्या मौजूद है। प्राथमिकता स्कोर = तत्कालता x महत्वपूर्णता x कार्यान्वयनीयता।' : 'LUME now tells officers where attention is needed, not just what exists. Priority scored by urgency x criticality x actionability. Every decision has a next-best investigation.'
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 146,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 130,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                            lineNumber: 126,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-2 shrink-0",
-                            children: [
-                                dataMode === 'REAL_DATA' && onOpenImport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: onOpenImport,
-                                    className: "flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-sm transition-colors cursor-pointer",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Upload$3e$__["Upload"], {
-                                            className: "w-3.5 h-3.5"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 160,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: language === 'HI' ? 'डेटा आयात' : 'Import Data'
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 161,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 156,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>setShowDataHealth(!showDataHealth),
-                                    className: `flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border rounded-xl shadow-sm transition-colors cursor-pointer ${showDataHealth ? 'bg-emerald-600 text-white border-emerald-500' : 'bg-slate-800 hover:bg-slate-700 text-emerald-300 border-emerald-500/30'}`,
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$activity$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Activity$3e$__["Activity"], {
-                                            className: "w-3.5 h-3.5"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 172,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: language === 'HI' ? 'डेटा स्वास्थ्य' : 'Data Health'
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 173,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 164,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                onOpenIPIModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: onOpenIPIModal,
-                                    className: "flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 rounded-xl shadow-sm transition-colors cursor-pointer",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sliders$2d$vertical$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sliders$3e$__["Sliders"], {
-                                            className: "w-3.5 h-3.5 text-amber-400"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 180,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: language === 'HI' ? 'आईपीआई भार' : 'IPI Weights'
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 181,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 176,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: onOpenGIS,
-                                    className: "flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-sm transition-colors cursor-pointer",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                            className: "w-3.5 h-3.5"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 188,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: language === 'HI' ? 'मानचित्र' : 'GIS Map'
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 189,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 184,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                            lineNumber: 154,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                    lineNumber: 125,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                lineNumber: 127,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2 shrink-0",
+                                children: [
+                                    dataMode === 'REAL_DATA' && onOpenImport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: onOpenImport,
+                                        className: "flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-[0_0_12px_rgba(16,185,129,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Upload$3e$__["Upload"], {
+                                                className: "w-3.5 h-3.5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 161,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: language === 'HI' ? 'डेटा आयात' : 'Import Data'
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 162,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                        lineNumber: 157,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>setShowDataHealth(!showDataHealth),
+                                        className: `flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold border rounded-xl shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer ${showDataHealth ? 'bg-emerald-500 text-slate-950 border-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.4)]' : 'bg-slate-800/90 hover:bg-slate-700/90 text-emerald-300 border-emerald-500/30'}`,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$activity$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Activity$3e$__["Activity"], {
+                                                className: "w-3.5 h-3.5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 173,
+                                                columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: language === 'HI' ? 'डेटा स्वास्थ्य' : 'Data Health'
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 174,
+                                                columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                        lineNumber: 165,
+                                        columnNumber: 13
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    onOpenIPIModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: onOpenIPIModal,
+                                        className: "flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-slate-800/90 hover:bg-slate-700/90 text-amber-300 border border-amber-500/40 rounded-xl shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sliders$2d$vertical$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sliders$3e$__["Sliders"], {
+                                                className: "w-3.5 h-3.5 text-amber-400"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 181,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: language === 'HI' ? 'आईपीआई भार' : 'IPI Weights'
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 182,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                        lineNumber: 177,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: onOpenGIS,
+                                        className: "flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 rounded-xl shadow-[0_0_16px_rgba(52,211,153,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                className: "w-3.5 h-3.5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 189,
+                                                columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: language === 'HI' ? 'मानचित्र' : 'GIS Map'
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                lineNumber: 190,
+                                                columnNumber: 15
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                        lineNumber: 185,
+                                        columnNumber: 13
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                lineNumber: 155,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                        lineNumber: 126,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
                 lineNumber: 124,
                 columnNumber: 7
@@ -322,7 +331,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         onClick: ()=>setViewMode((prev)=>prev === 'ALL_PROJECTS' ? 'QUEUE' : 'ALL_PROJECTS'),
-                        className: "bg-slate-800/80 border border-slate-700/80 hover:border-emerald-500/60 rounded-2xl p-4 shadow-sm cursor-pointer transition-all hover:scale-[1.01]",
+                        className: "group bg-slate-900/80 border border-slate-700/70 hover:border-emerald-500/60 rounded-2xl p-4 shadow-sm cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(52,211,153,0.15)] backdrop-blur-md",
                         title: language === 'HI' ? 'सभी परियोजनाओं की सूची देखें' : 'Click to view all projects directory',
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -332,28 +341,28 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'सक्रिय परियोजनाएं' : 'Active Portfolios'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 204,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__["Layers"], {
-                                        className: "w-4 h-4 text-emerald-400"
+                                        className: "w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 204,
+                                        lineNumber: 205,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 202,
+                                lineNumber: 203,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-2xl font-extrabold text-white mt-2",
+                                className: "text-2xl font-black text-white font-mono mt-2",
                                 children: portfolioHealth.totalProjects
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 206,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -366,38 +375,38 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                 children: "1,941 central base"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 208,
+                                                lineNumber: 209,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " tracked"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 208,
+                                        lineNumber: 209,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-[10px] text-emerald-400 font-semibold underline",
+                                        className: "text-[10px] text-emerald-400 font-bold underline group-hover:translate-x-0.5 transition-transform",
                                         children: "View All →"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 210,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 207,
+                                lineNumber: 208,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 197,
+                        lineNumber: 198,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-slate-800/80 border border-rose-500/30 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-rose-950/20 to-transparent",
+                        className: "group bg-slate-900/80 border border-rose-500/30 hover:border-rose-400/60 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-rose-950/25 to-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] backdrop-blur-md",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between text-rose-300 text-xs font-medium",
@@ -406,59 +415,59 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'अति-जोखिम' : 'Critical Risk'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 215,
+                                        lineNumber: 216,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertTriangle$3e$__["AlertTriangle"], {
                                         className: "w-4 h-4 text-rose-400 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 216,
+                                        lineNumber: 217,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 214,
+                                lineNumber: 215,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-2xl font-extrabold text-rose-400 mt-2",
+                                className: "text-2xl font-black text-rose-400 font-mono mt-2",
                                 children: [
                                     portfolioHealth.criticalRiskCount,
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs font-normal text-slate-400 ml-1.5",
+                                        className: "text-xs font-normal text-slate-400 ml-1.5 font-sans",
                                         children: [
                                             "/ ",
                                             portfolioHealth.totalProjects
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 220,
+                                        lineNumber: 221,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 218,
+                                lineNumber: 219,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-[11px] text-rose-300/80 mt-1",
+                                className: "text-[11px] text-rose-300/80 mt-1 font-mono",
                                 children: "Delay probability > 70%"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 222,
+                                lineNumber: 223,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 213,
+                        lineNumber: 214,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-slate-800/80 border border-amber-500/30 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-amber-950/20 to-transparent",
+                        className: "group bg-slate-900/80 border border-amber-500/30 hover:border-amber-400/60 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-amber-950/25 to-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] backdrop-blur-md",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between text-amber-300 text-xs font-medium",
@@ -467,59 +476,59 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'बैकलॉग कार्य' : 'Action Backlog'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 227,
+                                        lineNumber: 228,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$scale$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Scale$3e$__["Scale"], {
-                                        className: "w-4 h-4 text-amber-400"
+                                        className: "w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 228,
+                                        lineNumber: 229,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 226,
+                                lineNumber: 227,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-2xl font-extrabold text-amber-400 mt-2",
+                                className: "text-2xl font-black text-amber-400 font-mono mt-2",
                                 children: [
                                     portfolioHealth.actionQueueBacklog,
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs font-normal text-slate-400 ml-1.5",
+                                        className: "text-xs font-normal text-slate-400 ml-1.5 font-sans",
                                         children: "open"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 232,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 230,
+                                lineNumber: 231,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-[11px] text-amber-300/80 mt-1",
+                                className: "text-[11px] text-amber-300/80 mt-1 font-mono",
                                 children: [
                                     portfolioHealth.overdueActions,
                                     " overdue"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 234,
+                                lineNumber: 235,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 225,
+                        lineNumber: 226,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 shadow-sm",
+                        className: "group bg-slate-900/80 border border-slate-700/70 hover:border-teal-500/50 rounded-2xl p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(20,184,166,0.15)] backdrop-blur-md",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between text-slate-400 text-xs font-medium",
@@ -528,28 +537,28 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'प्रभावित परिवार' : 'Affected Families'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 241,
+                                        lineNumber: 242,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$scale$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Scale$3e$__["Scale"], {
-                                        className: "w-4 h-4 text-teal-400"
+                                        className: "w-4 h-4 text-teal-400 group-hover:scale-110 transition-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 242,
+                                        lineNumber: 243,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 240,
+                                lineNumber: 241,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-2xl font-extrabold text-white mt-2",
+                                className: "text-2xl font-black text-white font-mono mt-2",
                                 children: totalLandowners.toLocaleString()
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 244,
+                                lineNumber: 245,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -557,17 +566,17 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 children: "Direct DBT entitlement"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 245,
+                                lineNumber: 246,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 239,
+                        lineNumber: 240,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 shadow-sm",
+                        className: "group bg-slate-900/80 border border-slate-700/70 hover:border-emerald-500/50 rounded-2xl p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] backdrop-blur-md",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between text-slate-400 text-xs font-medium",
@@ -576,40 +585,40 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'निगरानी मूल्य' : 'Monitored Value'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 250,
+                                        lineNumber: 251,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
-                                        className: "w-4 h-4 text-emerald-400"
+                                        className: "w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 252,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 249,
+                                lineNumber: 250,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-2xl font-extrabold text-white mt-2",
+                                className: "text-2xl font-black text-white font-mono mt-2",
                                 children: [
                                     "₹",
                                     totalBudgetCr.toLocaleString(),
                                     " ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs font-normal text-slate-400",
+                                        className: "text-xs font-normal text-slate-400 font-sans",
                                         children: "Cr"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 254,
+                                        lineNumber: 255,
                                         columnNumber: 47
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 253,
+                                lineNumber: 254,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -617,19 +626,19 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 children: "MoSPI Flash aligned"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 256,
+                                lineNumber: 257,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 248,
+                        lineNumber: 249,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 196,
+                lineNumber: 197,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             showDataHealth && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -645,14 +654,14 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         className: "w-4 h-4 text-emerald-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 265,
+                                        lineNumber: 266,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     language === 'HI' ? 'डेटा पासपोर्ट स्वास्थ्य स्क्रीन' : 'Data Passport Health Screen'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 264,
+                                lineNumber: 265,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -661,13 +670,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 children: "✕"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 268,
+                                lineNumber: 269,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 263,
+                        lineNumber: 264,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,7 +741,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                 children: source.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 286,
+                                                lineNumber: 287,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -743,13 +752,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 287,
+                                                lineNumber: 288,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 286,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -763,13 +772,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: source.records.toLocaleString()
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 296,
+                                                        lineNumber: 297,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 296,
+                                                lineNumber: 297,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -780,13 +789,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: source.fresh
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 297,
+                                                        lineNumber: 298,
                                                         columnNumber: 31
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 297,
+                                                lineNumber: 298,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -797,13 +806,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: source.errors
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 298,
+                                                        lineNumber: 299,
                                                         columnNumber: 32
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 298,
+                                                lineNumber: 299,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -814,30 +823,30 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: "SYNCED"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 299,
+                                                        lineNumber: 300,
                                                         columnNumber: 32
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 299,
+                                                lineNumber: 300,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 295,
+                                        lineNumber: 296,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, source.name, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 284,
+                                lineNumber: 285,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 275,
+                        lineNumber: 276,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -848,7 +857,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 children: "Pipeline Health:"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 305,
+                                lineNumber: 306,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             " Last full refresh completed 2h ago. Evidence freshness score: ",
@@ -859,13 +868,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 304,
+                        lineNumber: 305,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 262,
+                lineNumber: 263,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -881,7 +890,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         className: "w-4 h-4 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 314,
+                                        lineNumber: 315,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -889,7 +898,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'ध्यान बजट' : 'Attention Budget'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 315,
+                                        lineNumber: 316,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -897,13 +906,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? `आज आप ${budget.selectedCases} मामलों पर ध्यान दे सकते हैं` : `${budget.selectedCases} cases selected for today's attention`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 318,
+                                        lineNumber: 319,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 313,
+                                lineNumber: 314,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -914,7 +923,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'सीमा:' : 'Budget:'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 325,
+                                        lineNumber: 326,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     [
@@ -927,19 +936,19 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                             children: limit
                                         }, limit, false, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 329,
+                                            lineNumber: 330,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 324,
+                                lineNumber: 325,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 312,
+                        lineNumber: 313,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -953,7 +962,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'कुल मामले' : 'Total Cases'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 345,
+                                        lineNumber: 346,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -961,13 +970,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: budget.totalCases
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 346,
+                                        lineNumber: 347,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 344,
+                                lineNumber: 345,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -978,7 +987,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'चयनित' : 'Selected'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 349,
+                                        lineNumber: 350,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -986,13 +995,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: budget.selectedCases
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 350,
+                                        lineNumber: 351,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 348,
+                                lineNumber: 349,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1003,7 +1012,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'बहिष्कृत' : 'Excluded'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 353,
+                                        lineNumber: 354,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1011,25 +1020,25 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: budget.totalCases - budget.selectedCases
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 354,
+                                        lineNumber: 355,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 352,
+                                lineNumber: 353,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 343,
+                        lineNumber: 344,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 311,
+                lineNumber: 312,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1042,7 +1051,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 className: "w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 362,
+                                lineNumber: 363,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1053,13 +1062,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 className: "w-full bg-slate-900 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 363,
+                                lineNumber: 364,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 361,
+                        lineNumber: 362,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1072,7 +1081,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                     children: "Priority:"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 373,
+                                    lineNumber: 374,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1085,7 +1094,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                             children: "All Priorities"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 379,
+                                            lineNumber: 380,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1093,7 +1102,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                             children: "Critical"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 380,
+                                            lineNumber: 381,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1101,7 +1110,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                             children: "High"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 381,
+                                            lineNumber: 382,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1109,7 +1118,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                             children: "Medium"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 382,
+                                            lineNumber: 383,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1117,30 +1126,30 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                             children: "Standard"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 383,
+                                            lineNumber: 384,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 374,
+                                    lineNumber: 375,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                            lineNumber: 372,
+                            lineNumber: 373,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 371,
+                        lineNumber: 372,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 360,
+                lineNumber: 361,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1157,14 +1166,14 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         className: "w-3.5 h-3.5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 400,
+                                        lineNumber: 401,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: language === 'HI' ? 'प्राथमिकता कार्य सूची' : 'Action Queue (IPI Ranked)'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 401,
+                                        lineNumber: 402,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1172,13 +1181,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: filteredQueue.length
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 402,
+                                        lineNumber: 403,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 392,
+                                lineNumber: 393,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1189,14 +1198,14 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         className: "w-3.5 h-3.5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 415,
+                                        lineNumber: 416,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: language === 'HI' ? 'समस्त परियोजनाएं' : 'All Projects Directory'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 416,
+                                        lineNumber: 417,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1204,19 +1213,19 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: filteredProjects.length
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 417,
+                                        lineNumber: 418,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 407,
+                                lineNumber: 408,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 391,
+                        lineNumber: 392,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1224,13 +1233,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                         children: viewMode === 'QUEUE' ? language === 'HI' ? 'परियोजना में प्रवेश करने के लिए किसी भी कार्ड पर क्लिक करें' : 'Click any card to enter Project Intelligence Room' : language === 'HI' ? 'समस्त परियोजनाओं की सूची एवं सीधा प्रवेश' : 'All statutory infrastructure project workspaces'
                     }, void 0, false, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 423,
+                        lineNumber: 424,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 390,
+                lineNumber: 391,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             viewMode === 'QUEUE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1246,7 +1255,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         className: "w-3.5 h-3.5 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 435,
+                                        lineNumber: 436,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Action Queue - ",
@@ -1255,7 +1264,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 434,
+                                lineNumber: 435,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1263,13 +1272,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 children: "Urgency x Criticality x Actionability"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 438,
+                                lineNumber: 439,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 433,
+                        lineNumber: 434,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1301,7 +1310,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: rank
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 469,
+                                                                lineNumber: 470,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1311,14 +1320,14 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                         className: "w-2.5 h-2.5 inline mr-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                        lineNumber: 474,
+                                                                        lineNumber: 475,
                                                                         columnNumber: 60
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     item.priority
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 473,
+                                                                lineNumber: 474,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1329,7 +1338,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 478,
+                                                                lineNumber: 479,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1339,14 +1348,14 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                         className: "w-2.5 h-2.5 inline mr-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                        lineNumber: 483,
+                                                                        lineNumber: 484,
                                                                         columnNumber: 57
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     item.status.replace('_', ' ')
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 482,
+                                                                lineNumber: 483,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1354,7 +1363,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: item.projectCode
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 487,
+                                                                lineNumber: 488,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1362,7 +1371,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: item.authority
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 491,
+                                                                lineNumber: 492,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1374,13 +1383,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 492,
+                                                                lineNumber: 493,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 467,
+                                                        lineNumber: 468,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1388,7 +1397,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: item.projectTitle
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 495,
+                                                        lineNumber: 496,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1398,7 +1407,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 className: "w-3.5 h-3.5 text-blue-400 shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 501,
+                                                                lineNumber: 502,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1406,7 +1415,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Next:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 502,
+                                                                lineNumber: 503,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1414,7 +1423,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: item.nextMilestone
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 503,
+                                                                lineNumber: 504,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1422,7 +1431,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "•"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 504,
+                                                                lineNumber: 505,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1433,13 +1442,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 505,
+                                                                lineNumber: 506,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 500,
+                                                        lineNumber: 501,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1449,7 +1458,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 className: "w-3.5 h-3.5 text-emerald-400 shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 512,
+                                                                lineNumber: 513,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1457,13 +1466,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: item.topDriver
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 513,
+                                                                lineNumber: 514,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 511,
+                                                        lineNumber: 512,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1473,7 +1482,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 className: "w-3.5 h-3.5 text-amber-400 shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 518,
+                                                                lineNumber: 519,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1481,13 +1490,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: item.recommendedAction
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 519,
+                                                                lineNumber: 520,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 517,
+                                                        lineNumber: 518,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     explanation && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1501,7 +1510,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 className: "w-3 h-3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 531,
+                                                                lineNumber: 532,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Why is this #",
@@ -1511,19 +1520,19 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 className: `w-3 h-3 transition-transform ${isExplanationOpen ? 'rotate-180' : ''}`
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 533,
+                                                                lineNumber: 534,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 524,
+                                                        lineNumber: 525,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 466,
+                                                lineNumber: 467,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1537,7 +1546,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Risk"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 542,
+                                                                lineNumber: 543,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1545,13 +1554,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: riskGauge.label
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 543,
+                                                                lineNumber: 544,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 541,
+                                                        lineNumber: 542,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1562,7 +1571,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Owner"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 550,
+                                                                lineNumber: 551,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1570,7 +1579,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: item.owner
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 551,
+                                                                lineNumber: 552,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1581,7 +1590,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 552,
+                                                                lineNumber: 553,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             item.escalationLevel > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1591,20 +1600,20 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                         className: "w-3 h-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                        lineNumber: 555,
+                                                                        lineNumber: 556,
                                                                         columnNumber: 29
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "ESCALATED"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 554,
+                                                                lineNumber: 555,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 549,
+                                                        lineNumber: 550,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1613,29 +1622,39 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             onSelectProject(item.projectId);
                                                         },
                                                         title: "Enter Project Intelligence Room",
-                                                        className: "w-9 h-9 rounded-full bg-slate-700 group-hover:bg-emerald-600 text-white flex items-center justify-center transition-colors cursor-pointer shrink-0",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                            className: "w-4 h-4 group-hover:translate-x-0.5 transition-transform"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 570,
-                                                            columnNumber: 25
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    }, void 0, false, {
+                                                        className: "flex items-center gap-1 px-3 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-400 text-emerald-300 hover:text-slate-950 border border-emerald-500/40 hover:border-emerald-300 font-bold text-xs shadow-[0_0_10px_rgba(52,211,153,0.2)] hover:shadow-[0_0_16px_rgba(52,211,153,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shrink-0",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-[11px] uppercase tracking-wider font-mono",
+                                                                children: "Inspect"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                                lineNumber: 571,
+                                                                columnNumber: 25
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                                className: "w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
+                                                                lineNumber: 572,
+                                                                columnNumber: 25
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 562,
+                                                        lineNumber: 563,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 539,
+                                                lineNumber: 540,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 464,
+                                        lineNumber: 465,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     isExplanationOpen && explanation && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1652,7 +1671,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 className: "w-4 h-4 text-amber-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 583,
+                                                                lineNumber: 585,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1664,13 +1683,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 584,
+                                                                lineNumber: 586,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 582,
+                                                        lineNumber: 584,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1679,13 +1698,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: "Close"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 588,
+                                                        lineNumber: 590,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 581,
+                                                lineNumber: 583,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1699,7 +1718,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "IPI Score"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 598,
+                                                                lineNumber: 600,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1707,13 +1726,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: explanation.ipiScore
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 599,
+                                                                lineNumber: 601,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 597,
+                                                        lineNumber: 599,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1724,7 +1743,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Urgency"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 602,
+                                                                lineNumber: 604,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1732,13 +1751,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: explanation.contributions.urgency
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 603,
+                                                                lineNumber: 605,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 601,
+                                                        lineNumber: 603,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1749,7 +1768,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Criticality"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 606,
+                                                                lineNumber: 608,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1757,13 +1776,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: explanation.contributions.criticality
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 607,
+                                                                lineNumber: 609,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 605,
+                                                        lineNumber: 607,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1774,7 +1793,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Actionability"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 610,
+                                                                lineNumber: 612,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1782,19 +1801,19 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: explanation.contributions.actionability
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 611,
+                                                                lineNumber: 613,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 609,
+                                                        lineNumber: 611,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 596,
+                                                lineNumber: 598,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1808,7 +1827,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Primary reason: "
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 617,
+                                                                lineNumber: 619,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1816,13 +1835,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: explanation.primaryReason
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 618,
+                                                                lineNumber: 620,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 616,
+                                                        lineNumber: 618,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1833,7 +1852,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: "Secondary reason: "
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 621,
+                                                                lineNumber: 623,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1841,13 +1860,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                 children: explanation.secondaryReason
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 622,
+                                                                lineNumber: 624,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 620,
+                                                        lineNumber: 622,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1861,13 +1880,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                         children: explanation.downstreamImpact
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                        lineNumber: 625,
+                                                                        lineNumber: 627,
                                                                         columnNumber: 52
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 625,
+                                                                lineNumber: 627,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1878,19 +1897,19 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                         children: explanation.evidenceQuality
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                        lineNumber: 626,
+                                                                        lineNumber: 628,
                                                                         columnNumber: 43
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                lineNumber: 626,
+                                                                lineNumber: 628,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 624,
+                                                        lineNumber: 626,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     explanation.confidenceNote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1898,37 +1917,37 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         children: explanation.confidenceNote
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                        lineNumber: 632,
+                                                        lineNumber: 634,
                                                         columnNumber: 27
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                lineNumber: 615,
+                                                lineNumber: 617,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 577,
+                                        lineNumber: 579,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, item.id, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 452,
+                                lineNumber: 453,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0));
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 441,
+                        lineNumber: 442,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 432,
+                lineNumber: 433,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             viewMode === 'ALL_PROJECTS' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1944,7 +1963,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         className: "w-3.5 h-3.5 text-emerald-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 651,
+                                        lineNumber: 653,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "All Projects Directory — ",
@@ -1953,7 +1972,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 650,
+                                lineNumber: 652,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1961,13 +1980,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                 children: "Click any project to enter its dedicated intelligence room"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 654,
+                                lineNumber: 656,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 649,
+                        lineNumber: 651,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1994,14 +2013,14 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     className: "w-2.5 h-2.5 inline mr-0.5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 676,
+                                                                    lineNumber: 678,
                                                                     columnNumber: 66
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 project.criticality
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 675,
+                                                            lineNumber: 677,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2009,7 +2028,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             children: project.projectCode
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 680,
+                                                            lineNumber: 682,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2017,7 +2036,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             children: project.processRoute.replace('_', ' ')
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 684,
+                                                            lineNumber: 686,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2029,13 +2048,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 688,
+                                                            lineNumber: 690,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 673,
+                                                    lineNumber: 675,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2045,7 +2064,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             children: language === 'HI' && project.titleHindi ? project.titleHindi : project.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 694,
+                                                            lineNumber: 696,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2061,13 +2080,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 697,
+                                                            lineNumber: 699,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 693,
+                                                    lineNumber: 695,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2081,7 +2100,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     children: "Stage:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 704,
+                                                                    lineNumber: 706,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2089,13 +2108,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     children: project.currentStageLabel
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 705,
+                                                                    lineNumber: 707,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 703,
+                                                            lineNumber: 705,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2106,7 +2125,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     children: "Clock:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 708,
+                                                                    lineNumber: 710,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2119,13 +2138,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 709,
+                                                                    lineNumber: 711,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 707,
+                                                            lineNumber: 709,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2136,7 +2155,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     children: "Budget:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 712,
+                                                                    lineNumber: 714,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2148,25 +2167,25 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                                    lineNumber: 713,
+                                                                    lineNumber: 715,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 711,
+                                                            lineNumber: 713,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 702,
+                                                    lineNumber: 704,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 672,
+                                            lineNumber: 674,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2180,7 +2199,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             children: "Delay Risk"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 721,
+                                                            lineNumber: 723,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2191,7 +2210,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 722,
+                                                            lineNumber: 724,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2203,13 +2222,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 727,
+                                                            lineNumber: 729,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 720,
+                                                    lineNumber: 722,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2217,55 +2236,55 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                                         e.stopPropagation();
                                                         onSelectProject(project.id);
                                                     },
-                                                    className: "flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-950/40 cursor-pointer group-hover:scale-105",
+                                                    className: "flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:via-teal-300 hover:to-cyan-300 text-slate-950 rounded-xl text-xs font-black tracking-wide transition-all shadow-[0_0_16px_rgba(52,211,153,0.35)] hover:shadow-[0_0_24px_rgba(52,211,153,0.6)] cursor-pointer group-hover:scale-[1.03] active:scale-[0.97]",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: language === 'HI' ? 'परियोजना में प्रवेश करें' : 'Enter Project Room'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 737,
+                                                            lineNumber: 739,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                            className: "w-4 h-4"
+                                                            className: "w-4 h-4 transition-transform group-hover:translate-x-0.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                            lineNumber: 738,
+                                                            lineNumber: 740,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                                    lineNumber: 730,
+                                                    lineNumber: 732,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                            lineNumber: 719,
+                                            lineNumber: 721,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                    lineNumber: 670,
+                                    lineNumber: 672,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, project.id, false, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 664,
+                                lineNumber: 666,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0));
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 659,
+                        lineNumber: 661,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 648,
+                lineNumber: 650,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2276,7 +2295,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                         children: language === 'HI' ? 'संचालन केपीआई' : 'Operational KPIs'
                     }, void 0, false, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 751,
+                        lineNumber: 753,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2289,7 +2308,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'चेतावनी लीड टाइम' : 'Warning Lead Time'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 756,
+                                        lineNumber: 758,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2300,7 +2319,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 757,
+                                        lineNumber: 759,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2308,13 +2327,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Median"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 758,
+                                        lineNumber: 760,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 755,
+                                lineNumber: 757,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2324,7 +2343,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Precision@K"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 761,
+                                        lineNumber: 763,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2335,7 +2354,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 762,
+                                        lineNumber: 764,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2343,13 +2362,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Top-5 accuracy"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 763,
+                                        lineNumber: 765,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 760,
+                                lineNumber: 762,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2359,7 +2378,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Recall@K"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 766,
+                                        lineNumber: 768,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2370,7 +2389,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 767,
+                                        lineNumber: 769,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2378,13 +2397,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Coverage"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 768,
+                                        lineNumber: 770,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 765,
+                                lineNumber: 767,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2394,7 +2413,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'कार्य रूपांतरण' : 'Action Conversion'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 771,
+                                        lineNumber: 773,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2402,7 +2421,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: portfolioHealth.completedActionsThisWeek
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 772,
+                                        lineNumber: 774,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2410,13 +2429,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "This week"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 775,
+                                        lineNumber: 777,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 770,
+                                lineNumber: 772,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2426,7 +2445,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'डेटा ताजगी' : 'Data Freshness'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 778,
+                                        lineNumber: 780,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2437,7 +2456,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 779,
+                                        lineNumber: 781,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2445,13 +2464,13 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Score"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 780,
+                                        lineNumber: 782,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 777,
+                                lineNumber: 779,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2461,7 +2480,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: language === 'HI' ? 'मॉडल कवरेज' : 'Model Coverage'
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 783,
+                                        lineNumber: 785,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2472,7 +2491,7 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 784,
+                                        lineNumber: 786,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2480,25 +2499,25 @@ const PortfolioCommandCenter = ({ projects, onSelectProject, onOpenGIS, language
                                         children: "Supported"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                        lineNumber: 785,
+                                        lineNumber: 787,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                                lineNumber: 782,
+                                lineNumber: 784,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                        lineNumber: 754,
+                        lineNumber: 756,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PortfolioCommandCenter.tsx",
-                lineNumber: 750,
+                lineNumber: 752,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]

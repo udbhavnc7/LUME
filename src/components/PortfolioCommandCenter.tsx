@@ -121,21 +121,22 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
   return (
     <div className="space-y-6">
       {/* V8: Control Tower Header */}
-      <div className="bg-gradient-to-r from-amber-500/15 via-slate-800 to-emerald-500/15 border border-amber-500/30 rounded-2xl p-4 shadow-sm">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-              <Target className="w-5 h-5" />
+      <div className="relative overflow-hidden bg-gradient-to-r from-amber-500/15 via-slate-900/90 to-emerald-500/15 border border-emerald-500/30 rounded-2xl p-5 shadow-lg backdrop-blur-md">
+        <div className="absolute top-0 right-0 w-64 h-32 bg-emerald-500/10 blur-2xl pointer-events-none" />
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+          <div className="flex items-start gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/30 to-amber-600/10 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+              <Target className="w-5 h-5 animate-pulse" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                <span className="text-xs font-black uppercase tracking-wider text-amber-400 font-mono">
                   {language === 'HI' ? 'अधिग्रहण नियंत्रण टॉवर' : 'Acquisition Control Tower'}
                 </span>
-                <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30">
+                <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-500/40 shadow-[0_0_8px_rgba(52,211,153,0.3)]">
                   V9
                 </span>
-                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${
+                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                   dataMode === 'DEMO'
                     ? 'bg-blue-500/20 text-blue-300 border-blue-500/30'
                     : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
@@ -143,7 +144,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                   {dataMode === 'DEMO' ? 'DEMO MODE' : 'REAL DATA'}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5 max-w-4xl leading-relaxed">
+              <p className="text-xs text-slate-300 mt-1 max-w-4xl leading-relaxed">
                 {language === 'HI'
                   ? 'ल्यूमे अब बताता है कि कहां ध्यान देना है, न कि केवल क्या मौजूद है। प्राथमिकता स्कोर = तत्कालता x महत्वपूर्णता x कार्यान्वयनीयता।'
                   : 'LUME now tells officers where attention is needed, not just what exists. Priority scored by urgency x criticality x actionability. Every decision has a next-best investigation.'}
@@ -155,7 +156,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
             {dataMode === 'REAL_DATA' && onOpenImport && (
               <button
                 onClick={onOpenImport}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-sm transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-[0_0_12px_rgba(16,185,129,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
               >
                 <Upload className="w-3.5 h-3.5" />
                 <span>{language === 'HI' ? 'डेटा आयात' : 'Import Data'}</span>
@@ -163,10 +164,10 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
             )}
             <button
               onClick={() => setShowDataHealth(!showDataHealth)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border rounded-xl shadow-sm transition-colors cursor-pointer ${
+              className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold border rounded-xl shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer ${
                 showDataHealth
-                  ? 'bg-emerald-600 text-white border-emerald-500'
-                  : 'bg-slate-800 hover:bg-slate-700 text-emerald-300 border-emerald-500/30'
+                  ? 'bg-emerald-500 text-slate-950 border-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.4)]'
+                  : 'bg-slate-800/90 hover:bg-slate-700/90 text-emerald-300 border-emerald-500/30'
               }`}
             >
               <Activity className="w-3.5 h-3.5" />
@@ -175,7 +176,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
             {onOpenIPIModal && (
               <button
                 onClick={onOpenIPIModal}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 rounded-xl shadow-sm transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-slate-800/90 hover:bg-slate-700/90 text-amber-300 border border-amber-500/40 rounded-xl shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
               >
                 <Sliders className="w-3.5 h-3.5 text-amber-400" />
                 <span>{language === 'HI' ? 'आईपीआई भार' : 'IPI Weights'}</span>
@@ -183,7 +184,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
             )}
             <button
               onClick={onOpenGIS}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-sm transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 rounded-xl shadow-[0_0_16px_rgba(52,211,153,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
             >
               <MapPin className="w-3.5 h-3.5" />
               <span>{language === 'HI' ? 'मानचित्र' : 'GIS Map'}</span>
@@ -196,62 +197,62 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-3.5">
         <div 
           onClick={() => setViewMode(prev => prev === 'ALL_PROJECTS' ? 'QUEUE' : 'ALL_PROJECTS')}
-          className="bg-slate-800/80 border border-slate-700/80 hover:border-emerald-500/60 rounded-2xl p-4 shadow-sm cursor-pointer transition-all hover:scale-[1.01]"
+          className="group bg-slate-900/80 border border-slate-700/70 hover:border-emerald-500/60 rounded-2xl p-4 shadow-sm cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(52,211,153,0.15)] backdrop-blur-md"
           title={language === 'HI' ? 'सभी परियोजनाओं की सूची देखें' : 'Click to view all projects directory'}
         >
           <div className="flex items-center justify-between text-slate-400 text-xs font-medium">
             <span>{language === 'HI' ? 'सक्रिय परियोजनाएं' : 'Active Portfolios'}</span>
-            <Layers className="w-4 h-4 text-emerald-400" />
+            <Layers className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
           </div>
-          <div className="text-2xl font-extrabold text-white mt-2">{portfolioHealth.totalProjects}</div>
+          <div className="text-2xl font-black text-white font-mono mt-2">{portfolioHealth.totalProjects}</div>
           <div className="text-[11px] text-slate-400 mt-1 flex items-center justify-between">
             <span><strong className="text-emerald-400">1,941 central base</strong> tracked</span>
-            <span className="text-[10px] text-emerald-400 font-semibold underline">View All →</span>
+            <span className="text-[10px] text-emerald-400 font-bold underline group-hover:translate-x-0.5 transition-transform">View All →</span>
           </div>
         </div>
 
-        <div className="bg-slate-800/80 border border-rose-500/30 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-rose-950/20 to-transparent">
+        <div className="group bg-slate-900/80 border border-rose-500/30 hover:border-rose-400/60 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-rose-950/25 to-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] backdrop-blur-md">
           <div className="flex items-center justify-between text-rose-300 text-xs font-medium">
             <span>{language === 'HI' ? 'अति-जोखिम' : 'Critical Risk'}</span>
             <AlertTriangle className="w-4 h-4 text-rose-400 animate-pulse" />
           </div>
-          <div className="text-2xl font-extrabold text-rose-400 mt-2">
+          <div className="text-2xl font-black text-rose-400 font-mono mt-2">
             {portfolioHealth.criticalRiskCount}
-            <span className="text-xs font-normal text-slate-400 ml-1.5">/ {portfolioHealth.totalProjects}</span>
+            <span className="text-xs font-normal text-slate-400 ml-1.5 font-sans">/ {portfolioHealth.totalProjects}</span>
           </div>
-          <div className="text-[11px] text-rose-300/80 mt-1">Delay probability &gt; 70%</div>
+          <div className="text-[11px] text-rose-300/80 mt-1 font-mono">Delay probability &gt; 70%</div>
         </div>
 
-        <div className="bg-slate-800/80 border border-amber-500/30 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-amber-950/20 to-transparent">
+        <div className="group bg-slate-900/80 border border-amber-500/30 hover:border-amber-400/60 rounded-2xl p-4 shadow-sm bg-gradient-to-b from-amber-950/25 to-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] backdrop-blur-md">
           <div className="flex items-center justify-between text-amber-300 text-xs font-medium">
             <span>{language === 'HI' ? 'बैकलॉग कार्य' : 'Action Backlog'}</span>
-            <Scale className="w-4 h-4 text-amber-400" />
+            <Scale className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
           </div>
-          <div className="text-2xl font-extrabold text-amber-400 mt-2">
+          <div className="text-2xl font-black text-amber-400 font-mono mt-2">
             {portfolioHealth.actionQueueBacklog}
-            <span className="text-xs font-normal text-slate-400 ml-1.5">open</span>
+            <span className="text-xs font-normal text-slate-400 ml-1.5 font-sans">open</span>
           </div>
-          <div className="text-[11px] text-amber-300/80 mt-1">
+          <div className="text-[11px] text-amber-300/80 mt-1 font-mono">
             {portfolioHealth.overdueActions} overdue
           </div>
         </div>
 
-        <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 shadow-sm">
+        <div className="group bg-slate-900/80 border border-slate-700/70 hover:border-teal-500/50 rounded-2xl p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(20,184,166,0.15)] backdrop-blur-md">
           <div className="flex items-center justify-between text-slate-400 text-xs font-medium">
             <span>{language === 'HI' ? 'प्रभावित परिवार' : 'Affected Families'}</span>
-            <Scale className="w-4 h-4 text-teal-400" />
+            <Scale className="w-4 h-4 text-teal-400 group-hover:scale-110 transition-transform" />
           </div>
-          <div className="text-2xl font-extrabold text-white mt-2">{totalLandowners.toLocaleString()}</div>
+          <div className="text-2xl font-black text-white font-mono mt-2">{totalLandowners.toLocaleString()}</div>
           <div className="text-[11px] text-teal-400 mt-1">Direct DBT entitlement</div>
         </div>
 
-        <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 shadow-sm">
+        <div className="group bg-slate-900/80 border border-slate-700/70 hover:border-emerald-500/50 rounded-2xl p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] backdrop-blur-md">
           <div className="flex items-center justify-between text-slate-400 text-xs font-medium">
             <span>{language === 'HI' ? 'निगरानी मूल्य' : 'Monitored Value'}</span>
-            <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <TrendingUp className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
           </div>
-          <div className="text-2xl font-extrabold text-white mt-2">
-            ₹{totalBudgetCr.toLocaleString()} <span className="text-xs font-normal text-slate-400">Cr</span>
+          <div className="text-2xl font-black text-white font-mono mt-2">
+            ₹{totalBudgetCr.toLocaleString()} <span className="text-xs font-normal text-slate-400 font-sans">Cr</span>
           </div>
           <div className="text-[11px] text-emerald-400 mt-1">MoSPI Flash aligned</div>
         </div>
@@ -558,16 +559,17 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                         )}
                       </div>
 
-                      {/* Drill-down Arrow */}
+                      {/* Drill-down Action Button */}
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           onSelectProject(item.projectId);
                         }}
                         title="Enter Project Intelligence Room"
-                        className="w-9 h-9 rounded-full bg-slate-700 group-hover:bg-emerald-600 text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
+                        className="flex items-center gap-1 px-3 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-400 text-emerald-300 hover:text-slate-950 border border-emerald-500/40 hover:border-emerald-300 font-bold text-xs shadow-[0_0_10px_rgba(52,211,153,0.2)] hover:shadow-[0_0_16px_rgba(52,211,153,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shrink-0"
                       >
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        <span className="text-[11px] uppercase tracking-wider font-mono">Inspect</span>
+                        <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </div>
@@ -732,10 +734,10 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                           e.stopPropagation();
                           onSelectProject(project.id);
                         }}
-                        className="flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-950/40 cursor-pointer group-hover:scale-105"
+                        className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:via-teal-300 hover:to-cyan-300 text-slate-950 rounded-xl text-xs font-black tracking-wide transition-all shadow-[0_0_16px_rgba(52,211,153,0.35)] hover:shadow-[0_0_24px_rgba(52,211,153,0.6)] cursor-pointer group-hover:scale-[1.03] active:scale-[0.97]"
                       >
                         <span>{language === 'HI' ? 'परियोजना में प्रवेश करें' : 'Enter Project Room'}</span>
-                        <ChevronRight className="w-4 h-4" />
+                        <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                       </button>
                     </div>
                   </div>
