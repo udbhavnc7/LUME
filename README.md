@@ -1,10 +1,8 @@
-# LUME (Land-Acquisition Uncertainty Intervention-Management Engine)
-
 <div align="center">
 
 <img src="./public/logo-dark.png" alt="LUME Logo" width="280" />
 
-### **Statutory Land Acquisition Foresight & Intervention Decision Engine**
+### **# LUME (Land-Acquisition Uncertainty Intervention-Management Engine)**
 *Turning government records into early bottleneck foresight, foresight into prioritized executive action, and completed acquisitions into institutional memory.*
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8_Strict-blue.svg?logo=typescript)](https://www.typescriptlang.org/)
