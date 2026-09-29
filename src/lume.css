@@ -12,15 +12,70 @@
   --lume-blue: #8bc6ff;
   --lume-muted: #87a4a2;
   --lume-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+  --lume-glow-a: rgba(23, 117, 101, 0.16);
+  --lume-glow-b: rgba(244, 199, 107, 0.06);
+  --lume-grid: rgba(132, 190, 180, 0.035);
+  --lume-scrollbar-track: rgba(2, 6, 23, 0.6);
+  --lume-scrollbar-thumb: rgba(51, 65, 85, 0.8);
+}
+
+/* =========================================================
+   LIGHT THEME TOKENS
+   Declared on the theme class itself (not just :root) so the shell —
+   which carries `.lume-app-shell` and `.app-theme-light` on the SAME
+   element — resolves every var to the light values.
+   ========================================================= */
+.app-theme-light {
+  --lume-ink: #f8fafc;
+  --lume-ink-soft: #f1f5f9;
+  --lume-panel: rgba(255, 255, 255, 0.86);
+  --lume-panel-solid: #ffffff;
+  --lume-line: rgba(15, 118, 110, 0.2);
+  --lume-line-strong: rgba(15, 118, 110, 0.38);
+  --lume-mint: #0f766e;
+  --lume-mint-soft: #115e59;
+  --lume-gold: #a16207;
+  --lume-coral: #be123c;
+  --lume-blue: #1d4ed8;
+  --lume-muted: #475569;
+  --lume-shadow: 0 24px 64px rgba(15, 118, 110, 0.12);
+  --lume-glow-a: rgba(13, 148, 136, 0.1);
+  --lume-glow-b: rgba(217, 119, 6, 0.07);
+  --lume-grid: rgba(15, 118, 110, 0.06);
+  --lume-scrollbar-track: rgba(226, 232, 240, 0.9);
+  --lume-scrollbar-thumb: rgba(100, 116, 139, 0.55);
+}
+
+.app-theme-high-contrast {
+  --lume-ink: #000000;
+  --lume-ink-soft: #000000;
+  --lume-panel: #000000;
+  --lume-panel-solid: #000000;
+  --lume-line: #facc15;
+  --lume-line-strong: #facc15;
+  --lume-mint: #4ade80;
+  --lume-mint-soft: #86efac;
+  --lume-gold: #fde047;
+  --lume-coral: #f87171;
+  --lume-blue: #93c5fd;
+  --lume-muted: #e5e7eb;
+  --lume-shadow: none;
+  --lume-glow-a: transparent;
+  --lume-glow-b: transparent;
+  --lume-grid: rgba(250, 204, 21, 0.08);
+  --lume-scrollbar-track: #000000;
+  --lume-scrollbar-thumb: #facc15;
 }
 
 .lume-app-shell {
   position: relative;
   isolation: isolate;
-  overflow-x: hidden;
+  /* `clip` instead of `hidden`: `hidden` makes this a scroll container,
+     which silently breaks `position: sticky` on the header and status bar. */
+  overflow-x: clip;
   background:
-    radial-gradient(circle at 76% 8%, rgba(23, 117, 101, 0.16), transparent 27rem),
-    radial-gradient(circle at 10% 58%, rgba(244, 199, 107, 0.06), transparent 24rem),
+    radial-gradient(circle at 76% 8%, var(--lume-glow-a), transparent 27rem),
+    radial-gradient(circle at 10% 58%, var(--lume-glow-b), transparent 24rem),
     var(--lume-ink) !important;
 }
 
@@ -31,7 +86,7 @@
   pointer-events: none;
   content: '';
   opacity: 0.28;
-  background-image: linear-gradient(rgba(132, 190, 180, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 190, 180, 0.035) 1px, transparent 1px);
+  background-image: linear-gradient(var(--lume-grid) 1px, transparent 1px), linear-gradient(90deg, var(--lume-grid) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(to bottom, black, transparent 75%);
 }
@@ -224,8 +279,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  color: var(--lume-mint-soft);
-  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   line-height: 1.3;
@@ -250,7 +303,6 @@
 .command-hero__title {
   max-width: 720px;
   margin: 1.35rem 0 0;
-  color: #f2fbf8;
   font-size: clamp(2.3rem, 5vw, 4.65rem);
   font-weight: 650;
   letter-spacing: -0.065em;
@@ -260,8 +312,6 @@
 .command-hero__description {
   max-width: 580px;
   margin: 1.3rem 0 0;
-  color: #9ab5b2;
-  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -362,8 +412,6 @@
   flex-wrap: wrap;
   gap: 0.8rem 1.1rem;
   margin-top: 1.65rem;
-  color: #75928e;
-  font-size: 0.65rem;
   font-weight: 700;
 }
 
@@ -371,10 +419,6 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-}
-
-.command-hero__trust-line svg {
-  color: var(--lume-mint);
 }
 
 .command-hero__visual {
@@ -430,9 +474,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #739591;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.56rem;
+  font-size: 0.68rem;
   letter-spacing: 0.12em;
   line-height: 1;
 }
@@ -463,7 +506,6 @@
   align-items: center;
   gap: 0.48rem;
   padding: 0.5rem 0.6rem;
-  color: #9ebcb7;
   border: 1px solid rgba(114, 228, 197, 0.16);
   border-radius: 0.6rem;
   background: rgba(5, 24, 27, 0.72);
