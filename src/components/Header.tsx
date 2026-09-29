@@ -68,13 +68,13 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
           <span className="hidden md:inline text-slate-500">•</span>
           <span className="hidden md:inline bg-slate-800 text-slate-300 px-2 py-0.5 rounded text-[11px] font-mono">
-            SIH26017 / RFCTLARR 2013 & NHAI Sec 3
+            RFCTLARR 2013 &amp; National Highways Act 1956
           </span>
         </div>
         <div className="flex items-center gap-3 text-[11px]">
           <span className="hidden sm:inline text-emerald-400 font-mono font-medium flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            5 Verified Case Files • Statutory Telemetry Live
+            {language === 'HI' ? 'संवैधानिक घड़ी इंजन सक्रिय' : 'Statutory clock engine live'}
           </span>
           <button
             onClick={onOpenHelp}
@@ -89,7 +89,19 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
         {/* Brand & Logo */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => onSelectView('OFFICER')}>
+        <div
+          role="button"
+          tabIndex={0}
+          className="flex items-center gap-3 cursor-pointer text-left"
+          onClick={() => onSelectView('OFFICER')}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              onSelectView('OFFICER');
+            }
+          }}
+          aria-label={language === 'HI' ? 'मुख्य कमान केंद्र पर जाएँ' : 'Go to Command Center'}
+        >
           <div className="h-10 px-3 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shadow-sm logo-badge">
             <img
               src={assetUrl('/logo-dark.png')}
@@ -104,7 +116,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded font-mono font-medium">Pilot-ready prototype</span>
+              <span className="text-xs px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded font-mono font-medium">Early preview</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
               {language === 'HI' 
@@ -115,7 +127,10 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Persona Mode Switcher: V9 Navigation */}
-        <div className="flex items-center bg-slate-950/80 p-1 rounded-xl border border-slate-700/60 shadow-inner backdrop-blur-md">
+        <nav
+          aria-label={language === 'HI' ? 'मुख्य नेविगेशन' : 'Primary navigation'}
+          className="flex items-center bg-slate-950/80 p-1 rounded-xl border border-slate-700/60 shadow-inner backdrop-blur-md max-w-full overflow-x-auto lume-nav-scroll"
+        >
           <button
             id="nav-officer-btn"
             onClick={() => onSelectView('OFFICER')}
@@ -219,84 +234,105 @@ export const Header: React.FC<HeaderProps> = ({
             <ClipboardList className="w-3.5 h-3.5" />
             <span className="hidden md:inline">{language === 'HI' ? 'कार्य' : 'Actions'}</span>
           </button>
-        </div>
+        </nav>
 
         {/* Global Utilities: Theme Switcher, Font Scaler, Language Toggle, Tour */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {/* 3-Theme Switcher: Light, Dark, High-Contrast */}
-          <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700">
+          <div className="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700" role="group" aria-label={language === 'HI' ? 'थीम चुनें' : 'Choose theme'}>
             <button
+              type="button"
               onClick={() => onChangeTheme('light')}
-              className={`p-1.5 rounded transition-colors ${
+              className={`min-h-9 min-w-9 p-2 rounded transition-colors ${
                 theme === 'light' && !highContrast ? 'bg-amber-500 text-slate-950 font-bold' : 'text-slate-400 hover:text-white'
               }`}
               title="Switch to Light Theme (Pristine GovTech)"
+              aria-label={language === 'HI' ? 'लाइट थीम' : 'Light theme'}
+              aria-pressed={theme === 'light' && !highContrast}
             >
-              <Sun className="w-3.5 h-3.5" />
+              <Sun className="w-4 h-4" />
             </button>
             <button
+              type="button"
               onClick={() => onChangeTheme('dark')}
-              className={`p-1.5 rounded transition-colors ${
+              className={`min-h-9 min-w-9 p-2 rounded transition-colors ${
                 theme === 'dark' && !highContrast ? 'bg-slate-700 text-white font-bold' : 'text-slate-400 hover:text-white'
               }`}
               title="Switch to Dark Theme (Command Center)"
+              aria-label={language === 'HI' ? 'डार्क थीम' : 'Dark theme'}
+              aria-pressed={theme === 'dark' && !highContrast}
             >
-              <Moon className="w-3.5 h-3.5" />
+              <Moon className="w-4 h-4" />
             </button>
             <button
+              type="button"
               onClick={() => onChangeTheme('high-contrast')}
-              className={`p-1.5 rounded transition-colors ${
+              className={`min-h-9 min-w-9 p-2 rounded transition-colors ${
                 theme === 'high-contrast' || highContrast ? 'bg-yellow-400 text-black font-black' : 'text-slate-400 hover:text-yellow-300'
               }`}
               title="High-Contrast WCAG AAA Mode"
+              aria-label={language === 'HI' ? 'उच्च कंट्रास्ट मोड' : 'High-contrast mode'}
+              aria-pressed={theme === 'high-contrast' || highContrast}
             >
-              <Eye className="w-3.5 h-3.5" />
+              <Eye className="w-4 h-4" />
             </button>
           </div>
 
-          {/* 7-Minute Demo Guided Tour Button */}
+          {/* Guided Demo Tour Button */}
           <button
+            type="button"
             id="tour-guide-btn"
             onClick={onStartDemoTour}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+            className={`flex items-center gap-1.5 min-h-9 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
               isTourActive
                 ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-md ring-2 ring-amber-400/50'
                 : 'bg-gradient-to-r from-amber-500/20 to-emerald-500/20 text-amber-300 border-amber-500/40 hover:bg-amber-500/30'
             }`}
-            title="Start interactive 7-minute pitch walk-through"
+            title="Start interactive guided walk-through"
+            aria-label={language === 'HI' ? 'इंटरैक्टिव डेमो दौरा शुरू करें' : 'Start interactive demo tour'}
+            aria-pressed={isTourActive}
           >
-            <Sparkles className="w-3.5 h-3.5 animate-spin text-amber-400" style={{ animationDuration: '4s' }} />
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="font-bold">
-              {isTourActive ? 'Demo Active' : '7-Min Tour'}
+              {isTourActive ? (language === 'HI' ? 'डेमो चालू' : 'Demo Active') : (language === 'HI' ? 'डेमो दौरा' : 'Guided Tour')}
             </span>
           </button>
 
           {/* Accessibility Font Scaler */}
-          <div className="hidden lg:flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700">
+          <div className="hidden lg:flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700" role="group" aria-label={language === 'HI' ? 'टेक्स्ट का आकार' : 'Text size'}>
             <button
+              type="button"
               onClick={() => onChangeFontSize('normal')}
-              className={`px-2 py-1 text-xs rounded font-bold transition-colors ${
+              className={`min-h-9 px-2.5 py-1 text-xs rounded font-bold transition-colors ${
                 fontSize === 'normal' ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-white'
               }`}
               title="Standard font size"
+              aria-label={language === 'HI' ? 'सामान्य टेक्स्ट' : 'Normal text size'}
+              aria-pressed={fontSize === 'normal'}
             >
               A
             </button>
             <button
+              type="button"
               onClick={() => onChangeFontSize('large')}
-              className={`px-2 py-1 text-sm rounded font-bold transition-colors ${
+              className={`min-h-9 px-2.5 py-1 text-sm rounded font-bold transition-colors ${
                 fontSize === 'large' ? 'bg-slate-700 text-amber-300' : 'text-slate-400 hover:text-white'
               }`}
               title="Larger font for comfortable reading"
+              aria-label={language === 'HI' ? 'बड़ा टेक्स्ट' : 'Large text size'}
+              aria-pressed={fontSize === 'large'}
             >
               A+
             </button>
             <button
+              type="button"
               onClick={() => onChangeFontSize('extra-large')}
-              className={`px-2 py-1 text-base rounded font-bold transition-colors ${
+              className={`min-h-9 px-2.5 py-1 text-base rounded font-bold transition-colors ${
                 fontSize === 'extra-large' ? 'bg-slate-700 text-amber-300' : 'text-slate-400 hover:text-white'
               }`}
               title="Extra large text for elderly users"
+              aria-label={language === 'HI' ? 'अति बड़ा टेक्स्ट' : 'Extra-large text size'}
+              aria-pressed={fontSize === 'extra-large'}
             >
               A++
             </button>
@@ -304,10 +340,12 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Bilingual Language Switcher */}
           <button
+            type="button"
             id="lang-toggle-btn"
             onClick={onToggleLanguage}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
+            className="flex items-center gap-1.5 min-h-9 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
             title="Toggle between English and Hindi"
+            aria-label={language === 'EN' ? 'हिंदी में बदलें' : 'Switch to English'}
           >
             <Languages className="w-3.5 h-3.5 text-emerald-400" />
             <span>{language === 'EN' ? 'हिंदी' : 'English'}</span>
@@ -315,9 +353,11 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Notification Indicator with Click Trigger */}
           <button
+            type="button"
             onClick={onOpenAlerts}
-            className="relative p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors cursor-pointer"
+            className="relative min-h-9 min-w-9 p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors cursor-pointer"
             title="Open Live Alerts & Change Feed"
+            aria-label={`${language === 'HI' ? 'लाइव अलर्ट खोलें' : 'Open live alerts'}${activeAlertCount > 0 ? ` (${activeAlertCount})` : ''}`}
           >
             <Bell className="w-4 h-4" />
             {activeAlertCount > 0 && (

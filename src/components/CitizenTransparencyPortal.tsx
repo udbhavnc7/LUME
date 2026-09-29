@@ -325,7 +325,7 @@ export const CitizenTransparencyPortal: React.FC<CitizenTransparencyPortalProps>
               </strong>
               {language === 'HI'
                 ? 'निजी बैंक खाते कभी सार्वजनिक नहीं किए जाते। केवल स्थानीय तहसील का वास्तविक दायरा दिखाया जाता है ताकि कोई बिचौलिया आपको कम राशि न बताए।'
-                : 'Individual private bank payments are never exposed (PRD Sec 16). Only anonymized tehsil ranges are shown so no broker can mislead you.'}
+                : 'Individual private bank payments are never exposed. Only anonymized tehsil ranges are shown so no broker can mislead you.'}
             </div>
           </div>
         </div>

@@ -73,10 +73,10 @@ export const IPIConfiguratorModal: React.FC<IPIConfiguratorModalProps> = ({
             </div>
             <div>
               <h3 className="text-base font-bold text-white">
-                {language === 'HI' ? 'हस्तक्षेप प्राथमिकता सूचकांक (IPI) कॉन्फ़िगरेशन' : 'Intervention Priority Index (IPI) Configuration (F09)'}
+                {language === 'HI' ? 'हस्तक्षेप प्राथमिकता सूचकांक (IPI) कॉन्फ़िगरेशन' : 'Intervention Priority Index (IPI) Configuration'}
               </h3>
               <p className="text-xs text-slate-400 font-mono">
-                PRD Section 14.2 Formula Weights Tuning
+                Formula weights tuning
               </p>
             </div>
           </div>
@@ -190,7 +190,7 @@ export const IPIConfiguratorModal: React.FC<IPIConfiguratorModalProps> = ({
             className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset PRD Defaults</span>
+            <span>Reset to defaults</span>
           </button>
 
           <div className="flex items-center gap-2">

@@ -61,7 +61,7 @@ export function Fact({ value, provenance, className = '', absentLabel = 'ABSENT'
   return (
     <span className={`lume-fact lume-fact--present ${className}`.trim()} data-fact-state="present" title={tooltip}>
       <span className="lume-fact__value">{value}</span>
-      <span className="lume-fact__freshness">Data as of {provenance.asOf}</span>
+      <span className="lume-fact__freshness">Data as of {provenance.asOf.slice(0, 10)}</span>
       {provenance.classification === 'SOURCED' && (
         <a
           className="lume-fact__source"

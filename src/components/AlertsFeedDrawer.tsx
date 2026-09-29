@@ -147,7 +147,7 @@ export const AlertsFeedDrawer: React.FC<AlertsFeedDrawerProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-bold text-sm text-white">
-                  {language === 'HI' ? 'सांविधिक अलर्ट एवं परिवर्तन फ़ीड (F11)' : 'Statutory Alerts & Change Feed (F11)'}
+                  {language === 'HI' ? 'सांविधिक अलर्ट एवं परिवर्तन फ़ीड' : 'Statutory Alerts & Change Feed'}
                 </h3>
                 {unacknowledgedCount > 0 && (
                   <span className="bg-rose-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">

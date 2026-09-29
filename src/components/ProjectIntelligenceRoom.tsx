@@ -869,13 +869,13 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
             </div>
           </div>
 
-          {/* Critical Path View (F06) */}
+          {/* Critical Path View */}
           <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <Layers className="w-4 h-4 text-emerald-400" />
-                  Critical Path Dependency Intelligence (F06)
+                  Critical Path Dependency Intelligence
                 </h3>
                 <p className="text-xs text-slate-400">
                   Isolates conditions blocking downstream milestone execution, with owning departments and statutory age.
@@ -1494,7 +1494,7 @@ export const ProjectIntelligenceRoom: React.FC<ProjectIntelligenceRoomProps> = (
                 Government of India • Ministry of Rural Development • DoLR / LACRRIS Intelligence
               </div>
               <h1 className="text-xl font-black text-slate-900 mt-1">
-                EXECUTIVE PROJECT REVIEW BRIEF (F12)
+                EXECUTIVE PROJECT REVIEW BRIEF
               </h1>
               <div className="text-xs text-slate-600 font-medium mt-0.5">
                 For the Attention of: District Collector & Competent Authority (CALA)

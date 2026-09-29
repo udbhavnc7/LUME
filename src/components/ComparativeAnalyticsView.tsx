@@ -41,10 +41,10 @@ export const ComparativeAnalyticsView: React.FC<ComparativeAnalyticsViewProps> =
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg font-bold text-white">
-                  {language === 'HI' ? 'तुलनात्मक विश्लेषण एवं सांविधिक रुझान (F18)' : 'Comparative Analytics & Statutory Benchmarks (F18)'}
+                  {language === 'HI' ? 'तुलनात्मक विश्लेषण एवं सांविधिक रुझान' : 'Comparative Analytics & Statutory Benchmarks'}
                 </h2>
                 <span className="text-[10px] bg-teal-500/20 text-teal-300 font-mono px-2 py-0.5 rounded-full border border-teal-500/30">
-                  PRD Section 15
+                  Statutory benchmark
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">

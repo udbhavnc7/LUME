@@ -100,9 +100,11 @@
 .lume-fact {
   display: inline-flex;
   max-width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: inherit;
-  gap: 0.35rem;
+  gap: 0.15rem 0.35rem;
   vertical-align: middle;
 }
 
@@ -123,7 +125,11 @@
 
 .lume-fact__freshness {
   display: inline-flex;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   align-items: center;
   padding: 0.1rem 0.3rem;
   border: 1px solid rgba(114, 228, 197, 0.28);
@@ -509,7 +515,6 @@
   border: 1px solid rgba(114, 228, 197, 0.16);
   border-radius: 0.6rem;
   background: rgba(5, 24, 27, 0.72);
-  font-size: 0.6rem;
   font-weight: 700;
   backdrop-filter: blur(12px);
 }
@@ -517,16 +522,6 @@
 .signal-field__status strong {
   color: var(--lume-mint);
   font-size: 0.75rem;
-}
-
-.signal-field__status-icon {
-  display: grid;
-  width: 1.5rem;
-  height: 1.5rem;
-  place-items: center;
-  color: #05241c;
-  border-radius: 0.45rem;
-  background: var(--lume-mint);
 }
 
 .command-hero__metrics {
@@ -539,12 +534,11 @@
 
 .hero-metric {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.45rem;
   min-width: 0;
   padding: 0.8rem 0.9rem;
-  border: 1px solid rgba(143, 220, 203, 0.12);
   border-radius: 0.9rem;
   background: rgba(7, 22, 25, 0.68);
 }
@@ -567,22 +561,20 @@
 .hero-metric div:nth-child(2) {
   display: flex;
   min-width: 0;
-  flex-direction: column;
-  gap: 0.1rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
 }
 
 .hero-metric span {
   overflow: hidden;
-  color: #789894;
-  font-size: 0.62rem;
   font-weight: 700;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .hero-metric strong {
-  color: #effaf7;
-  font-size: 1.05rem;
+  min-width: 0;
   font-weight: 750;
   letter-spacing: -0.04em;
 }
@@ -596,16 +588,11 @@
 }
 
 .hero-metric small {
-  color: var(--lume-mint);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.57rem;
   font-weight: 700;
   text-align: right;
   white-space: nowrap;
 }
-
-.hero-metric small.is-gold { color: var(--lume-gold); }
-.hero-metric small.is-coral { color: var(--lume-coral); }
 
 .app-theme-light .command-hero {
   border-color: #cfe5de;
@@ -624,6 +611,20 @@
 .app-theme-light .hero-metric span { color: #64847e; }
 .app-theme-light .hero-metric strong { color: #123e35; }
 .app-theme-light .hero-metric em { color: #6d8984; }
+
+/* Header nav pills: scroll horizontally on narrow screens instead of wrapping
+   the whole header into a very tall sticky block. */
+.lume-nav-scroll {
+  scrollbar-width: none;
+}
+
+.lume-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.lume-nav-scroll > button {
+  flex: 0 0 auto;
+}
 
 @keyframes lume-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(114, 228, 197, 0.28), 0 0 1.2rem rgba(114, 228, 197, 0.72); }

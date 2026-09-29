@@ -125,7 +125,7 @@ export const DemoTourGuide: React.FC<DemoTourGuideProps> = ({
       <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-600 px-4 py-2 flex items-center justify-between text-slate-950 font-bold text-xs">
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-slate-950 animate-bounce" />
-          <span className="uppercase tracking-wider">SIH 2026 Pitch Walkthrough Mode</span>
+          <span className="uppercase tracking-wider">Guided walkthrough mode</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="bg-slate-950 text-amber-300 px-2 py-0.5 rounded-full font-mono text-[11px]">

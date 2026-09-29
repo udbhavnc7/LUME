@@ -477,7 +477,7 @@ export const HelpSupportModal: React.FC<HelpSupportModalProps> = ({
                     className="flex items-center gap-2 px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold rounded-xl text-xs shadow-sm transition-transform hover:scale-105"
                   >
                     <Sparkles className="w-4 h-4" />
-                    <span>Launch 7-Minute SIH Guided Tour</span>
+                    <span>Start the guided tour</span>
                   </button>
 
                   <button

@@ -51,49 +51,33 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [selectedProjectTab, setSelectedProjectTab] = useState<'OVERVIEW' | 'EVIDENCE' | 'PRECEDENTS' | 'SCENARIO' | 'DECISIONS' | 'DOC_VERIFICATION' | 'REVIEW_PACKET'>('OVERVIEW');
   const [citizenTargetUlpin, setCitizenTargetUlpin] = useState<string | undefined>(undefined);
-  
+
   // Alerts Drawer & IPI Modal State
   const [isAlertsOpen, setIsAlertsOpen] = useState<boolean>(false);
   const [isIPIModalOpen, setIsIPIModalOpen] = useState<boolean>(false);
-  const [ipiWeights, setIpiWeights] = useState<IPIWeights>(() => {
-    const saved = readStoredValue('lume_ipi_weights');
-    return saved ? JSON.parse(saved) : {
-      w1RiskMovement: 0.35,
-      w2Urgency: 0.30,
-      w3Criticality: 0.20,
-      w4Actionability: 0.15,
-      version: '2026.1-champion'
-    };
+  // Persisted preferences start at the server-rendered defaults and are
+  // rehydrated in the effect below. Reading localStorage during the first
+  // render makes the client HTML differ from the exported server HTML, which
+  // React refuses to patch — the saved theme/language would silently never apply.
+  const [ipiWeights, setIpiWeights] = useState<IPIWeights>({
+    w1RiskMovement: 0.35,
+    w2Urgency: 0.30,
+    w3Criticality: 0.20,
+    w4Actionability: 0.15,
+    version: '2026.1-champion'
   });
 
   // Theme & Accessibility Preferences
-  const [theme, setTheme] = useState<AppTheme>(() => {
-    const saved = readStoredValue('lume_theme');
-    return (saved as AppTheme) || 'dark';
-  });
-  const [fontSize, setFontSize] = useState<AppFontSize>(() => {
-    const saved = readStoredValue('lume_font_size');
-    return (saved as AppFontSize) || 'normal';
-  });
-  const [highContrast, setHighContrast] = useState<boolean>(() => {
-    return readStoredValue('lume_high_contrast') === 'true';
-  });
-  const [language, setLanguage] = useState<'EN' | 'HI'>(() => {
-    const saved = readStoredValue('lume_language');
-    return (saved as 'EN' | 'HI') || 'EN';
-  });
+  const [theme, setTheme] = useState<AppTheme>('dark');
+  const [fontSize, setFontSize] = useState<AppFontSize>('normal');
+  const [highContrast, setHighContrast] = useState<boolean>(false);
+  const [language, setLanguage] = useState<'EN' | 'HI'>('EN');
 
   // Splash Screen State
-  const [showSplash, setShowSplash] = useState<boolean>(() => {
-    // Show splash on every initial load/refresh for a cinematic experience
-    return true;
-  });
+  const [showSplash, setShowSplash] = useState<boolean>(true);
 
   // Onboarding Wizard State
   const [showOnboarding, setShowOnboarding] = useState<boolean>(false);
-  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean>(() => {
-    return readStoredValue('lume_onboarding_completed') === 'true';
-  });
 
   // Help & Support Modal State
   const [isHelpOpen, setIsHelpOpen] = useState(false);
@@ -109,18 +93,38 @@ export default function App() {
   const [validationReports, setValidationReports] = useState<DatasetValidationReport[]>([]);
 
   // Mutable state for decision logs
-  const [decisionLogs, setDecisionLogs] = useState<DecisionLogEntry[]>(() => {
-    const saved = readStoredValue('lume_decision_logs');
-    return saved ? JSON.parse(saved) : DEMO_DECISION_LOGS;
-  });
+  const [decisionLogs, setDecisionLogs] = useState<DecisionLogEntry[]>(DEMO_DECISION_LOGS);
 
   const [projects] = useState<LandAcquisitionProject[]>(DEMO_PROJECTS);
   const [parcels] = useState<CitizenParcelRecord[]>(DEMO_CITIZEN_PARCELS);
 
-  // When splash completes, check if onboarding is needed
+  // Rehydrate every persisted preference once, after the first client render.
+  useEffect(() => {
+    const savedIpi = readStoredValue('lume_ipi_weights');
+    if (savedIpi) {
+      try { setIpiWeights(JSON.parse(savedIpi)); } catch { /* ignore malformed payload */ }
+    }
+    const savedTheme = readStoredValue('lume_theme') as AppTheme | null;
+    if (savedTheme) setTheme(savedTheme);
+    const savedFontSize = readStoredValue('lume_font_size') as AppFontSize | null;
+    if (savedFontSize) setFontSize(savedFontSize);
+    setHighContrast(readStoredValue('lume_high_contrast') === 'true');
+    const savedLanguage = readStoredValue('lume_language') as 'EN' | 'HI' | null;
+    if (savedLanguage) setLanguage(savedLanguage);
+    const savedDataMode = readStoredValue('lume_data_mode') as DataMode | null;
+    if (savedDataMode) setDataMode(savedDataMode);
+    const savedLogs = readStoredValue('lume_decision_logs');
+    if (savedLogs) {
+      try { setDecisionLogs(JSON.parse(savedLogs)); } catch { /* ignore malformed payload */ }
+    }
+  }, []);
+
+  // When splash completes, check if onboarding is needed. Read the flag
+  // directly rather than from state: the splash timer can fire from a stale
+  // closure that predates the rehydration effect.
   const handleSplashComplete = () => {
     setShowSplash(false);
-    if (!hasCompletedOnboarding) {
+    if (readStoredValue('lume_onboarding_completed') !== 'true') {
       setShowOnboarding(true);
     }
   };
@@ -137,7 +141,6 @@ export default function App() {
     setHighContrast(prefs.highContrast);
     setLanguage(prefs.language);
     setCurrentView(prefs.preferredRole === 'CITIZEN' ? 'CITIZEN' : prefs.preferredRole === 'GIS' ? 'GIS' : 'OFFICER');
-    setHasCompletedOnboarding(true);
     setShowOnboarding(false);
 
     // Save all to localStorage

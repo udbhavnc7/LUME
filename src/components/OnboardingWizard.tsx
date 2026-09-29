@@ -488,7 +488,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
                     Designed for farmers and senior citizens: enter your 14-digit Bhu-Aadhaar (ULPIN) or Khasra/Gut number to view statutory status, fair compensation estimates with 100% solatium, and listen aloud via Web Speech synthesis.
                   </p>
                   <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-[11px] font-mono text-amber-300">
-                    Privacy Protection: Personal bank details are never published (PRD Sec 16).
+                    Privacy Protection: Personal bank details are never published.
                   </div>
                 </div>
               )}

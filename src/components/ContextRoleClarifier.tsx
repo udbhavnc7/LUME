@@ -277,7 +277,7 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
 
           {/* Persona Switcher & Direct Alternate */}
           <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto justify-between lg:justify-end shrink-0 pt-1 lg:pt-0 border-t lg:border-t-0 border-slate-800">
-            {/* RBAC Role Switcher (PRD Section 5) */}
+            {/* RBAC Role Switcher */}
             <div className="relative">
               <button
                 onClick={() => setShowRoleMenu(!showRoleMenu)}
@@ -295,7 +295,7 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
               {showRoleMenu && (
                 <div className="absolute right-0 top-full mt-1.5 w-72 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl p-2 z-50 text-xs space-y-1">
                   <div className="px-2 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-slate-800">
-                    {language === 'HI' ? 'उपयोगकर्ता भूमिका चुनें (PRD Section 5)' : 'Select User Role (PRD Section 5)'}
+                    {language === 'HI' ? 'उपयोगकर्ता भूमिका चुनें' : 'Select User Role'}
                   </div>
                   {(Object.keys(roleDefinitions) as RBACRole[]).map((r) => (
                     <button
@@ -347,7 +347,7 @@ export const ContextRoleClarifier: React.FC<ContextRoleClarifierProps> = ({
           <div className="flex items-center gap-2">
             <span className="font-bold text-amber-400 flex items-center gap-1">
               <Scale className="w-3 h-3" />
-              <span>{language === 'HI' ? 'भूमिका फोकस:' : 'Persona Objective:'}</span>
+              <span>{language === 'HI' ? 'भूमिका फोकस:' : 'Focus for today:'}</span>
             </span>
             <span className="text-slate-200">
               {language === 'HI' ? currentRoleInfo.jobQueryHindi : currentRoleInfo.jobQuery}

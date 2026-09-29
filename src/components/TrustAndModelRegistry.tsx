@@ -49,7 +49,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
   const [isCopied, setIsCopied] = useState(false);
   const t = TRANSLATIONS[language];
 
-  // API Endpoints Specification (PRD Section 18.1 / F16)
+  // API Endpoints Specification
   const apiEndpoints: ApiEndpoint[] = [
     {
       id: 'projects',
@@ -242,7 +242,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
           }`}
         >
           <Code2 className="w-4 h-4" />
-          <span>{language === 'HI' ? 'इंटरैक्टिव रेस्ट एपीआई (F16)' : 'Interactive REST APIs (F16)'}</span>
+          <span>{language === 'HI' ? 'इंटरैक्टिव रेस्ट एपीआई' : 'Interactive REST APIs'}</span>
         </button>
 
         <button
@@ -266,7 +266,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
           }`}
         >
           <Award className="w-4 h-4" />
-          <span>{language === 'HI' ? 'एसआईएच 10/10 मूल्यांकन स्कोरकार्ड' : 'SIH 10/10 Scorecard (Sec 25)'}</span>
+          <span>{language === 'HI' ? 'मूल्यांकन स्कोरकार्ड' : 'Evaluation Scorecard'}</span>
         </button>
 
         <button
@@ -386,13 +386,13 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
         </div>
       )}
 
-      {/* TAB 2: INTERACTIVE REST APIS (F16) */}
+      {/* TAB 2: INTERACTIVE REST APIS */}
       {activeTab === 'API' && (
         <div className="space-y-5">
           <div className="bg-slate-800/90 border border-slate-700 rounded-2xl p-5 shadow-sm space-y-2">
             <div className="flex items-center gap-2 text-teal-400 text-xs font-bold uppercase tracking-wider">
               <Code2 className="w-4 h-4" />
-              REST API Integration Surface (F16 / PRD Section 18.1)
+              REST API Integration Surface
             </div>
             <p className="text-xs text-slate-300 leading-relaxed">
               LUME functions as an enterprise microservice exposing standard OpenAPI/Swagger-compliant JSON endpoints. Acquire corridor risk probabilities, trigger what-if scenario re-scoring, or ingest state registry updates seamlessly.
@@ -510,7 +510,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
         </div>
       )}
 
-      {/* TAB 3: BUSINESS MODEL & DEFENSIVE MOAT (PRD SECTION 20 & 21) */}
+      {/* TAB 3: BUSINESS MODEL & DEFENSIVE MOAT */}
       {activeTab === 'BUSINESS' && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -565,7 +565,7 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
               The Core Executive Question: "Why won't NIC build this next year?"
             </div>
             <h3 className="text-base font-bold text-white">
-              The Defensibility Moat & Organizational Divide (PRD Section 21)
+              The Defensibility Moat & Organizational Divide
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300 pt-1">
               <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
@@ -599,13 +599,13 @@ export const TrustAndModelRegistry: React.FC<TrustAndModelRegistryProps> = ({ la
           <div className="bg-slate-800/90 border border-amber-500/40 rounded-2xl p-5 shadow-sm space-y-2">
             <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
               <Award className="w-4 h-4" />
-              Smart India Hackathon (SIH) 10/10 Evaluation Checklist (Section 25)
+               Evaluation Checklist
             </div>
             <h3 className="text-lg font-extrabold text-white">
-              Verifiable Evidence for Every Hackathon Jury Dimension
+               Verifiable Evidence for Every Evaluation Dimension
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Every single criterion from the SIH national jury scorecard is implemented as live, verifiable software in this application:
+               Every criterion in the evaluation checklist is implemented as live, verifiable software in this application:
             </p>
           </div>
 

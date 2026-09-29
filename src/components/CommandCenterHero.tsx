@@ -32,7 +32,7 @@ export function CommandCenterHero({
 
   const statutoryProvenance: FactProvenance = {
     classification: 'COMPUTED',
-    sourceName: dataMode === 'DEMO' ? 'SIH26017 demo seed (DEMO mode)' : 'Local import (no backend sync)',
+    sourceName: dataMode === 'DEMO' ? 'LUME demo seed (demo mode)' : 'Local import (no backend sync)',
     asOf: '2026-09-07T06:00:00Z',
     reviewStatus: 'confirmed',
     formulaVersion: 'hero-aggregate-v1',
@@ -155,14 +155,14 @@ export function CommandCenterHero({
             <span className="text-xs text-slate-400 font-medium">
               {language === 'HI' ? 'निगरानी में मूल्य' : 'Value monitored'}
             </span>
+            <small className="ml-auto shrink-0 text-[11px] font-semibold text-emerald-400 font-mono bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/50">
+              {projects.length} projects
+            </small>
           </div>
           <div className="flex items-baseline justify-between mt-1">
             <strong className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
               <Fact value={`₹${budgetLabel} Cr`} provenance={statutoryProvenance} />
             </strong>
-            <small className="text-[11px] font-semibold text-emerald-400 font-mono bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/50">
-              {projects.length} projects
-            </small>
           </div>
         </div>
 
@@ -174,14 +174,14 @@ export function CommandCenterHero({
             <span className="text-xs text-slate-400 font-medium">
               {language === 'HI' ? 'घड़ी-जोखिम' : 'Clock risk'}
             </span>
+            <small className="ml-auto shrink-0 text-[11px] font-semibold text-amber-400 font-mono bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-800/50">
+              needs action
+            </small>
           </div>
           <div className="flex items-baseline justify-between mt-1">
             <strong className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
               <Fact value={`${criticalAlertsCount} alerts`} provenance={statutoryProvenance} />
             </strong>
-            <small className="text-[11px] font-semibold text-amber-400 font-mono bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-800/50">
-              needs action
-            </small>
           </div>
         </div>
 
@@ -193,14 +193,14 @@ export function CommandCenterHero({
             <span className="text-xs text-slate-400 font-medium">
               {language === 'HI' ? 'उच्च जोखिम' : 'High-risk corridors'}
             </span>
+            <small className="ml-auto shrink-0 text-[11px] font-semibold text-rose-400 font-mono bg-rose-950/60 px-1.5 py-0.5 rounded border border-rose-800/50">
+              {averageRisk}% avg risk
+            </small>
           </div>
           <div className="flex items-baseline justify-between mt-1">
             <strong className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
               <Fact value={`${highRiskCount} of ${projects.length}`} provenance={statutoryProvenance} />
             </strong>
-            <small className="text-[11px] font-semibold text-rose-400 font-mono bg-rose-950/60 px-1.5 py-0.5 rounded border border-rose-800/50">
-              {averageRisk}% avg risk
-            </small>
           </div>
         </div>
 
@@ -212,14 +212,14 @@ export function CommandCenterHero({
             <span className="text-xs text-slate-400 font-medium">
               {language === 'HI' ? 'प्रभावित परिवार' : 'Families in scope'}
             </span>
+            <small className="ml-auto shrink-0 text-[11px] font-semibold text-cyan-400 font-mono bg-cyan-950/60 px-1.5 py-0.5 rounded border border-cyan-800/50">
+              across {projects.length}
+            </small>
           </div>
           <div className="flex items-baseline justify-between mt-1">
             <strong className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
               <Fact value={totalFamilies.toLocaleString()} provenance={statutoryProvenance} />
             </strong>
-            <small className="text-[11px] font-semibold text-cyan-400 font-mono bg-cyan-950/60 px-1.5 py-0.5 rounded border border-cyan-800/50">
-              across {projects.length}
-            </small>
           </div>
         </div>
       </div>

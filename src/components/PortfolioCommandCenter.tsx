@@ -134,7 +134,7 @@ export const PortfolioCommandCenter: React.FC<PortfolioCommandCenterProps> = ({
                   {language === 'HI' ? 'अधिग्रहण नियंत्रण टॉवर' : 'Acquisition Control Tower'}
                 </span>
                 <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-500/40 shadow-[0_0_8px_rgba(52,211,153,0.3)]">
-                  V9
+                  LIVE
                 </span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                   dataMode === 'DEMO'

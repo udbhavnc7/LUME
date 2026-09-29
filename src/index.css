@@ -98,25 +98,63 @@
   color: #475569 !important;
 }
 
-/* Light theme cards and panels (all opacity variants) */
-.app-theme-light [class*="bg-slate-950"] {
+/* Light theme cards and panels.
+   Selectors use [class~="..."] (whole token) plus a space-anchored opacity
+   match so that `hover:bg-slate-800` / `bg-slate-800/80` are not swallowed by
+   a rule meant for the resting `bg-slate-800` state. */
+.app-theme-light [class~="bg-slate-950"],
+.app-theme-light [class^="bg-slate-950/"],
+.app-theme-light [class*=" bg-slate-950/"] {
   background-color: #f8fafc !important;
   border-color: #e2e8f0 !important;
   color: #0f172a !important;
 }
 
-.app-theme-light [class*="bg-slate-900"] {
+.app-theme-light [class~="bg-slate-900"],
+.app-theme-light [class^="bg-slate-900/"],
+.app-theme-light [class*=" bg-slate-900/"] {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
   color: #0f172a !important;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
 }
 
-.app-theme-light [class*="bg-slate-800"] {
+.app-theme-light [class~="bg-slate-800"],
+.app-theme-light [class^="bg-slate-800/"],
+.app-theme-light [class*=" bg-slate-800/"] {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
   color: #0f172a !important;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
+}
+
+/* Hover feedback must still work once the resting state is remapped. */
+.app-theme-light [class*="hover:bg-slate-900"]:hover,
+.app-theme-light [class*="hover:bg-slate-800"]:hover,
+.app-theme-light [class*="hover:bg-slate-700"]:hover,
+.app-theme-light [class*="hover:bg-slate-600"]:hover {
+  background-color: #e8edf3 !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+}
+
+/* bg-slate-700 / bg-slate-600 mark the ACTIVE pill in segmented controls
+   (theme switcher, font scaler, active tab). Keep them a dark thumb so the
+   selection still reads, and put white back on the label. */
+.app-theme-light [class~="bg-slate-700"],
+.app-theme-light [class~="bg-slate-600"] {
+  background-color: #334155 !important;
+  border-color: #1e293b !important;
+  box-shadow: none;
+}
+
+.app-theme-light [class~="bg-slate-700"] .text-white,
+.app-theme-light [class~="bg-slate-600"] .text-white,
+.app-theme-light [class~="bg-slate-700"].text-white,
+.app-theme-light [class~="bg-slate-600"].text-white,
+.app-theme-light [class~="bg-slate-700"] .text-slate-300,
+.app-theme-light [class~="bg-slate-700"] .text-slate-400,
+.app-theme-light [class~="bg-slate-600"] .text-slate-300 {
+  color: #f8fafc !important;
 }
 
 /* Universal text contrast rules */
@@ -145,10 +183,10 @@
 .app-theme-light button.bg-rose-500,
 .app-theme-light button.bg-blue-600,
 .app-theme-light button.bg-indigo-600,
-.app-theme-light [class*="bg-emerald-600"],
-.app-theme-light [class*="bg-teal-600"],
-.app-theme-light [class*="bg-rose-600"],
-.app-theme-light [class*="bg-blue-600"] {
+.app-theme-light [class~="bg-emerald-600"],
+.app-theme-light [class~="bg-teal-600"],
+.app-theme-light [class~="bg-rose-600"],
+.app-theme-light [class~="bg-blue-600"] {
   color: #ffffff !important;
 }
 
@@ -161,26 +199,31 @@
 .app-theme-light button.bg-rose-500 *,
 .app-theme-light button.bg-blue-600 *,
 .app-theme-light button.bg-indigo-600 *,
-.app-theme-light [class*="bg-emerald-600"] *,
-.app-theme-light [class*="bg-teal-600"] *,
-.app-theme-light [class*="bg-rose-600"] *,
-.app-theme-light [class*="bg-blue-600"] * {
+.app-theme-light [class~="bg-emerald-600"] *,
+.app-theme-light [class~="bg-teal-600"] *,
+.app-theme-light [class~="bg-rose-600"] *,
+.app-theme-light [class~="bg-blue-600"] * {
   color: #ffffff !important;
 }
 
-/* Amber buttons/tabs with dark text */
-.app-theme-light [class*="bg-amber-500"],
-.app-theme-light [class*="bg-amber-400"] {
+/* Solid amber controls with dark text. Tinted variants (bg-amber-500/20)
+   keep their own translucent fill instead of being flattened to solid. */
+.app-theme-light [class~="bg-amber-500"],
+.app-theme-light [class~="bg-amber-400"] {
   background-color: #f59e0b !important;
   color: #0f172a !important;
 }
-.app-theme-light [class*="bg-amber-500"] *,
-.app-theme-light [class*="bg-amber-400"] * {
+.app-theme-light [class~="bg-amber-500"] *,
+.app-theme-light [class~="bg-amber-400"] * {
   color: #0f172a !important;
 }
+.app-theme-light [class*="hover:bg-amber-500/"]:hover,
+.app-theme-light [class*="hover:bg-amber-400/"]:hover {
+  background-color: rgba(245, 158, 11, 0.24) !important;
+}
 
-/* Borders */
-.app-theme-light [class*="border-slate-"] {
+/* Borders — exclude :hover so hover:border-* utilities still fire. */
+.app-theme-light [class*="border-slate-"]:not(:hover) {
   border-color: #e2e8f0 !important;
 }
 
@@ -240,6 +283,12 @@
   color: #047857 !important;
 }
 
+.app-theme-light [class*="bg-cyan-950"] {
+  background-color: #cffafe !important;
+  border-color: #a5f3fc !important;
+  color: #155e75 !important;
+}
+
 .app-theme-light [class*="bg-teal-950"] {
   background-color: #ccfbf1 !important;
   border-color: #99f6e4 !important;
@@ -259,6 +308,16 @@
 .app-theme-light .text-blue-400,
 .app-theme-light .text-indigo-400 {
   color: #2563eb !important;
+}
+.app-theme-light .text-blue-300,
+.app-theme-light .text-indigo-300 {
+  color: #1d4ed8 !important;
+}
+.app-theme-light .text-cyan-400,
+.app-theme-light .text-cyan-300,
+.app-theme-light .text-sky-400,
+.app-theme-light .text-sky-300 {
+  color: #0369a1 !important;
 }
 
 /* =========================================================
@@ -398,22 +457,48 @@ button:focus-visible {
   transform: translateY(-2px);
 }
 
-/* Custom sleek scrollbar */
+/* Custom sleek scrollbar — themed via tokens so light/high-contrast modes
+   don't keep a near-black track. */
+* {
+  scrollbar-color: var(--lume-scrollbar-thumb, rgba(51, 65, 85, 0.8)) var(--lume-scrollbar-track, rgba(2, 6, 23, 0.6));
+  scrollbar-width: thin;
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(2, 6, 23, 0.6);
+  background: var(--lume-scrollbar-track, rgba(2, 6, 23, 0.6));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(51, 65, 85, 0.8);
+  background: var(--lume-scrollbar-thumb, rgba(51, 65, 85, 0.8));
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(16, 185, 129, 0.6);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   Opt users out of every animation/transition, not just the three
+   that lume.css happened to list.
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  button:active:not(:disabled) {
+    transform: none !important;
+  }
 }
 

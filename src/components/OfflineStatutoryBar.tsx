@@ -78,7 +78,18 @@ export const OfflineStatutoryBar: React.FC<OfflineStatutoryBarProps> = ({ langua
     refreshData: refreshIdbData
   } = useIndexedDB();
 
-  const [cacheStats, setCacheStats] = useState<OfflineCacheStats>(getOfflineCacheStats());
+  // Start from a neutral value: this is rendered on the server during static
+  // export, so reading the cache here would produce HTML the client can't
+  // hydrate. The mount effect below swaps in the real figures.
+  const [cacheStats, setCacheStats] = useState<OfflineCacheStats>({
+    lastUpdated: '',
+    rulesCount: 0,
+    parcelsCount: 0,
+    draftsCount: 0,
+    pendingSyncCount: 0,
+    estimatedStorageKb: 0,
+    isReadyForFieldDuty: false,
+  });
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'IDB_VAULT' | 'ANNOTATIONS' | 'RULES' | 'PARCELS' | 'DRAFTS' | 'NEW_DRAFT' | 'AUDIT_LOGS'>('IDB_VAULT');
   const [isPreCaching, setIsPreCaching] = useState<boolean>(false);
@@ -292,7 +303,7 @@ export const OfflineStatutoryBar: React.FC<OfflineStatutoryBarProps> = ({ langua
           !isOnline 
             ? 'bg-amber-950/90 border-amber-800 text-amber-200' 
             : 'bg-slate-900/95 border-slate-800 text-slate-300'
-        } backdrop-blur-md sticky top-0 z-40 shadow-sm`}
+        } backdrop-blur-md relative z-30 shadow-sm`}
       >
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
           {/* Left: Connectivity Status & Statutory Protection Status */}
